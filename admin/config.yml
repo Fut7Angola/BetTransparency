@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: thylousada/BetTransparency # Substitui pelo teu usuário/repositorio
+  branch: main
+
+media_folder: "images"   # onde estão as imagens
+public_folder: "/images"
+
+collections:
+  - name: "ads"
+    label: "Publicidade"
+    folder: "data"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Influenciador", name: "influencer", widget: "string" }
+      - { label: "Plataforma", name: "plataforma", widget: "string" }
+      - { label: "Conteúdo", name: "conteudo", widget: "text" }
+      - { label: "Imagem", name: "imagem", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
