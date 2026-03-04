@@ -49,12 +49,11 @@ fetch("./data/blacklist.json")
       card.className = "card";
 
       card.innerHTML = `
-        <h2>${item.nome}</h2>
-        <p><strong>Motivo:</strong> ${item.motivo}</p>
-        <p><strong>Link Website:</strong> ${item.Link Website}</p>        
-        <a class="btn" href="${item.website}" target="_blank">Website</a>
-        ${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
-      `;
+  <h2>${item.nome}</h2>
+  <p><strong>Motivo:</strong> ${item.motivo}</p>
+  <a class="btn" href="${item.website}" target="_blank">Website</a>
+  ${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
+`;
 
       container.appendChild(card);
     });
