@@ -4,185 +4,125 @@
   <meta charset="UTF-8">
   <title>BetTransparency - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-    
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       background: #eef2f7;
       color: #222;
-      line-height: 1.6;
+      text-align: center;
     }
 
     main {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: 30px auto;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
     h1 {
-      margin-top: 0;
-      font-weight: 700;
       color: #0b132b;
-      text-align: center;
-      font-size: 36px;
     }
 
-    h2 {
-      color: #0b132b;
-      margin-top: 30px;
-    }
-
-    .section {
-      background: white;
-      padding: 25px 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    .card {
-      flex: 1 1 calc(33% - 20px);
+    .verificador {
+      margin-top: 40px;
+      padding: 30px;
       background: #f9fafd;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      min-width: 250px;
+      border-radius: 12px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
+    input {
+      padding: 10px;
+      width: 60%;
+      max-width: 300px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
       background: #1c7ed6;
       color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 15px;
-      font-weight: 600;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    @media(max-width: 992px) {
-      .cards { flex-direction: column; }
-      .card { flex: 1 1 100%; }
+    button:hover {
+      background: #1864ab;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-<div id="header"></div>
-
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
-</script>
-
 <main>
+  <h1>BetTransparency</h1>
+  <p>Projeto educativo sobre apostas online em Portugal.</p>
 
-  <div class="section">
-    <h1>Bem-vindo ao BetTransparency</h1>
-    <p>Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.</p>
+  <div class="verificador">
+    <h2>🔎 Verificar Operador</h2>
+    <p>Escreva o nome do site:</p>
 
-    <!-- VERIFICADOR -->
-    <div style="margin-top:40px;padding:30px;background:#f9fafd;border-radius:12px;text-align:center;">
-      <h2>🔎 Verificar Operador</h2>
-      <p>Escreva o nome do site para verificar se é legal em Portugal.</p>
+    <input type="text" id="siteInput" placeholder="Ex: Betano">
+    <button onclick="verificarSite()">Verificar</button>
 
-      <input type="text" id="siteInput" placeholder="Ex: 1xBet"
-        style="padding:10px;width:60%;max-width:300px;border-radius:6px;border:1px solid #ccc;">
-
-      <button onclick="verificarSite()"
-        style="padding:10px 15px;margin-left:10px;border:none;border-radius:6px;background:#1c7ed6;color:white;font-weight:600;">
-        Verificar
-      </button>
-
-      <div id="resultado" style="margin-top:20px;font-weight:600;"></div>
-    </div>
-
-    <div class="cards" style="margin-top:40px;">
-      <div class="card">
-        <h3>Verificação de Licença</h3>
-        <a class="btn" href="license.html">Verificar Licença</a>
-      </div>
-
-      <div class="card">
-        <h3>Alertas de Publicidade</h3>
-        <a class="btn" href="ads.html">Ver Análises</a>
-      </div>
-
-      <div class="card">
-        <h3>Lista Negra</h3>
-        <a class="btn" href="blacklist.html">Ver Blacklist</a>
-      </div>
-    </div>
+    <div id="resultado"></div>
   </div>
-
 </main>
 
-<div id="footer"></div>
-
-<script>
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
-
-<!-- SCRIPT DO VERIFICADOR -->
 <script>
 function verificarSite() {
-  const input = document.getElementById("siteInput").value.toLowerCase().trim();
+  const input = document.getElementById("siteInput").value.trim().toLowerCase();
   const resultado = document.getElementById("resultado");
 
   if (input === "") {
-    resultado.innerHTML = "Por favor escreva um nome.";
+    resultado.innerHTML = "Escreva um nome.";
     resultado.style.color = "black";
     return;
   }
 
   Promise.all([
-    fetch("./data/blacklist.json").then(res => res.json()),
-    fetch("./data/legal.json").then(res => res.json())
+    fetch("data/blacklist.json").then(res => res.json()),
+    fetch("data/legal.json").then(res => res.json())
   ])
   .then(([blacklist, legal]) => {
 
-    const ilegal = blacklist.find(item =>
-      item.nome.toLowerCase().includes(input)
+    const ilegal = blacklist.some(item =>
+      item.nome.trim().toLowerCase() === input
     );
 
     if (ilegal) {
-      resultado.innerHTML = "🚨 Operador ILEGAL — Encontra-se na BLACKLIST.";
+      resultado.innerHTML = "🚨 Operador ILEGAL (Blacklist)";
       resultado.style.color = "red";
       return;
     }
 
-    const legalEncontrado = legal.find(item =>
-      item.nome.toLowerCase().includes(input)
+    const legalEncontrado = legal.some(item =>
+      item.nome.trim().toLowerCase() === input
     );
 
     if (legalEncontrado) {
-      resultado.innerHTML = "✅ Operador LEGAL — Licenciado em Portugal.";
+      resultado.innerHTML = "✅ Operador LEGAL em Portugal";
       resultado.style.color = "green";
       return;
     }
 
-    resultado.innerHTML = "⚠️ Operador não encontrado na nossa base de dados. Será analisado.";
+    resultado.innerHTML = "⚠️ Operador não encontrado.";
     resultado.style.color = "#b8860b";
 
   })
-  .catch(() => {
-    resultado.innerHTML = "Erro ao verificar operador.";
+  .catch(error => {
+    console.error(error);
+    resultado.innerHTML = "Erro ao carregar dados.";
     resultado.style.color = "red";
   });
 }
