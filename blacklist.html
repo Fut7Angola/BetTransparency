@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Blacklist - Operadores Ilegais</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{font-family:'Roboto',sans-serif;margin:0;background:#eef2f7;color:#222;}
+    main{padding:50px 20px;max-width:1000px;margin:30px auto;background:white;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    h1{text-align:center;color:#0b132b;}
+    .warning{background:#fff3cd;color:#856404;padding:15px;border-radius:8px;margin-bottom:30px;}
+    .card{border:1px solid #dce1eb;padding:20px;margin-bottom:20px;border-radius:10px;background:#f9fafd;}
+    .card h2{margin-top:0;color:#b00020;}
+    .btn{display:inline-block;padding:8px 15px;background:#1c7ed6;color:white;text-decoration:none;border-radius:6px;margin-right:10px;font-size:14px;}
+    .btn:hover{background:#1864ab;}
+  </style>
+</head>
+<body>
 
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+<main>
+  <h1>🚨 Lista Negra de Operadores Ilegais</h1>
+
+  <div class="warning">
+    Estes operadores não possuem licença válida para operar legalmente em Portugal.
+    Recomendamos evitar qualquer registo ou depósito nestas plataformas.
+  </div>
+
+  <div id="blacklist-container"></div>
+</main>
+
+<script>
+fetch("./data/blacklist.json")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("blacklist-container");
+
+    data.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <h2>${item.nome}</h2>
+        <p><strong>Motivo:</strong> ${item.motivo}</p>
+        <a class="btn" href="${item.website}" target="_blank">Website</a>
+        ${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
+      `;
+
+      container.appendChild(card);
+    });
+  });
+</script>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
