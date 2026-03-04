@@ -14,36 +14,6 @@
       color: #222;
       line-height: 1.6;
     }
-    
-    header {
-      background: #0b132b;
-      color: white;
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 15px;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      background: #1c2a4a;
-    }
 
     main {
       padding: 50px 20px;
@@ -62,18 +32,6 @@
     h2 {
       color: #0b132b;
       margin-top: 30px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .country-info {
-      text-align: center;
-      margin: 20px 0;
-      font-weight: 500;
-      font-size: 16px;
-      color: #1c2a4a;
     }
 
     .section {
@@ -100,22 +58,6 @@
       min-width: 250px;
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #0b132b;
-      font-size: 20px;
-    }
-
-    .card p {
-      font-size: 15px;
-    }
-
     .btn {
       display: inline-block;
       padding: 12px 22px;
@@ -125,30 +67,11 @@
       border-radius: 8px;
       margin-top: 15px;
       font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #1864ab;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 13px;
-      color: #666;
-      background: #f0f3f8;
     }
 
     @media(max-width: 992px) {
       .cards { flex-direction: column; }
       .card { flex: 1 1 100%; }
-    }
-
-    @media(max-width:768px) {
-      main { padding: 30px 15px; }
-      nav a { margin: 8px 10px; font-size: 14px; }
-      h1 { font-size: 28px; }
     }
   </style>
 </head>
@@ -165,68 +88,45 @@ fetch("header.html")
 </script>
 
 <main>
-  <!-- Introdução -->
+
   <div class="section">
     <h1>Bem-vindo ao BetTransparency</h1>
-    <div class="country-info">País analisado: Portugal • Expansão futura: Espanha • França • Itália</div>
-    <p>O BetTransparency é um projeto educativo que alerta jogadores sobre apostas online ilegais, promove práticas de jogo responsável e fornece guias educativos.</p>
+    <p>Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.</p>
+
+    <!-- VERIFICADOR -->
     <div style="margin-top:40px;padding:30px;background:#f9fafd;border-radius:12px;text-align:center;">
-  <h2>🔎 Verificar Operador</h2>
-  <p>Escreva o nome do site de apostas para verificar se é legal em Portugal.</p>
+      <h2>🔎 Verificar Operador</h2>
+      <p>Escreva o nome do site para verificar se é legal em Portugal.</p>
 
-  <input type="text" id="siteInput" placeholder="Ex: 1xBet"
-    style="padding:10px;width:60%;max-width:300px;border-radius:6px;border:1px solid #ccc;">
+      <input type="text" id="siteInput" placeholder="Ex: 1xBet"
+        style="padding:10px;width:60%;max-width:300px;border-radius:6px;border:1px solid #ccc;">
 
-  <button onclick="verificarSite()"
-    style="padding:10px 15px;margin-left:10px;border:none;border-radius:6px;background:#1c7ed6;color:white;font-weight:600;">
-    Verificar
-  </button>
+      <button onclick="verificarSite()"
+        style="padding:10px 15px;margin-left:10px;border:none;border-radius:6px;background:#1c7ed6;color:white;font-weight:600;">
+        Verificar
+      </button>
 
-  <div id="resultado" style="margin-top:20px;font-weight:600;"></div>
-</div>    
-    <div class="cards">
+      <div id="resultado" style="margin-top:20px;font-weight:600;"></div>
+    </div>
+
+    <div class="cards" style="margin-top:40px;">
       <div class="card">
         <h3>Verificação de Licença</h3>
-        <p>Confirme sempre se o operador de apostas online é licenciado pelo SRIJ em Portugal.</p>
         <a class="btn" href="license.html">Verificar Licença</a>
       </div>
+
       <div class="card">
-        <h3>Alertas de Influenciadores</h3>
-        <p>Identificamos conteúdos de influenciadores que promovem operadores ilegais e mostramos os riscos associados.</p>
-        <a class="btn" href="ads.html">Ver Análise</a>
+        <h3>Alertas de Publicidade</h3>
+        <a class="btn" href="ads.html">Ver Análises</a>
       </div>
+
       <div class="card">
-        <h3>Guias Educativos</h3>
-        <p>Dicas para reconhecer sinais de alerta e jogar de forma segura e responsável.</p>
-        <a class="btn" href="guides.html">Ver Guias</a>
+        <h3>Lista Negra</h3>
+        <a class="btn" href="blacklist.html">Ver Blacklist</a>
       </div>
     </div>
   </div>
 
-  <!-- Notícias recentes -->
-  <div class="section">
-    <h2>Últimos Artigos e Alertas</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/article1.jpg" alt="Influenciador X">
-        <h3>Influenciador X promove operador não licenciado</h3>
-        <p>Riscos de jogar em plataformas não licenciadas.</p>
-        <a class="btn" href="article1.html">Ler Mais</a>
-      </div>
-      <div class="card">
-        <img src="images/article2.jpg" alt="Bónus elevado">
-        <h3>Bónus elevado sem menção a operador legal</h3>
-        <p>Alertas sobre promoções suspeitas.</p>
-        <a class="btn" href="article2.html">Ler Mais</a>
-      </div>
-      <div class="card">
-        <img src="images/article3.jpg" alt="Como identificar apostas ilegais" style="width:100%; border-radius:8px; margin-bottom:20px;">
-        <h3>Como identificar apostas ilegais online</h3>
-        <p>Guia rápido de sinais de alerta para jogadores.</p>
-        <a class="btn" href="article3.html">Ler Mais</a>
-      </div>
-    </div>
-  </div>
 </main>
 
 <div id="footer"></div>
@@ -239,32 +139,54 @@ fetch("footer.html")
   });
 </script>
 
-</body>
-</html>
+<!-- SCRIPT DO VERIFICADOR -->
 <script>
 function verificarSite() {
-  const input = document.getElementById("siteInput").value.toLowerCase();
+  const input = document.getElementById("siteInput").value.toLowerCase().trim();
   const resultado = document.getElementById("resultado");
 
-  fetch("./data/blacklist.json")
-    .then(response => response.json())
-    .then(data => {
+  if (input === "") {
+    resultado.innerHTML = "Por favor escreva um nome.";
+    resultado.style.color = "black";
+    return;
+  }
 
-      const encontrado = data.find(item =>
-        item.nome.toLowerCase().includes(input)
-      );
+  Promise.all([
+    fetch("./data/blacklist.json").then(res => res.json()),
+    fetch("./data/legal.json").then(res => res.json())
+  ])
+  .then(([blacklist, legal]) => {
 
-      if (encontrado) {
-        resultado.innerHTML = "🚨 Este operador encontra-se na BLACKLIST.";
-        resultado.style.color = "red";
-      } else if (input.trim() === "") {
-        resultado.innerHTML = "Por favor escreva um nome.";
-        resultado.style.color = "black";
-      } else {
-        resultado.innerHTML = "⚠️ Operador não encontrado na nossa base de dados. Será analisado.";
-        resultado.style.color = "#b8860b";
-      }
+    const ilegal = blacklist.find(item =>
+      item.nome.toLowerCase().includes(input)
+    );
 
-    });
+    if (ilegal) {
+      resultado.innerHTML = "🚨 Operador ILEGAL — Encontra-se na BLACKLIST.";
+      resultado.style.color = "red";
+      return;
+    }
+
+    const legalEncontrado = legal.find(item =>
+      item.nome.toLowerCase().includes(input)
+    );
+
+    if (legalEncontrado) {
+      resultado.innerHTML = "✅ Operador LEGAL — Licenciado em Portugal.";
+      resultado.style.color = "green";
+      return;
+    }
+
+    resultado.innerHTML = "⚠️ Operador não encontrado na nossa base de dados. Será analisado.";
+    resultado.style.color = "#b8860b";
+
+  })
+  .catch(() => {
+    resultado.innerHTML = "Erro ao verificar operador.";
+    resultado.style.color = "red";
+  });
 }
 </script>
+
+</body>
+</html>
