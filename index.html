@@ -185,8 +185,8 @@ function verificarSite() {
   ])
   .then(([blacklist, legal]) => {
 
-    const ilegal = blacklist.some(item =>
-      item.nome.trim().toLowerCase() === input
+    const ilegal = blacklist.find(item =>
+      item.nome.toLowerCase() === input
     );
 
     if (ilegal) {
@@ -195,8 +195,8 @@ function verificarSite() {
       return;
     }
 
-    const legalEncontrado = legal.some(item =>
-      item.nome.trim().toLowerCase() === input
+    const legalEncontrado = legal.find(item =>
+      item.nome.toLowerCase() === input
     );
 
     if (legalEncontrado) {
@@ -205,8 +205,26 @@ function verificarSite() {
       return;
     }
 
-    resultado.innerHTML = "⚠️ Operador não encontrado.";
-    resultado.style.color = "#b8860b";
+    // 🔎 SUGESTÕES
+    const todosNomes = [
+      ...blacklist.map(item => item.nome),
+      ...legal.map(item => item.nome)
+    ];
+
+    const sugestoes = todosNomes.filter(nome =>
+      nome.toLowerCase().includes(input.substring(0, 4))
+    ).slice(0, 3);
+
+    if (sugestoes.length > 0) {
+      resultado.innerHTML = `
+        ⚠️ Operador não encontrado.<br>
+        Quis dizer: <strong>${sugestoes.join(", ")}</strong>?
+      `;
+      resultado.style.color = "#b8860b";
+    } else {
+      resultado.innerHTML = "⚠️ Operador não encontrado.";
+      resultado.style.color = "#b8860b";
+    }
 
   })
   .catch(error => {
@@ -216,6 +234,5 @@ function verificarSite() {
   });
 }
 </script>
-
 </body>
 </html>
