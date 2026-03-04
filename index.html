@@ -170,6 +170,20 @@ fetch("header.html")
     <h1>Bem-vindo ao BetTransparency</h1>
     <div class="country-info">País analisado: Portugal • Expansão futura: Espanha • França • Itália</div>
     <p>O BetTransparency é um projeto educativo que alerta jogadores sobre apostas online ilegais, promove práticas de jogo responsável e fornece guias educativos.</p>
+    <div style="margin-top:40px;padding:30px;background:#f9fafd;border-radius:12px;text-align:center;">
+  <h2>🔎 Verificar Operador</h2>
+  <p>Escreva o nome do site de apostas para verificar se é legal em Portugal.</p>
+
+  <input type="text" id="siteInput" placeholder="Ex: 1xBet"
+    style="padding:10px;width:60%;max-width:300px;border-radius:6px;border:1px solid #ccc;">
+
+  <button onclick="verificarSite()"
+    style="padding:10px 15px;margin-left:10px;border:none;border-radius:6px;background:#1c7ed6;color:white;font-weight:600;">
+    Verificar
+  </button>
+
+  <div id="resultado" style="margin-top:20px;font-weight:600;"></div>
+</div>    
     <div class="cards">
       <div class="card">
         <h3>Verificação de Licença</h3>
@@ -227,3 +241,30 @@ fetch("footer.html")
 
 </body>
 </html>
+<script>
+function verificarSite() {
+  const input = document.getElementById("siteInput").value.toLowerCase();
+  const resultado = document.getElementById("resultado");
+
+  fetch("./data/blacklist.json")
+    .then(response => response.json())
+    .then(data => {
+
+      const encontrado = data.find(item =>
+        item.nome.toLowerCase().includes(input)
+      );
+
+      if (encontrado) {
+        resultado.innerHTML = "🚨 Este operador encontra-se na BLACKLIST.";
+        resultado.style.color = "red";
+      } else if (input.trim() === "") {
+        resultado.innerHTML = "Por favor escreva um nome.";
+        resultado.style.color = "black";
+      } else {
+        resultado.innerHTML = "⚠️ Operador não encontrado na nossa base de dados. Será analisado.";
+        resultado.style.color = "#b8860b";
+      }
+
+    });
+}
+</script>
