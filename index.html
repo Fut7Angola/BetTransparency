@@ -219,14 +219,23 @@ const legalEncontrado=legal.find(item=>
 item.nome.toLowerCase().includes(input)
 );
 
-if(legalEncontrado){
+if (legalEncontrado) {
 
-resultado.innerHTML="✅ Operador LEGAL — Licenciado em Portugal.";
-resultado.style.color="green";
+  const pagina = legalEncontrado.nome.toLowerCase().replace(/\s/g,"");
 
-guardarPesquisa(input);
+  resultado.innerHTML = `
+  ✅ Operador LEGAL — Licenciado em Portugal.<br><br>
+  <a href="operadores/${pagina}.html"
+  style="display:inline-block;padding:8px 15px;background:#1c7ed6;color:white;border-radius:6px;text-decoration:none;">
+  Saber mais
+  </a>
+  `;
 
-return;
+  resultado.style.color = "green";
+
+  guardarPesquisa(input);
+
+  return;
 }
 
 resultado.innerHTML="⚠️ Operador não encontrado na base de dados.";
