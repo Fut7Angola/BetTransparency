@@ -302,7 +302,10 @@ body:JSON.stringify({
 nome:nome,
 pais:"Portugal"
 })
-});
+})
+.then(res=>res.text())
+.then(()=>{})
+.catch(()=>{});
 
 }
 
