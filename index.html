@@ -305,7 +305,7 @@ resultado.style.color="red";
 
 function guardarPesquisa(nome){
 
-fetch("https://script.google.com/macros/s/AKfycbyuiwRMCqQIZEsNO7cEGRZPDXLq_tFB-wThW5B_AiEBqJ1N8sil6d_DeZUkgl-w7FKo/exec",{
+fetch("https://script.google.com/macros/s/AKfycbwHSGU8ArqWkpPiQNeatT6ZO9pJfI7b4juD2z7t7DksWYEqzl9RQG6_X_zd4lHNv0BB/exec",{
 method:"POST",
 body:JSON.stringify({
 nome:nome,
@@ -362,7 +362,7 @@ document.getElementById("total-legais").innerText = legal.length;
 
   <script>
 
-fetch("https://script.google.com/macros/s/AKfycbyuiwRMCqQIZEsNO7cEGRZPDXLq_tFB-wThW5B_AiEBqJ1N8sil6d_DeZUkgl-w7FKo/exec")
+fetch("https://script.google.com/macros/s/AKfycbwHSGU8ArqWkpPiQNeatT6ZO9pJfI7b4juD2z7t7DksWYEqzl9RQG6_X_zd4lHNv0BB/exec")
 .then(res => res.json())
 .then(data => {
 
