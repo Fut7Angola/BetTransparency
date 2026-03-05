@@ -168,43 +168,64 @@ fetch("footer.html")
 </script>
 
 <!-- SCRIPT VERIFICADOR -->
-<script>
 function verificarSite() {
-  const input = document.getElementById("siteInput").value.trim().toLowerCase();
+
+  const input = document.getElementById("siteInput").value.toLowerCase().trim();
   const resultado = document.getElementById("resultado");
 
   if (input === "") {
-    resultado.innerHTML = "Escreva um nome.";
+    resultado.innerHTML = "Por favor escreva um nome.";
     resultado.style.color = "black";
     return;
   }
 
   Promise.all([
-    fetch("data/blacklist.json").then(res => res.json()),
-    fetch("data/legal.json").then(res => res.json())
+    fetch("./data/blacklist.json").then(res => res.json()),
+    fetch("./data/legal.json").then(res => res.json())
   ])
   .then(([blacklist, legal]) => {
 
     const ilegal = blacklist.find(item =>
-      item.nome.toLowerCase() === input
+      item.nome.toLowerCase().includes(input)
     );
 
     if (ilegal) {
-      resultado.innerHTML = "🚨 Operador ILEGAL (Blacklist)";
+      resultado.innerHTML = "🚨 Operador ILEGAL — Encontra-se na BLACKLIST.";
       resultado.style.color = "red";
+      guardarPesquisa(input);
       return;
     }
 
     const legalEncontrado = legal.find(item =>
-      item.nome.toLowerCase() === input
+      item.nome.toLowerCase().includes(input)
     );
 
     if (legalEncontrado) {
-      resultado.innerHTML = "✅ Operador LEGAL em Portugal";
+      resultado.innerHTML = "✅ Operador LEGAL — Licenciado em Portugal.";
       resultado.style.color = "green";
+      guardarPesquisa(input);
       return;
     }
 
+    resultado.innerHTML = "⚠️ Operador não encontrado na nossa base de dados. Será analisado.";
+    resultado.style.color = "#b8860b";
+
+    guardarPesquisa(input);
+
+  });
+}
+
+  function guardarPesquisa(nome) {
+
+  fetch("https://script.google.com/macros/s/AKfycbxx9zX2qrg1uF8zWYEZmEsztZCKv4HYf2Yi5ibP2OCHZf2BCOCWYNs9yQnAU_hwLtPU/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      nome: nome,
+      pais: "Portugal"
+    })
+  });
+
+}
     // 🔎 SUGESTÕES
     const todosNomes = [
       ...blacklist.map(item => item.nome),
