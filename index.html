@@ -202,7 +202,16 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 </div>
 
 </div>
+  <!-- SITES ILEGAIS MAIS PESQUISADOS -->
 
+<div class="section">
+
+<h2>🔥 Sites Ilegais Mais Pesquisados</h2>
+
+<div id="top-ilegais" class="cards"></div>
+
+</div>
+  
 </div>
 
 </main>
@@ -351,5 +360,48 @@ document.getElementById("total-legais").innerText = legal.length;
 
 </script>
 
+  <script>
+
+fetch("https://script.google.com/macros/s/AKfycbxx9zX2qrg1uF8zWYEZmEsztZCKv4HYf2Yi5ibP2OCHZf2BCOCWYNs9yQnAU_hwLtPU/exec")
+.then(res => res.json())
+.then(data => {
+
+  const container = document.getElementById("top-ilegais");
+
+  const contagem = {};
+
+  data.forEach(item => {
+
+    const nome = item.nome.toLowerCase();
+
+    if(contagem[nome]){
+      contagem[nome]++;
+    } else {
+      contagem[nome] = 1;
+    }
+
+  });
+
+  const ordenado = Object.entries(contagem)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,3);
+
+  ordenado.forEach(site => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <h3>${site[0]}</h3>
+      <p>${site[1]} pesquisas</p>
+    `;
+
+    container.appendChild(card);
+
+  });
+
+});
+
+</script>
 </body>
 </html>
