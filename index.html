@@ -162,7 +162,13 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 </div>
 
 </div>
+  <!-- ÚLTIMOS SITES ILEGAIS -->
+<div class="section">
+  <h2>🚨 Últimos Sites Ilegais Detectados</h2>
 
+  <div id="ultimos-ilegais" class="cards"></div>
+
+</div>
 </div>
 
 </main>
@@ -268,5 +274,29 @@ pais:"Portugal"
 
 </script>
 
+  fetch("./data/blacklist.json")
+.then(response => response.json())
+.then(data => {
+
+  const container = document.getElementById("ultimos-ilegais");
+
+  const ultimos = data.slice(-3).reverse();
+
+  ultimos.forEach(item => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <h3>${item.nome}</h3>
+      <p><strong>Motivo:</strong> ${item.motivo}</p>
+      <p><strong>Adicionado:</strong> ${item.data}</p>
+    `;
+
+    container.appendChild(card);
+
+  });
+
+});
 </body>
 </html>
