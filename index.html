@@ -169,6 +169,30 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
   <div id="ultimos-ilegais" class="cards"></div>
 
 </div>
+
+  <!-- ESTATÍSTICAS -->
+<div class="section">
+  <h2>📊 Estatísticas do Projeto</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3 id="total-legais">0</h3>
+      <p>Operadores legais</p>
+    </div>
+
+    <div class="card">
+      <h3 id="total-ilegais">0</h3>
+      <p>Operadores ilegais</p>
+    </div>
+
+    <div class="card">
+      <h3 id="total-pesquisas">0</h3>
+      <p>Pesquisas realizadas</p>
+    </div>
+
+  </div>
+</div>
 </div>
 
 </main>
@@ -298,5 +322,15 @@ pais:"Portugal"
   });
 
 });
-</body>
+
+  Promise.all([
+  fetch("./data/blacklist.json").then(res => res.json()),
+  fetch("./data/legal.json").then(res => res.json())
+])
+.then(([blacklist, legal]) => {
+
+  document.getElementById("total-ilegais").innerText = blacklist.length;
+  document.getElementById("total-legais").innerText = legal.length;
+
+});</body>
 </html>
