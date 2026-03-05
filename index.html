@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 <meta charset="UTF-8">
 <title>BetTransparency - Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{
 font-family:Arial,sans-serif;
 margin:0;
@@ -100,6 +102,7 @@ font-weight:bold;
 .cards{flex-direction:column;}
 .card{flex:1 1 100%;}
 }
+
 </style>
 </head>
 
@@ -162,37 +165,44 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 </div>
 
 </div>
-  <!-- ÚLTIMOS SITES ILEGAIS -->
-<div class="section">
-  <h2>🚨 Últimos Sites Ilegais Detectados</h2>
-
-  <div id="ultimos-ilegais" class="cards"></div>
 
 </div>
 
-  <!-- ESTATÍSTICAS -->
+<!-- ÚLTIMOS SITES ILEGAIS -->
+
 <div class="section">
-  <h2>📊 Estatísticas do Projeto</h2>
 
-  <div class="cards">
+<h2>🚨 Últimos Sites Ilegais Detectados</h2>
 
-    <div class="card">
-      <h3 id="total-legais">0</h3>
-      <p>Operadores legais</p>
-    </div>
+<div id="ultimos-ilegais" class="cards"></div>
 
-    <div class="card">
-      <h3 id="total-ilegais">0</h3>
-      <p>Operadores ilegais</p>
-    </div>
-
-    <div class="card">
-      <h3 id="total-pesquisas">0</h3>
-      <p>Pesquisas realizadas</p>
-    </div>
-
-  </div>
 </div>
+
+<!-- ESTATÍSTICAS -->
+
+<div class="section">
+
+<h2>📊 Estatísticas do Projeto</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3 id="total-legais">0</h3>
+<p>Operadores legais</p>
+</div>
+
+<div class="card">
+<h3 id="total-ilegais">0</h3>
+<p>Operadores ilegais</p>
+</div>
+
+<div class="card">
+<h3 id="total-pesquisas">0</h3>
+<p>Pesquisas realizadas</p>
+</div>
+
+</div>
+
 </div>
 
 </main>
@@ -209,7 +219,7 @@ document.getElementById("footer").innerHTML=data;
 });
 </script>
 
-<!-- SCRIPT DO VERIFICADOR -->
+<!-- SCRIPT PRINCIPAL -->
 
 <script>
 
@@ -251,21 +261,21 @@ item.nome.toLowerCase().includes(input)
 
 if (legalEncontrado) {
 
-  const pagina = legalEncontrado.nome.toLowerCase().replace(/\s/g,"");
+const pagina = legalEncontrado.nome.toLowerCase().replace(/\s/g,"");
 
-  resultado.innerHTML = `
-  ✅ Operador LEGAL — Licenciado em Portugal.<br><br>
-  <a href="operators/${pagina}.html"
-  style="display:inline-block;padding:8px 15px;background:#1c7ed6;color:white;border-radius:6px;text-decoration:none;">
-  Saber mais
-  </a>
-  `;
+resultado.innerHTML = `
+✅ Operador LEGAL — Licenciado em Portugal.<br><br>
+<a href="operators/${pagina}.html"
+style="display:inline-block;padding:8px 15px;background:#1c7ed6;color:white;border-radius:6px;text-decoration:none;">
+Saber mais
+</a>
+`;
 
-  resultado.style.color = "green";
+resultado.style.color = "green";
 
-  guardarPesquisa(input);
+guardarPesquisa(input);
 
-  return;
+return;
 }
 
 resultado.innerHTML="⚠️ Operador não encontrado na base de dados.";
@@ -296,41 +306,47 @@ pais:"Portugal"
 
 }
 
-</script>
+/* ULTIMOS ILEGAIS */
 
-  fetch("./data/blacklist.json")
+fetch("./data/blacklist.json")
 .then(response => response.json())
 .then(data => {
 
-  const container = document.getElementById("ultimos-ilegais");
+const container = document.getElementById("ultimos-ilegais");
 
-  const ultimos = data.slice(-3).reverse();
+const ultimos = data.slice(-3).reverse();
 
-  ultimos.forEach(item => {
+ultimos.forEach(item => {
 
-    const card = document.createElement("div");
-    card.className = "card";
+const card = document.createElement("div");
+card.className = "card";
 
-    card.innerHTML = `
-      <h3>${item.nome}</h3>
-      <p><strong>Motivo:</strong> ${item.motivo}</p>
-      <p><strong>Adicionado:</strong> ${item.data}</p>
-    `;
+card.innerHTML = `
+<h3>${item.nome}</h3>
+<p><strong>Motivo:</strong> ${item.motivo}</p>
+<p><strong>Adicionado:</strong> ${item.data}</p>
+`;
 
-    container.appendChild(card);
-
-  });
+container.appendChild(card);
 
 });
 
-  Promise.all([
-  fetch("./data/blacklist.json").then(res => res.json()),
-  fetch("./data/legal.json").then(res => res.json())
+});
+
+/* ESTATISTICAS */
+
+Promise.all([
+fetch("./data/blacklist.json").then(res => res.json()),
+fetch("./data/legal.json").then(res => res.json())
 ])
 .then(([blacklist, legal]) => {
 
-  document.getElementById("total-ilegais").innerText = blacklist.length;
-  document.getElementById("total-legais").innerText = legal.length;
+document.getElementById("total-ilegais").innerText = blacklist.length;
+document.getElementById("total-legais").innerText = legal.length;
 
-});</body>
+});
+
+</script>
+
+</body>
 </html>
