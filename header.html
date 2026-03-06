@@ -67,6 +67,7 @@ left:0;
 }
 
 }
+
 </style>
 
 
@@ -116,31 +117,26 @@ Sobre
 
 </header>
 
-<script>
 
-document.addEventListener("click", function(e){
+<script>
 
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
-if(!btn || !menu) return;
+/* ABRIR MENU */
 
-if(e.target === btn){
+btn.addEventListener("click", function(){
 menu.classList.toggle("show");
+});
+
+/* FECHAR MENU AO CLICAR FORA */
+
+document.addEventListener("click", function(e){
+
+if(!menu.contains(e.target) && !btn.contains(e.target)){
+menu.classList.remove("show");
 }
 
 });
-
-</script>
-
-<script>
-
-function toggleMenu(){
-
-const menu=document.getElementById("menu");
-
-menu.classList.toggle("show");
-
-}
 
 </script>
