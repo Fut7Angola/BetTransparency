@@ -1,26 +1,135 @@
-<header style="
-  background:#0b132b;
-  padding:20px 40px;
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-">
-  <nav style="
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-  ">
-    <a href="/BetTransparency/index.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Home</a>
-    <a href="/BetTransparency/license.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Verificar Licença</a>
-    <a href="/BetTransparency/blacklist.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Blacklist</a>    
-    <a href="/BetTransparency/ads.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Análise de Publicidade</a>
-    <a href="/BetTransparency/guides.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Guias</a>
-    <a href="/BetTransparency/methodology.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Metodologia</a>
-    <a href="/BetTransparency/news.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Notícias</a>
-    <a href="/BetTransparency/about.html" style="color:white;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:5px;transition:0.3s;">Sobre</a>
-  </nav>
+<style>
+
+.header{
+background:#0b132b;
+color:white;
+padding:15px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.menu a:hover{
+text-decoration:underline;
+}
+
+/* BOTÃO HAMBURGUER */
+
+.menu-btn{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#0b132b;
+padding:20px;
+}
+
+.menu a{
+padding:10px 0;
+}
+
+.menu.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+
+</style>
+
+
+<header class="header">
+
+<div class="logo">
+BetTransparency
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+<nav class="menu" id="menu">
+
+<a href="/BetTransparency/">Home</a>
+
+<a href="/BetTransparency/license.html">
+Verificar Licenças
+</a>
+
+<a href="/BetTransparency/blacklist.html">
+Blacklist
+</a>
+
+
+<a href="/BetTransparency/ads.html">
+Anásise de Publicidade
+</a>
+
+<a href="/BetTransparency/guides.html">
+Guias
+</a>
+
+
+<a href="/BetTransparency/methodology.html">
+Metodologia
+</a>
+
+<a href="/BetTransparency/news.html">
+Noticias
+</a>
+
+<a href="/BetTransparency/about.html">
+Sobre
+</a>
+
+
+
+</nav>
+
 </header>
+
+
+<script>
+
+function toggleMenu(){
+
+const menu = document.getElementById("menu");
+
+menu.classList.toggle("show");
+
+}
+
+</script>
+
 
