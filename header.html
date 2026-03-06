@@ -7,13 +7,20 @@ padding:15px 20px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-position:relative;
 }
 
 .logo{
 font-weight:bold;
 font-size:18px;
 }
+
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+display:none;
+}
+
+/* MENU NORMAL (DESKTOP) */
 
 .menu{
 display:flex;
@@ -26,47 +33,40 @@ text-decoration:none;
 font-weight:bold;
 }
 
-.menu a:hover{
-text-decoration:underline;
-}
-
-/* BOTÃO HAMBURGUER */
-
-.menu-btn{
-display:none;
-font-size:26px;
-cursor:pointer;
-}
-
 /* MOBILE */
 
 @media(max-width:768px){
-
-.menu{
-display:none;
-flex-direction:column;
-position:absolute;
-top:60px;
-left:0;
-width:100%;
-background:#0b132b;
-padding:20px;
-}
-
-.menu a{
-padding:10px 0;
-}
-
-.menu.show{
-display:flex;
-}
 
 .menu-btn{
 display:block;
 }
 
+/* MENU LATERAL */
+
+.menu{
+position:fixed;
+top:0;
+left:-260px;
+width:260px;
+height:100%;
+background:#0b132b;
+display:flex;
+flex-direction:column;
+padding:30px 20px;
+transition:0.3s;
+z-index:999;
 }
 
+.menu a{
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.menu.show{
+left:0;
+}
+
+}
 </style>
 
 
@@ -130,5 +130,17 @@ menu.classList.toggle("show");
 }
 
 });
+
+</script>
+
+<script>
+
+function toggleMenu(){
+
+const menu=document.getElementById("menu");
+
+menu.classList.toggle("show");
+
+}
 
 </script>
