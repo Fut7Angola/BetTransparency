@@ -7,6 +7,7 @@ padding:15px 20px;
 display:flex;
 align-items:center;
 justify-content:space-between;
+position:relative;
 }
 
 .logo{
@@ -75,7 +76,7 @@ display:block;
 BetTransparency
 </div>
 
-<div class="menu-btn" onclick="toggleMenu()">
+<div class="menu-btn" id="menuBtn">
 ☰
 </div>
 
@@ -91,45 +92,43 @@ Verificar Licenças
 Blacklist
 </a>
 
-
 <a href="/BetTransparency/ads.html">
-Anásise de Publicidade
+Análise de Publicidade
 </a>
 
 <a href="/BetTransparency/guides.html">
 Guias
 </a>
 
-
 <a href="/BetTransparency/methodology.html">
 Metodologia
 </a>
 
 <a href="/BetTransparency/news.html">
-Noticias
+Notícias
 </a>
 
 <a href="/BetTransparency/about.html">
 Sobre
 </a>
 
-
-
 </nav>
 
 </header>
 
-
 <script>
 
-function toggleMenu(){
+document.addEventListener("click", function(e){
 
+const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
-menu.classList.toggle("show");
+if(!btn || !menu) return;
 
+if(e.target === btn){
+menu.classList.toggle("show");
 }
 
+});
+
 </script>
-
-
