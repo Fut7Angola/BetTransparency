@@ -390,16 +390,11 @@ fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5
 
 .then(([blacklist,legal,pesquisas])=>{
 
-document.getElementById("total-ilegais").innerText=blacklist.length;
-document.getElementById("total-legais").innerText=legal.length;
+document.getElementById("total-ilegais").innerText = blacklist.length;
 
-let total=0;
+document.getElementById("total-legais").innerText = legal.length;
 
-pesquisas.forEach(item=>{
-total+=item.pesquisas;
-});
-
-document.getElementById("total-pesquisas").innerText=total;
+document.getElementById("total-pesquisas").innerText = pesquisas.length;
 
 });
 
