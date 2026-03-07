@@ -406,9 +406,12 @@ document.getElementById("total-pesquisas").innerText = pesquisas.length;
 <script>
 
 fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+/* ATIVAR MENU */
 
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
@@ -420,6 +423,5 @@ menu.classList.toggle("show");
 });
 
 </script>
-
 </body>
 </html>
