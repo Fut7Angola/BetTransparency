@@ -30,14 +30,28 @@ footer{text-align:center;padding:30px;font-size:13px;color:#666;background:#f0f3
 </head>
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
+
 fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+btn.onclick = function(){
+menu.classList.toggle("show");
+};
+}
+
+});
+
 </script>
 
 <main>
