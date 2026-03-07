@@ -5,24 +5,14 @@ background:#0b132b;
 color:white;
 padding:15px 20px;
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 }
 
 .logo{
 font-weight:bold;
 font-size:18px;
 }
-
-/* BOTAO */
-
-.menu-btn{
-font-size:28px;
-cursor:pointer;
-display:none;
-}
-
-/* MENU DESKTOP */
 
 .menu{
 display:flex;
@@ -35,37 +25,33 @@ text-decoration:none;
 font-weight:bold;
 }
 
+.menu-btn{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
 
-.menu-btn{
-display:block;
-}
-
-/* MENU LATERAL */
-
 .menu{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100vh;
-background:#0b132b;
-display:flex;
+display:none;
 flex-direction:column;
-padding:80px 20px;
-transition:0.3s;
-z-index:9999;
-}
-
-.menu a{
-padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,0.1);
+background:#0b132b;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+padding:20px;
 }
 
 .menu.show{
-left:0;
+display:flex;
+}
+
+.menu-btn{
+display:block;
 }
 
 }
@@ -79,9 +65,7 @@ left:0;
 BetTransparency
 </div>
 
-<div class="menu-btn" id="menuBtn">
-☰
-</div>
+<div class="menu-btn" id="menuBtn">☰</div>
 
 <nav class="menu" id="menu">
 
