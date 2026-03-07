@@ -159,7 +159,7 @@ menu.classList.toggle("show");
 Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 </p>
 
-  <div style="margin-top:20px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;">
+<div style="margin-top:20px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;">
 
 <p>
 O <strong>BetTransparency</strong> é um projeto independente que monitoriza
@@ -168,6 +168,7 @@ identificar plataformas legais e alertando para operadores ilegais.
 </p>
 
 </div>
+
 <div class="verificador">
 
 <h2>🔎 Verificar Operador</h2>
@@ -182,7 +183,9 @@ identificar plataformas legais e alertando para operadores ilegais.
 
 </div>
 
-  <!-- COMO FUNCIONA -->
+</div>
+
+<!-- COMO FUNCIONA -->
 
 <div class="section">
 
@@ -208,6 +211,9 @@ identificar plataformas legais e alertando para operadores ilegais.
 </div>
 
 </div>
+
+<div class="section">
+
 <div class="cards">
 
 <div class="card">
@@ -266,7 +272,7 @@ identificar plataformas legais e alertando para operadores ilegais.
 
 </div>
 
-  <div class="section">
+<div class="section">
 
 <h2>⚠️ Aviso ao Utilizador</h2>
 
@@ -278,6 +284,7 @@ plataformas legais e evitar operadores não licenciados.
 </p>
 
 </div>
+
 </main>
 
 <!-- FOOTER -->
@@ -285,11 +292,13 @@ plataformas legais e evitar operadores não licenciados.
 <div id="footer"></div>
 
 <script>
+
 fetch("footer.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("footer").innerHTML=data;
 });
+
 </script>
 
 <script>
@@ -405,104 +414,10 @@ fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5
 .then(([blacklist,legal,pesquisas])=>{
 
 document.getElementById("total-ilegais").innerText = blacklist.length;
-
 document.getElementById("total-legais").innerText = legal.length;
-
 document.getElementById("total-pesquisas").innerText = pesquisas.length;
 
 });
-
-<script>
-    
-<script>
-
-/* VERIFICADOR DE OPERADOR */
-
-function verificarSite(){
-
-const input = document.getElementById("siteInput").value.toLowerCase().trim();
-const resultado = document.getElementById("resultado");
-
-if(input === ""){
-resultado.innerHTML = "Por favor escreva um nome.";
-return;
-}
-
-Promise.all([
-fetch("./data/blacklist.json").then(res => res.json()),
-fetch("./data/legal.json").then(res => res.json())
-])
-
-.then(([blacklist, legal]) => {
-
-/* VERIFICAR BLACKLIST */
-
-const ilegal = blacklist.find(item =>
-item.nome.toLowerCase().includes(input)
-);
-
-if(ilegal){
-
-resultado.innerHTML = "🚨 Operador ILEGAL — Encontra-se na BLACKLIST.";
-resultado.style.color = "red";
-
-guardarPesquisa(input);
-
-return;
-
-}
-
-/* VERIFICAR OPERADOR LEGAL */
-
-const legalEncontrado = legal.find(item =>
-item.nome.toLowerCase().includes(input)
-);
-
-if(legalEncontrado){
-
-const pagina = legalEncontrado.nome.toLowerCase().replace(/\s/g,"");
-
-resultado.innerHTML = `
-✅ Operador LEGAL — Licenciado.<br><br>
-<a href="operators/${pagina}.html"
-style="padding:8px 14px;background:#1c7ed6;color:white;border-radius:6px;text-decoration:none;">
-Saber mais
-</a>
-`;
-
-resultado.style.color = "green";
-
-guardarPesquisa(input);
-
-return;
-
-}
-
-/* NÃO ENCONTRADO */
-
-resultado.innerHTML = "⚠️ Operador não encontrado na base de dados.";
-resultado.style.color = "#b8860b";
-
-guardarPesquisa(input);
-
-});
-
-}
-
-
-/* GUARDAR PESQUISA */
-
-function guardarPesquisa(nome){
-
-fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec",{
-method:"POST",
-body:JSON.stringify({
-nome:nome,
-pais:"Portugal"
-})
-});
-
-}
 
 </script>
 
