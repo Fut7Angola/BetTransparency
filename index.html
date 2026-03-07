@@ -129,13 +129,24 @@ font-weight:bold;
 <div id="header"></div>
 
 <script>
-fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
 
-iniciarMenu(); // inicia o menu depois de carregar
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+btn.onclick = function(){
+menu.classList.toggle("show");
+};
+}
+
 });
+
 </script>
 
 <main>
@@ -403,25 +414,6 @@ document.getElementById("total-pesquisas").innerText = pesquisas.length;
 
 <script>
     
-<script>
 
-fetch("header.html")
-.then(res => res.text())
-.then(data => {
-
-document.getElementById("header").innerHTML = data;
-
-/* ATIVAR MENU */
-
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-btn.addEventListener("click", function(){
-menu.classList.toggle("show");
-});
-
-});
-
-</script>
 </body>
 </html>
