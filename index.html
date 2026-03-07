@@ -17,9 +17,11 @@ overflow-x:hidden;
 }
 
 main{
-padding:50px 20px;
+padding:40px 15px;
 max-width:1000px;
 margin:30px auto;
+width:100%;
+box-sizing:border-box;
 }
 
 h1{
@@ -51,9 +53,10 @@ flex:1 1 calc(33% - 20px);
 background:#f9fafd;
 padding:22px;
 border-radius:12px;
-min-width:250px;
+min-width:0;
 border:1px solid #e6ecf2;
 transition:all 0.25s ease;
+box-sizing:border-box;
 }
 
 .card:hover{
@@ -90,10 +93,11 @@ border:1px solid #e6ecf2;
 
 input{
 padding:10px;
-width:60%;
+width:100%;
 max-width:300px;
 border-radius:6px;
 border:1px solid #ccc;
+box-sizing:border-box;
 }
 
 button{
@@ -120,6 +124,11 @@ font-weight:bold;
 .card{flex:1 1 100%;}
 }
 
+img{
+max-width:100%;
+height:auto;
+}
+  
 </style>
 </head>
 
