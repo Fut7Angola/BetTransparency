@@ -400,5 +400,30 @@ document.getElementById("total-pesquisas").innerText = pesquisas.length;
 
 </script>
 
+  <script>
+
+setTimeout(function(){
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(!btn || !menu) return;
+
+btn.addEventListener("click", function(e){
+e.stopPropagation();
+menu.classList.toggle("show");
+});
+
+document.addEventListener("click", function(e){
+
+if(!menu.contains(e.target) && !btn.contains(e.target)){
+menu.classList.remove("show");
+}
+
+});
+
+},500);
+
+</script>
 </body>
 </html>
