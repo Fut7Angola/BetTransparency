@@ -13,6 +13,7 @@ font-family:Arial,sans-serif;
 margin:0;
 background:#eef2f7;
 color:#222;
+overflow-x:hidden;
 }
 
 main{
@@ -132,6 +133,8 @@ fetch("header.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("header").innerHTML=data;
+
+iniciarMenu(); // inicia o menu depois de carregar
 });
 </script>
 
@@ -425,5 +428,32 @@ menu.classList.remove("show");
 },500);
 
 </script>
+
+  <script>
+
+function iniciarMenu(){
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(!btn || !menu) return;
+
+btn.onclick = function(e){
+e.stopPropagation();
+menu.classList.toggle("show");
+};
+
+document.onclick = function(e){
+
+if(!menu.contains(e.target) && !btn.contains(e.target)){
+menu.classList.remove("show");
+}
+
+};
+
+}
+
+</script>
+
 </body>
 </html>
