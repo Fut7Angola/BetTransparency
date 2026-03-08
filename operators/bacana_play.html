@@ -17,7 +17,27 @@ p{font-size:16px;margin-bottom:15px;}
 </head>
 <body>
 <div id="header"></div>
-<script>fetch("../header.html").then(r=>r.text()).then(d=>{document.getElementById("header").innerHTML=d;});</script>
+
+<script>
+
+fetch("../header.html")
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+btn.onclick = function(){
+menu.classList.toggle("show");
+};
+}
+
+});
+
+</script>
 <main>
 <a class="back" href="../license.html">← Voltar à lista de operadores</a>
 <h1>Bacana Play</h1>
