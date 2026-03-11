@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>BetTransparency - Home</title>
+<title>Bacana Play - Operador Licenciado</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -13,133 +13,104 @@ font-family:Arial,sans-serif;
 margin:0;
 background:#eef2f7;
 color:#222;
-overflow-x:hidden;
 }
 
 main{
-padding:40px 15px;
-max-width:1000px;
-margin:30px auto;
-width:100%;
+max-width:900px;
+margin:40px auto;
+padding:20px;
 box-sizing:border-box;
 }
 
-h1{
-text-align:center;
-color:#0b132b;
-}
-
-h2{
-color:#0b132b;
-}
-
-.section{
+.operator-header{
 background:white;
-padding:25px;
+padding:30px;
 border-radius:12px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
-margin-bottom:30px;
+text-align:center;
+margin-bottom:25px;
 }
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-margin-top:30px;
+.operator-logo{
+width:140px;
+max-width:100%;
+height:auto;
+margin-bottom:15px;
 }
 
-.card{
-flex:1 1 calc(33% - 20px);
-background:#f9fafd;
-padding:22px;
-border-radius:12px;
-min-width:0;
-border:1px solid #e6ecf2;
-transition:all 0.25s ease;
-box-sizing:border-box;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,0.12);
+.operator-license{
+color:#1c7ed6;
+font-weight:bold;
+margin-bottom:15px;
 }
 
 .btn{
 display:inline-block;
-padding:11px 20px;
+padding:12px 22px;
 background:#1c7ed6;
 color:white;
 text-decoration:none;
 border-radius:8px;
 margin-top:15px;
 font-weight:bold;
-transition:all 0.2s ease;
 }
 
 .btn:hover{
 background:#1864ab;
-transform:translateY(-1px);
 }
 
-.verificador{
-margin-top:40px;
-padding:35px;
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-bottom:25px;
+}
+
+.info-box{
 background:white;
-border-radius:14px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-border:1px solid #e6ecf2;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.06);
 }
 
-input{
-padding:10px;
-width:100%;
-max-width:300px;
-border-radius:6px;
-border:1px solid #ccc;
-box-sizing:border-box;
+.info-box h3{
+margin-top:0;
+color:#0b132b;
 }
 
-button{
-padding:10px 15px;
-border:none;
-border-radius:6px;
-background:#1c7ed6;
-color:white;
+.description{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.06);
+margin-bottom:25px;
+}
+
+.responsible{
+background:#fff3cd;
+padding:18px;
+border-radius:10px;
+font-size:14px;
+}
+
+.back{
+display:block;
+margin-bottom:20px;
+text-decoration:none;
+color:#0b132b;
 font-weight:bold;
-cursor:pointer;
 }
 
-button:hover{
-background:#1864ab;
-}
-
-#resultado{
-margin-top:20px;
-font-weight:bold;
-}
-
-@media(max-width:992px){
-.cards{flex-direction:column;}
-.card{flex:1 1 100%;}
-}
-
-img{
-max-width:100%;
-height:auto;
-}
-  
 </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <script>
-
-fetch("header.html")
+fetch("../header.html")
 .then(res => res.text())
 .then(data => {
 
@@ -149,285 +120,101 @@ const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 if(btn && menu){
-btn.onclick = function(){
+btn.onclick=function(){
 menu.classList.toggle("show");
 };
 }
 
 });
-
 </script>
 
 <main>
 
-<div class="section">
+<a class="back" href="../license.html">← Voltar à lista de operadores</a>
 
-<h1>Bem-vindo ao BetTransparency</h1>
+<!-- HEADER DO OPERADOR -->
 
-<p style="text-align:center;">
-Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
-</p>
+<div class="operator-header">
 
-<div style="margin-top:20px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;">
+<img src="../images/bacana_play.jpg" class="operator-logo">
 
-<p>
-O <strong>BetTransparency</strong> é um projeto independente que monitoriza
-operadores de apostas online em Portugal, ajudando utilizadores a
-identificar plataformas legais e alertando para operadores ilegais.
-</p>
+<h1>Bacana Play</h1>
+
+<div class="operator-license">
+Licença SRIJ nº25
+</div>
+
+<a href="https://www.bacanaplay.pt" target="_blank" class="btn">
+Visitar site oficial
+</a>
 
 </div>
 
-<div class="verificador">
+<!-- INFORMAÇÕES -->
 
-<h2>🔎 Verificar Operador</h2>
+<div class="info-grid">
 
-<p>Escreva o nome do site:</p>
-
-<input type="text" id="siteInput" placeholder="Ex: Betano">
-
-<button onclick="verificarSite()">Verificar</button>
-
-<div id="resultado"></div>
-
+<div class="info-box">
+<h3>Tipo</h3>
+<p>Apostas desportivas e casino online</p>
 </div>
 
+<div class="info-box">
+<h3>Métodos de pagamento</h3>
+<p>MB Way<br>Multibanco<br>Cartões bancários</p>
 </div>
 
-<!-- COMO FUNCIONA -->
-
-<div class="section">
-
-<h2>Como funciona</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>1️⃣ Pesquise</h3>
-<p>Introduza o nome de um operador no verificador.</p>
+<div class="info-box">
+<h3>Plataformas</h3>
+<p>Desktop<br>Mobile<br>Tablet</p>
 </div>
 
-<div class="card">
-<h3>2️⃣ Verificação</h3>
-<p>O sistema compara com operadores licenciados e blacklist.</p>
-</div>
-
-<div class="card">
-<h3>3️⃣ Resultado</h3>
-<p>Descubra se o operador é legal ou potencialmente ilegal.</p>
+<div class="info-box">
+<h3>Regulação</h3>
+<p>SRIJ<br>Portugal</p>
 </div>
 
 </div>
 
-</div>
+<!-- DESCRIÇÃO -->
 
-<div class="section">
+<div class="description">
 
-<div class="cards">
+<h2>Sobre o operador</h2>
 
-<div class="card">
-<h3>Verificação de Licença</h3>
-<a class="btn" href="license.html">Verificar</a>
-</div>
+<p><strong>Descrição:</strong> A Bacana Play é uma plataforma de apostas desportivas e casino online que opera legalmente em Portugal. Disponibiliza apostas em diversas modalidades desportivas, incluindo futebol, ténis, basquetebol e outras competições nacionais e internacionais.
+No segmento de casino online, oferece jogos como slots, roleta, blackjack e outras variantes de jogos de mesa, através de fornecedores reconhecidos no setor. A plataforma pode ser utilizada em computador, tablet ou smartphone, garantindo compatibilidade móvel.</p>
 
-<div class="card">
-<h3>Alertas Publicidade</h3>
-<a class="btn" href="ads.html">Ver Análises</a>
-</div>
+<p><strong>Licenciamento e Regulação:</strong> Opera ao abrigo da Licença SRIJ nº 25, emitida pelo Serviço de Regulação e Inspeção de Jogos (SRIJ), entidade responsável pela regulação do jogo online em Portugal. Este enquadramento assegura que a operadora cumpre as normas legais portuguesas em matéria de segurança, proteção de dados e transparência.</p>
 
-<div class="card">
-<h3>Lista Negra</h3>
-<a class="btn" href="blacklist.html">Ver Blacklist</a>
-</div>
+<p><strong>Métodos de Pagamento:</strong> Disponibiliza vários métodos de pagamento adaptados ao mercado português, podendo incluir Multibanco, MB Way, cartões bancários e carteiras digitais, dependendo das condições em vigor.</p>
+<p><strong>Promoções e Campanhas:</strong> A plataforma apresenta campanhas promocionais periódicas, que podem incluir bónus de boas-vindas, apostas grátis ou campanhas associadas a eventos desportivos específicos. Todas as ofertas estão sujeitas a termos e condições próprios.</p>
 
-</div>
+<p><strong>Segurança e Proteção do Utilizador:</strong> Utiliza protocolos de segurança e encriptação de dados para proteger a informação dos utilizadores. Inclui ainda ferramentas de controlo, como limites de depósito e mecanismos de autoexclusão.</p>
 
-</div>
+<p><strong>Jogo responsável:</strong> O jogo deve ser encarado como uma forma de entretenimento. A participação é permitida apenas a maiores de 18 anos. A Bacana Play disponibiliza informação e ferramentas de apoio ao jogo responsável, promovendo uma utilização consciente e equilibrada!.</p>
 
-<!-- ULTIMOS ILEGAIS -->
+<!-- JOGO RESPONSÁVEL -->
 
-<div class="section">
+<div class="responsible">
 
-<h2>🚨 Últimos Sites Ilegais Detectados</h2>
+<strong>Jogo responsável:</strong><br><br>
 
-<div id="ultimos-ilegais" class="cards"></div>
-
-</div>
-
-<!-- ESTATISTICAS -->
-
-<div class="section">
-
-<h2>📊 Estatísticas do Projeto</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3 id="total-legais">0</h3>
-<p>Operadores legais</p>
-</div>
-
-<div class="card">
-<h3 id="total-ilegais">0</h3>
-<p>Operadores ilegais</p>
-</div>
-
-<div class="card">
-<h3 id="total-pesquisas">0</h3>
-<p>Total de Pesquisas realizadas por utilizadores</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>⚠️ Aviso ao Utilizador</h2>
-
-<p>
-O BetTransparency é um projeto educativo e informativo.
-Não promovemos apostas nem operadores de jogo.
-O objetivo é ajudar utilizadores a identificar
-plataformas legais e evitar operadores não licenciados.
-</p>
+O jogo deve ser encarado apenas como forma de entretenimento.
+Participação permitida apenas a maiores de 18 anos.
 
 </div>
 
 </main>
 
-<!-- FOOTER -->
-
 <div id="footer"></div>
 
 <script>
-
-fetch("footer.html")
+fetch("../footer.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("footer").innerHTML=data;
 });
-
-</script>
-
-<script>
-
-/* VERIFICADOR */
-
-function verificarSite(){
-
-const input=document.getElementById("siteInput").value.toLowerCase().trim();
-const resultado=document.getElementById("resultado");
-
-if(input===""){
-resultado.innerHTML="Por favor escreva um nome.";
-return;
-}
-
-Promise.all([
-fetch("./data/blacklist.json").then(res=>res.json()),
-fetch("./data/legal.json").then(res=>res.json())
-])
-
-.then(([blacklist,legal])=>{
-
-const ilegal=blacklist.find(item=>item.nome.toLowerCase().includes(input));
-
-if(ilegal){
-
-resultado.innerHTML="🚨 Operador ILEGAL — Encontra-se na BLACKLIST.";
-resultado.style.color="red";
-
-guardarPesquisa(input);
-return;
-}
-
-const legalEncontrado=legal.find(item=>item.nome.toLowerCase().includes(input));
-
-if(legalEncontrado){
-
-const pagina = legalEncontrado.nome.toLowerCase().replace(/\s/g,"");
-
-resultado.innerHTML=`
-✅ Operador LEGAL — Licenciado em Portugal.<br><br>
-<a href="operators/${pagina}.html"
-style="display:inline-block;padding:8px 15px;background:#1c7ed6;color:white;border-radius:6px;text-decoration:none;">
-Saber mais
-</a>
-`;
-
-resultado.style.color="green";
-
-guardarPesquisa(input);
-return;
-}
-
-resultado.innerHTML="⚠️ Operador não encontrado na base de dados, iremos verificar a legalidade ou ilegalidade do mesmo (sendo provavel ser um operador ILEGAL em Portugal).";
-resultado.style.color="#b8860b";
-
-guardarPesquisa(input);
-
-});
-
-}
-
-/* GUARDAR PESQUISA */
-
-function guardarPesquisa(nome){
-
-fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec",{
-method:"POST",
-body:JSON.stringify({
-nome:nome,
-pais:"Portugal"
-})
-});
-
-}
-
-/* ULTIMOS ILEGAIS */
-
-fetch("./data/blacklist.json")
-.then(res=>res.json())
-.then(data=>{
-
-const container=document.getElementById("ultimos-ilegais");
-
-const ultimos=data.slice(-3).reverse();
-
-ultimos.forEach(item=>{
-
-const card=document.createElement("div");
-card.className="card";
-
-card.innerHTML=`
-<h3>${item.nome}</h3>
-<p><strong>Motivo:</strong> ${item.motivo}</p>
-<p><strong>Adicionado:</strong> ${item.data}</p>
-`;
-
-container.appendChild(card);
-
-});
-
-});
-
-/* ESTATISTICAS */
-
-Promise.all([
-fetch("./data/blacklist.json").then(res=>res.json()),
-fetch("./data/legal.json").then(res=>res.json()),
-fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec").then(res=>res.json())
-])
-
-.then(([blacklist,legal,pesquisas])=>{
-
-document.getElementById("total-ilegais").innerText = blacklist.length;
-document.getElementById("total-legais").innerText = legal.length;
-document.getElementById("total-pesquisas").innerText = pesquisas.length;
-
-});
-
 </script>
 
 </body>
