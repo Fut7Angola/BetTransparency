@@ -2,10 +2,8 @@
 <html lang="pt">
 
 <head>
-
 <meta charset="UTF-8">
-<title>BetTransparency</title>
-
+<title>BetTransparency - Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -19,9 +17,9 @@ overflow-x:hidden;
 }
 
 main{
+padding:50px 20px;
 max-width:1000px;
-margin:40px auto;
-padding:20px;
+margin:30px auto;
 }
 
 h1{
@@ -29,9 +27,13 @@ text-align:center;
 color:#0b132b;
 }
 
+h2{
+color:#0b132b;
+}
+
 .section{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:12px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
 margin-bottom:30px;
@@ -41,33 +43,37 @@ margin-bottom:30px;
 display:flex;
 flex-wrap:wrap;
 gap:20px;
-margin-top:20px;
+margin-top:30px;
 }
 
 .card{
-flex:1;
+flex:1 1 calc(33% - 20px);
 background:#f9fafd;
-padding:20px;
-border-radius:10px;
+padding:22px;
+border-radius:12px;
+min-width:250px;
 border:1px solid #e6ecf2;
-min-width:200px;
-text-align:center;
 }
 
 .btn{
 display:inline-block;
-padding:12px 20px;
+padding:11px 20px;
 background:#1c7ed6;
 color:white;
 text-decoration:none;
 border-radius:8px;
+margin-top:15px;
 font-weight:bold;
-margin-top:10px;
 }
 
 .verificador{
+margin-top:40px;
+padding:35px;
+background:white;
+border-radius:14px;
 text-align:center;
-margin-top:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border:1px solid #e6ecf2;
 }
 
 input{
@@ -79,13 +85,13 @@ border:1px solid #ccc;
 }
 
 button{
-padding:10px 16px;
+padding:10px 15px;
 border:none;
+border-radius:6px;
 background:#1c7ed6;
 color:white;
-border-radius:6px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
 }
 
 #resultado{
@@ -93,20 +99,12 @@ margin-top:20px;
 font-weight:bold;
 }
 
-@media(max-width:768px){
-
-.cards{
-flex-direction:column;
-}
-
-input{
-width:90%;
-}
-
+@media(max-width:992px){
+.cards{flex-direction:column;}
+.card{flex:1 1 100%;}
 }
 
 </style>
-
 </head>
 
 <body>
@@ -114,26 +112,22 @@ width:90%;
 <div id="header"></div>
 
 <script>
-
 fetch("header.html")
-.then(res => res.text())
-.then(data => {
+.then(res=>res.text())
+.then(data=>{
 
-document.getElementById("header").innerHTML = data;
+document.getElementById("header").innerHTML=data;
 
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
+const btn=document.getElementById("menuBtn");
+const menu=document.getElementById("menu");
 
 if(btn && menu){
-
-btn.onclick = function(){
+btn.onclick=function(){
 menu.classList.toggle("show");
-}
-
+};
 }
 
 });
-
 </script>
 
 <main>
@@ -164,48 +158,60 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 
 <div class="section">
 
-<h2>📊 Estatísticas da Plataforma</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Total de pesquisas</h3>
-<p id="totalPesquisas">0</p>
-</div>
-
-<div class="card">
-<h3>Operador mais pesquisado</h3>
-<p id="topOperador">-</p>
-</div>
-
-<div class="card">
-<h3>Operadores analisados</h3>
-<p>17</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
 <h2>Ferramentas</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Verificar Licenças</h3>
-<a class="btn" href="license.html">Abrir</a>
+<h3>Verificação de Licença</h3>
+<a class="btn" href="license.html">Verificar</a>
 </div>
 
 <div class="card">
-<h3>Blacklist</h3>
-<a class="btn" href="blacklist.html">Ver Lista</a>
+<h3>Alertas Publicidade</h3>
+<a class="btn" href="ads.html">Ver Análises</a>
 </div>
 
 <div class="card">
-<h3>Análise de Publicidade</h3>
-<a class="btn" href="ads.html">Ver análises</a>
+<h3>Lista Negra</h3>
+<a class="btn" href="blacklist.html">Ver Blacklist</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- ULTIMOS ILEGAIS -->
+
+<div class="section">
+
+<h2>🚨 Últimos Sites Ilegais Detectados</h2>
+
+<div id="ultimos-ilegais" class="cards"></div>
+
+</div>
+
+<!-- ESTATISTICAS -->
+
+<div class="section">
+
+<h2>📊 Estatísticas do Projeto</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3 id="total-legais">0</h3>
+<p>Operadores legais</p>
+</div>
+
+<div class="card">
+<h3 id="total-ilegais">0</h3>
+<p>Operadores ilegais</p>
+</div>
+
+<div class="card">
+<h3 id="total-pesquisas">0</h3>
+<p>Total de Pesquisas realizadas por utilizadores</p>
 </div>
 
 </div>
@@ -217,45 +223,123 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 <div id="footer"></div>
 
 <script>
-
 fetch("footer.html")
-.then(res => res.text())
-.then(data => {
-document.getElementById("footer").innerHTML = data;
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("footer").innerHTML=data;
 });
-
 </script>
 
 <script>
 
-/* carregar estatísticas */
+/* VERIFICADOR */
 
-fetch("stats.json")
-.then(res => res.json())
-.then(data => {
+function verificarSite(){
 
-let total = 0;
-let topNome = "";
-let topValor = 0;
+const input=document.getElementById("siteInput").value.toLowerCase().trim();
+const resultado=document.getElementById("resultado");
 
-data.forEach(op => {
-
-total += op.pesquisas;
-
-if(op.pesquisas > topValor){
-topValor = op.pesquisas;
-topNome = op.nome;
+if(input===""){
+resultado.innerHTML="Por favor escreva um nome.";
+return;
 }
+
+Promise.all([
+fetch("./data/blacklist.json").then(res=>res.json()),
+fetch("./data/legal.json").then(res=>res.json())
+])
+
+.then(([blacklist,legal])=>{
+
+const ilegal=blacklist.find(item=>item.nome.toLowerCase().includes(input));
+
+if(ilegal){
+
+resultado.innerHTML="🚨 Operador ILEGAL — Encontra-se na BLACKLIST.";
+resultado.style.color="red";
+
+guardarPesquisa(input);
+return;
+}
+
+const legalEncontrado=legal.find(item=>item.nome.toLowerCase().includes(input));
+
+if(legalEncontrado){
+
+resultado.innerHTML="✅ Operador LEGAL — Licenciado em Portugal.";
+resultado.style.color="green";
+
+guardarPesquisa(input);
+return;
+}
+
+resultado.innerHTML="⚠️ Operador não encontrado na base de dados.";
+resultado.style.color="#b8860b";
+
+guardarPesquisa(input);
 
 });
 
-document.getElementById("totalPesquisas").innerText = total;
-document.getElementById("topOperador").innerText = topNome;
+}
+
+/* GUARDAR PESQUISA */
+
+function guardarPesquisa(nome){
+
+fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec",{
+method:"POST",
+body:JSON.stringify({
+nome:nome,
+pais:"Portugal"
+})
+});
+
+}
+
+/* ULTIMOS ILEGAIS */
+
+fetch("./data/blacklist.json")
+.then(res=>res.json())
+.then(data=>{
+
+const container=document.getElementById("ultimos-ilegais");
+
+const ultimos=data.slice(-3).reverse();
+
+ultimos.forEach(item=>{
+
+const card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<h3>${item.nome}</h3>
+<p><strong>Motivo:</strong> ${item.motivo}</p>
+<p><strong>Adicionado:</strong> ${item.data}</p>
+`;
+
+container.appendChild(card);
+
+});
+
+});
+
+/* ESTATISTICAS */
+
+Promise.all([
+fetch("./data/blacklist.json").then(res=>res.json()),
+fetch("./data/legal.json").then(res=>res.json()),
+fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec").then(res=>res.json())
+])
+
+.then(([blacklist,legal,pesquisas])=>{
+
+document.getElementById("total-ilegais").innerText = blacklist.length;
+document.getElementById("total-legais").innerText = legal.length;
+document.getElementById("total-pesquisas").innerText = pesquisas.length;
 
 });
 
 </script>
 
 </body>
-
 </html>
