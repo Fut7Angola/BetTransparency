@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Bacana Play - Operador Licenciado</title>
+<title>BetTransparency - Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -13,40 +13,47 @@ font-family:Arial,sans-serif;
 margin:0;
 background:#eef2f7;
 color:#222;
+overflow-x:hidden;
 }
 
 main{
-max-width:900px;
-margin:40px auto;
-padding:20px;
-box-sizing:border-box;
+padding:50px 20px;
+max-width:1000px;
+margin:30px auto;
 }
 
-.operator-header{
+h1{
+text-align:center;
+color:#0b132b;
+}
+
+.section{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:12px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
-text-align:center;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
-.operator-logo{
-width:140px;
-max-width:100%;
-height:auto;
-margin-bottom:15px;
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+margin-top:30px;
 }
 
-.operator-license{
-color:#1c7ed6;
-font-weight:bold;
-margin-bottom:15px;
+.card{
+flex:1 1 calc(33% - 20px);
+background:#f9fafd;
+padding:22px;
+border-radius:12px;
+min-width:250px;
+border:1px solid #e6ecf2;
 }
 
 .btn{
 display:inline-block;
-padding:12px 22px;
+padding:11px 20px;
 background:#1c7ed6;
 color:white;
 text-decoration:none;
@@ -55,54 +62,52 @@ margin-top:15px;
 font-weight:bold;
 }
 
-.btn:hover{
-background:#1864ab;
-}
-
-.info-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-bottom:25px;
-}
-
-.info-box{
+.verificador{
+margin-top:40px;
+padding:35px;
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.06);
+border-radius:14px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border:1px solid #e6ecf2;
 }
 
-.info-box h3{
-margin-top:0;
-color:#0b132b;
+input{
+padding:10px;
+width:60%;
+max-width:300px;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
-.description{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.06);
-margin-bottom:25px;
+button{
+padding:10px 15px;
+border:none;
+border-radius:6px;
+background:#1c7ed6;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
 
-.responsible{
-background:#fff3cd;
-padding:18px;
-border-radius:10px;
-font-size:14px;
-}
-
-.back{
-display:block;
-margin-bottom:20px;
-text-decoration:none;
-color:#0b132b;
+#resultado{
+margin-top:20px;
 font-weight:bold;
 }
 
-</style>
+@media(max-width:992px){
 
+.cards{
+flex-direction:column;
+}
+
+.card{
+flex:1 1 100%;
+}
+
+}
+
+</style>
 </head>
 
 <body>
@@ -110,7 +115,8 @@ font-weight:bold;
 <div id="header"></div>
 
 <script>
-fetch("../header.html")
+
+fetch("header.html")
 .then(res => res.text())
 .then(data => {
 
@@ -126,82 +132,57 @@ menu.classList.toggle("show");
 }
 
 });
+
 </script>
 
 <main>
 
-<a class="back" href="../license.html">← Voltar à lista de operadores</a>
+<div class="section">
 
-<!-- HEADER DO OPERADOR -->
+<h1>Bem-vindo ao BetTransparency</h1>
 
-<div class="operator-header">
+<p style="text-align:center;">
+Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
+</p>
 
-<img src="../images/bacana_play.jpg" class="operator-logo">
+<div class="verificador">
 
-<h1>Bacana Play</h1>
+<h2>🔎 Verificar Operador</h2>
 
-<div class="operator-license">
-Licença SRIJ nº25
-</div>
+<p>Escreva o nome do site:</p>
 
-<a href="https://www.bacanaplay.pt" target="_blank" class="btn">
-Visitar site oficial
-</a>
+<input type="text" id="siteInput" placeholder="Ex: Betano">
 
-</div>
+<button onclick="verificarSite()">Verificar</button>
 
-<!-- INFORMAÇÕES -->
+<div id="resultado"></div>
 
-<div class="info-grid">
-
-<div class="info-box">
-<h3>Tipo</h3>
-<p>Apostas desportivas e casino online</p>
-</div>
-
-<div class="info-box">
-<h3>Métodos de pagamento</h3>
-<p>MB Way<br>Multibanco<br>Cartões bancários</p>
-</div>
-
-<div class="info-box">
-<h3>Plataformas</h3>
-<p>Desktop<br>Mobile<br>Tablet</p>
-</div>
-
-<div class="info-box">
-<h3>Regulação</h3>
-<p>SRIJ<br>Portugal</p>
 </div>
 
 </div>
 
-<!-- DESCRIÇÃO -->
+<div class="section">
 
-<div class="description">
+<h2>Ferramentas</h2>
 
-<h2>Sobre o operador</h2>
+<div class="cards">
 
-<p><strong>Descrição:</strong> A Bacana Play é uma plataforma de apostas desportivas e casino online que opera legalmente em Portugal. Disponibiliza apostas em diversas modalidades desportivas, incluindo futebol, ténis, basquetebol e outras competições nacionais e internacionais.
-No segmento de casino online, oferece jogos como slots, roleta, blackjack e outras variantes de jogos de mesa, através de fornecedores reconhecidos no setor. A plataforma pode ser utilizada em computador, tablet ou smartphone, garantindo compatibilidade móvel.</p>
+<div class="card">
+<h3>Verificação de Licença</h3>
+<a class="btn" href="license.html">Verificar</a>
+</div>
 
-<p><strong>Licenciamento e Regulação:</strong> Opera ao abrigo da Licença SRIJ nº 25, emitida pelo Serviço de Regulação e Inspeção de Jogos (SRIJ), entidade responsável pela regulação do jogo online em Portugal. Este enquadramento assegura que a operadora cumpre as normas legais portuguesas em matéria de segurança, proteção de dados e transparência.</p>
+<div class="card">
+<h3>Alertas Publicidade</h3>
+<a class="btn" href="ads.html">Ver Análises</a>
+</div>
 
-<p><strong>Métodos de Pagamento:</strong> Disponibiliza vários métodos de pagamento adaptados ao mercado português, podendo incluir Multibanco, MB Way, cartões bancários e carteiras digitais, dependendo das condições em vigor.</p>
-<p><strong>Promoções e Campanhas:</strong> A plataforma apresenta campanhas promocionais periódicas, que podem incluir bónus de boas-vindas, apostas grátis ou campanhas associadas a eventos desportivos específicos. Todas as ofertas estão sujeitas a termos e condições próprios.</p>
+<div class="card">
+<h3>Lista Negra</h3>
+<a class="btn" href="blacklist.html">Ver Blacklist</a>
+</div>
 
-<p><strong>Segurança e Proteção do Utilizador:</strong> Utiliza protocolos de segurança e encriptação de dados para proteger a informação dos utilizadores. Inclui ainda ferramentas de controlo, como limites de depósito e mecanismos de autoexclusão.</p>
-
-<p><strong>Jogo responsável:</strong> O jogo deve ser encarado como uma forma de entretenimento. A participação é permitida apenas a maiores de 18 anos. A Bacana Play disponibiliza informação e ferramentas de apoio ao jogo responsável, promovendo uma utilização consciente e equilibrada!.</p>
-
-<!-- JOGO RESPONSÁVEL -->
-
-<div class="responsible">
-
-<strong>Jogo responsável:</strong><br><br>
-
-O jogo deve ser encarado apenas como forma de entretenimento.
-Participação permitida apenas a maiores de 18 anos.
+</div>
 
 </div>
 
@@ -210,7 +191,7 @@ Participação permitida apenas a maiores de 18 anos.
 <div id="footer"></div>
 
 <script>
-fetch("../footer.html")
+fetch("footer.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("footer").innerHTML=data;
