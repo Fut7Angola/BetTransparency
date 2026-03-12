@@ -177,26 +177,32 @@ placeholder="🔎 Pesquisar site suspeito..."
 
 let blacklist = [];
 
+async function carregarBlacklist(){
 
-/* CARREGAR BLACKLIST */
+try{
 
-fetch("./data/blacklist.json")
-.then(response => response.json())
-.then(data => {
+const response = await fetch("./data/blacklist.json");
 
-blacklist = data;
+if(!response.ok){
+throw new Error("Erro ao carregar JSON");
+}
+
+blacklist = await response.json();
 
 sortAZ();
 
-})
-.catch(error => {
+}catch(error){
+
+console.error("Erro ao carregar blacklist:", error);
 
 document.getElementById("blacklist-container").innerHTML =
 "<p>Erro ao carregar lista de operadores.</p>";
 
-console.error("Erro:", error);
+}
 
-});
+}
+
+carregarBlacklist();
 
 
 /* RENDER LISTA */
