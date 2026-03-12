@@ -1,23 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Blacklist - Operadores Ilegais</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{font-family:'Roboto',sans-serif;margin:0;background:#eef2f7;color:#222;}
-    main{padding:50px 20px;max-width:1000px;margin:30px auto;background:white;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
-    h1{text-align:center;color:#0b132b;}
-    .warning{background:#fff3cd;color:#856404;padding:15px;border-radius:8px;margin-bottom:30px;}
-    .card{border:1px solid #dce1eb;padding:20px;margin-bottom:20px;border-radius:10px;background:#f9fafd;}
-    .card h2{margin-top:0;color:#b00020;}
-    .btn{display:inline-block;padding:8px 15px;background:#1c7ed6;color:white;text-decoration:none;border-radius:6px;margin-right:10px;font-size:14px;}
-    .btn:hover{background:#1864ab;}
-  </style>
+<meta charset="UTF-8">
+<title>Blacklist - Operadores Ilegais</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:'Roboto',sans-serif;
+margin:0;
+background:#eef2f7;
+color:#222;
+}
+
+main{
+padding:50px 20px;
+max-width:1000px;
+margin:30px auto;
+background:white;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+h1{
+text-align:center;
+color:#0b132b;
+}
+
+.warning{
+background:#fff3cd;
+color:#856404;
+padding:15px;
+border-radius:8px;
+margin-bottom:30px;
+}
+
+.controls{
+margin-bottom:25px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.controls input{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+min-width:220px;
+}
+
+.controls button{
+padding:10px 14px;
+border:none;
+background:#1c7ed6;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.controls button:hover{
+background:#1864ab;
+}
+
+.card{
+border:1px solid #dce1eb;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+background:#f9fafd;
+}
+
+.card h2{
+margin-top:0;
+color:#b00020;
+}
+
+.badge{
+display:inline-block;
+padding:5px 10px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.risk-high{
+background:#ff4d4f;
+color:white;
+}
+
+.btn{
+display:inline-block;
+padding:8px 15px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:6px;
+margin-right:10px;
+font-size:14px;
+}
+
+.btn:hover{
+background:#1864ab;
+}
+
+.counter{
+margin-bottom:20px;
+font-weight:bold;
+color:#0b132b;
+}
+
+</style>
 </head>
+
 <body>
 
 <!-- HEADER -->
+
 <div id="header"></div>
 
 <script>
@@ -32,7 +133,7 @@ const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 if(btn && menu){
-btn.onclick = function(){
+btn.onclick=function(){
 menu.classList.toggle("show");
 };
 }
@@ -41,48 +142,169 @@ menu.classList.toggle("show");
 
 </script>
 
+
 <main>
-  <h1>🚨 Lista Negra de Operadores Ilegais</h1>
 
-  <div class="warning">
-    Estes operadores não possuem licença válida para operar legalmente em Portugal.
-    Recomendamos evitar qualquer registo ou depósito nestas plataformas.
-  </div>
+<h1>🚨 Lista Negra de Operadores Ilegais</h1>
 
-  <div id="blacklist-container"></div>
+<div class="warning">
+
+Estes operadores não possuem licença válida para operar legalmente em Portugal.
+Recomendamos evitar qualquer registo ou depósito nestas plataformas.
+
+</div>
+
+
+<div class="counter" id="site-counter"></div>
+
+
+<div class="controls">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔎 Pesquisar site suspeito..."
+>
+
+<button onclick="sortAZ()">A-Z</button>
+<button onclick="sortZA()">Z-A</button>
+<button onclick="sortDate()">Mais recentes</button>
+
+</div>
+
+
+<div id="blacklist-container"></div>
+
 </main>
 
+
 <script>
+
+let blacklist = [];
+
+
 fetch("./data/blacklist.json")
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById("blacklist-container");
+.then(response => response.json())
+.then(data => {
 
-    data.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card";
+blacklist = data;
 
-      card.innerHTML = `
-  <h2>${item.nome}</h2>
-  <p><strong>Motivo:</strong> ${item.motivo}</p>
-  <a class="btn" href="${item.website}" target="_blank">Website</a>
-  ${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
+sortAZ();
+
+});
+
+
+
+function renderList(list){
+
+const container = document.getElementById("blacklist-container");
+
+container.innerHTML = "";
+
+document.getElementById("site-counter").innerText =
+"Sites ilegais identificados: " + list.length;
+
+
+list.forEach(item => {
+
+const card = document.createElement("div");
+
+card.className = "card";
+
+card.innerHTML = `
+
+<div class="badge risk-high">⚠️ Alto risco</div>
+
+<h2>${item.nome}</h2>
+
+<p><strong>Motivo:</strong> ${item.motivo}</p>
+
+<p><strong>Data:</strong> ${item.data}</p>
+
+<a class="btn" href="${item.website}" target="_blank">Website</a>
+
+${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
+
 `;
 
-      container.appendChild(card);
-    });
-  });
+container.appendChild(card);
+
+});
+
+}
+
+
+
+function sortAZ(){
+
+blacklist.sort((a,b)=>a.nome.localeCompare(b.nome));
+
+renderList(blacklist);
+
+}
+
+
+
+function sortZA(){
+
+blacklist.sort((a,b)=>b.nome.localeCompare(a.nome));
+
+renderList(blacklist);
+
+}
+
+
+
+function sortDate(){
+
+blacklist.sort((a,b)=>{
+
+let da = a.data.split("-").reverse().join("");
+
+let db = b.data.split("-").reverse().join("");
+
+return db - da;
+
+});
+
+renderList(blacklist);
+
+}
+
+
+
+document.getElementById("searchInput").addEventListener("keyup",function(){
+
+let value = this.value.toLowerCase();
+
+let filtered = blacklist.filter(site =>
+site.nome.toLowerCase().includes(value)
+);
+
+renderList(filtered);
+
+});
+
 </script>
+
+
+
+<!-- FOOTER -->
 
 <div id="footer"></div>
 
 <script>
+
 fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+.then(response => response.text())
+.then(data => {
+
+document.getElementById("footer").innerHTML = data;
+
+});
+
 </script>
+
 
 </body>
 </html>
