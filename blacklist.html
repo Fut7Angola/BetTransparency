@@ -8,7 +8,7 @@
 <style>
 
 body{
-font-family:'Roboto',sans-serif;
+font-family:Arial,sans-serif;
 margin:0;
 background:#eef2f7;
 color:#222;
@@ -148,15 +148,11 @@ menu.classList.toggle("show");
 <h1>🚨 Lista Negra de Operadores Ilegais</h1>
 
 <div class="warning">
-
 Estes operadores não possuem licença válida para operar legalmente em Portugal.
 Recomendamos evitar qualquer registo ou depósito nestas plataformas.
-
 </div>
 
-
-<div class="counter" id="site-counter"></div>
-
+<div class="counter" id="site-counter">A carregar...</div>
 
 <div class="controls">
 
@@ -172,7 +168,6 @@ placeholder="🔎 Pesquisar site suspeito..."
 
 </div>
 
-
 <div id="blacklist-container"></div>
 
 </main>
@@ -183,6 +178,8 @@ placeholder="🔎 Pesquisar site suspeito..."
 let blacklist = [];
 
 
+/* CARREGAR BLACKLIST */
+
 fetch("./data/blacklist.json")
 .then(response => response.json())
 .then(data => {
@@ -191,9 +188,18 @@ blacklist = data;
 
 sortAZ();
 
+})
+.catch(error => {
+
+document.getElementById("blacklist-container").innerHTML =
+"<p>Erro ao carregar lista de operadores.</p>";
+
+console.error("Erro:", error);
+
 });
 
 
+/* RENDER LISTA */
 
 function renderList(list){
 
@@ -236,44 +242,47 @@ container.appendChild(card);
 }
 
 
+/* ORDENAR A-Z */
 
 function sortAZ(){
 
-blacklist.sort((a,b)=>a.nome.localeCompare(b.nome));
+let sorted = [...blacklist].sort((a,b)=>a.nome.localeCompare(b.nome));
 
-renderList(blacklist);
+renderList(sorted);
 
 }
 
 
+/* ORDENAR Z-A */
 
 function sortZA(){
 
-blacklist.sort((a,b)=>b.nome.localeCompare(a.nome));
+let sorted = [...blacklist].sort((a,b)=>b.nome.localeCompare(a.nome));
 
-renderList(blacklist);
+renderList(sorted);
 
 }
 
 
+/* ORDENAR DATA */
 
 function sortDate(){
 
-blacklist.sort((a,b)=>{
+let sorted = [...blacklist].sort((a,b)=>{
 
 let da = a.data.split("-").reverse().join("");
-
 let db = b.data.split("-").reverse().join("");
 
 return db - da;
 
 });
 
-renderList(blacklist);
+renderList(sorted);
 
 }
 
 
+/* PESQUISA */
 
 document.getElementById("searchInput").addEventListener("keyup",function(){
 
@@ -288,7 +297,6 @@ renderList(filtered);
 });
 
 </script>
-
 
 
 <!-- FOOTER -->
@@ -306,7 +314,6 @@ document.getElementById("footer").innerHTML = data;
 });
 
 </script>
-
 
 </body>
 </html>
