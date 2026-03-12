@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Denunciar Operador</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 20px;
+background:#1c7ed6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
+});
+</script>
+
+<main>
+
+<h1>⚠️ Denunciar Operador Suspeito</h1>
+
+<p>Se encontrou um site de apostas suspeito ou ilegal, pode denunciá-lo aqui.</p>
+
+<form action="https://formspree.io/f/SEU_EMAIL" method="POST">
+
+<label>Nome do operador</label>
+<input type="text" name="operador" required>
+
+<label>Website</label>
+<input type="text" name="website">
+
+<label>Motivo da denúncia</label>
+<textarea name="motivo"></textarea>
+
+<label>Email (opcional)</label>
+<input type="email" name="email">
+
+<button type="submit">Enviar denúncia</button>
+
+</form>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+</body>
+</html>
