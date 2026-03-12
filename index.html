@@ -50,7 +50,6 @@ margin-top:30px;
 background:#f9fafd;
 padding:22px;
 border-radius:12px;
-min-width:250px;
 border:1px solid #e6ecf2;
 }
 
@@ -96,11 +95,6 @@ cursor:pointer;
 #resultado{
 margin-top:20px;
 font-weight:bold;
-}
-
-@media(max-width:992px){
-.cards{flex-direction:column;}
-.card{flex:1 1 100%;}
 }
 
 </style>
@@ -289,6 +283,10 @@ resultado.style.color="#b8860b";
 
 guardarPesquisa(input);
 
+})
+
+.catch(()=>{
+resultado.innerHTML="Erro ao verificar operador.";
 });
 
 }
@@ -315,6 +313,8 @@ fetch("./data/blacklist.json")
 
 const container=document.getElementById("ultimos-ilegais");
 
+container.innerHTML="";
+
 const ultimos=data.slice(-4).reverse();
 
 ultimos.forEach(item=>{
@@ -332,6 +332,10 @@ container.appendChild(card);
 
 });
 
+})
+
+.catch(()=>{
+console.log("Erro a carregar blacklist");
 });
 
 /* ESTATISTICAS */
@@ -348,6 +352,10 @@ document.getElementById("total-ilegais").innerText = blacklist.length;
 document.getElementById("total-legais").innerText = legal.length;
 document.getElementById("total-pesquisas").innerText = pesquisas.length;
 
+})
+
+.catch(()=>{
+console.log("Erro ao carregar estatísticas");
 });
 
 </script>
