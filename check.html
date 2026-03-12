@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Verificar Site de Apostas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+}
+
+input{
+padding:12px;
+width:70%;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 20px;
+background:#1c7ed6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+margin-left:10px;
+}
+
+.result{
+margin-top:25px;
+font-size:18px;
+font-weight:bold;
+}
+
+.safe{
+color:green;
+}
+
+.risk{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
+});
+</script>
+
+<main>
+
+<h1>🔎 Verificar site de apostas</h1>
+
+<p>Introduza o domínio do site para verificar se está na blacklist.</p>
+
+<input id="siteInput" placeholder="ex: winwin676.bet">
+
+<button onclick="checkSite()">Verificar</button>
+
+<div id="result" class="result"></div>
+
+</main>
+
+<script>
+
+let blacklist = [];
+
+fetch("./data/blacklist.json")
+.then(res=>res.json())
+.then(data=>{
+blacklist=data;
+});
+
+function checkSite(){
+
+let input=document.getElementById("siteInput").value.toLowerCase();
+
+let found=blacklist.find(site=>site.website.toLowerCase().includes(input));
+
+let result=document.getElementById("result");
+
+if(found){
+
+result.innerHTML="⚠️ Este operador encontra-se na blacklist.";
+
+result.className="result risk";
+
+}else{
+
+result.innerHTML="✔️ Este site não consta atualmente na blacklist.";
+
+result.className="result safe";
+
+}
+
+}
+
+</script>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+</body>
+</html>
