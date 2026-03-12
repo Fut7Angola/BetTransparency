@@ -72,24 +72,58 @@ menu.classList.toggle("show");
 
 <p>Se encontrou um site de apostas suspeito ou ilegal, pode denunciá-lo aqui.</p>
 
-<form action="https://formspree.io/f/SEU_EMAIL" method="POST">
+<form id="reportForm">
 
 <label>Nome do operador</label>
-<input type="text" name="operador" required>
+<input type="text" id="operador" required>
 
 <label>Website</label>
-<input type="text" name="website">
+<input type="text" id="website">
 
 <label>Motivo da denúncia</label>
-<textarea name="motivo"></textarea>
+<textarea id="motivo"></textarea>
 
 <label>Email (opcional)</label>
-<input type="email" name="email">
+<input type="email" id="email">
 
 <button type="submit">Enviar denúncia</button>
 
 </form>
 
+<p id="msg"></p>
+
+  <script>
+
+document.getElementById("reportForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+fetch("https://script.google.com/macros/s/AKfycbyNQGzTSAw4BYWaI6DP0YPh2Q2zgqZ_yX6twFExkn6r2SgloOxNoylEYg5459Z7tTLZuQ/exec",{
+
+method:"POST",
+
+body:JSON.stringify({
+
+operador:document.getElementById("operador").value,
+website:document.getElementById("website").value,
+motivo:document.getElementById("motivo").value,
+email:document.getElementById("email").value
+
+})
+
+})
+
+.then(res=>{
+
+document.getElementById("msg").innerHTML="✅ Denúncia enviada. Obrigado.";
+
+document.getElementById("reportForm").reset();
+
+});
+
+});
+
+</script>
 </main>
 
 <div id="footer"></div>
