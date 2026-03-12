@@ -181,7 +181,7 @@ async function carregarBlacklist(){
 
 try{
 
-const response = await fetch("./data/blacklist.json");
+const response = await fetch("/BetTransparency/data/blacklist.json");
 
 if(!response.ok){
 throw new Error("Erro ao carregar JSON");
