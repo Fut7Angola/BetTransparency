@@ -49,9 +49,20 @@ cursor:pointer;
 
 <script>
 fetch("header.html")
-.then(r=>r.text())
-.then(d=>{
-document.getElementById("header").innerHTML=d;
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+btn.onclick=function(){
+menu.classList.toggle("show");
+};
+}
+
 });
 </script>
 
