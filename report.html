@@ -98,22 +98,19 @@ document.getElementById("reportForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-const data = {
-operador: document.getElementById("operador").value,
-website: document.getElementById("website").value,
-motivo: document.getElementById("motivo").value,
-email: document.getElementById("email").value
-};
+var formData = new FormData();
+
+formData.append("operador", document.getElementById("operador").value);
+formData.append("website", document.getElementById("website").value);
+formData.append("motivo", document.getElementById("motivo").value);
+formData.append("email", document.getElementById("email").value);
 
 fetch("https://script.google.com/macros/s/AKfycbx_9OTZ1Q-mnI0-QClw4sCmnyku9h6zUZQ_9yB9eLjiJflCZPqOIOKw0gZlmNIMm7dkeg/exec", {
 method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify(data)
+body: formData
 })
 .then(response => response.text())
-.then(result => {
+.then(data => {
 
 document.getElementById("msg").innerHTML =
 "✅ Denúncia enviada com sucesso.";
