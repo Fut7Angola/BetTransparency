@@ -10,29 +10,60 @@ align-items:center;
 position:fixed;
 top:0;
 left:0;
-right:0%;
+right:0;
 z-index:1000;
 box-shadow:0 3px 10px rgba(0,0,0,0.15);
-box-sizzing:border-box;  
+box-sizing:border-box;
 }
 
 .logo img{
 height:50px;
 }
 
+/* MENU DESKTOP */
+
 .menu{
 display:flex;
 gap:20px;
-flex-wrap:wrap;
+align-items:center;
 }
 
 .menu a{
 color:white;
 text-decoration:none;
 font-weight:bold;
+}
+
 .menu a:hover{
 color:#4ade80;
 }
+
+/* SUBMENU */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#1f4cd1;
+top:35px;
+left:0;
+min-width:220px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+padding:10px 0;
+flex-direction:column;
+}
+
+.dropdown-content a{
+display:block;
+padding:10px 15px;
+}
+
+.dropdown:hover .dropdown-content{
+display:flex;
 }
 
 /* BOTÃO HAMBURGER */
@@ -49,17 +80,12 @@ cursor:pointer;
 
 .menu-btn{
 display:block;
-
-/* BOTÃO FIXO */
-
 position:fixed;
 top:15px;
 right:15px;
-
 background:#0b132b;
 padding:8px 12px;
 border-radius:6px;
-
 z-index:2000;
 }
 
@@ -86,6 +112,20 @@ padding:12px 0;
 border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
+/* SUBMENU MOBILE */
+
+.dropdown-content{
+position:relative;
+top:0;
+background:none;
+box-shadow:none;
+padding-left:10px;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
 }
 
 </style>
@@ -104,6 +144,7 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 <a href="/BetTransparency/">Home</a>
 
 <div class="dropdown">
+
 <a href="#">Ferramentas ▾</a>
 
 <div class="dropdown-content">
@@ -131,43 +172,20 @@ document.addEventListener("DOMContentLoaded", function(){
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
-if(btn && menu){
+/* abrir menu mobile */
 
 btn.addEventListener("click", function(){
 menu.classList.toggle("show");
 });
 
-}
+/* fechar menu ao clicar num link */
+
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+});
+});
 
 });
-/* SUBMENU */
-
-.dropdown{
-position:relative;
-}
-
-.dropdown-content{
-display:none;
-position:absolute;
-background:#0a1f44;
-top:40px;
-left:0;
-min-width:220px;
-border-radius:8px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-padding:10px 0;
-z-index:2000;
-}
-
-.dropdown-content a{
-display:block;
-padding:10px 15px;
-color:white;
-text-decoration:none;
-}
-
-.dropdown-content a:hover{
-background:rgba(255,255,255,0.1);
-}
 
 </script>
