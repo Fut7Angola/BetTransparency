@@ -102,14 +102,22 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 <nav class="menu" id="menu">
 
 <a href="/BetTransparency/">Home</a>
+
+<div class="dropdown">
+<a href="#">Ferramentas ▾</a>
+
+<div class="dropdown-content">
 <a href="/BetTransparency/license.html">Verificar Licenças</a>
 <a href="/BetTransparency/blacklist.html">Blacklist</a>
-<a href="/BetTransparency/donations.html">Doações</a>  
-<a href="/BetTransparency/ads.html">Análise de Publicidade</a>
+<a href="/BetTransparency/report.html">Denunciar Operador</a>
+</div>
+
+</div>
+
 <a href="/BetTransparency/guides.html">Guias</a>
-<a href="/BetTransparency/methodology.html">Metodologia</a>
 <a href="/BetTransparency/news.html">Notícias</a>
 <a href="/BetTransparency/about.html">Sobre</a>
+<a href="/BetTransparency/donations.html">Doações</a>
 
 </nav>
 
@@ -132,5 +140,31 @@ menu.classList.toggle("show");
 }
 
 });
+/* SUBMENU */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#0a1f44;
+top:35px;
+left:0;
+min-width:200px;
+flex-direction:column;
+border-radius:6px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a{
+padding:10px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown:hover .dropdown-content{
+display:flex;
+}
 
 </script>
