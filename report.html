@@ -72,19 +72,19 @@ menu.classList.toggle("show");
 
 <p>Se encontrou um site de apostas suspeito ou ilegal, pode denunciá-lo aqui.</p>
 
-<form id="reportForm">
+<form method="POST" action="https://script.google.com/macros/s/AKfycbx_9OTZ1Q-mnI0-QClw4sCmnyku9h6zUZQ_9yB9eLjiJflCZPqOIOKw0gZlmNIMm7dkeg/exec">
 
 <label>Nome do operador</label>
-<input type="text" id="operador" required>
+<input type="text" name="operador" required>
 
 <label>Website</label>
-<input type="text" id="website">
+<input type="text" name="website">
 
 <label>Motivo da denúncia</label>
-<textarea id="motivo"></textarea>
+<textarea name="motivo"></textarea>
 
 <label>Email (opcional)</label>
-<input type="email" id="email">
+<input type="email" name="email">
 
 <button type="submit">Enviar denúncia</button>
 
