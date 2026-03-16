@@ -7,8 +7,12 @@ padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:relative;
-z-index:999;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
 
 .logo img{
@@ -24,6 +28,9 @@ gap:20px;
 color:white;
 text-decoration:none;
 font-weight:bold;
+.menu a:hover{
+color:#4ade80;
+}
 }
 
 /* BOTÃO HAMBURGER */
