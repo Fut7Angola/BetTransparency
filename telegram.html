@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
 
+<meta charset="UTF-8">
+<title>Blacklist Telegram</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:1000px;
+margin:100px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+.badge{
+background:#ff4d4f;
+color:white;
+padding:5px 10px;
+border-radius:6px;
+font-size:12px;
+}
+
+a{
+color:#1c7ed6;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+btn.onclick=function(){
+menu.classList.toggle("show");
+};
+}
+
+});
+</script>
+
+<main>
+
+<h1>🚨 Grupos de Telegram suspeitos</h1>
+
+<div id="container"></div>
+
+</main>
+
+<script>
+
+let lista=[];
+
+fetch("./data/telegram.json")
+.then(r=>r.json())
+.then(data=>{
+lista=data;
+render(lista);
+});
+
+function render(list){
+
+const c=document.getElementById("container");
+
+c.innerHTML="";
+
+list.forEach(item=>{
+
+const div=document.createElement("div");
+
+div.className="card";
+
+div.innerHTML=`
+<div class="badge">⚠️ Suspeito</div>
+
+<h2>${item.nome}</h2>
+
+<p><strong>Motivo:</strong> ${item.motivo}</p>
+<p><strong>Data:</strong> ${item.data}</p>
+
+<a href="${item.link}" target="_blank">Abrir no Telegram</a>
+`;
+
+c.appendChild(div);
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
