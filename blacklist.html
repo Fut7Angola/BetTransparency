@@ -241,6 +241,48 @@ carregarComentarios(site);
 
 }
 
+window.enviar = async function(site){
+
+const text=document.getElementById("input-"+site).value;
+
+if(!text)return alert("Escreve algo");
+
+await addDoc(collection(db,"comments"),{
+site:site,
+text:text,
+date:Date.now()
+});
+
+carregarComentarios(site);
+
+}
+
+/* 👇 COLA AQUI */
+
+window.likeComment = async function(id){
+
+const ref = doc(db,"comments",id);
+
+await updateDoc(ref,{
+likes: increment(1)
+});
+
+location.reload();
+
+}
+
+window.dislikeComment = async function(id){
+
+const ref = doc(db,"comments",id);
+
+await updateDoc(ref,{
+dislikes: increment(1)
+});
+
+location.reload();
+
+}
+
 window.like = async function(site){
 
 alert("Like registado 👍 (vai aparecer nos próximos passos)");
