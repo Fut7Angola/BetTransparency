@@ -137,7 +137,30 @@ fetch("header.html")
 .then(r=>r.text())
 .then(d=>{
 document.getElementById("header").innerHTML=d;
+
+/* 🔥 ATIVAR MENU */
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+
+btn.addEventListener("click", function(){
+menu.classList.toggle("show");
 });
+
+/* FECHAR MENU AO CLICAR NUM LINK (MOBILE) */
+
+menu.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+});
+});
+
+}
+
+});
+  
 </script>
 
 <main>
