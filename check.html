@@ -17,7 +17,7 @@ margin:0;
 
 main{
 max-width:700px;
-margin:40px auto;
+margin:100px auto 40px auto;
 background:white;
 padding:30px;
 border-radius:10px;
@@ -45,14 +45,25 @@ margin-left:10px;
 margin-top:25px;
 font-size:18px;
 font-weight:bold;
+padding:15px;
+border-radius:8px;
 }
 
+/* CORES */
+
 .safe{
-color:green;
+background:#d3f9d8;
+color:#2b8a3e;
 }
 
 .risk{
-color:red;
+background:#ffe3e3;
+color:#c92a2a;
+}
+
+.unknown{
+background:#fff3bf;
+color:#e67700;
 }
 
 </style>
@@ -86,7 +97,7 @@ menu.classList.toggle("show");
 
 <h1>🔎 Verificar site de apostas</h1>
 
-<p>Introduza o domínio do site para verificar se está na blacklist.</p>
+<p>Introduza o domínio do site.</p>
 
 <input id="siteInput" placeholder="ex: winwin676.bet">
 
@@ -99,6 +110,9 @@ menu.classList.toggle("show");
 <script>
 
 let blacklist = [];
+let legal = [];
+
+/* CARREGAR DADOS */
 
 fetch("./data/blacklist.json")
 .then(res=>res.json())
@@ -106,25 +120,54 @@ fetch("./data/blacklist.json")
 blacklist=data;
 });
 
+fetch("./data/legal.json")
+.then(res=>res.json())
+.then(data=>{
+legal=data;
+});
+
+/* VERIFICAR */
+
 function checkSite(){
 
-let input=document.getElementById("siteInput").value.toLowerCase();
-
-let found=blacklist.find(site=>site.website.toLowerCase().includes(input));
+let input=document.getElementById("siteInput").value.toLowerCase().trim();
 
 let result=document.getElementById("result");
 
-if(found){
+if(!input){
+result.innerHTML="⚠️ Introduz um domínio.";
+result.className="result unknown";
+return;
+}
 
-result.innerHTML="⚠️ Este operador encontra-se na blacklist.";
+/* VERIFICAR BLACKLIST */
 
+let foundBlack = blacklist.find(site =>
+site.website && site.website.toLowerCase().includes(input)
+);
+
+/* VERIFICAR LEGAL */
+
+let foundLegal = legal.find(site =>
+input.includes(site)
+);
+
+/* RESULTADO */
+
+if(foundBlack){
+
+result.innerHTML="🚨 Este operador encontra-se na blacklist.";
 result.className="result risk";
+
+}else if(foundLegal){
+
+result.innerHTML="✅ Operador legal em Portugal.";
+result.className="result safe";
 
 }else{
 
-result.innerHTML="✔️ Este site não consta atualmente na blacklist.";
-
-result.className="result safe";
+result.innerHTML="⚠️ Operador não encontrado na base de dados.";
+result.className="result unknown";
 
 }
 
