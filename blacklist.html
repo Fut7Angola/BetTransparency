@@ -179,11 +179,30 @@ div.innerHTML=`
 
 <div class="comments">
 
-<div id="comments-${item.nome}">A carregar...</div>
+<h3>⭐ Avaliação</h3>
 
-<textarea id="input-${item.nome}" placeholder="Escrever comentário"></textarea>
+<select id="rating-${item.nome}">
+<option value="5">⭐⭐⭐⭐⭐</option>
+<option value="4">⭐⭐⭐⭐</option>
+<option value="3">⭐⭐⭐</option>
+<option value="2">⭐⭐</option>
+<option value="1">⭐</option>
+</select>
+
+<input id="user-${item.nome}" placeholder="Nickname ou Anónimo">
+
+<textarea id="input-${item.nome}" placeholder="Partilha a tua experiência"></textarea>
+
+<div style="margin-top:5px;">
+<button onclick="like('${item.nome}')">👍</button>
+<button onclick="dislike('${item.nome}')">👎</button>
+</div>
 
 <button onclick="enviar('${item.nome}')">Enviar</button>
+
+<div id="score-${item.nome}" style="margin-top:10px;font-weight:bold;"></div>
+
+<div id="comments-${item.nome}">A carregar...</div>
 
 </div>
 `;
@@ -201,18 +220,36 @@ carregarComentarios(item.nome);
 window.enviar = async function(site){
 
 const text=document.getElementById("input-"+site).value;
+const rating=document.getElementById("rating-"+site).value;
+const user=document.getElementById("user-"+site).value || "Anónimo";
 
 if(!text)return alert("Escreve algo");
 
 await addDoc(collection(db,"comments"),{
 site:site,
 text:text,
+rating:Number(rating),
+user:user,
+likes:0,
+dislikes:0,
 date:Date.now()
 });
 
 document.getElementById("input-"+site).value="";
 
 carregarComentarios(site);
+
+}
+
+window.like = async function(site){
+
+alert("Like registado 👍 (vai aparecer nos próximos passos)");
+
+}
+
+window.dislike = async function(site){
+
+alert("Dislike registado 👎 (vai aparecer nos próximos passos)");
 
 }
 
@@ -223,12 +260,30 @@ const q=query(collection(db,"comments"),where("site","==",site));
 const res=await getDocs(q);
 
 let html="";
+let total=0;
+let soma=0;
 let count=0;
 
 res.forEach(doc=>{
+
+const d=doc.data();
+
 count++;
-html+=`<p>💬 ${doc.data().text}</p>`;
+soma+=d.rating;
+
+html+=`
+<div style="border-bottom:1px solid #eee;margin-bottom:10px;padding-bottom:5px;">
+<strong>${d.user}</strong> - ⭐ ${d.rating}/5
+<p>${d.text}</p>
+</div>
+`;
+
 });
+
+let media = count ? (soma/count).toFixed(1) : 0;
+
+document.getElementById("score-"+site).innerText =
+"⭐ Rating: "+media+" ("+count+" avaliações)";
 
 document.getElementById("comments-"+site).innerHTML =
 html || "Sem comentários";
