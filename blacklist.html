@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
 <title>Blacklist - Operadores Ilegais</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
@@ -102,45 +103,40 @@ margin-right:10px;
 font-size:14px;
 }
 
-.btn:hover{
-background:#1864ab;
-}
-
 .counter{
 margin-bottom:20px;
 font-weight:bold;
 color:#0b132b;
 }
 
+.comments{
+margin-top:20px;
+border-top:1px solid #ddd;
+padding-top:15px;
+}
+
+.comments textarea{
+width:100%;
+padding:8px;
+margin-bottom:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.comments button{
+padding:8px 14px;
+background:#22c55e;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
 </style>
+
 </head>
 
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-const firebaseConfig = {
-apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain: "bettransparency.firebaseapp.com",
-projectId: "bettransparency",
-storageBucket: "bettransparency.firebasestorage.app",
-messagingSenderId: "493636447089",
-appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
-
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth();
-
-signInAnonymously(auth);
-
-</script>  
 <body>
-
-<!-- HEADER -->
 
 <div id="header"></div>
 
@@ -194,11 +190,29 @@ placeholder="🔎 Pesquisar site suspeito..."
 </main>
 
 
-<script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain: "bettransparency.firebaseapp.com",
+projectId: "bettransparency",
+storageBucket: "bettransparency.firebasestorage.app",
+messagingSenderId: "493636447089",
+appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth();
+
+signInAnonymously(auth);
 
 let blacklist = [];
 
-/* ESPERAR PÁGINA CARREGAR */
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -219,17 +233,11 @@ renderList(filtered);
 });
 
 
-/* CARREGAR BLACKLIST */
-
 async function carregarBlacklist(){
 
 try{
 
 const response = await fetch("/BetTransparency/data/blacklist.json");
-
-if(!response.ok){
-throw new Error("Erro ao carregar JSON");
-}
 
 blacklist = await response.json();
 
@@ -237,17 +245,15 @@ sortAZ();
 
 }catch(error){
 
-console.error("Erro ao carregar blacklist:", error);
+console.error(error);
 
 document.getElementById("blacklist-container").innerHTML =
-"<p>Erro ao carregar lista de operadores.</p>";
+"<p>Erro ao carregar lista.</p>";
 
 }
 
 }
 
-
-/* RENDER LISTA */
 
 function renderList(list){
 
@@ -258,14 +264,13 @@ container.innerHTML = "";
 document.getElementById("site-counter").innerText =
 "Sites ilegais identificados: " + list.length;
 
-
 list.forEach(item => {
 
 const card = document.createElement("div");
 
-card.className = "card";
+card.className="card";
 
-card.innerHTML = `
+card.innerHTML=`
 
 <div class="badge risk-high">⚠️ Alto risco</div>
 
@@ -281,12 +286,6 @@ card.innerHTML = `
 
 ${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
 
-`;
-
-container.appendChild(card);
-
-});
-
 <div class="comments">
 
 <h3>💬 Comentários</h3>
@@ -295,52 +294,18 @@ container.appendChild(card);
 
 <button onclick="sendComment('${item.nome}')">Enviar</button>
 
-<div id="comments-${item.nome}"></div>
+</div>
 
-</div>  
-}
+`;
 
-
-/* ORDENAR A-Z */
-
-function sortAZ(){
-
-let sorted = [...blacklist].sort((a,b)=>a.nome.localeCompare(b.nome));
-
-renderList(sorted);
-
-}
-
-
-/* ORDENAR Z-A */
-
-function sortZA(){
-
-let sorted = [...blacklist].sort((a,b)=>b.nome.localeCompare(a.nome));
-
-renderList(sorted);
-
-}
-
-
-/* ORDENAR DATA */
-
-function sortDate(){
-
-let sorted = [...blacklist].sort((a,b)=>{
-
-let da = a.data.split("-").reverse().join("");
-let db = b.data.split("-").reverse().join("");
-
-return db - da;
+container.appendChild(card);
 
 });
 
-renderList(sorted);
-
 }
 
-  async function sendComment(site){
+
+window.sendComment = async function(site){
 
 const text = document.getElementById("comment-"+site).value;
 
@@ -357,61 +322,52 @@ date:Date.now()
 
 alert("Comentário enviado");
 
-}  
-</script>
+}
 
 
-<!-- FOOTER -->
+window.sortAZ = function(){
 
-<div id="footer"></div>
+let sorted=[...blacklist].sort((a,b)=>a.nome.localeCompare(b.nome));
 
-<script>
-fetch("footer.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("footer").innerHTML = data;
-});
-</script>
+renderList(sorted);
 
-<script type="module">
+}
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+window.sortZA = function(){
 
-const firebaseConfig = {
-apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain: "bettransparency.firebaseapp.com",
-projectId: "bettransparency",
-storageBucket: "bettransparency.firebasestorage.app",
-messagingSenderId: "493636447089",
-appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
+let sorted=[...blacklist].sort((a,b)=>b.nome.localeCompare(a.nome));
 
-};
+renderList(sorted);
 
-const app = initializeApp(firebaseConfig);
+}
 
-const db = getFirestore(app);
+window.sortDate = function(){
 
-const auth = getAuth();
+let sorted=[...blacklist].sort((a,b)=>{
 
-signInAnonymously(auth);
+let da=a.data.split("-").reverse().join("");
+let db=b.data.split("-").reverse().join("");
 
-window.testFirebase = async function(){
+return db-da;
 
-await addDoc(collection(db,"test"),{
-mensagem:"Firebase está a funcionar",
-data:Date.now()
 });
 
-alert("Firebase ligado com sucesso!");
+renderList(sorted);
 
 }
 
 </script>
 
-<button onclick="testFirebase()" style="position:fixed;bottom:20px;right:20px;padding:10px 15px;background:#22c55e;color:white;border:none;border-radius:6px;cursor:pointer;">
-Testar Firebase
-</button>  
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
 </body>
 </html>
