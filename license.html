@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>BetTransparency - Operadores Licenciados</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-body{font-family:'Roboto',sans-serif;margin:0;background:#eef2f7;color:#222;line-height:1.6;}
-header{background:#0b132b;color:white;padding:20px 40px;position:sticky;top:0;z-index:100;}
-nav{display:flex;flex-wrap:wrap;justify-content:center;}
-nav a{color:white;margin:0 15px;text-decoration:none;font-weight:500;font-size:15px;padding:8px 12px;border-radius:5px;transition:0.3s;}
-nav a:hover{background:#1c2a4a;}
-main{padding:50px 20px;max-width:1200px;margin:30px auto;}
-h1{text-align:center;font-size:36px;color:#0b132b;margin-top:0;}
-p{font-size:16px;margin-bottom:15px;}
-.cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;}
-.card{flex:1 1 calc(25% - 20px);background:white;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);min-width:250px;text-align:center;}
-.card img{width:120px;height:auto;margin-bottom:12px;border-radius:8px;}
-.card h3{color:#0b132b;margin-top:0;font-size:18px;}
-.card p{font-size:14px;margin-bottom:10px;}
-.btn{display:inline-block;padding:8px 16px;background:#1c7ed6;color:white;text-decoration:none;border-radius:6px;font-weight:600;transition:.3s;}
-.btn:hover{background:#1864ab;}
-footer{text-align:center;padding:30px;font-size:13px;color:#666;background:#f0f3f8;}
-.srij-btn{display:inline-block;padding:12px 24px;background:#1c7ed6;color:white;text-decoration:none;border-radius:8px;font-weight:600;margin:20px 0;transition:0.3s;}
-.srij-btn:hover{background:#1864ab;}
-@media(max-width:992px){.cards{flex-direction:column;}.card{flex:1 1 100%;}}
+<meta charset="UTF-8">
+<title>Operadores Licenciados em Portugal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 20px;
+background:#1c7ed6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <script>
-
 fetch("header.html")
 .then(res => res.text())
 .then(data => {
@@ -45,14 +58,14 @@ const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 if(btn && menu){
-btn.onclick = function(){
+btn.onclick=function(){
 menu.classList.toggle("show");
 };
 }
 
 });
-
 </script>
+
 
 <main>
 <h1>Operadores Licenciados em Portugal</h1>
