@@ -127,7 +127,7 @@ Operadores sem licença em Portugal.
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, query, where, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -273,8 +273,14 @@ soma+=d.rating;
 
 html+=`
 <div style="border-bottom:1px solid #eee;margin-bottom:10px;padding-bottom:5px;">
+
 <strong>${d.user}</strong> - ⭐ ${d.rating}/5
+
 <p>${d.text}</p>
+
+<button onclick="likeComment('${doc.id}')">👍 ${d.likes || 0}</button>
+<button onclick="dislikeComment('${doc.id}')">👎 ${d.dislikes || 0}</button>
+
 </div>
 `;
 
