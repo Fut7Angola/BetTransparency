@@ -16,82 +16,114 @@ color:#222;
 }
 
 main{
-padding:80px 20px;
+padding:90px 20px;
 max-width:1000px;
 margin:auto;
-background:white;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 h1{
 text-align:center;
 color:#0b132b;
-}
-
-.warning{
-background:#fff3cd;
-color:#856404;
-padding:15px;
-border-radius:8px;
-margin-bottom:30px;
-}
-
-.controls{
-margin-bottom:25px;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.controls input{
-padding:10px;
-border-radius:6px;
-border:1px solid #ccc;
-min-width:220px;
-}
-
-.controls button{
-padding:10px;
-border:none;
-background:#1c7ed6;
-color:white;
-border-radius:6px;
-cursor:pointer;
+margin-bottom:20px;
 }
 
 .card{
-border:1px solid #ddd;
+background:white;
+border-radius:12px;
 padding:20px;
 margin-bottom:20px;
-border-radius:10px;
-background:#f9fafd;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-2px);
 }
 
 .badge{
 background:#ff4d4f;
 color:white;
 padding:5px 10px;
-border-radius:6px;
+border-radius:20px;
 font-size:12px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+h2{
+margin:5px 0;
+}
+
+a{
+color:#1c7ed6;
+text-decoration:none;
+font-weight:bold;
 }
 
 .comments{
 margin-top:15px;
-border-top:1px solid #ddd;
 padding-top:10px;
+border-top:1px solid #eee;
 }
 
 textarea{
 width:100%;
-padding:8px;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
 margin-top:10px;
+resize:none;
 }
 
-button{
+input, select{
+padding:8px;
+border-radius:8px;
+border:1px solid #ddd;
 margin-top:5px;
 }
 
+button{
+background:#1c7ed6;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+margin-top:8px;
+}
+
+button:hover{
+background:#1864ab;
+}
+
+.comment-box{
+background:#f1f3f5;
+padding:10px;
+border-radius:8px;
+margin-top:10px;
+}
+
+.comment-user{
+font-weight:bold;
+color:#0b132b;
+}
+
+.rating{
+color:#f59f00;
+font-weight:bold;
+}
+
+.actions button{
+background:#e9ecef;
+color:#333;
+margin-right:5px;
+}
+
+.score{
+margin-top:10px;
+font-weight:bold;
+color:#0b132b;
+}
 </style>
 
 </head>
@@ -173,6 +205,8 @@ div.innerHTML=`
 
 <h2>${item.nome}</h2>
 
+<div class="score" id="score-${item.nome}"></div>
+
 <p>${item.motivo}</p>
 
 <a href="${item.website}" target="_blank">Abrir site</a>
@@ -182,11 +216,11 @@ div.innerHTML=`
 <h3>⭐ Avaliação</h3>
 
 <select id="rating-${item.nome}">
-<option value="5">⭐⭐⭐⭐⭐</option>
-<option value="4">⭐⭐⭐⭐</option>
-<option value="3">⭐⭐⭐</option>
-<option value="2">⭐⭐</option>
-<option value="1">⭐</option>
+<option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+<option value="4">⭐⭐⭐⭐ Bom</option>
+<option value="3">⭐⭐⭐ Médio</option>
+<option value="2">⭐⭐ Fraco</option>
+<option value="1">⭐ Muito Mau</option>
 </select>
 
 <input id="user-${item.nome}" placeholder="Nickname ou Anónimo">
@@ -314,14 +348,18 @@ count++;
 soma+=d.rating;
 
 html+=`
-<div style="border-bottom:1px solid #eee;margin-bottom:10px;padding-bottom:5px;">
+<div class="comment-box">
 
-<strong>${d.user}</strong> - ⭐ ${d.rating}/5
+<div class="comment-user">${d.user}</div>
+
+<div class="rating">⭐ ${d.rating}/5</div>
 
 <p>${d.text}</p>
 
+<div class="actions">
 <button onclick="likeComment('${doc.id}')">👍 ${d.likes || 0}</button>
 <button onclick="dislikeComment('${doc.id}')">👎 ${d.dislikes || 0}</button>
+</div>
 
 </div>
 `;
