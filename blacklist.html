@@ -344,5 +344,45 @@ document.getElementById("footer").innerHTML = data;
 });
 </script>
 
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain: "bettransparency.firebaseapp.com",
+projectId: "bettransparency",
+storageBucket: "bettransparency.firebasestorage.app",
+messagingSenderId: "493636447089",
+appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+const auth = getAuth();
+
+signInAnonymously(auth);
+
+window.testFirebase = async function(){
+
+await addDoc(collection(db,"test"),{
+mensagem:"Firebase está a funcionar",
+data:Date.now()
+});
+
+alert("Firebase ligado com sucesso!");
+
+}
+
+</script>
+
+<button onclick="testFirebase()" style="position:fixed;bottom:20px;right:20px;padding:10px 15px;background:#22c55e;color:white;border:none;border-radius:6px;cursor:pointer;">
+Testar Firebase
+</button>  
 </body>
 </html>
