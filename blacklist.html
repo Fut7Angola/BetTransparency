@@ -287,6 +287,17 @@ container.appendChild(card);
 
 });
 
+<div class="comments">
+
+<h3>💬 Comentários</h3>
+
+<textarea id="comment-${item.nome}" placeholder="Partilha a tua experiência"></textarea>
+
+<button onclick="sendComment('${item.nome}')">Enviar</button>
+
+<div id="comments-${item.nome}"></div>
+
+</div>  
 }
 
 
@@ -329,6 +340,24 @@ renderList(sorted);
 
 }
 
+  async function sendComment(site){
+
+const text = document.getElementById("comment-"+site).value;
+
+if(!text){
+alert("Escreve um comentário");
+return;
+}
+
+await addDoc(collection(db,"comments"),{
+site:site,
+text:text,
+date:Date.now()
+});
+
+alert("Comentário enviado");
+
+}  
 </script>
 
 
