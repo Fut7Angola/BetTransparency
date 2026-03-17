@@ -16,9 +16,9 @@ color:#222;
 }
 
 main{
-padding:50px 20px;
+padding:80px 20px;
 max-width:1000px;
-margin:30px auto;
+margin:auto;
 background:white;
 border-radius:12px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
@@ -52,84 +52,44 @@ min-width:220px;
 }
 
 .controls button{
-padding:10px 14px;
+padding:10px;
 border:none;
 background:#1c7ed6;
 color:white;
 border-radius:6px;
 cursor:pointer;
-font-weight:bold;
-}
-
-.controls button:hover{
-background:#1864ab;
 }
 
 .card{
-border:1px solid #dce1eb;
+border:1px solid #ddd;
 padding:20px;
 margin-bottom:20px;
 border-radius:10px;
 background:#f9fafd;
 }
 
-.card h2{
-margin-top:0;
-color:#b00020;
-}
-
 .badge{
-display:inline-block;
+background:#ff4d4f;
+color:white;
 padding:5px 10px;
 border-radius:6px;
 font-size:12px;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.risk-high{
-background:#ff4d4f;
-color:white;
-}
-
-.btn{
-display:inline-block;
-padding:8px 15px;
-background:#1c7ed6;
-color:white;
-text-decoration:none;
-border-radius:6px;
-margin-right:10px;
-font-size:14px;
-}
-
-.counter{
-margin-bottom:20px;
-font-weight:bold;
-color:#0b132b;
 }
 
 .comments{
-margin-top:20px;
+margin-top:15px;
 border-top:1px solid #ddd;
-padding-top:15px;
+padding-top:10px;
 }
 
-.comments textarea{
+textarea{
 width:100%;
 padding:8px;
-margin-bottom:10px;
-border-radius:6px;
-border:1px solid #ccc;
+margin-top:10px;
 }
 
-.comments button{
-padding:8px 14px;
-background:#22c55e;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
+button{
+margin-top:5px;
 }
 
 </style>
@@ -142,177 +102,107 @@ cursor:pointer;
 
 <script>
 fetch("header.html")
-.then(res => res.text())
-.then(data => {
-
-document.getElementById("header").innerHTML = data;
-
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-if(btn && menu){
-btn.onclick=function(){
-menu.classList.toggle("show");
-};
-}
-
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
 });
 </script>
 
-
 <main>
 
-<h1>🚨 Lista Negra de Operadores Ilegais</h1>
+<h1>🚨 Lista Negra</h1>
 
 <div class="warning">
-Estes operadores não possuem licença válida para operar legalmente em Portugal.
-Recomendamos evitar qualquer registo ou depósito nestas plataformas.
+Operadores sem licença em Portugal.
 </div>
 
 <div class="counter" id="site-counter">A carregar...</div>
 
-<div class="controls">
-
-<input
-type="text"
-id="searchInput"
-placeholder="🔎 Pesquisar site suspeito..."
->
-
-<button onclick="sortAZ()">A-Z</button>
-<button onclick="sortZA()">Z-A</button>
-<button onclick="sortDate()">Mais recentes</button>
-
-</div>
+<input id="searchInput" placeholder="Pesquisar...">
 
 <div id="blacklist-container"></div>
 
 </main>
 
-
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
 authDomain: "bettransparency.firebaseapp.com",
 projectId: "bettransparency",
-storageBucket: "bettransparency.firebasestorage.app",
-messagingSenderId: "493636447089",
 appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth = getAuth();
+signInAnonymously(getAuth());
 
-signInAnonymously(auth);
+let blacklist=[];
 
-let blacklist = [];
+async function carregar(){
 
+const res = await fetch("/BetTransparency/data/blacklist.json");
+blacklist = await res.json();
 
-document.addEventListener("DOMContentLoaded", function(){
-
-carregarBlacklist();
-
-document.getElementById("searchInput").addEventListener("keyup",function(){
-
-let value = this.value.toLowerCase();
-
-let filtered = blacklist.filter(site =>
-site.nome.toLowerCase().includes(value)
-);
-
-renderList(filtered);
-
-});
-
-});
-
-
-async function carregarBlacklist(){
-
-try{
-
-const response = await fetch("/BetTransparency/data/blacklist.json");
-
-blacklist = await response.json();
-
-sortAZ();
-
-}catch(error){
-
-console.error(error);
-
-document.getElementById("blacklist-container").innerHTML =
-"<p>Erro ao carregar lista.</p>";
+render(blacklist);
 
 }
 
-}
+carregar();
 
+function render(lista){
 
-function renderList(list){
-
-const container = document.getElementById("blacklist-container");
-
-container.innerHTML = "";
+const container=document.getElementById("blacklist-container");
+container.innerHTML="";
 
 document.getElementById("site-counter").innerText =
-"Sites ilegais identificados: " + list.length;
+"Total: "+lista.length;
 
-list.forEach(item => {
+lista.forEach(item=>{
 
-const card = document.createElement("div");
+const div=document.createElement("div");
 
-card.className="card";
+div.className="card";
 
-card.innerHTML=`
-
-<div class="badge risk-high">⚠️ Alto risco</div>
+div.innerHTML=`
+<div class="badge">Alto risco</div>
 
 <h2>${item.nome}</h2>
 
-<p><strong>🌍 País:</strong> ${item.pais || "Desconhecido"}</p>
+<p>${item.motivo}</p>
 
-<p><strong>Motivo:</strong> ${item.motivo}</p>
-
-<p><strong>Data:</strong> ${item.data}</p>
-
-<a class="btn" href="${item.website}" target="_blank">Website</a>
-
-${item.app ? `<a class="btn" href="${item.app}" target="_blank">App</a>` : ""}
+<a href="${item.website}" target="_blank">Abrir site</a>
 
 <div class="comments">
 
-<h3>💬 Comentários</h3>
+<div id="comments-${item.nome}">A carregar...</div>
 
-<textarea id="comment-${item.nome}" placeholder="Partilha a tua experiência"></textarea>
+<textarea id="input-${item.nome}" placeholder="Escrever comentário"></textarea>
 
-<button onclick="sendComment('${item.nome}')">Enviar</button>
+<button onclick="enviar('${item.nome}')">Enviar</button>
 
 </div>
-
 `;
 
-container.appendChild(card);
+container.appendChild(div);
+
+carregarComentarios(item.nome);
 
 });
 
 }
 
+/* COMENTÁRIOS */
 
-window.sendComment = async function(site){
+window.enviar = async function(site){
 
-const text = document.getElementById("comment-"+site).value;
+const text=document.getElementById("input-"+site).value;
 
-if(!text){
-alert("Escreve um comentário");
-return;
-}
+if(!text)return alert("Escreve algo");
 
 await addDoc(collection(db,"comments"),{
 site:site,
@@ -320,53 +210,43 @@ text:text,
 date:Date.now()
 });
 
-alert("Comentário enviado");
+document.getElementById("input-"+site).value="";
+
+carregarComentarios(site);
 
 }
 
+async function carregarComentarios(site){
 
-window.sortAZ = function(){
+const q=query(collection(db,"comments"),where("site","==",site));
 
-let sorted=[...blacklist].sort((a,b)=>a.nome.localeCompare(b.nome));
+const res=await getDocs(q);
 
-renderList(sorted);
+let html="";
+let count=0;
+
+res.forEach(doc=>{
+count++;
+html+=`<p>💬 ${doc.data().text}</p>`;
+});
+
+document.getElementById("comments-"+site).innerHTML =
+html || "Sem comentários";
 
 }
 
-window.sortZA = function(){
+/* PESQUISA */
 
-let sorted=[...blacklist].sort((a,b)=>b.nome.localeCompare(a.nome));
+document.getElementById("searchInput").addEventListener("keyup",function(){
 
-renderList(sorted);
+let v=this.value.toLowerCase();
 
-}
+let f=blacklist.filter(x=>x.nome.toLowerCase().includes(v));
 
-window.sortDate = function(){
-
-let sorted=[...blacklist].sort((a,b)=>{
-
-let da=a.data.split("-").reverse().join("");
-let db=b.data.split("-").reverse().join("");
-
-return db-da;
+render(f);
 
 });
 
-renderList(sorted);
-
-}
-
-</script>
-
-
-<div id="footer"></div>
-
-<script>
-fetch("footer.html")
-.then(r=>r.text())
-.then(d=>{
-document.getElementById("footer").innerHTML=d;
-});
 </script>
 
 </body>
