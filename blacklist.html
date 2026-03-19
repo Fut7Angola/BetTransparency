@@ -308,21 +308,6 @@ carregarComentarios(site);
 
 }
 
-window.enviar = async function(site){
-
-const text=document.getElementById("input-"+site).value;
-
-if(!text)return alert("Escreve algo");
-
-await addDoc(collection(db,"comments"),{
-site:site,
-text:text,
-date:Date.now()
-});
-
-carregarComentarios(site);
-
-}
 
 /* 👇 COLA AQUI */
 
