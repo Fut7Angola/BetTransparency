@@ -86,7 +86,7 @@ let lista=[];
 
 /* CARREGAR JSON */
 
-fetch("data/telegram.json")
+fetch("https://bettransparency.com/data/telegram.json")
 .then(res=>{
 if(!res.ok) throw new Error("Erro JSON");
 return res.json();
