@@ -43,6 +43,49 @@ font-weight:bold;
 text-decoration:none;
 }
 
+.comments{
+margin-top:15px;
+padding-top:10px;
+border-top:1px solid #eee;
+}
+
+textarea{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+margin-top:10px;
+resize:none;
+}
+
+input{
+width:100%;
+padding:8px;
+border-radius:8px;
+border:1px solid #ddd;
+margin-top:5px;
+}
+
+button{
+background:#1c7ed6;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1864ab;
+}
+
+.comment-box{
+background:#f1f3f5;
+padding:10px;
+border-radius:8px;
+margin-top:10px;
+}
+
 </style>
 
 </head>
@@ -297,5 +340,151 @@ document.getElementById("footer").innerHTML=d;
 });
 </script>
 
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain: "bettransparency.firebaseapp.com",
+projectId: "bettransparency",
+appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+signInAnonymously(getAuth());
+
+/* 🔥 LISTA (mantém a tua) */
+const lista = [
+  {
+    nome: "Grupo Exemplo",
+    motivo: "Promove casas ilegais",
+    data: "01-03-2026",
+    link: "https://t.me/exemplo"
+  }
+];
+
+render(lista);
+
+/* 🔥 RENDER */
+
+function render(list){
+
+const c=document.getElementById("container");
+c.innerHTML="";
+
+list.forEach(item=>{
+
+const div=document.createElement("div");
+
+div.className="card";
+
+div.innerHTML=`
+
+<div class="badge">⚠️ Suspeito</div>
+
+<h2>${item.nome}</h2>
+
+<p><strong>Motivo:</strong> ${item.motivo}</p>
+<p><strong>Data:</strong> ${item.data}</p>
+
+<a href="${item.link}" target="_blank">Abrir no Telegram</a>
+
+<!-- 🚨 DENUNCIAR -->
+<div style="margin-top:10px;">
+<button onclick="denunciar('${item.nome}')">🚨 Denunciar grupo</button>
+</div>
+
+<!-- 💬 COMENTÁRIOS -->
+<div class="comments">
+
+<h3>💬 Comentários</h3>
+
+<input id="user-${item.nome}" placeholder="Nickname ou Anónimo">
+
+<textarea id="input-${item.nome}" placeholder="Escreve um comentário"></textarea>
+
+<button onclick="comentar('${item.nome}')">Enviar</button>
+
+<div id="comments-${item.nome}">A carregar...</div>
+
+</div>
+`;
+
+c.appendChild(div);
+
+carregarComentarios(item.nome);
+
+});
+
+}
+
+/* 🚨 DENÚNCIA */
+
+window.denunciar = async function(nome){
+
+await addDoc(collection(db,"denuncias_telegram"),{
+grupo:nome,
+data:Date.now()
+});
+
+alert("Denúncia enviada 🚨");
+
+}
+
+/* 💬 COMENTAR */
+
+window.comentar = async function(nome){
+
+const text=document.getElementById("input-"+nome).value;
+const user=document.getElementById("user-"+nome).value || "Anónimo";
+
+if(!text)return alert("Escreve algo");
+
+await addDoc(collection(db,"comentarios_telegram"),{
+grupo:nome,
+user:user,
+text:text,
+data:Date.now()
+});
+
+document.getElementById("input-"+nome).value="";
+
+carregarComentarios(nome);
+
+}
+
+/* 📥 CARREGAR COMENTÁRIOS */
+
+async function carregarComentarios(nome){
+
+const q=query(collection(db,"comentarios_telegram"),where("grupo","==",nome));
+
+const res=await getDocs(q);
+
+let html="";
+
+res.forEach(doc=>{
+
+const d=doc.data();
+
+html+=`
+<div class="comment-box">
+<strong>${d.user}</strong>
+<p>${d.text}</p>
+</div>
+`;
+
+});
+
+document.getElementById("comments-"+nome).innerHTML =
+html || "Sem comentários";
+
+}
+
+</script>  
 </body>
 </html>
