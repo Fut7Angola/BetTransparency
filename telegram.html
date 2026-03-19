@@ -53,7 +53,24 @@ text-decoration:none;
 
 <div id="header"></div>
 
+<!-- CONTEÚDO -->
+
+<main>
+
+<h1>🚨 Grupos de Telegram suspeitos</h1>
+
+<div id="container">A carregar...</div>
+
+</main>
+
+<!-- SCRIPTS -->
+
 <script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+/* HEADER */
+
 fetch("header.html")
 .then(res=>res.text())
 .then(data=>{
@@ -66,25 +83,8 @@ if(btn && menu){
 btn.onclick=()=>menu.classList.toggle("show");
 }
 });
-</script>
 
-<!-- CONTEÚDO -->
-
-<main>
-
-<h1>🚨 Grupos de Telegram suspeitos</h1>
-
-<div id="container">A carregar...</div>
-
-</main>
-
-<!-- SCRIPT PRINCIPAL -->
-
-<script>
-
-let lista=[];
-
-/* CARREGAR JSON */
+/* JSON */
 
 fetch("https://bettransparency.com/data/telegram.json")
 .then(res=>{
@@ -92,12 +92,13 @@ if(!res.ok) throw new Error("Erro JSON");
 return res.json();
 })
 .then(data=>{
-lista=data;
-render(lista);
+render(data);
 })
 .catch(()=>{
 document.getElementById("container").innerHTML =
 "<p>Erro ao carregar grupos.</p>";
+});
+
 });
 
 /* RENDER */
