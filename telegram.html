@@ -84,20 +84,22 @@ btn.onclick=()=>menu.classList.toggle("show");
 }
 });
 
-/* JSON */
+/* 👇 LISTA MANUAL (COLA AQUI O JSON) */
 
-fetch("https://bettransparency.com/data/telegram.json")
-.then(res=>{
-if(!res.ok) throw new Error("Erro JSON");
-return res.json();
-})
-.then(data=>{
-render(data);
-})
-.catch(()=>{
-document.getElementById("container").innerHTML =
-"<p>Erro ao carregar grupos.</p>";
-});
+const lista = [
+  {
+    nome: "Grupo Exemplo",
+    motivo: "Promove casas ilegais",
+    data: "01-03-2026",
+    link: "https://t.me/exemplo"
+  }
+
+  // 👇 adicionas mais aqui
+];
+
+/* RENDER */
+
+render(lista);
 
 });
 
@@ -133,7 +135,6 @@ c.appendChild(div);
 }
 
 </script>
-
 <!-- FOOTER -->
 
 <div id="footer"></div>
