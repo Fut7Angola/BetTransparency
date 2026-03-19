@@ -40,6 +40,7 @@ font-size:12px;
 a{
 color:#1c7ed6;
 font-weight:bold;
+text-decoration:none;
 }
 
 </style>
@@ -48,54 +49,58 @@ font-weight:bold;
 
 <body>
 
+<!-- HEADER -->
+
 <div id="header"></div>
 
 <script>
-fetch("./data/telegram.json")
-.then(res => {
-if(!res.ok) throw new Error("Erro a carregar JSON");
-return res.json();
-})
-.then(data => {
-lista = data;
-render(lista);
-})
-.catch(err => {
-console.error(err);
-document.getElementById("container").innerHTML =
-"<p>Erro ao carregar grupos.</p>";
-});
+fetch("header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
 
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
+const btn=document.getElementById("menuBtn");
+const menu=document.getElementById("menu");
 
 if(btn && menu){
-btn.onclick=function(){
-menu.classList.toggle("show");
-};
+btn.onclick=()=>menu.classList.toggle("show");
 }
-
 });
 </script>
+
+<!-- CONTEÚDO -->
 
 <main>
 
 <h1>🚨 Grupos de Telegram suspeitos</h1>
 
-<div id="container"></div>
+<div id="container">A carregar...</div>
 
 </main>
+
+<!-- SCRIPT PRINCIPAL -->
 
 <script>
 
 let lista=[];
 
-fetch("./data/telegram.json")
-.then(r=>r.json())
+/* CARREGAR JSON */
+
+fetch("/data/telegram.json")
+.then(res=>{
+if(!res.ok) throw new Error("Erro JSON");
+return res.json();
+})
 .then(data=>{
 lista=data;
 render(lista);
+})
+.catch(()=>{
+document.getElementById("container").innerHTML =
+"<p>Erro ao carregar grupos.</p>";
 });
+
+/* RENDER */
 
 function render(list){
 
@@ -126,6 +131,18 @@ c.appendChild(div);
 
 }
 
+</script>
+
+<!-- FOOTER -->
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
 </script>
 
 </body>
