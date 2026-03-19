@@ -133,10 +133,20 @@ color:#0b132b;
 <div id="header"></div>
 
 <script>
-fetch("header.html")
-.then(r=>r.text())
-.then(d=>{
-document.getElementById("header").innerHTML=d;
+fetch("./data/blacklist.json")
+.then(res => {
+if(!res.ok) throw new Error("Erro a carregar JSON");
+return res.json();
+})
+.then(data => {
+blacklist = data;
+sortAZ();
+})
+.catch(err => {
+console.error(err);
+document.getElementById("blacklist-container").innerHTML =
+"<p>Erro ao carregar dados.</p>";
+});
 
 /* 🔥 ATIVAR MENU */
 
