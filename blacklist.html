@@ -210,7 +210,7 @@ let blacklist=[];
 
 async function carregar(){
 
-const res = await fetch("/BetTransparency/data/blacklist.json");
+const res = await fetch("/data/blacklist.json");
 blacklist = await res.json();
 
 render(blacklist);
