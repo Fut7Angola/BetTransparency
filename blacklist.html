@@ -33,11 +33,6 @@ border-radius:12px;
 padding:20px;
 margin-bottom:20px;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
-transition:0.2s;
-}
-
-.card:hover{
-transform:translateY(-2px);
 }
 
 .badge{
@@ -48,10 +43,6 @@ border-radius:20px;
 font-size:12px;
 display:inline-block;
 margin-bottom:10px;
-}
-
-h2{
-margin:5px 0;
 }
 
 a{
@@ -66,20 +57,12 @@ padding-top:10px;
 border-top:1px solid #eee;
 }
 
-textarea{
+textarea, input, select{
 width:100%;
 padding:10px;
 border-radius:8px;
 border:1px solid #ddd;
-margin-top:10px;
-resize:none;
-}
-
-input, select{
-padding:8px;
-border-radius:8px;
-border:1px solid #ddd;
-margin-top:5px;
+margin-top:8px;
 }
 
 button{
@@ -92,10 +75,6 @@ cursor:pointer;
 margin-top:8px;
 }
 
-button:hover{
-background:#1864ab;
-}
-
 .comment-box{
 background:#f1f3f5;
 padding:10px;
@@ -103,27 +82,11 @@ border-radius:8px;
 margin-top:10px;
 }
 
-.comment-user{
-font-weight:bold;
-color:#0b132b;
-}
-
-.rating{
-color:#f59f00;
-font-weight:bold;
-}
-
-.actions button{
-background:#e9ecef;
-color:#333;
-margin-right:5px;
-}
-
 .score{
 margin-top:10px;
 font-weight:bold;
-color:#0b132b;
 }
+
 </style>
 
 </head>
@@ -133,55 +96,25 @@ color:#0b132b;
 <div id="header"></div>
 
 <script>
-fetch("./data/blacklist.json")
-.then(res => {
-if(!res.ok) throw new Error("Erro a carregar JSON");
-return res.json();
-})
-.then(data => {
-blacklist = data;
-sortAZ();
-})
-.catch(err => {
-console.error(err);
-document.getElementById("blacklist-container").innerHTML =
-"<p>Erro ao carregar dados.</p>";
-});
+fetch("header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
 
-/* 🔥 ATIVAR MENU */
-
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
+const btn=document.getElementById("menuBtn");
+const menu=document.getElementById("menu");
 
 if(btn && menu){
-
-btn.addEventListener("click", function(){
-menu.classList.toggle("show");
-});
-
-/* FECHAR MENU AO CLICAR NUM LINK (MOBILE) */
-
-menu.querySelectorAll("a").forEach(link=>{
-link.addEventListener("click", ()=>{
-menu.classList.remove("show");
-});
-});
-
+btn.onclick=()=>menu.classList.toggle("show");
 }
-
 });
-  
 </script>
 
 <main>
 
 <h1>🚨 Lista Negra</h1>
 
-<div class="warning">
-Operadores sem licença em Portugal.
-</div>
-
-<div class="counter" id="site-counter">A carregar...</div>
+<div id="site-counter">A carregar...</div>
 
 <input id="searchInput" placeholder="Pesquisar...">
 
@@ -195,18 +128,19 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, collection, addDoc, getDocs, query, where, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const firebaseConfig = {
-apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain: "bettransparency.firebaseapp.com",
-projectId: "bettransparency",
-appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
-};
+const app = initializeApp({
+apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain:"bettransparency.firebaseapp.com",
+projectId:"bettransparency",
+appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
+});
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 signInAnonymously(getAuth());
 
 let blacklist=[];
+
+/* CARREGAR LISTA */
 
 async function carregar(){
 
@@ -218,6 +152,8 @@ render(blacklist);
 }
 
 carregar();
+
+/* RENDER */
 
 function render(lista){
 
@@ -249,25 +185,18 @@ div.innerHTML=`
 <h3>⭐ Avaliação</h3>
 
 <select id="rating-${item.nome}">
-<option value="5">⭐⭐⭐⭐⭐ Excelente</option>
-<option value="4">⭐⭐⭐⭐ Bom</option>
-<option value="3">⭐⭐⭐ Médio</option>
-<option value="2">⭐⭐ Fraco</option>
-<option value="1">⭐ Muito Mau</option>
+<option value="5">⭐⭐⭐⭐⭐</option>
+<option value="4">⭐⭐⭐⭐</option>
+<option value="3">⭐⭐⭐</option>
+<option value="2">⭐⭐</option>
+<option value="1">⭐</option>
 </select>
 
 <input id="user-${item.nome}" placeholder="Nickname ou Anónimo">
 
-<textarea id="input-${item.nome}" placeholder="Partilha a tua experiência"></textarea>
-
-<div style="margin-top:5px;">
-<button onclick="like('${item.nome}')">👍</button>
-<button onclick="dislike('${item.nome}')">👎</button>
-</div>
+<textarea id="input-${item.nome}" placeholder="Comentário"></textarea>
 
 <button onclick="enviar('${item.nome}')">Enviar</button>
-
-<div id="score-${item.nome}" style="margin-top:10px;font-weight:bold;"></div>
 
 <div id="comments-${item.nome}">A carregar...</div>
 
@@ -282,7 +211,7 @@ carregarComentarios(item.nome);
 
 }
 
-/* COMENTÁRIOS */
+/* ENVIAR COMENTÁRIO */
 
 window.enviar = async function(site){
 
@@ -293,10 +222,10 @@ const user=document.getElementById("user-"+site).value || "Anónimo";
 if(!text)return alert("Escreve algo");
 
 await addDoc(collection(db,"comments"),{
-site:site,
-text:text,
+site,
+text,
 rating:Number(rating),
-user:user,
+user,
 likes:0,
 dislikes:0,
 date:Date.now()
@@ -308,76 +237,32 @@ carregarComentarios(site);
 
 }
 
-
-/* 👇 COLA AQUI */
-
-window.likeComment = async function(id){
-
-const ref = doc(db,"comments",id);
-
-await updateDoc(ref,{
-likes: increment(1)
-});
-
-location.reload();
-
-}
-
-window.dislikeComment = async function(id){
-
-const ref = doc(db,"comments",id);
-
-await updateDoc(ref,{
-dislikes: increment(1)
-});
-
-location.reload();
-
-}
-
-window.like = async function(site){
-
-alert("Like registado 👍 (vai aparecer nos próximos passos)");
-
-}
-
-window.dislike = async function(site){
-
-alert("Dislike registado 👎 (vai aparecer nos próximos passos)");
-
-}
+/* CARREGAR COMENTÁRIOS */
 
 async function carregarComentarios(site){
 
 const q=query(collection(db,"comments"),where("site","==",site));
-
 const res=await getDocs(q);
 
 let html="";
-let total=0;
 let soma=0;
 let count=0;
 
-res.forEach(doc=>{
+res.forEach(docu=>{
 
-const d=doc.data();
+const d=docu.data();
 
 count++;
 soma+=d.rating;
 
 html+=`
 <div class="comment-box">
-
-<div class="comment-user">${d.user}</div>
-
-<div class="rating">⭐ ${d.rating}/5</div>
-
+<strong>${d.user}</strong><br>
+⭐ ${d.rating}/5
 <p>${d.text}</p>
 
-<div class="actions">
-<button onclick="likeComment('${doc.id}')">👍 ${d.likes || 0}</button>
-<button onclick="dislikeComment('${doc.id}')">👎 ${d.dislikes || 0}</button>
-</div>
+<button onclick="likeComment('${docu.id}')">👍 ${d.likes||0}</button>
+<button onclick="dislikeComment('${docu.id}')">👎 ${d.dislikes||0}</button>
 
 </div>
 `;
@@ -387,10 +272,32 @@ html+=`
 let media = count ? (soma/count).toFixed(1) : 0;
 
 document.getElementById("score-"+site).innerText =
-"⭐ Rating: "+media+" ("+count+" avaliações)";
+"⭐ "+media+" ("+count+")";
 
 document.getElementById("comments-"+site).innerHTML =
 html || "Sem comentários";
+
+}
+
+/* LIKE / DISLIKE */
+
+window.likeComment = async function(id){
+
+await updateDoc(doc(db,"comments",id),{
+likes: increment(1)
+});
+
+location.reload();
+
+}
+
+window.dislikeComment = async function(id){
+
+await updateDoc(doc(db,"comments",id),{
+dislikes: increment(1)
+});
+
+location.reload();
 
 }
 
@@ -406,6 +313,16 @@ render(f);
 
 });
 
+</script>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
 </script>
 
 </body>
