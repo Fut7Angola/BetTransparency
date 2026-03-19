@@ -51,10 +51,20 @@ font-weight:bold;
 <div id="header"></div>
 
 <script>
-fetch("header.html")
-.then(r=>r.text())
-.then(d=>{
-document.getElementById("header").innerHTML=d;
+fetch("./data/telegram.json")
+.then(res => {
+if(!res.ok) throw new Error("Erro a carregar JSON");
+return res.json();
+})
+.then(data => {
+lista = data;
+render(lista);
+})
+.catch(err => {
+console.error(err);
+document.getElementById("container").innerHTML =
+"<p>Erro ao carregar grupos.</p>";
+});
 
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
