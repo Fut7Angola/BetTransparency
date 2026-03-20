@@ -342,25 +342,31 @@ container.appendChild(card);
 
 /* STATS */
 
-Promise.all([
-fetch("./data/blacklist.json").then(r=>r.json()),
-fetch("./data/legal.json").then(r=>r.json()),
+/* ILEGAIS */
+fetch("./data/blacklist.json")
+.then(r=>r.json())
+.then(data=>{
+document.getElementById("total-ilegais").innerText = data.length;
+})
+.catch(()=>console.log("Erro blacklist"));
+
+/* LEGAIS */
+fetch("./data/legal.json")
+.then(r=>r.json())
+.then(data=>{
+document.getElementById("total-legais").innerText = data.length;
+})
+.catch(()=>console.log("Erro legais"));
+
+/* PESQUISAS */
 fetch("https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec")
 .then(r=>r.json())
-])
-
-.then(([b,l,p])=>{
-
-document.getElementById("total-ilegais").innerText = b.length;
-document.getElementById("total-legais").innerText = l.length;
-
-/* 👇 ESTA LINHA É A IMPORTANTE */
-document.getElementById("total-pesquisas").innerText = p.length;
-
+.then(data=>{
+document.getElementById("total-pesquisas").innerText = data.length;
 })
-
 .catch(()=>{
-console.log("Erro ao carregar stats");
+console.log("Erro pesquisas");
+document.getElementById("total-pesquisas").innerText = "0";
 });
 
 </script>
