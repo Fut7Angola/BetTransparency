@@ -227,6 +227,20 @@ document.getElementById("footer").innerHTML=data;
 
 <script>
 
+/* ENTER PARA VERIFICAR */
+document.getElementById("siteInput").addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+e.preventDefault();
+verificarSite();
+}
+
+});
+
+</script>
+
+<script>
+
 /* VERIFICADOR */
 
 function verificarSite(){
