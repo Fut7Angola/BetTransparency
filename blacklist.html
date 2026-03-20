@@ -27,72 +27,14 @@ color:#0b132b;
 margin-bottom:20px;
 }
 
-.card{
-background:white;
-border-radius:12px;
-padding:20px;
-margin-bottom:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
-
-.badge{
-background:#ff4d4f;
-color:white;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-display:inline-block;
-margin-bottom:10px;
-}
-
-a{
-color:#1c7ed6;
-text-decoration:none;
-font-weight:bold;
-}
-
-.comments{
-margin-top:15px;
-padding-top:10px;
-border-top:1px solid #eee;
-}
-
-textarea, input, select{
-width:100%;
-padding:10px;
-border-radius:8px;
-border:1px solid #ddd;
-margin-top:8px;
-}
-
-button{
-background:#1c7ed6;
-color:white;
-border:none;
-padding:8px 12px;
-border-radius:8px;
-cursor:pointer;
-margin-top:8px;
-}
-
-.comment-box{
-background:#f1f3f5;
-padding:10px;
-border-radius:8px;
-margin-top:10px;
-}
-
-.score{
-margin-top:10px;
-font-weight:bold;
-}
-  
+/* GRID BONITO */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
+/* CARDS */
 .card{
 background:white;
 padding:15px;
@@ -111,7 +53,46 @@ transform:translateY(-3px);
 margin:0;
 font-size:16px;
 color:#b00020;
-}  
+}
+
+input{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+margin-top:10px;
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+padding:25px;
+border-radius:12px;
+max-width:500px;
+width:90%;
+}
+
+button{
+background:#1c7ed6;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
 
 </style>
 
@@ -119,6 +100,7 @@ color:#b00020;
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
@@ -134,23 +116,6 @@ if(btn && menu){
 btn.onclick=()=>menu.classList.toggle("show");
 }
 });
-
-function abrirModal(item){
-
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("modal-nome").innerText = item.nome;
-document.getElementById("modal-motivo").innerText = item.motivo;
-
-const link = document.getElementById("modal-link");
-link.href = item.website;
-link.innerText = item.website;
-
-}
-
-function fecharModal(){
-document.getElementById("modal").style.display="none";
-}
 </script>
 
 <main>
@@ -165,21 +130,25 @@ document.getElementById("modal").style.display="none";
 
 </main>
 
-<script type="module">
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<h2 id="modal-nome"></h2>
 
-const app = initializeApp({
-apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain:"bettransparency.firebaseapp.com",
-projectId:"bettransparency",
-appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
-});
+<p id="modal-motivo"></p>
 
-const db = getFirestore(app);
-signInAnonymously(getAuth());
+<a id="modal-link" target="_blank"></a>
+
+<br>
+
+<button onclick="fecharModal()">Fechar</button>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script>
 
 let blacklist=[];
 
@@ -187,10 +156,14 @@ let blacklist=[];
 
 async function carregar(){
 
+try{
 const res = await fetch("/data/blacklist.json");
 blacklist = await res.json();
 
 render(blacklist);
+}catch(e){
+document.getElementById("blacklist-container").innerHTML = "Erro ao carregar dados";
+}
 
 }
 
@@ -198,10 +171,6 @@ carregar();
 
 /* RENDER */
 
-div.onclick = function(){
-abrirModal(item);
-};
-  
 function render(lista){
 
 const container=document.getElementById("blacklist-container");
@@ -220,136 +189,34 @@ div.innerHTML=`
 <h3>${item.nome}</h3>
 <p style="font-size:12px;color:#666;">Clique para ver detalhes</p>
 `;
-  
-<div class="badge">Alto risco</div>
 
-<h2>${item.nome}</h2>
-
-<div class="score" id="score-${item.nome}"></div>
-
-<p>${item.motivo}</p>
-
-<a href="${item.website}" target="_blank">Abrir site</a>
-
-<div class="comments">
-
-<h3>⭐ Avaliação</h3>
-
-<select id="rating-${item.nome}">
-<option value="5">⭐⭐⭐⭐⭐</option>
-<option value="4">⭐⭐⭐⭐</option>
-<option value="3">⭐⭐⭐</option>
-<option value="2">⭐⭐</option>
-<option value="1">⭐</option>
-</select>
-
-<input id="user-${item.nome}" placeholder="Nickname ou Anónimo">
-
-<textarea id="input-${item.nome}" placeholder="Comentário"></textarea>
-
-<button onclick="enviar('${item.nome}')">Enviar</button>
-
-<div id="comments-${item.nome}">A carregar...</div>
-
-</div>
-`;
+div.onclick=function(){
+abrirModal(item);
+};
 
 container.appendChild(div);
 
-carregarComentarios(item.nome);
-
 });
 
 }
 
-/* ENVIAR COMENTÁRIO */
+/* MODAL */
 
-window.enviar = async function(site){
+function abrirModal(item){
 
-const text=document.getElementById("input-"+site).value;
-const rating=document.getElementById("rating-"+site).value;
-const user=document.getElementById("user-"+site).value || "Anónimo";
+document.getElementById("modal").style.display="flex";
 
-if(!text)return alert("Escreve algo");
+document.getElementById("modal-nome").innerText = item.nome;
+document.getElementById("modal-motivo").innerText = item.motivo;
 
-await addDoc(collection(db,"comments"),{
-site,
-text,
-rating:Number(rating),
-user,
-likes:0,
-dislikes:0,
-date:Date.now()
-});
-
-document.getElementById("input-"+site).value="";
-
-carregarComentarios(site);
+const link=document.getElementById("modal-link");
+link.href=item.website;
+link.innerText=item.website;
 
 }
 
-/* CARREGAR COMENTÁRIOS */
-
-async function carregarComentarios(site){
-
-const q=query(collection(db,"comments"),where("site","==",site));
-const res=await getDocs(q);
-
-let html="";
-let soma=0;
-let count=0;
-
-res.forEach(docu=>{
-
-const d=docu.data();
-
-count++;
-soma+=d.rating;
-
-html+=`
-<div class="comment-box">
-<strong>${d.user}</strong><br>
-⭐ ${d.rating}/5
-<p>${d.text}</p>
-
-<button onclick="likeComment('${docu.id}')">👍 ${d.likes||0}</button>
-<button onclick="dislikeComment('${docu.id}')">👎 ${d.dislikes||0}</button>
-
-</div>
-`;
-
-});
-
-let media = count ? (soma/count).toFixed(1) : 0;
-
-document.getElementById("score-"+site).innerText =
-"⭐ "+media+" ("+count+")";
-
-document.getElementById("comments-"+site).innerHTML =
-html || "Sem comentários";
-
-}
-
-/* LIKE / DISLIKE */
-
-window.likeComment = async function(id){
-
-await updateDoc(doc(db,"comments",id),{
-likes: increment(1)
-});
-
-location.reload();
-
-}
-
-window.dislikeComment = async function(id){
-
-await updateDoc(doc(db,"comments",id),{
-dislikes: increment(1)
-});
-
-location.reload();
-
+function fecharModal(){
+document.getElementById("modal").style.display="none";
 }
 
 /* PESQUISA */
@@ -366,6 +233,7 @@ render(f);
 
 </script>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
@@ -376,22 +244,5 @@ document.getElementById("footer").innerHTML=d;
 });
 </script>
 
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
-
-<div style="background:white; padding:25px; border-radius:12px; max-width:500px; width:90%;">
-
-<h2 id="modal-nome"></h2>
-
-<p id="modal-motivo"></p>
-
-<a id="modal-link" target="_blank">Abrir site</a>
-
-<br><br>
-
-<button onclick="fecharModal()">Fechar</button>
-
-</div>
-
-</div>  
 </body>
 </html>
