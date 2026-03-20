@@ -86,6 +86,32 @@ margin-top:10px;
 margin-top:10px;
 font-weight:bold;
 }
+  
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.2s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+.card h3{
+margin:0;
+font-size:16px;
+color:#b00020;
+}  
 
 </style>
 
@@ -108,6 +134,23 @@ if(btn && menu){
 btn.onclick=()=>menu.classList.toggle("show");
 }
 });
+
+function abrirModal(item){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modal-nome").innerText = item.nome;
+document.getElementById("modal-motivo").innerText = item.motivo;
+
+const link = document.getElementById("modal-link");
+link.href = item.website;
+link.innerText = item.website;
+
+}
+
+function fecharModal(){
+document.getElementById("modal").style.display="none";
+}
 </script>
 
 <main>
@@ -118,7 +161,7 @@ btn.onclick=()=>menu.classList.toggle("show");
 
 <input id="searchInput" placeholder="Pesquisar...">
 
-<div id="blacklist-container"></div>
+<div id="blacklist-container" class="grid"></div>
 
 </main>
 
@@ -155,6 +198,10 @@ carregar();
 
 /* RENDER */
 
+div.onclick = function(){
+abrirModal(item);
+};
+  
 function render(lista){
 
 const container=document.getElementById("blacklist-container");
@@ -170,6 +217,10 @@ const div=document.createElement("div");
 div.className="card";
 
 div.innerHTML=`
+<h3>${item.nome}</h3>
+<p style="font-size:12px;color:#666;">Clique para ver detalhes</p>
+`;
+  
 <div class="badge">Alto risco</div>
 
 <h2>${item.nome}</h2>
@@ -325,5 +376,22 @@ document.getElementById("footer").innerHTML=d;
 });
 </script>
 
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+
+<div style="background:white; padding:25px; border-radius:12px; max-width:500px; width:90%;">
+
+<h2 id="modal-nome"></h2>
+
+<p id="modal-motivo"></p>
+
+<a id="modal-link" target="_blank">Abrir site</a>
+
+<br><br>
+
+<button onclick="fecharModal()">Fechar</button>
+
+</div>
+
+</div>  
 </body>
 </html>
