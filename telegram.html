@@ -73,6 +73,7 @@ border:none;
 padding:8px 12px;
 border-radius:8px;
 cursor:pointer;
+margin-top:8px;
 }
 
 button:hover{
@@ -93,10 +94,7 @@ margin-top:10px;
 <body>
 
 <!-- HEADER -->
-
 <div id="header"></div>
-
-<!-- CONTEÚDO -->
 
 <main>
 
@@ -106,14 +104,26 @@ margin-top:10px;
 
 </main>
 
-<!-- SCRIPTS -->
+<!-- 🔥 SCRIPT PRINCIPAL -->
+<script type="module">
 
-<script>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-document.addEventListener("DOMContentLoaded", function(){
+/* FIREBASE */
+const firebaseConfig = {
+apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain: "bettransparency.firebaseapp.com",
+projectId: "bettransparency",
+appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+signInAnonymously(getAuth());
 
 /* HEADER */
-
 fetch("header.html")
 .then(res=>res.text())
 .then(data=>{
@@ -127,249 +137,24 @@ btn.onclick=()=>menu.classList.toggle("show");
 }
 });
 
-/* 👇 LISTA MANUAL (COLA AQUI O JSON) */
-
+/* 🔥 LISTA DOS GRUPOS (A TUA) */
 const lista = [
-  {
-"nome": "Fábio M. Tipster",
-"link": "https://t.me/+czVC2wto03syYmQ8",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
+{
+nome: "Fábio M. Tipster",
+link: "https://t.me/+czVC2wto03syYmQ8",
+motivo: "Promoção de casas ilegais",
+data: "17-03-2026"
 },
 {
-"nome": "Stake 10 Fútbol",
-"link": "https://t.me/+MFlAFi3xutcyYTQ0",
-"motivo": "Redirecionamento para operadores não licenciados",
-"data": "17-03-2026"
-},
-{
-"nome": "DiogoEsteves91",
-"link": "@EstevesTipsSuporteBot",
-"motivo": "Promove operadores não licenciados",
-"data": "17-03-2026"
-},
-{
-"nome": "Tips Advisor",
-"link": "https://t.me/+OoS_aiiSa1ZiM2U0",
-"motivo": "Promove operadores não licenciados",
-"data": "17-03-2026"
-},
-{
-"nome": "O Castelo das Odds",
-"link": "https://t.me/+Ap0KTzJdgx1iMjdk",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},
-{
-"nome": "Giovanni Football",
-"link": "@Giovannifoot1",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Oliver Bets",
-"link": "@whittakeroliver_bot",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Oliver | Insade Bet",
-"link": "@OliverWhitakers",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Pantera Green Bets",
-"link": "https://t.me/+wIkeb0hzWCU5NzRk",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Nuno Morais",
-"link": "@NUNO_M0RAIS",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},   
-{
-"nome": "Stake 10 Fútbol",
-"link": "@Stakes10futbol",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},   
-{
-"nome": "Golden Stake",
-"link": "https://t.me/goldenstakechannel",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},   
-{
-"nome": "Academia dos Greens",
-"link": "https://t.me/+PnItzxnVpedhZGNk",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-}, 
-{
-"nome": "FrTipsExclusive_Bot",
-"link": "@FRTIPSEXCLUSIVE_BOT",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},   
-{
-"nome": "OGB Sports",
-"link": "@ogb_portugal",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Secret Match",
-"link": "https://t.me/+1HPsKY2K0BAyNmNi",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Oliver Whitakers",
-"link": "@olivertesst_bot",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Castelo Das Odds VIP",
-"link": "@CasteloDasOddsVIP",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "OGB Sports",
-"link": "@ogbportugal",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "ApostaGrátis2024",
-"link": "@ApostaGratis24_bot",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Fixed Matches",
-"link": "https://t.me/+UldmVT1zRlFhMDgx",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "Leão",
-"link": "@leaosportsvip",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-},  
-{
-"nome": "King Of NBA",
-"link": "https://t.me/+vDjnQVJp6xg0ODc0",
-"motivo": "Promoção de casas ilegais",
-"data": "17-03-2026"
-}, 
-{
-"nome": "Gabriel Tips",
-"link": "@gb_tipsbot",
-"motivo": "Promoção de casas ilegais",
-"data": "18-03-2026"
-}, 
-{
-"nome": "IronBet Team",
-"link": "telegra.ph/PUBLIC-OFFER-AGREEMENT-02-05",
-"motivo": "Promoção de casas ilegais",
-"data": "18-03-2026"
-},  
-{
-"nome": "Sucecess Football",
-"link": "@vicent_succes",
-"motivo": "Promoção de casas ilegais",
-"data": "18-03-2026"
-} 
-
-  // 👇 adicionas mais aqui
-];
-
-/* RENDER */
-
-render(lista);
-
-});
-
-/* RENDER */
-
-function render(list){
-
-const c=document.getElementById("container");
-
-c.innerHTML="";
-
-list.forEach(item=>{
-
-const div=document.createElement("div");
-
-div.className="card";
-
-div.innerHTML=`
-<div class="badge">⚠️ Suspeito</div>
-
-<h2>${item.nome}</h2>
-
-<p><strong>Motivo:</strong> ${item.motivo}</p>
-<p><strong>Data:</strong> ${item.data}</p>
-
-<a href="${item.link}" target="_blank">Abrir no Telegram</a>
-`;
-
-c.appendChild(div);
-
-});
-
+nome: "Stake 10 Fútbol",
+link: "https://t.me/+MFlAFi3xutcyYTQ0",
+motivo: "Redirecionamento para operadores não licenciados",
+data: "17-03-2026"
 }
-
-</script>
-<!-- FOOTER -->
-
-<div id="footer"></div>
-
-<script>
-fetch("footer.html")
-.then(r=>r.text())
-.then(d=>{
-document.getElementById("footer").innerHTML=d;
-});
-</script>
-
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-const firebaseConfig = {
-apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain: "bettransparency.firebaseapp.com",
-projectId: "bettransparency",
-appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-signInAnonymously(getAuth());
-
-/* 🔥 LISTA (mantém a tua) */
-const lista = [
-  {
-    nome: "Grupo Exemplo",
-    motivo: "Promove casas ilegais",
-    data: "01-03-2026",
-    link: "https://t.me/exemplo"
-  }
 ];
 
+/* RENDER */
 render(lista);
-
-/* 🔥 RENDER */
 
 function render(list){
 
@@ -393,12 +178,10 @@ div.innerHTML=`
 
 <a href="${item.link}" target="_blank">Abrir no Telegram</a>
 
-<!-- 🚨 DENUNCIAR -->
 <div style="margin-top:10px;">
 <button onclick="denunciar('${item.nome}')">🚨 Denunciar grupo</button>
 </div>
 
-<!-- 💬 COMENTÁRIOS -->
 <div class="comments">
 
 <h3>💬 Comentários</h3>
@@ -422,8 +205,7 @@ carregarComentarios(item.nome);
 
 }
 
-/* 🚨 DENÚNCIA */
-
+/* DENUNCIAR */
 window.denunciar = async function(nome){
 
 await addDoc(collection(db,"denuncias_telegram"),{
@@ -435,8 +217,7 @@ alert("Denúncia enviada 🚨");
 
 }
 
-/* 💬 COMENTAR */
-
+/* COMENTAR */
 window.comentar = async function(nome){
 
 const text=document.getElementById("input-"+nome).value;
@@ -457,8 +238,7 @@ carregarComentarios(nome);
 
 }
 
-/* 📥 CARREGAR COMENTÁRIOS */
-
+/* CARREGAR COMENTÁRIOS */
 async function carregarComentarios(nome){
 
 const q=query(collection(db,"comentarios_telegram"),where("grupo","==",nome));
@@ -485,6 +265,18 @@ html || "Sem comentários";
 
 }
 
-</script>  
+</script>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
 </body>
 </html>
