@@ -19,7 +19,7 @@ box-shadow:0 3px 10px rgba(0,0,0,0.15);
 height:40px;
 }
 
-/* DESKTOP MENU */
+/* MENU DESKTOP */
 
 .menu{
 display:flex;
@@ -65,13 +65,14 @@ padding:10px 15px;
 display:flex;
 }
 
-/* BOTÃO HAMBURGER MODERNO */
+/* BOTÃO HAMBURGER */
 
 .menu-btn{
 display:none;
 flex-direction:column;
-cursor:pointer;
 gap:5px;
+cursor:pointer;
+z-index:2000;
 }
 
 .menu-btn span{
@@ -113,21 +114,20 @@ z-index:1400;
 display:block;
 }
 
-/* MOBILE MENU */
+/* MOBILE */
 
 @media(max-width:768px){
 
 .menu-btn{
 display:flex;
 position:fixed;
-top:15px;
-right:15px;
-z-index:2000;
+top:18px;
+right:20px;
 }
 
 .menu{
 flex-direction:column;
-background:white;
+background:#0b132b; /* 🔥 COR ESCURA (ANTES ESTAVA BRANCO) */
 position:fixed;
 top:0;
 right:-100%;
@@ -136,7 +136,7 @@ height:100vh;
 padding:80px 20px;
 transition:0.3s;
 z-index:1500;
-box-shadow:-5px 0 20px rgba(0,0,0,0.2);
+box-shadow:-5px 0 20px rgba(0,0,0,0.3);
 }
 
 .menu.show{
@@ -144,12 +144,12 @@ right:0;
 }
 
 .menu a{
-color:#0b132b;
+color:white;
 padding:12px 0;
-border-bottom:1px solid #eee;
+border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-/* SUBMENU MOBILE */
+/* DROPDOWN MOBILE */
 
 .dropdown-content{
 position:relative;
@@ -185,25 +185,25 @@ display:block;
 
 <nav class="menu" id="menu">
 
-<a href="/">Home</a>
+<a href="/">🏠 Home</a>
 
 <div class="dropdown" id="dropdownBtn">
 
-<a href="#">Ferramentas ▾</a>
+<a href="#">🛠️ Ferramentas ▾</a>
 
 <div class="dropdown-content">
-<a href="/license.html">Operadores Licenciados</a>
-<a href="/blacklist.html">Blacklist</a>
-<a href="/telegram.html">🚨 Telegram</a>
-<a href="/report.html">Denunciar Operador</a>
+<a href="/license.html">✅ Operadores Licenciados</a>
+<a href="/blacklist.html">🚨 Blacklist</a>
+<a href="/telegram.html">📱 Telegram</a>
+<a href="/report.html">📢 Denunciar Operador</a>
 </div>
 
 </div>
 
-<a href="/guides.html">Guias</a>
-<a href="/news.html">Notícias</a>
-<a href="/about.html">Sobre</a>
-<a href="/donations.html">Doações</a>
+<a href="/guides.html">📚 Guias</a>
+<a href="/news.html">📰 Notícias</a>
+<a href="/about.html">ℹ️ Sobre</a>
+<a href="/donations.html">💙 Doações</a>
 
 </nav>
 
