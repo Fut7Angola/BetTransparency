@@ -13,14 +13,13 @@ left:0;
 right:0;
 z-index:1000;
 box-shadow:0 3px 10px rgba(0,0,0,0.15);
-box-sizing:border-box;
 }
 
 .logo img{
 height:40px;
 }
 
-/* MENU DESKTOP */
+/* DESKTOP MENU */
 
 .menu{
 display:flex;
@@ -38,7 +37,7 @@ font-weight:bold;
 color:#4ade80;
 }
 
-/* SUBMENU */
+/* DROPDOWN */
 
 .dropdown{
 position:relative;
@@ -66,68 +65,101 @@ padding:10px 15px;
 display:flex;
 }
 
-  .dropdown{
-position:relative;
-padding-bottom:5px;
-}
-  
-/* BOTÃO HAMBURGER */
+/* BOTÃO HAMBURGER MODERNO */
 
 .menu-btn{
 display:none;
-font-size:26px;
+flex-direction:column;
 cursor:pointer;
+gap:5px;
 }
 
-/* MOBILE */
+.menu-btn span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+transition:0.3s;
+}
+
+/* ANIMAÇÃO X */
+
+.menu-btn.active span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+.menu-btn.active span:nth-child(2){
+opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* OVERLAY ESCURO */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:none;
+z-index:1400;
+}
+
+.overlay.show{
+display:block;
+}
+
+/* MOBILE MENU */
 
 @media(max-width:768px){
 
 .menu-btn{
-display:block;
+display:flex;
 position:fixed;
 top:15px;
 right:15px;
-background:#0b132b;
-padding:8px 12px;
-border-radius:6px;
 z-index:2000;
 }
 
 .menu{
-display:none;
 flex-direction:column;
-background:#0b132b;
+background:white;
 position:fixed;
 top:0;
-right:0;
-width:250px;
+right:-100%;
+width:260px;
 height:100vh;
-padding:70px 20px;
+padding:80px 20px;
+transition:0.3s;
 z-index:1500;
-box-shadow:-2px 0 10px rgba(0,0,0,0.3);
+box-shadow:-5px 0 20px rgba(0,0,0,0.2);
 }
 
 .menu.show{
-display:flex;
+right:0;
 }
 
 .menu a{
+color:#0b132b;
 padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,0.1);
+border-bottom:1px solid #eee;
 }
 
 /* SUBMENU MOBILE */
 
 .dropdown-content{
 position:relative;
-top:0;
 background:none;
 box-shadow:none;
+display:none;
 padding-left:10px;
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown.active .dropdown-content{
 display:block;
 }
 
@@ -135,27 +167,34 @@ display:block;
 
 </style>
 
-
 <header class="header">
 
 <a href="/" class="logo">
 <img src="/images/logo.png" alt="BetTransparency">
 </a>
 
-<div class="menu-btn" id="menuBtn">☰</div>
+<!-- BOTÃO -->
+<div class="menu-btn" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
 
 <nav class="menu" id="menu">
 
 <a href="/">Home</a>
 
-<div class="dropdown">
+<div class="dropdown" id="dropdownBtn">
 
 <a href="#">Ferramentas ▾</a>
 
 <div class="dropdown-content">
 <a href="/license.html">Operadores Licenciados</a>
 <a href="/blacklist.html">Blacklist</a>
-<a href="/telegram.html">🚨 Telegram</a>  
+<a href="/telegram.html">🚨 Telegram</a>
 <a href="/report.html">Denunciar Operador</a>
 </div>
 
@@ -170,25 +209,52 @@ display:block;
 
 </header>
 
-
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const dropdown = document.getElementById("dropdownBtn");
 
-/* abrir menu mobile */
+/* ABRIR MENU */
 
 btn.addEventListener("click", function(){
+
 menu.classList.toggle("show");
+overlay.classList.toggle("show");
+btn.classList.toggle("active");
+
 });
 
-/* fechar menu ao clicar num link */
+/* FECHAR AO CLICAR FORA */
+
+overlay.addEventListener("click", function(){
+
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+
+});
+
+/* DROPDOWN MOBILE */
+
+dropdown.addEventListener("click", function(){
+
+if(window.innerWidth < 768){
+this.classList.toggle("active");
+}
+
+});
+
+/* FECHAR AO CLICAR NUM LINK */
 
 document.querySelectorAll(".menu a").forEach(link=>{
 link.addEventListener("click", ()=>{
 menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
 });
 });
 
