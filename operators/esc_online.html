@@ -1,25 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 <meta charset="UTF-8">
-<title>ESC Online - Operador Licenciado</title>
+<title>ESC Online</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-body{font-family:'Roboto',sans-serif;margin:0;background:#eef2f7;color:#222;line-height:1.6;}
-main{max-width:900px;margin:40px auto;padding:20px;}
-h1{text-align:center;color:#0b132b;font-size:32px;margin-bottom:20px;}
-.operator-logo{display:block;margin:0 auto 25px auto;width:180px;border-radius:12px;}
-p{font-size:16px;margin-bottom:15px;}
-.btn{display:inline-block;padding:12px 22px;background:#1c7ed6;color:white;text-decoration:none;border-radius:8px;margin-top:20px;font-weight:600;transition:.3s;}
-.btn:hover{background:#1864ab;}
-.back{display:block;margin-bottom:25px;color:#0b132b;text-decoration:none;font-weight:500;}
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#eef2f7;
+color:#222;
+}
+
+main{
+max-width:900px;
+margin:100px auto 40px auto;
+padding:20px;
+box-sizing:border-box;
+padding-top:30px;
+}
+
+.operator-header{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+text-align:center;
+margin-bottom:25px;
+}
+
+.operator-logo{
+width:140px;
+max-width:100%;
+height:auto;
+margin-bottom:15px;
+}
+
+.operator-license{
+color:#1c7ed6;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 22px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:15px;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#1864ab;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-bottom:25px;
+}
+
+.info-box{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.06);
+}
+
+.info-box h3{
+margin-top:0;
+color:#0b132b;
+}
+
+.description{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.06);
+margin-bottom:25px;
+}
+
+.responsible{
+background:#fff3cd;
+padding:18px;
+border-radius:10px;
+font-size:14px;
+}
+
+.back{
+display:block;
+margin-bottom:20px;
+text-decoration:none;
+color:#0b132b;
+font-weight:bold;
+}
+
 </style>
+
 </head>
+
 <body>
+
 <div id="header"></div>
 
 <script>
-
 fetch("../header.html")
 .then(res => res.text())
 .then(data => {
@@ -30,25 +121,106 @@ const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 if(btn && menu){
-btn.onclick = function(){
+btn.onclick=function(){
 menu.classList.toggle("show");
 };
 }
 
 });
-
 </script>
+
 <main>
+
 <a class="back" href="../license.html">← Voltar à lista de operadores</a>
+
+<!-- HEADER DO OPERADOR -->
+
+<div class="operator-header">
+
+<img src="../images/esc_online.jpg" class="operator-logo">
+
 <h1>ESC Online</h1>
-<img src="../images/esc_online.jpg" alt="ESC Online" class="operator-logo">
-<p><strong>Descrição:</strong> ESC Online disponibiliza apostas desportivas e jogos online com licença oficial SRIJ, garantindo segurança e suporte regulamentado.</p>
-<p><strong>Licença:</strong> Licença SRIJ nº 3 e 8</p>
-<p><strong>Promoções e bónus:</strong> Bónus de boas-vindas e promoções periódicas.</p>
-<p><strong>Jogo responsável:</strong> Apenas maiores de 18 anos, jogar de forma consciente.</p>
-<a href="https://www.esconline.pt" target="_blank" class="btn">Visitar site oficial</a>
+
+<div class="operator-license">
+Licença SRIJ nº 03 e 08
+</div>
+
+<a href="https://www.estorilsolcasinos.pt" target="_blank" class="btn">
+Visitar site oficial
+</a>
+
+</div>
+
+<!-- INFORMAÇÕES -->
+
+<div class="info-grid">
+
+<div class="info-box">
+<h3>Tipo</h3>
+<p>Apostas desportivas e casino online</p>
+</div>
+
+<div class="info-box">
+<h3>Métodos de pagamento</h3>
+<p>MB Way<br>Multibanco<br>Cartões bancários<br>Skrill<br>Neteller<br>Paysafecard</p>
+</div>
+
+<div class="info-box">
+<h3>Plataformas</h3>
+<p>Desktop<br>Mobile<br>Tablet</p>
+</div>
+
+<div class="info-box">
+<h3>Regulação</h3>
+<p>SRIJ<br>Portugal</p>
+</div>
+
+</div>
+
+<!-- DESCRIÇÃO -->
+
+<div class="description">
+
+<h2>Sobre o operador</h2>
+
+<p><strong>Descrição:</strong> A ESC Online pertence ao Grupo Estoril Sol, detentor de alguns dos casinos físicos mais emblemáticos de Portugal. A plataforma destaca-se pela sofisticação do seu casino online e por uma secção de apostas desportivas com odds competitivas e software de alta qualidade.</p>
+
+<p><strong>Licenciamento e Regulação:</strong> Opera sob as Licenças SRIJ nº 003 e 008. Cumpre rigorosamente os padrões de transparência e segurança da regulação nacional do jogo online.</p>
+
+<p><strong>Métodos de Pagamento:</strong> Aceita pagamentos através de Multibanco, MB WAY, cartões de crédito, Skrill, Neteller e Paysafecard, adaptando-se às necessidades do utilizador.</p>
+
+<p><strong>Promoções e Campanhas:</strong> Oferece bónus de registo, bónus de amizade e promoções específicas para desporto e casino. Todas as campanhas requerem o cumprimento de requisitos de aposta específicos.</p>
+
+<p><strong>Segurança e Proteção do Utilizador:</strong> Garante a máxima confidencialidade através de protocolos de segurança avançados e assegura que a integridade dos jogos é mantida através de auditorias regulares.</p>
+
+<p><strong>Países:</strong> Portugal</p>  
+
+  <p><strong>Jogo responsável:</strong> Proibido a menores de 18 anos. A ESC Online incentiva o jogo equilibrado, fornecendo contactos de apoio e opções de limitação de tempo e valores de aposta./p>
+
+</div>
+
+<!-- JOGO RESPONSÁVEL -->
+
+<div class="responsible">
+
+<strong>Jogo responsável:</strong><br><br>
+
+O jogo deve ser encarado apenas como forma de entretenimento.
+Participação permitida apenas a maiores de 18 anos.
+
+</div>
+
 </main>
+
 <div id="footer"></div>
-<script>fetch("../footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d;});</script>
+
+<script>
+fetch("../footer.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("footer").innerHTML=data;
+});
+</script>
+
 </body>
 </html>
