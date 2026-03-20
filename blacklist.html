@@ -58,17 +58,16 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
 justify-content:center;
-align-items:center;
-z-index:999;
+align-items:flex-end; /* 🔥 MOBILE FIX */
 }
 
 /* 🔥 CAIXA */
 .modal-content{
 background:white;
-width:95%;
+width:100%;
 max-width:500px;
-max-height:90vh; /* 👈 LIMITE */
-border-radius:12px;
+max-height:90vh;
+border-radius:16px 16px 0 0; /* 👈 topo arredondado */
 display:flex;
 flex-direction:column;
 overflow:hidden;
@@ -88,6 +87,7 @@ z-index:10;
 .modal-body{
 padding:15px;
 overflow-y:auto;
+-webkit-overflow-scrolling: touch; /* 👈 scroll suave iPhone */
 }
 
 textarea,input,select{
