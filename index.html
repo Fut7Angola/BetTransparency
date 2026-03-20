@@ -359,14 +359,13 @@ document.getElementById("total-legais").innerText = data.length;
 .catch(()=>console.log("Erro legais"));
 
 /* PESQUISAS */
-fetch("https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec")
+fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec")
 .then(r=>r.json())
 .then(data=>{
 document.getElementById("total-pesquisas").innerText = data.length;
 })
 .catch(()=>{
 console.log("Erro pesquisas");
-document.getElementById("total-pesquisas").innerText = "0";
 });
 
 </script>
