@@ -344,12 +344,23 @@ container.appendChild(card);
 
 Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
-fetch("./data/legal.json").then(r=>r.json())
+fetch("./data/legal.json").then(r=>r.json()),
+fetch("https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec")
+.then(r=>r.json())
 ])
 
-.then(([b,l])=>{
-document.getElementById("total-ilegais").innerText=b.length;
-document.getElementById("total-legais").innerText=l.length;
+.then(([b,l,p])=>{
+
+document.getElementById("total-ilegais").innerText = b.length;
+document.getElementById("total-legais").innerText = l.length;
+
+/* 👇 ESTA LINHA É A IMPORTANTE */
+document.getElementById("total-pesquisas").innerText = p.length;
+
+})
+
+.catch(()=>{
+console.log("Erro ao carregar stats");
 });
 
 </script>
