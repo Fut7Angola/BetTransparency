@@ -9,10 +9,9 @@
 <style>
 
 body{
-font-family:Arial,sans-serif;
+font-family:Arial;
 margin:0;
 background:#eef2f7;
-color:#222;
 }
 
 main{
@@ -21,46 +20,32 @@ max-width:1000px;
 margin:auto;
 }
 
-h1{
-text-align:center;
-color:#0b132b;
-margin-bottom:20px;
-}
-
-/* GRID BONITO */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
 background:white;
 padding:15px;
 border-radius:12px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
 cursor:pointer;
-transition:0.2s;
 text-align:center;
-}
-
-.card:hover{
-transform:translateY(-3px);
 }
 
 .card h3{
 margin:0;
-font-size:16px;
 color:#b00020;
 }
 
-input{
-width:100%;
-padding:10px;
-border-radius:8px;
-border:1px solid #ddd;
-margin-top:10px;
+.rating{
+color:#f59f00;
+font-weight:bold;
+margin-top:5px;
 }
 
 /* MODAL */
@@ -82,6 +67,16 @@ padding:25px;
 border-radius:12px;
 max-width:500px;
 width:90%;
+max-height:90%;
+overflow:auto;
+}
+
+textarea,input,select{
+width:100%;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
 }
 
 button{
@@ -90,7 +85,14 @@ color:white;
 border:none;
 padding:8px 12px;
 border-radius:8px;
+margin-top:10px;
 cursor:pointer;
+}
+
+.comment{
+background:#f1f3f5;
+padding:10px;
+border-radius:8px;
 margin-top:10px;
 }
 
@@ -100,29 +102,19 @@ margin-top:10px;
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <script>
 fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-
-const btn=document.getElementById("menuBtn");
-const menu=document.getElementById("menu");
-
-if(btn && menu){
-btn.onclick=()=>menu.classList.toggle("show");
-}
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
 });
 </script>
 
 <main>
 
 <h1>🚨 Lista Negra</h1>
-
-<div id="site-counter">A carregar...</div>
 
 <input id="searchInput" placeholder="Pesquisar...">
 
@@ -140,61 +132,84 @@ btn.onclick=()=>menu.classList.toggle("show");
 
 <a id="modal-link" target="_blank"></a>
 
-<br>
+<div id="modal-rating" class="rating"></div>
+
+<h3>💬 Comentários</h3>
+
+<div id="modal-comments">A carregar...</div>
+
+<h3>✍️ Adicionar comentário</h3>
+
+<select id="modal-rating-input">
+<option value="5">⭐⭐⭐⭐⭐</option>
+<option value="4">⭐⭐⭐⭐</option>
+<option value="3">⭐⭐⭐</option>
+<option value="2">⭐⭐</option>
+<option value="1">⭐</option>
+</select>
+
+<input id="modal-user" placeholder="Nome (opcional)">
+
+<textarea id="modal-text" placeholder="Escreve comentário"></textarea>
+
+<button onclick="enviarComentario()">Enviar</button>
 
 <button onclick="fecharModal()">Fechar</button>
 
 </div>
 </div>
 
-<!-- SCRIPT -->
-<script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+/* FIREBASE */
+const app = initializeApp({
+apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain:"bettransparency.firebaseapp.com",
+projectId:"bettransparency",
+appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
+});
+
+const db = getFirestore(app);
+signInAnonymously(getAuth());
 
 let blacklist=[];
+let currentSite="";
 
-/* CARREGAR LISTA */
+/* LOAD */
 
-async function carregar(){
-
-try{
-const res = await fetch("/data/blacklist.json");
-blacklist = await res.json();
-
-render(blacklist);
-}catch(e){
-document.getElementById("blacklist-container").innerHTML = "Erro ao carregar dados";
-}
-
-}
-
-carregar();
+fetch("/data/blacklist.json")
+.then(r=>r.json())
+.then(data=>{
+blacklist=data;
+render(data);
+});
 
 /* RENDER */
 
 function render(lista){
 
-const container=document.getElementById("blacklist-container");
-container.innerHTML="";
-
-document.getElementById("site-counter").innerText =
-"Total: "+lista.length;
+const c=document.getElementById("blacklist-container");
+c.innerHTML="";
 
 lista.forEach(item=>{
 
 const div=document.createElement("div");
-
 div.className="card";
 
 div.innerHTML=`
 <h3>${item.nome}</h3>
-<p style="font-size:12px;color:#666;">Clique para ver detalhes</p>
+<div class="rating" id="rating-${item.nome}">⭐ ...</div>
 `;
 
-div.onclick=function(){
-abrirModal(item);
-};
+div.onclick=()=>abrirModal(item);
 
-container.appendChild(div);
+c.appendChild(div);
+
+carregarRating(item.nome);
 
 });
 
@@ -202,21 +217,109 @@ container.appendChild(div);
 
 /* MODAL */
 
-function abrirModal(item){
+async function abrirModal(item){
+
+currentSite=item.nome;
 
 document.getElementById("modal").style.display="flex";
 
-document.getElementById("modal-nome").innerText = item.nome;
-document.getElementById("modal-motivo").innerText = item.motivo;
+document.getElementById("modal-nome").innerText=item.nome;
+document.getElementById("modal-motivo").innerText=item.motivo;
 
 const link=document.getElementById("modal-link");
 link.href=item.website;
 link.innerText=item.website;
 
+carregarComentarios(item.nome);
+
 }
 
 function fecharModal(){
 document.getElementById("modal").style.display="none";
+}
+
+/* ENVIAR */
+
+window.enviarComentario = async function(){
+
+const text=document.getElementById("modal-text").value;
+const rating=document.getElementById("modal-rating-input").value;
+const user=document.getElementById("modal-user").value || "Anónimo";
+
+if(!text)return alert("Escreve algo");
+
+await addDoc(collection(db,"comments"),{
+site:currentSite,
+text,
+rating:Number(rating),
+user,
+date:Date.now()
+});
+
+document.getElementById("modal-text").value="";
+
+carregarComentarios(currentSite);
+carregarRating(currentSite);
+
+}
+
+/* CARREGAR */
+
+async function carregarComentarios(site){
+
+const q=query(collection(db,"comments"),where("site","==",site));
+const res=await getDocs(q);
+
+let html="";
+let soma=0;
+let count=0;
+
+res.forEach(doc=>{
+
+const d=doc.data();
+
+count++;
+soma+=d.rating;
+
+html+=`
+<div class="comment">
+<strong>${d.user}</strong> ⭐ ${d.rating}
+<p>${d.text}</p>
+</div>
+`;
+
+});
+
+let media = count ? (soma/count).toFixed(1) : 0;
+
+document.getElementById("modal-rating").innerText =
+"⭐ "+media+" ("+count+" avaliações)";
+
+document.getElementById("modal-comments").innerHTML =
+html || "Sem comentários";
+
+}
+
+/* RATING NO CARD */
+
+async function carregarRating(site){
+
+const q=query(collection(db,"comments"),where("site","==",site));
+const res=await getDocs(q);
+
+let soma=0;
+let count=0;
+
+res.forEach(doc=>{
+soma+=doc.data().rating;
+count++;
+});
+
+let media = count ? (soma/count).toFixed(1) : "-";
+
+document.getElementById("rating-"+site).innerText =
+"⭐ "+media;
+
 }
 
 /* PESQUISA */
@@ -231,17 +334,6 @@ render(f);
 
 });
 
-</script>
-
-<!-- FOOTER -->
-<div id="footer"></div>
-
-<script>
-fetch("footer.html")
-.then(r=>r.text())
-.then(d=>{
-document.getElementById("footer").innerHTML=d;
-});
 </script>
 
 </body>
