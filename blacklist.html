@@ -59,16 +59,35 @@ height:100%;
 background:rgba(0,0,0,0.6);
 justify-content:center;
 align-items:center;
+z-index:999;
 }
 
+/* 🔥 CAIXA */
 .modal-content{
 background:white;
-padding:25px;
-border-radius:12px;
+width:95%;
 max-width:500px;
-width:90%;
-max-height:90%;
-overflow:auto;
+max-height:90vh; /* 👈 LIMITE */
+border-radius:12px;
+display:flex;
+flex-direction:column;
+overflow:hidden;
+}
+
+/* 🔥 HEADER FIXO */
+.modal-header{
+padding:15px;
+border-bottom:1px solid #eee;
+background:white;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+/* 🔥 CORPO COM SCROLL */
+.modal-body{
+padding:15px;
+overflow-y:auto;
 }
 
 textarea,input,select{
@@ -135,21 +154,37 @@ menu.classList.toggle("show");
 
 <!-- MODAL -->
 <div id="modal" class="modal">
+
 <div class="modal-content">
 
+<div class="modal-header">
 <h2 id="modal-nome"></h2>
+<button onclick="fecharModal()">Fechar</button>
+</div>
+
+<script>
+
+/* FECHAR AO CLICAR FORA */
+document.getElementById("modal").onclick = function(e){
+if(e.target.id === "modal"){
+fecharModal();
+}
+}
+
+</script>
+
+<div class="modal-body">
 
 <p id="modal-motivo"></p>
 
 <a id="modal-link" target="_blank"></a>
 
-<div id="modal-rating" class="rating"></div>
+<div id="modal-rating"></div>
 
 <h3>💬 Comentários</h3>
+<div id="modal-comments"></div>
 
-<div id="modal-comments">A carregar...</div>
-
-<h3>✍️ Adicionar comentário</h3>
+<h3>✍️ Comentar</h3>
 
 <select id="modal-rating-input">
 <option value="5">⭐⭐⭐⭐⭐</option>
@@ -159,15 +194,16 @@ menu.classList.toggle("show");
 <option value="1">⭐</option>
 </select>
 
-<input id="modal-user" placeholder="Nome (opcional)">
+<input id="modal-user" placeholder="Nome">
 
-<textarea id="modal-text" placeholder="Escreve comentário"></textarea>
+<textarea id="modal-text"></textarea>
 
 <button onclick="enviarComentario()">Enviar</button>
 
-<button onclick="fecharModal()">Fechar</button>
+</div>
 
 </div>
+
 </div>
 
 <script type="module">
