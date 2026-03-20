@@ -127,16 +127,21 @@ right:20px;
 
 .menu{
 flex-direction:column;
-background:#0b132b; /* 🔥 COR ESCURA (ANTES ESTAVA BRANCO) */
+background:#0b132b;
 position:fixed;
 top:0;
 right:-100%;
 width:260px;
-height:100vh;
+
+/* 🔥 IMPORTANTE */
+height:auto;
+max-height:80vh;
+overflow-y:auto;
+
 padding:80px 20px;
 transition:0.3s;
 z-index:1500;
-box-shadow:-5px 0 20px rgba(0,0,0,0.3);
+border-radius:0 0 0 16px;
 }
 
 .menu.show{
@@ -153,10 +158,17 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 
 .dropdown-content{
 position:relative;
-background:none;
-box-shadow:none;
+background:#111827;
+border-radius:8px;
+margin-top:8px;
 display:none;
-padding-left:10px;
+padding:5px 10px;
+}
+
+.dropdown-content a{
+border:none;
+padding:10px;
+font-size:14px;
 }
 
 .dropdown.active .dropdown-content{
