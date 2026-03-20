@@ -97,6 +97,13 @@ margin-top:20px;
 font-weight:bold;
 }
 
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
+}
+  
 </style>
 </head>
 
@@ -151,35 +158,36 @@ Projeto educativo que alerta jogadores sobre apostas online ilegais em Portugal.
 
 <div class="section">
 
-<h2>Ferramentas</h2>
+<h2>🔧 Ferramentas de Proteção</h2>
 
-<div class="cards">
+<div class="tools-grid">
 
+<!-- BLACKLIST -->
 <div class="card">
-<h3>Operadores Legais em Portugal</h3>
-<a class="btn" href="license.html">Ver</a>
+<h3>🚨 Blacklist</h3>
+<p>Lista atualizada de operadores ilegais em Portugal.</p>
+<a class="btn" href="blacklist.html">Ver lista</a>
 </div>
 
+<!-- TELEGRAM -->
 <div class="card">
-<h3>Alertas Publicidade</h3>
-<a class="btn" href="ads.html">Ver Análises</a>
-</div>
-
-<div class="card">
-<h3>Lista Negra</h3>
-<a class="btn" href="blacklist.html">Ver Blacklist</a>
-</div>
-
-<div class="card">
-<h3>Blacklist Telegram</h3>
-<p>Descobre grupos suspeitos que promovem casas ilegais.</p>
+<h3>📱 Telegram Suspeito</h3>
+<p>Grupos que promovem casas ilegais e esquemas.</p>
 <a class="btn" href="telegram.html">Ver grupos</a>
 </div>
 
+<!-- GUIAS -->
 <div class="card">
-<h3>Denunciar Operador</h3>
-<p>Encontrou um site suspeito? Envie uma denúncia.</p>
-<a class="btn" href="report.html">Denunciar</a>
+<h3>📚 Guias</h3>
+<p>Aprende a identificar sites seguros e evitar fraudes.</p>
+<a class="btn" href="guides.html">Ver guias</a>
+</div>
+
+<!-- NOTÍCIAS -->
+<div class="card">
+<h3>📰 Notícias</h3>
+<p>Atualizações sobre o mundo das apostas e fraudes.</p>
+<a class="btn" href="news.html">Ver notícias</a>
 </div>
 
 </div>
