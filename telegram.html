@@ -30,32 +30,19 @@ margin-bottom:20px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:15px;
-@media(max-width:768px){
+}
 
+/* MOBILE 2 COLUNAS */
+@media(max-width:768px){
 .grid{
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
+}
 
+/* CARD */
 .card{
-padding:12px;
-border-radius:12px;
-aspect-ratio:1/1;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-}
-
-.card h3{
-font-size:14px;
-}
-
-}  
-}
-
-/* CARD PEQUENO */
-.card{
+position:relative;
 background:white;
 padding:15px;
 border-radius:12px;
@@ -63,16 +50,39 @@ box-shadow:0 4px 10px rgba(0,0,0,0.08);
 cursor:pointer;
 text-align:center;
 transition:0.2s;
+overflow:hidden;
 }
 
 .card:hover{
 transform:translateY(-3px);
 }
 
+/* 🔥 Marca de água Telegram */
+.card::before{
+content:"✈️";
+position:absolute;
+font-size:60px;
+opacity:0.05;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+/* Nome */
 .card h3{
 margin:0;
-font-size:16px;
+font-size:14px;
 color:#b00020;
+z-index:2;
+position:relative;
+}
+
+/* Ícone de risco */
+.badge{
+position:absolute;
+top:8px;
+right:8px;
+font-size:14px;
 }
 
 /* MODAL */
@@ -87,27 +97,29 @@ background:rgba(0,0,0,0.6);
 justify-content:center;
 align-items:center;
 z-index:2000;
+padding:10px;
 }
 
 .modal-content{
 background:white;
 padding:20px;
 border-radius:12px;
-width:90%;
+width:100%;
 max-width:500px;
-
-/* 🔥 FIX MOBILE */
-max-height:80vh;
+max-height:85vh;
 overflow-y:auto;
+position:relative;
 }
 
 .close{
-float:right;
+position:absolute;
+top:10px;
+right:15px;
 cursor:pointer;
 font-size:20px;
 }
 
-/* COMMENTS */
+/* INPUTS */
 textarea, input{
 width:100%;
 padding:10px;
@@ -202,24 +214,20 @@ appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
 const db = getFirestore(app);
 signInAnonymously(getAuth());
 
-/* HEADER */
+/* HEADER + MENU */
 fetch("header.html")
 .then(r=>r.text())
 .then(d=>{
 document.getElementById("header").innerHTML=d;
 
-/* 🔥 ATIVAR MENU MOBILE */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 if(btn && menu){
 
-btn.onclick = function(){
-menu.classList.toggle("show");
-};
+btn.onclick = ()=>menu.classList.toggle("show");
 
-/* fechar ao clicar fora */
-document.addEventListener("click", function(e){
+document.addEventListener("click",(e)=>{
 if(!menu.contains(e.target) && !btn.contains(e.target)){
 menu.classList.remove("show");
 }
@@ -228,12 +236,19 @@ menu.classList.remove("show");
 }
 });
 
-/* LISTA */
+/* LISTA COM TIPOS */
 const lista = [
-{nome:"Fábio M. Tipster",link:"https://t.me/+czVC2wto03syYmQ8",motivo:"Promoção ilegal"},
-{nome:"Stake 10 Fútbol",link:"https://t.me/+MFlAFi3xutcyYTQ0",motivo:"Redirecionamento ilegal"},
-{nome:"Tips Advisor",link:"https://t.me/+OoS_aiiSa1ZiM2U0",motivo:"Operadores ilegais"}
+{nome:"Fábio M. Tipster",link:"https://t.me/+czVC2wto03syYmQ8",motivo:"Promoção ilegal",tipo:"perigo"},
+{nome:"Stake 10 Fútbol",link:"https://t.me/+MFlAFi3xutcyYTQ0",motivo:"Redirecionamento ilegal",tipo:"spam"},
+{nome:"Tips Advisor",link:"https://t.me/+OoS_aiiSa1ZiM2U0",motivo:"Operadores ilegais",tipo:"analise"}
 ];
+
+/* ICONES */
+function getIcon(tipo){
+if(tipo==="perigo") return "🚫";
+if(tipo==="spam") return "⚠️";
+return "🔍";
+}
 
 /* RENDER */
 const container=document.getElementById("container");
@@ -245,8 +260,8 @@ const div=document.createElement("div");
 div.className="card";
 
 div.innerHTML=`
+<div class="badge">${getIcon(item.tipo)}</div>
 <h3>${item.nome}</h3>
-<p style="font-size:12px;color:#666;">Ver detalhes</p>
 `;
 
 div.onclick=()=>abrirModal(item);
@@ -278,7 +293,7 @@ window.fecharModal = function(){
 document.getElementById("modal").style.display="none";
 }
 
-/* FECHAR AO CLICAR FORA */
+/* fechar fora */
 document.getElementById("modal").onclick = function(e){
 if(e.target.id==="modal") fecharModal();
 }
@@ -316,7 +331,7 @@ carregarComentarios();
 
 }
 
-/* CARREGAR COMENTÁRIOS */
+/* CARREGAR */
 async function carregarComentarios(){
 
 const q=query(collection(db,"comentarios_telegram"),where("grupo","==",grupoAtual));
