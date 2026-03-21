@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Blacklist Telegram</title>
+<title>Telegram Suspeito</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -17,53 +17,82 @@ margin:0;
 main{
 max-width:1000px;
 margin:100px auto;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* CARD PEQUENO */
+.card{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+cursor:pointer;
+text-align:center;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+.card h3{
+margin:0;
+font-size:16px;
+color:#b00020;
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
 background:white;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
+width:90%;
+max-width:500px;
+
+/* 🔥 FIX MOBILE */
+max-height:80vh;
+overflow-y:auto;
 }
 
-.card{
-border:1px solid #ddd;
-padding:20px;
-margin-bottom:20px;
-border-radius:10px;
+.close{
+float:right;
+cursor:pointer;
+font-size:20px;
 }
 
-.badge{
-background:#ff4d4f;
-color:white;
-padding:5px 10px;
-border-radius:6px;
-font-size:12px;
-}
-
-a{
-color:#1c7ed6;
-font-weight:bold;
-text-decoration:none;
-}
-
-.comments{
-margin-top:15px;
-padding-top:10px;
-border-top:1px solid #eee;
-}
-
-textarea{
+/* COMMENTS */
+textarea, input{
 width:100%;
 padding:10px;
 border-radius:8px;
 border:1px solid #ddd;
-margin-top:10px;
-resize:none;
-}
-
-input{
-width:100%;
-padding:8px;
-border-radius:8px;
-border:1px solid #ddd;
-margin-top:5px;
+margin-top:8px;
+font-size:16px;
 }
 
 button{
@@ -76,10 +105,6 @@ cursor:pointer;
 margin-top:8px;
 }
 
-button:hover{
-background:#1864ab;
-}
-
 .comment-box{
 background:#f1f3f5;
 padding:10px;
@@ -87,28 +112,57 @@ border-radius:8px;
 margin-top:10px;
 }
 
-input, textarea{
-font-size:16px;
-}
-  
 </style>
 
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <main>
 
-<h1>🚨 Grupos de Telegram suspeitos</h1>
+<h1>🚨 Grupos Telegram Suspeitos</h1>
 
-<div id="container">A carregar...</div>
+<div id="container" class="grid"></div>
 
 </main>
 
-<!-- 🔥 SCRIPT PRINCIPAL -->
+<!-- MODAL -->
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="fecharModal()">✖</span>
+
+<h2 id="modal-nome"></h2>
+
+<p id="modal-motivo"></p>
+
+<a id="modal-link" target="_blank">Abrir Telegram</a>
+
+<div style="margin-top:10px;">
+<button onclick="denunciar()">🚨 Denunciar</button>
+</div>
+
+<div class="comments">
+
+<h3>💬 Comentários</h3>
+
+<input id="user" placeholder="Nome ou Anónimo">
+
+<textarea id="input" placeholder="Escreve comentário"></textarea>
+
+<button onclick="comentar()">Enviar</button>
+
+<div id="comments">A carregar...</div>
+
+</div>
+
+</div>
+
+</div>
+
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -116,217 +170,83 @@ import { getFirestore, collection, addDoc, getDocs, query, where } from "https:/
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 /* FIREBASE */
-const firebaseConfig = {
-apiKey: "AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain: "bettransparency.firebaseapp.com",
-projectId: "bettransparency",
-appId: "1:493636447089:web:f5ceb8146a11a5b60364d0"
-};
+const app = initializeApp({
+apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+authDomain:"bettransparency.firebaseapp.com",
+projectId:"bettransparency",
+appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
+});
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 signInAnonymously(getAuth());
 
 /* HEADER */
 fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-
-const btn=document.getElementById("menuBtn");
-const menu=document.getElementById("menu");
-
-if(btn && menu){
-btn.onclick=()=>menu.classList.toggle("show");
-}
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
 });
 
-/* 🔥 LISTA DOS GRUPOS (A TUA) */
+/* LISTA */
 const lista = [
-{
-nome: "Fábio M. Tipster",
-link: "https://t.me/+czVC2wto03syYmQ8",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Stake 10 Fútbol",
-link: "https://t.me/+MFlAFi3xutcyYTQ0",
-motivo: "Redirecionamento para operadores não licenciados",
-data: "17-03-2026"
-},
-{
-nome: "DiogoEsteves91",
-link: "@EstevesTipsSuporteBot",
-motivo: "Promove operadores não licenciados",
-data: "17-03-2026"
-},
-{
-nome: "Tips Advisor",
-link: "https://t.me/+OoS_aiiSa1ZiM2U0",
-motivo: "Promove operadores não licenciados",
-data: "17-03-2026"
-},
-{
-nome: "O Castelo das Odds",
-link: "https://t.me/+Ap0KTzJdgx1iMjdk",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Giovanni Football",
-link: "@Giovannifoot1",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Oliver Bets",
-link: "@whittakeroliver_bot",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Oliver | Insade Bet",
-link: "@OliverWhitakers",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Pantera Green Bets",
-link: "https://t.me/+wIkeb0hzWCU5NzRk",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Nuno Morais",
-link: "@NUNO_M0RAIS",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Golden Stake",
-link: "https://t.me/goldenstakechannel",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Academia dos Greens",
-link: "https://t.me/+PnItzxnVpedhZGNk",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "OGB Sports",
-link: "@ogb_portugal",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Secret Match",
-link: "https://t.me/+1HPsKY2K0BAyNmNi",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "ApostaGrátis2024",
-link: "@ApostaGratis24_bot",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Fixed Matches",
-link: "https://t.me/+UldmVT1zRlFhMDgx",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Leão",
-link: "@leaosportsvip",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "King Of NBA",
-link: "https://t.me/+vDjnQVJp6xg0ODc0",
-motivo: "Promoção de casas ilegais",
-data: "17-03-2026"
-},
-{
-nome: "Gabriel Tips",
-link: "@gb_tipsbot",
-motivo: "Promoção de casas ilegais",
-data: "18-03-2026"
-},
-{
-nome: "IronBet Team",
-link: "telegra.ph/PUBLIC-OFFER-AGREEMENT-02-05",
-motivo: "Promoção de casas ilegais",
-data: "18-03-2026"
-},
-{
-nome: "Sucecess Football",
-link: "@vicent_succes",
-motivo: "Promoção de casas ilegais",
-data: "18-03-2026"
-}
+{nome:"Fábio M. Tipster",link:"https://t.me/+czVC2wto03syYmQ8",motivo:"Promoção ilegal"},
+{nome:"Stake 10 Fútbol",link:"https://t.me/+MFlAFi3xutcyYTQ0",motivo:"Redirecionamento ilegal"},
+{nome:"Tips Advisor",link:"https://t.me/+OoS_aiiSa1ZiM2U0",motivo:"Operadores ilegais"}
 ];
+
 /* RENDER */
-render(lista);
+const container=document.getElementById("container");
 
-function render(list){
-
-const c=document.getElementById("container");
-c.innerHTML="";
-
-list.forEach(item=>{
+lista.forEach(item=>{
 
 const div=document.createElement("div");
 
 div.className="card";
 
 div.innerHTML=`
-
-<div class="badge">⚠️ Suspeito</div>
-
-<h2>${item.nome}</h2>
-
-<p><strong>Motivo:</strong> ${item.motivo}</p>
-<p><strong>Data:</strong> ${item.data}</p>
-
-<a href="${item.link}" target="_blank">Abrir no Telegram</a>
-
-<div style="margin-top:10px;">
-<button onclick="denunciar('${item.nome}')">🚨 Denunciar grupo</button>
-</div>
-
-<div class="comments">
-
-<h3>💬 Comentários</h3>
-
-<input id="user-${item.nome}" placeholder="Nickname ou Anónimo">
-
-<textarea id="input-${item.nome}" placeholder="Escreve um comentário"></textarea>
-
-<button onclick="comentar('${item.nome}')">Enviar</button>
-
-<div id="comments-${item.nome}">A carregar...</div>
-
-</div>
+<h3>${item.nome}</h3>
+<p style="font-size:12px;color:#666;">Ver detalhes</p>
 `;
 
-c.appendChild(div);
+div.onclick=()=>abrirModal(item);
 
-carregarComentarios(item.nome);
+container.appendChild(div);
 
 });
 
+/* MODAL */
+let grupoAtual="";
+
+window.abrirModal = function(item){
+
+grupoAtual=item.nome;
+
+document.getElementById("modal").style.display="flex";
+document.getElementById("modal-nome").innerText=item.nome;
+document.getElementById("modal-motivo").innerText=item.motivo;
+
+const link=document.getElementById("modal-link");
+link.href=item.link;
+link.innerText="Abrir no Telegram";
+
+carregarComentarios();
+
+}
+
+window.fecharModal = function(){
+document.getElementById("modal").style.display="none";
+}
+
+/* FECHAR AO CLICAR FORA */
+document.getElementById("modal").onclick = function(e){
+if(e.target.id==="modal") fecharModal();
 }
 
 /* DENUNCIAR */
-window.denunciar = async function(nome){
+window.denunciar = async function(){
 
 await addDoc(collection(db,"denuncias_telegram"),{
-grupo:nome,
+grupo:grupoAtual,
 data:Date.now()
 });
 
@@ -335,37 +255,35 @@ alert("Denúncia enviada 🚨");
 }
 
 /* COMENTAR */
-window.comentar = async function(nome){
+window.comentar = async function(){
 
-const text=document.getElementById("input-"+nome).value;
-const user=document.getElementById("user-"+nome).value || "Anónimo";
+const text=document.getElementById("input").value;
+const user=document.getElementById("user").value || "Anónimo";
 
 if(!text)return alert("Escreve algo");
 
 await addDoc(collection(db,"comentarios_telegram"),{
-grupo:nome,
-user:user,
-text:text,
+grupo:grupoAtual,
+user,
+text,
 data:Date.now()
 });
 
-document.getElementById("input-"+nome).value="";
+document.getElementById("input").value="";
 
-carregarComentarios(nome);
+carregarComentarios();
 
 }
 
 /* CARREGAR COMENTÁRIOS */
-async function carregarComentarios(nome){
+async function carregarComentarios(){
 
-const q=query(collection(db,"comentarios_telegram"),where("grupo","==",nome));
-
+const q=query(collection(db,"comentarios_telegram"),where("grupo","==",grupoAtual));
 const res=await getDocs(q);
 
 let html="";
 
 res.forEach(doc=>{
-
 const d=doc.data();
 
 html+=`
@@ -374,17 +292,15 @@ html+=`
 <p>${d.text}</p>
 </div>
 `;
-
 });
 
-document.getElementById("comments-"+nome).innerHTML =
+document.getElementById("comments").innerHTML =
 html || "Sem comentários";
 
 }
 
 </script>
 
-<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
