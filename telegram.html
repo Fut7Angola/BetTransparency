@@ -185,6 +185,25 @@ fetch("header.html")
 .then(r=>r.text())
 .then(d=>{
 document.getElementById("header").innerHTML=d;
+
+/* 🔥 ATIVAR MENU MOBILE */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+if(btn && menu){
+
+btn.onclick = function(){
+menu.classList.toggle("show");
+};
+
+/* fechar ao clicar fora */
+document.addEventListener("click", function(e){
+if(!menu.contains(e.target) && !btn.contains(e.target)){
+menu.classList.remove("show");
+}
+});
+
+}
 });
 
 /* LISTA */
