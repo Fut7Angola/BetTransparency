@@ -44,47 +44,53 @@ gap:12px;
 .card{
 position:relative;
 background:white;
-padding:15px;
 border-radius:12px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
 cursor:pointer;
-text-align:center;
 transition:0.2s;
 overflow:hidden;
+
+/* 🔥 quadrado perfeito */
+aspect-ratio:1/1;
+
+/* 🔥 alinhar conteúdo */
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:10px;
 }
 
 .card:hover{
 transform:translateY(-3px);
 }
 
-/* 🔥 Marca de água Telegram */
+/* 🔥 marca de água melhorada */
 .card::before{
 content:"✈️";
 position:absolute;
-font-size:60px;
-opacity:0.05;
+font-size:80px;
+opacity:0.08; /* mais visível */
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 }
 
-/* Nome */
+/* nome */
 .card h3{
 margin:0;
 font-size:14px;
 color:#b00020;
 z-index:2;
-position:relative;
 }
 
-/* Ícone de risco */
-.badge{
-position:absolute;
-top:8px;
-right:8px;
-font-size:14px;
+/* 🔥 icone por baixo */
+.icon{
+margin-top:8px;
+font-size:20px;
+z-index:2;
 }
-
 /* MODAL */
 .modal{
 display:none;
@@ -260,8 +266,8 @@ const div=document.createElement("div");
 div.className="card";
 
 div.innerHTML=`
-<div class="badge">${getIcon(item.tipo)}</div>
 <h3>${item.nome}</h3>
+<div class="icon">${getIcon(item.tipo)}</div>
 `;
 
 div.onclick=()=>abrirModal(item);
