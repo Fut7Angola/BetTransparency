@@ -4,18 +4,20 @@
 "link": "https://t.me/+czVC2wto03syYmQ8",
 "motivo": "Promoção de casas ilegais",
 "data": "17-03-2026",
-},
+"tipo": "spam"},
 {
 "nome": "Stake 10 Fútbol",
 "link": "https://t.me/+MFlAFi3xutcyYTQ0",
 "motivo": "Redirecionamento para operadores não licenciados",
 "data": "17-03-2026",
+"tipo": "spam"
 },
 {
 "nome": "DiogoEsteves91",
 "link": "@EstevesTipsSuporteBot",
 "motivo": "Promove operadores não licenciados",
 "data": "17-03-2026",
+"tipo": "spam"
 },
 {
 "nome": "Tips Advisor",
