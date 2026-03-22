@@ -141,67 +141,91 @@ input, textarea{
 font-size:16px;
 }
 
-/* 🔥 DASHBOARD PREMIUM */
+/* 🔥 DASHBOARD ULTRA PREMIUM */
 
 .stats-premium{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:30px;
 }
 
+/* CARD BASE */
 .stat-card{
-background:white;
-padding:25px;
-border-radius:16px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-text-align:center;
+border-radius:18px;
+padding:2px;
+background:linear-gradient(135deg,#1c7ed6,#4dabf7);
 transition:0.3s;
+position:relative;
+}
+
+.stat-inner{
+background:#ffffff;
+border-radius:16px;
+padding:30px 20px;
+text-align:center;
 position:relative;
 overflow:hidden;
 }
 
+/* HOVER */
 .stat-card:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,0.12);
+transform:translateY(-6px) scale(1.02);
 }
 
 /* ICON */
-.stat-card .icon{
-font-size:28px;
+.icon{
+font-size:32px;
 display:block;
 margin-bottom:10px;
 }
 
 /* NUMBER */
-.stat-card h3{
+.stat-inner h3{
 margin:0;
-font-size:32px;
-font-weight:bold;
+font-size:36px;
+font-weight:800;
 }
 
 /* TEXT */
-.stat-card p{
-margin-top:5px;
+.stat-inner p{
+margin-top:6px;
 color:#666;
 font-size:14px;
 }
 
-/* CORES POR TIPO */
+/* CORES DIFERENTES */
 .stat-card.legal{
-border-left:5px solid #2f9e44;
+background:linear-gradient(135deg,#2f9e44,#51cf66);
 }
 
 .stat-card.ilegal{
-border-left:5px solid #e03131;
+background:linear-gradient(135deg,#e03131,#ff6b6b);
 }
 
 .stat-card.pesquisa{
-border-left:5px solid #f59f00;
+background:linear-gradient(135deg,#f59f00,#ffd43b);
 }
 
 .stat-card.telegram{
-border-left:5px solid #1c7ed6;
+background:linear-gradient(135deg,#1c7ed6,#4dabf7);
+}
+
+/* 🔥 GLOW EFFECT */
+.stat-card::after{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:radial-gradient(circle,rgba(255,255,255,0.2),transparent);
+opacity:0;
+transition:0.4s;
+}
+
+.stat-card:hover::after{
+opacity:1;
 }
   
 </style>
@@ -292,27 +316,35 @@ menu.classList.toggle("show");
 <div class="stats-premium">
 
 <div class="stat-card legal">
+<div class="stat-inner">
 <span class="icon">🟢</span>
 <h3 id="total-legais">0</h3>
 <p>Operadores Legais</p>
 </div>
+</div>
 
 <div class="stat-card ilegal">
+<div class="stat-inner">
 <span class="icon">🚨</span>
 <h3 id="total-ilegais">0</h3>
 <p>Sites Ilegais</p>
 </div>
+</div>
 
 <div class="stat-card pesquisa">
+<div class="stat-inner">
 <span class="icon">🔍</span>
 <h3 id="total-pesquisas">0</h3>
 <p>Pesquisas</p>
 </div>
+</div>
 
 <div class="stat-card telegram">
+<div class="stat-inner">
 <span class="icon">📱</span>
 <h3 id="total-telegram">0</h3>
 <p>Grupos Telegram</p>
+</div>
 </div>
 
 </div>
@@ -449,7 +481,7 @@ function animarNumero(id, valor){
 
 let el = document.getElementById(id);
 let atual = 0;
-let incremento = Math.ceil(valor / 30);
+let incremento = Math.ceil(valor / 40);
 
 let timer = setInterval(()=>{
 
@@ -462,7 +494,7 @@ clearInterval(timer);
 el.innerText = atual;
 }
 
-},30);
+},25);
 
 }  
 </script>
