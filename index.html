@@ -243,6 +243,11 @@ menu.classList.toggle("show");
 <p>Pesquisas</p>
 </div>
 
+<div class="stat">
+<h3 id="total-telegram">0</h3>
+<p>Grupos Telegram</p>
+</div>
+  
 </div>
 
 </div>
@@ -350,6 +355,7 @@ c.appendChild(card);
 Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
 fetch("./data/legal.json").then(r=>r.json()),
+fetch(".data/telegram.json").then(r=>r.json()),  
 fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec")
 .then(r=>r.text())
 .then(text=>{
