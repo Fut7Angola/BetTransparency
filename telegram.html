@@ -251,11 +251,17 @@ menu.classList.remove("show");
 });
 
 /* LISTA COM TIPOS */
-const lista = [
-{nome:"Fábio M. Tipster",link:"https://t.me/+czVC2wto03syYmQ8",motivo:"Promoção ilegal",tipo:"perigo"},
-{nome:"Stake 10 Fútbol",link:"https://t.me/+MFlAFi3xutcyYTQ0",motivo:"Redirecionamento ilegal",tipo:"spam"},
-{nome:"Tips Advisor",link:"https://t.me/+OoS_aiiSa1ZiM2U0",motivo:"Operadores ilegais",tipo:"analise"}
-];
+let lista = [];
+
+fetch("/data/telegram.json")
+.then(res => res.json())
+.then(data => {
+lista = data;
+render(lista);
+})
+.catch(() => {
+console.log("Erro a carregar telegram.json");
+});
 
 /* ICONES */
 function getIcon(tipo){
@@ -273,9 +279,15 @@ const div=document.createElement("div");
 
 div.className="card";
 
-div.innerHTML=`
+let icon = "⚠️";
+
+if(item.tipo === "perigo") icon = "🚨";
+if(item.tipo === "spam") icon = "📛";
+if(item.tipo === "analise") icon = "🔍";
+
+div.innerHTML = `
 <h3>${item.nome}</h3>
-<div class="icon">${getIcon(item.tipo)}</div>
+<div style="font-size:22px; margin-top:8px;">${icon}</div>
 `;
 
 div.onclick=()=>abrirModal(item);
