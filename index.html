@@ -352,10 +352,12 @@ c.appendChild(card);
 
 /* STATS */
 
+/* STATS */
+
 Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
 fetch("./data/legal.json").then(r=>r.json()),
-fetch(".data/telegram.json").then(r=>r.json()),  
+fetch("./data/telegram.json").then(r=>r.json()),  
 fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec")
 .then(r=>r.text())
 .then(text=>{
@@ -367,14 +369,16 @@ return [];
 })
 ])
 
-.then(([b,l,p])=>{
+.then(([b,l,t,p])=>{
+
 document.getElementById("total-ilegais").innerText = b.length;
 document.getElementById("total-legais").innerText = l.length;
+document.getElementById("total-telegram").innerText = t.length;
 document.getElementById("total-pesquisas").innerText = p.length;
+
 })
 
 .catch(()=>console.log("Erro stats"));
-
 </script>
 
 </body>
