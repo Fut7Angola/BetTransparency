@@ -256,8 +256,16 @@ let lista = [];
 fetch("/data/telegram.json")
 .then(res => res.json())
 .then(data => {
+
 lista = data;
+
+/* 🔥 ordenar por data (opcional mas top) */
+lista.sort((a,b)=>{
+return new Date(b.data) - new Date(a.data);
+});
+
 render(lista);
+
 })
 .catch(() => {
 console.log("Erro a carregar telegram.json");
@@ -271,12 +279,15 @@ return "🔍";
 }
 
 /* RENDER */
+/* RENDER */
+function render(lista){
+
 const container=document.getElementById("container");
+container.innerHTML = "";
 
 lista.forEach(item=>{
 
 const div=document.createElement("div");
-
 div.className="card";
 
 let icon = "⚠️";
@@ -287,7 +298,7 @@ if(item.tipo === "analise") icon = "🔍";
 
 div.innerHTML = `
 <h3>${item.nome}</h3>
-<div style="font-size:22px; margin-top:8px;">${icon}</div>
+<div class="icon">${icon}</div>
 `;
 
 div.onclick=()=>abrirModal(item);
@@ -295,6 +306,8 @@ div.onclick=()=>abrirModal(item);
 container.appendChild(div);
 
 });
+
+}
 
 /* MODAL */
 let grupoAtual="";
