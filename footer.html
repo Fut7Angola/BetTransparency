@@ -8,10 +8,38 @@ font-size:14px;
 
 <style>
 
-.manifesto-footer{
-margin-bottom:25px;
+/* GRID */
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:left;
 }
 
+/* LINKS */
+.footer-container a{
+color:#cbd5e1;
+text-decoration:none;
+transition:0.2s;
+}
+
+.footer-container a:hover{
+color:#4dabf7;
+}
+
+/* MANIFESTO */
+.manifesto-footer{
+margin-top:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:25px;
+animation:fadeUp 1s ease forwards;
+opacity:0;
+}
+
+/* TEXTO */
 .manifesto-footer p{
 margin:0;
 font-weight:800;
@@ -20,36 +48,59 @@ text-transform:uppercase;
 }
 
 /* linha 1 */
-.manifesto-footer p:last-child{
-font-size:20px;
-color:#0b132b;
-text-shadow:0 1px 0 rgba(0,0,0,0.1);
+.manifesto-footer p:first-child{
+font-size:13px;
+color:#94a3b8;
 }
 
-/* linha 2 (mais forte) */
+/* linha 2 (impacto) */
 .manifesto-footer p:last-child{
-font-size:20px;
-color:#0b132b;
+font-size:22px;
+color:white;
+margin-top:5px;
+text-shadow:0 0 8px rgba(255,255,255,0.15);
 }
 
-.manifesto-footer{
-text-align:center;
-border-top:1px solid #ddd;
-padding-top:20px;
+/* ANIMAÇÃO */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* LINHA ANIMADA */
+.manifesto-footer::before{
+content:"";
+display:block;
+width:60px;
+height:3px;
+background:#4dabf7;
+margin:0 auto 15px;
+border-radius:10px;
+animation:lineGrow 1s ease forwards;
+}
+
+@keyframes lineGrow{
+from{
+width:0;
+opacity:0;
+}
+to{
+width:60px;
+opacity:1;
+}
 }
 
 </style>
 
-<div style="
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-text-align:left;
-">
+<div class="footer-container">
 
-<!-- LOGO / DESCRIÇÃO -->
+<!-- LOGO -->
 <div>
 <h2 style="margin:0 0 10px 0; color:white;">BetTransparency</h2>
 <p style="opacity:0.8; line-height:1.6;">
@@ -61,20 +112,20 @@ Protegemos jogadores contra operadores ilegais e promovemos transparência no se
 <div>
 <h3 style="color:white;">Navegação</h3>
 
-<p><a href="/" style="color:#cbd5e1; text-decoration:none;">Home</a></p>
-<p><a href="/blacklist.html" style="color:#cbd5e1; text-decoration:none;">Blacklist Operadores</a></p>
-<p><a href="/telegram.html" style="color:#cbd5e1; text-decoration:none;">Blacklist Telegram</a></p>
-<p><a href="/guides.html" style="color:#cbd5e1; text-decoration:none;">Guias</a></p>
-<p><a href="/news.html" style="color:#cbd5e1; text-decoration:none;">Notícias</a></p>
+<p><a href="/">🏠 Home</a></p>
+<p><a href="/blacklist.html">🚨 Blacklist Operadores</a></p>
+<p><a href="/telegram.html">📱 Blacklist Telegram</a></p>
+<p><a href="/guides.html">📚 Guias</a></p>
+<p><a href="/news.html">📰 Notícias</a></p>
 
 </div>
 
-<!-- LEGAL -->
+<!-- INFORMAÇÃO -->
 <div>
 <h3 style="color:white;">Informação</h3>
 
-<p><a href="/about.html" style="color:#cbd5e1; text-decoration:none;">Sobre</a></p>
-<p><a href="/donations.html" style="color:#cbd5e1; text-decoration:none;">Doações</a></p>
+<p><a href="/about.html">ℹ️ Sobre</a></p>
+<p><a href="/donations.html">💙 Doações</a></p>
 
 <p style="margin-top:10px;">
 Fonte oficial:<br>
@@ -104,45 +155,37 @@ font-size:14px;
 </a>
 
 <p style="margin-top:15px; opacity:0.8;">
-Fica a par de alertas e novos esquemas em primeira mão.
+Alertas e novos esquemas em primeira mão.
 </p>
 
 </div>
 
 </div>
 
-<!-- LINHA DIVISÓRIA -->
-<hr style="margin:40px auto; max-width:1100px; opacity:0.2;">
-
-<!-- PARTE FINAL -->
-<div style="max-width:1100px; margin:auto; text-align:center;">
-
-<p style="
-font-size:16px;
-font-weight:bold;
-margin-bottom:10px;
-color:#0b132b;
-">
+<!-- MANIFESTO 🔥 -->
 <div class="manifesto-footer">
 
 <p>NÃO SOMOS CONTRA O JOGO</p>
 <p>SOMOS CONTRA A FRAUDE</p>
 
 </div>
-</p>  
+
+<!-- RODAPÉ FINAL -->
+<div style="max-width:1100px; margin:auto; text-align:center; margin-top:20px;">
+
 <p style="margin:0; opacity:0.7;">
-© 2026 BetTransparency — Projeto independente e informativo
+© 2026 BetTransparency — Projeto independente
 </p>
 
 <p style="margin-top:10px; font-size:13px; opacity:0.6; max-width:700px; margin-left:auto; margin-right:auto;">
-<strong>Aviso de Jogo Responsável:</strong> O jogo online pode causar dependência. Apenas maiores de 18 anos podem participar legalmente em Portugal. Jogue com responsabilidade.
+<strong>Aviso:</strong> O jogo pode causar dependência. Apenas maiores de 18 anos. Jogue com responsabilidade.
 </p>
 
 </div>
 
 <!-- SEO escondido -->
 <p style="display:none;">
-Verificar casas de apostas legais em Portugal, identificar operadores ilegais e evitar fraude online. Plataforma independente de proteção ao utilizador.
+Verificar casas de apostas legais em Portugal, identificar operadores ilegais e evitar fraude online.
 </p>
 
 </footer>
