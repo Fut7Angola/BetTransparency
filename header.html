@@ -49,7 +49,7 @@ position:absolute;
 background:#1f4cd1;
 top:100%;
 left:0;
-min-width:220px;
+min-width:240px;
 border-radius:8px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 padding:5px 0;
@@ -97,7 +97,7 @@ opacity:0;
 transform:rotate(-45deg) translate(5px,-5px);
 }
 
-/* OVERLAY ESCURO */
+/* OVERLAY */
 
 .overlay{
 position:fixed;
@@ -132,12 +132,9 @@ position:fixed;
 top:0;
 right:-100%;
 width:260px;
-
-/* 🔥 IMPORTANTE */
 height:auto;
 max-height:80vh;
 overflow-y:auto;
-
 padding:80px 20px;
 transition:0.3s;
 z-index:1500;
@@ -151,9 +148,6 @@ right:0;
 .menu a{
 display:block;
 padding:12px 0;
-color:white;
-text-decoration:none;
-font-weight:bold;
 }
 
 /* DROPDOWN MOBILE */
@@ -165,12 +159,6 @@ border-radius:8px;
 margin-top:8px;
 display:none;
 padding:5px 10px;
-}
-
-.dropdown-content a{
-border:none;
-padding:10px;
-font-size:14px;
 }
 
 .dropdown.active .dropdown-content{
@@ -201,7 +189,8 @@ display:block;
 
 <a href="/">🏠 Home</a>
 
-<div class="dropdown" id="dropdownBtn">
+<!-- FERRAMENTAS -->
+<div class="dropdown" id="drop1">
 
 <a href="#">🛠️ Ferramentas ▾</a>
 
@@ -214,7 +203,32 @@ display:block;
 
 </div>
 
-<a href="/guides.html">📚 Guias</a>
+<!-- EDUCAÇÃO -->
+<div class="dropdown" id="drop2">
+
+<a href="#">📚 Educação ▾</a>
+
+<div class="dropdown-content">
+<a href="/guides.html">🧠 Guias</a>
+<a href="/legislacao.html">📖 Legislação</a>
+<a href="/guia-seguranca.html">🛡️ Segurança</a>
+</div>
+
+</div>
+
+<!-- AJUDA -->
+<div class="dropdown" id="drop3">
+
+<a href="#">🆘 Ajuda ▾</a>
+
+<div class="dropdown-content">
+<a href="/ajuda.html">📞 Apoio ao Jogador</a>
+<a href="/livros.html">📚 Livros</a>
+<a href="/autoexclusao.html">🛑 Autoexclusão</a>
+</div>
+
+</div>
+
 <a href="/news.html">📰 Notícias</a>
 <a href="/about.html">ℹ️ Sobre</a>
 <a href="/donations.html">💙 Doações</a>
@@ -230,10 +244,8 @@ document.addEventListener("DOMContentLoaded", function(){
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const overlay = document.getElementById("overlay");
-const dropdown = document.getElementById("dropdownBtn");
 
 /* ABRIR MENU */
-
 btn.addEventListener("click", function(){
 
 menu.classList.toggle("show");
@@ -242,8 +254,7 @@ btn.classList.toggle("active");
 
 });
 
-/* FECHAR AO CLICAR FORA */
-
+/* FECHAR */
 overlay.addEventListener("click", function(){
 
 menu.classList.remove("show");
@@ -252,18 +263,18 @@ btn.classList.remove("active");
 
 });
 
-/* DROPDOWN MOBILE */
-
-dropdown.addEventListener("click", function(){
+/* DROPDOWNS MOBILE */
+document.querySelectorAll(".dropdown").forEach(drop=>{
+drop.addEventListener("click", function(){
 
 if(window.innerWidth < 768){
 this.classList.toggle("active");
 }
 
 });
+});
 
-/* FECHAR AO CLICAR NUM LINK */
-
+/* FECHAR AO CLICAR LINK */
 document.querySelectorAll(".menu a").forEach(link=>{
 link.addEventListener("click", ()=>{
 menu.classList.remove("show");
