@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Manifesto - BetTransparency</title>
+
+<meta name="description" content="Manifesto da BetTransparency. A nossa missão, valores e compromisso com a transparência no jogo online.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#eef2f7;
+}
+
+main{
+max-width:900px;
+margin:100px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+h1{
+text-align:center;
+color:#0b132b;
+}
+
+h2{
+margin-top:30px;
+color:#1c7ed6;
+}
+
+p{
+line-height:1.7;
+}
+
+.highlight{
+font-weight:bold;
+color:#b00020;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
+});
+</script>
+
+<main>
+
+<h1>📜 Manifesto BetTransparency</h1>
+
+<p><strong>O jogo acabou para a mentira.</strong></p>
+
+<p>
+O mercado das apostas desportivas transformou-se num verdadeiro “Velho Oeste”.
+De um lado, operadores que lucram com a falta de conhecimento.
+Do outro, tipsters e consultorias que manipulam resultados.
+</p>
+
+<p class="highlight">No meio disso tudo, estás tu.</p>
+
+<h2>Os Nossos Pilares</h2>
+
+<p><strong>Independência Radical:</strong> Nunca aceitamos dinheiro de casas de apostas.</p>
+
+<p><strong>Poder Comunitário:</strong> A comunidade é o motor da verdade.</p>
+
+<p><strong>Transparência Total:</strong> Critérios públicos e verificáveis.</p>
+
+<h2>A Nossa Posição</h2>
+
+<p>Não somos contra as apostas. Somos contra a fraude.</p>
+
+<h2>Missão</h2>
+
+<p>
+Construir um ecossistema onde a decisão é consciente
+e a informação é transparente.
+</p>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("footer").innerHTML=data;
+});
+</script>
+
+</body>
+</html>
