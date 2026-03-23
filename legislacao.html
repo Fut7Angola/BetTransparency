@@ -66,6 +66,57 @@ text-decoration:underline;
 
 <div id="header"></div>
 
+<script>
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+
+document.getElementById("header").innerHTML = data;
+
+/* 🔥 ATIVAR MENU MOBILE */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const dropdown = document.getElementById("dropdownBtn");
+
+if(btn && menu){
+
+btn.onclick = function(){
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+btn.classList.toggle("active");
+};
+
+/* fechar ao clicar fora */
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+};
+
+/* dropdown mobile */
+if(dropdown){
+dropdown.onclick = function(){
+if(window.innerWidth < 768){
+this.classList.toggle("active");
+}
+};
+}
+
+/* fechar ao clicar num link */
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+});
+});
+
+}
+
+});
+</script>
+
 <main>
 
 <h1>📖 Legislação das Apostas em Portugal</h1>
