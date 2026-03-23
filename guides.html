@@ -90,6 +90,7 @@ background:#1864ab;
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
@@ -99,7 +100,7 @@ fetch("header.html")
 
 document.getElementById("header").innerHTML = data;
 
-/* 🔥 ATIVAR MENU MOBILE */
+/* 🔥 MENU MOBILE CORRETO */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const overlay = document.getElementById("overlay");
@@ -114,11 +115,13 @@ btn.classList.toggle("active");
 };
 
 /* fechar ao clicar fora */
+if(overlay){
 overlay.onclick = function(){
 menu.classList.remove("show");
 overlay.classList.remove("show");
 btn.classList.remove("active");
 };
+}
 
 /* dropdown mobile */
 if(dropdown){
@@ -197,22 +200,15 @@ Livros sobre disciplina, controlo emocional e gestão financeira.
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
-
-fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-});
-
 fetch("footer.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("footer").innerHTML=data;
 });
-
 </script>
 
 </body>
