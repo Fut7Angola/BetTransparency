@@ -10,7 +10,7 @@ font-size:14px;
 
 /* GRID */
 .footer-container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -29,9 +29,15 @@ transition:0.2s;
 color:#4dabf7;
 }
 
+/* TÍTULOS */
+.footer-container h3{
+color:white;
+margin-bottom:10px;
+}
+
 /* MANIFESTO */
 .manifesto-footer{
-margin-top:30px;
+margin-top:40px;
 text-align:center;
 border-top:1px solid rgba(255,255,255,0.1);
 padding-top:25px;
@@ -39,7 +45,6 @@ animation:fadeUp 1s ease forwards;
 opacity:0;
 }
 
-/* TEXTO */
 .manifesto-footer p{
 margin:0;
 font-weight:800;
@@ -47,13 +52,11 @@ letter-spacing:2px;
 text-transform:uppercase;
 }
 
-/* linha 1 */
 .manifesto-footer p:first-child{
 font-size:13px;
 color:#94a3b8;
 }
 
-/* linha 2 (impacto) */
 .manifesto-footer p:last-child{
 font-size:22px;
 color:white;
@@ -63,17 +66,11 @@ text-shadow:0 0 8px rgba(255,255,255,0.15);
 
 /* ANIMAÇÃO */
 @keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
 }
 
-/* LINHA ANIMADA */
+/* LINHA */
 .manifesto-footer::before{
 content:"";
 display:block;
@@ -86,14 +83,8 @@ animation:lineGrow 1s ease forwards;
 }
 
 @keyframes lineGrow{
-from{
-width:0;
-opacity:0;
-}
-to{
-width:60px;
-opacity:1;
-}
+from{width:0; opacity:0;}
+to{width:60px; opacity:1;}
 }
 
 </style>
@@ -104,27 +95,41 @@ opacity:1;
 <div>
 <h2 style="margin:0 0 10px 0; color:white;">BetTransparency</h2>
 <p style="opacity:0.8; line-height:1.6;">
-Protegemos jogadores contra operadores ilegais e promovemos transparência no setor das apostas em Portugal.
+Projeto independente que combate fraude nas apostas online e protege jogadores em Portugal.
 </p>
 </div>
 
-<!-- NAVEGAÇÃO -->
+<!-- FERRAMENTAS -->
 <div>
-<h3 style="color:white;">Navegação</h3>
+<h3>Ferramentas</h3>
 
-<p><a href="/">🏠 Home</a></p>
 <p><a href="/blacklist.html">🚨 Blacklist Operadores</a></p>
 <p><a href="/telegram.html">📱 Blacklist Telegram</a></p>
-<p><a href="/guides.html">📚 Guias</a></p>
-<p><a href="/news.html">📰 Notícias</a></p>
+<p><a href="/license.html">✅ Operadores Legais</a></p>
+<p><a href="/report.html">📢 Denunciar</a></p>
 
 </div>
 
-<!-- INFORMAÇÃO -->
+<!-- GUIAS / EDUCAÇÃO -->
 <div>
-<h3 style="color:white;">Informação</h3>
+<h3>Guias & Segurança</h3>
 
+<p><a href="/guides.html">📚 Guias</a></p>
+<p><a href="/seguranca.html">🛡️ Segurança</a></p>
+<p><a href="/legislacao.html">📖 Legislação</a></p>
+<p><a href="/autoexclusao.html">🛑 Autoexclusão</a></p>
+<p><a href="/ajuda.html">🆘 Apoio ao Jogador</a></p>
+<p><a href="/livros.html">📚 Livros</a></p>
+
+</div>
+
+<!-- PROJETO -->
+<div>
+<h3>Projeto</h3>
+
+<p><a href="/manifesto.html">📜 Manifesto</a></p>
 <p><a href="/about.html">ℹ️ Sobre</a></p>
+<p><a href="/news.html">📰 Notícias</a></p>
 <p><a href="/donations.html">💙 Doações</a></p>
 
 <p style="margin-top:10px;">
@@ -138,7 +143,7 @@ SRIJ Portugal
 
 <!-- SOCIAL -->
 <div>
-<h3 style="color:white;">Segue-nos</h3>
+<h3>Comunidade</h3>
 
 <a href="https://www.instagram.com/bettransparency/" target="_blank" style="
 display:inline-block;
@@ -155,22 +160,20 @@ font-size:14px;
 </a>
 
 <p style="margin-top:15px; opacity:0.8;">
-Alertas e novos esquemas em primeira mão.
+Alertas, esquemas e novidades em primeira mão.
 </p>
 
 </div>
 
 </div>
 
-<!-- MANIFESTO 🔥 -->
+<!-- MANIFESTO -->
 <div class="manifesto-footer">
-
 <p>NÃO SOMOS CONTRA O JOGO</p>
 <p>SOMOS CONTRA A FRAUDE</p>
-
 </div>
 
-<!-- RODAPÉ FINAL -->
+<!-- FINAL -->
 <div style="max-width:1100px; margin:auto; text-align:center; margin-top:20px;">
 
 <p style="margin:0; opacity:0.7;">
@@ -178,14 +181,14 @@ Alertas e novos esquemas em primeira mão.
 </p>
 
 <p style="margin-top:10px; font-size:13px; opacity:0.6; max-width:700px; margin-left:auto; margin-right:auto;">
-<strong>Aviso:</strong> O jogo pode causar dependência. Apenas maiores de 18 anos. Jogue com responsabilidade.
+<strong>Aviso:</strong> O jogo online pode causar dependência. Apenas maiores de 18 anos podem participar legalmente em Portugal. Jogue com responsabilidade.
 </p>
 
 </div>
 
-<!-- SEO escondido -->
+<!-- SEO -->
 <p style="display:none;">
-Verificar casas de apostas legais em Portugal, identificar operadores ilegais e evitar fraude online.
+Verificar casas de apostas legais em Portugal, identificar operadores ilegais, evitar fraude e promover jogo responsável.
 </p>
 
 </footer>
