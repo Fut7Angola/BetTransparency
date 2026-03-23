@@ -340,11 +340,27 @@ document.getElementById("footer").innerHTML=data;
 
 <script>
 
+/* 🔥 ENTER FUNCIONA SEMPRE */
+document.addEventListener("DOMContentLoaded", function(){
+
+const input = document.getElementById("siteInput");
+
+if(input){
+input.addEventListener("keydown", function(e){
+if(e.key === "Enter"){
+e.preventDefault();
+verificarSite();
+}
+});
+}
+
+});
+
 /* VERIFICADOR */
 
 function verificarSite(){
 
-const input=document.getElementById("siteInput").value.toLowerCase();
+const input=document.getElementById("siteInput").value.toLowerCase().trim();
 const resultado=document.getElementById("resultado");
 
 if(!input){
@@ -362,36 +378,91 @@ fetch("./data/legal.json").then(r=>r.json())
 if(b.find(x=>x.nome.toLowerCase().includes(input))){
 resultado.innerText="🚨 ILEGAL";
 resultado.style.color="red";
+guardarPesquisa(input);
 return;
 }
 
 if(l.find(x=>x.nome.toLowerCase().includes(input))){
 resultado.innerText="✅ LEGAL";
 resultado.style.color="green";
+guardarPesquisa(input);
 return;
 }
 
 resultado.innerText="⚠️ Não encontrado";
 resultado.style.color="orange";
 
+guardarPesquisa(input);
+
 });
 
-/* 🔥 ENTER PARA VERIFICAR */
-document.addEventListener("DOMContentLoaded", function(){
-
-const input = document.getElementById("siteInput");
-
-if(input){
-input.addEventListener("keydown", function(e){
-if(e.key === "Enter"){
-e.preventDefault();
-verificarSite();
-}
-});
 }
 
+/* 🔥 GUARDA PESQUISA */
+function guardarPesquisa(nome){
+
+fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec",{
+method:"POST",
+body:JSON.stringify({nome:nome})
 });
-  
+
+}
+
+/* 🔥 STATS REAIS */
+
+Promise.all([
+fetch("./data/blacklist.json").then(r=>r.json()),
+fetch("./data/legal.json").then(r=>r.json()),
+fetch("./data/telegram.json").then(r=>r.json()),
+fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec")
+.then(r=>r.text())
+.then(text=>{
+try{
+const data = JSON.parse(text);
+return Array.isArray(data) ? data : [];
+}catch{
+return [];
+}
+})
+])
+
+.then(([b,l,t,p])=>{
+
+animarNumero("total-ilegais", b.length);
+animarNumero("total-legais", l.length);
+animarNumero("total-telegram", t.length);
+animarNumero("total-pesquisas", p.length);
+
+})
+
+.catch(()=>console.log("Erro stats"));
+
+/* 🔥 ANIMAÇÃO */
+function animarNumero(id, valor){
+
+let el = document.getElementById(id);
+let atual = 0;
+
+if(valor === 0){
+el.innerText = 0;
+return;
+}
+
+let incremento = Math.ceil(valor / 40);
+
+let timer = setInterval(()=>{
+
+atual += incremento;
+
+if(atual >= valor){
+el.innerText = valor;
+clearInterval(timer);
+}else{
+el.innerText = atual;
+}
+
+},25);
+
 }
 
 /* STATS FIX */
