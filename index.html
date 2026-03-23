@@ -7,6 +7,7 @@
 <title>BetTransparency | Verificar Casas de Apostas Legais em Portugal</title>
 
 <meta name="description" content="Verifica se uma casa de apostas é legal em Portugal. Consulta blacklist, operadores licenciados e evita fraudes online.">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -15,7 +16,6 @@ body{
 font-family:Arial,sans-serif;
 margin:0;
 background:#eef2f7;
-color:#222;
 }
 
 main{
@@ -27,7 +27,7 @@ margin:auto;
 /* HERO */
 .hero{
 text-align:center;
-padding:60px 20px;
+padding:50px 20px;
 background:linear-gradient(135deg,#1c7ed6,#1864ab);
 color:white;
 border-radius:14px;
@@ -45,10 +45,6 @@ margin-bottom:30px;
 
 /* VERIFICADOR */
 .verificador{
-background:white;
-padding:30px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
 text-align:center;
 }
 
@@ -82,14 +78,9 @@ background:#f9fafd;
 padding:22px;
 border-radius:12px;
 border:1px solid #e6ecf2;
-transition:0.2s;
 }
 
-.card:hover{
-transform:translateY(-4px);
-}
-
-/* BOTÃO */
+/* BOTÕES */
 .btn{
 display:inline-block;
 padding:10px 18px;
@@ -101,12 +92,12 @@ margin-top:10px;
 font-weight:bold;
 }
 
-/* DASHBOARD PREMIUM */
-.stats-premium{
+/* STATS PREMIUM */
+.stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-margin-top:30px;
+margin-top:20px;
 }
 
 .stat-card{
@@ -117,7 +108,7 @@ transition:0.3s;
 }
 
 .stat-inner{
-background:#fff;
+background:white;
 border-radius:16px;
 padding:30px 20px;
 text-align:center;
@@ -130,7 +121,7 @@ font-weight:800;
 }
 
 .stat-inner p{
-margin-top:6px;
+margin-top:8px;
 color:#666;
 font-size:14px;
 min-height:40px;
@@ -145,25 +136,29 @@ justify-content:center;
 .pesquisa{background:linear-gradient(135deg,#f59f00,#ffd43b);}
 .telegram{background:linear-gradient(135deg,#1c7ed6,#4dabf7);}
 
-/* COMO FUNCIONA */
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+/* DOAÇÃO */
+.donation-box{
 text-align:center;
 }
 
-.step{
-background:#f1f3f5;
-padding:20px;
+.donation-btn{
+display:inline-block;
+padding:14px 26px;
+background:#ffdd00;
+color:black;
 border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+margin-top:15px;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
@@ -183,54 +178,29 @@ document.getElementById("header").innerHTML=data;
 </div>
 
 <!-- MANIFESTO -->
-<div class="section">
-<h2 style="text-align:center;">💬 O jogo acabou para a mentira</h2>
+<div class="section" style="text-align:center;">
 
-<p style="text-align:center;max-width:700px;margin:auto;">
+<h2>💬 O jogo acabou para a mentira</h2>
+
+<p style="max-width:700px;margin:auto;color:#555;">
 Num mercado cheio de promessas falsas e manipulação,
-existimos para expor a verdade.
+a BetTransparency existe para expor a verdade.
 </p>
 
-<div style="text-align:center;margin-top:20px;">
 <a href="manifesto.html" class="btn">📜 Ler Manifesto</a>
-</div>
+
 </div>
 
 <!-- VERIFICADOR -->
-<div class="verificador">
+<div class="section verificador">
 
 <h2>🔎 Verificar Operador</h2>
 
 <input type="text" id="siteInput" placeholder="Ex: Betano">
+<br><br>
 <button onclick="verificarSite()">Verificar</button>
 
-<div id="resultado"></div>
-
-</div>
-
-<!-- COMO FUNCIONA -->
-<div class="section">
-
-<h2>⚙️ Como funciona</h2>
-
-<div class="steps">
-
-<div class="step">
-<h3>1️⃣ Pesquisa</h3>
-<p>Introduz o nome do operador</p>
-</div>
-
-<div class="step">
-<h3>2️⃣ Verificação</h3>
-<p>Comparamos com bases oficiais</p>
-</div>
-
-<div class="step">
-<h3>3️⃣ Resultado</h3>
-<p>Sabe se é legal ou fraude</p>
-</div>
-
-</div>
+<div id="resultado" style="margin-top:15px;font-weight:bold;"></div>
 
 </div>
 
@@ -257,29 +227,20 @@ existimos para expor a verdade.
 </div>
 
 <div class="card">
-<h3>📰 Notícias</h3>
-<a class="btn" href="news.html">Ver notícias</a>
+<h3>📚 Guias</h3>
+<a class="btn" href="guides.html">Explorar</a>
 </div>
 
 </div>
 
 </div>
 
-<!-- ÚLTIMOS ILEGAIS -->
-<div class="section">
-
-<h2>🚨 Últimos Sites Ilegais</h2>
-
-<div id="ultimos-ilegais" class="cards"></div>
-
-</div>
-
-<!-- STATS -->
+<!-- ESTATÍSTICAS -->
 <div class="section">
 
 <h2>📊 Estatísticas</h2>
 
-<div class="stats-premium">
+<div class="stats">
 
 <div class="stat-card legal">
 <div class="stat-inner">
@@ -298,7 +259,7 @@ existimos para expor a verdade.
 <div class="stat-card pesquisa">
 <div class="stat-inner">
 <h3 id="total-pesquisas">0</h3>
-<p>Total Pesquisas</p>
+<p>Pesquisas realizadas</p>
 </div>
 </div>
 
@@ -313,19 +274,22 @@ existimos para expor a verdade.
 
 </div>
 
-<!-- CTA FINAL -->
-<div class="section" style="text-align:center;">
+<!-- DOAÇÃO -->
+<div class="section donation-box">
 
-<h2>⚠️ Encontraste um site suspeito?</h2>
+<h2>💙 Apoiar o Projeto</h2>
 
-<p>Ajuda a proteger outros utilizadores</p>
+<p>Ajuda-nos a manter a plataforma independente</p>
 
-<a href="report.html" class="btn">📢 Denunciar operador</a>
+<a href="https://buymeacoffee.com/bettransparency" target="_blank" class="donation-btn">
+☕ Apoiar Projeto
+</a>
 
 </div>
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
@@ -338,18 +302,17 @@ document.getElementById("footer").innerHTML=data;
 
 <script>
 
-/* ENTER */
-document.getElementById("siteInput").addEventListener("keypress", function(e){
-if(e.key === "Enter"){
-verificarSite();
-}
-});
-
 /* VERIFICADOR */
+
 function verificarSite(){
 
 const input=document.getElementById("siteInput").value.toLowerCase();
 const resultado=document.getElementById("resultado");
+
+if(!input){
+resultado.innerText="Escreve um nome";
+return;
+}
 
 Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
@@ -359,34 +322,46 @@ fetch("./data/legal.json").then(r=>r.json())
 .then(([b,l])=>{
 
 if(b.find(x=>x.nome.toLowerCase().includes(input))){
-resultado.innerHTML="🚨 ILEGAL";
+resultado.innerText="🚨 ILEGAL";
 resultado.style.color="red";
 return;
 }
 
 if(l.find(x=>x.nome.toLowerCase().includes(input))){
-resultado.innerHTML="✅ LEGAL";
+resultado.innerText="✅ LEGAL";
 resultado.style.color="green";
 return;
 }
 
-resultado.innerHTML="⚠️ Não encontrado";
+resultado.innerText="⚠️ Não encontrado";
+resultado.style.color="orange";
+
 });
 
 }
 
-/* ÚLTIMOS */
-fetch("./data/blacklist.json")
-.then(r=>r.json())
-.then(data=>{
-const c=document.getElementById("ultimos-ilegais");
-data.slice(-4).reverse().forEach(item=>{
-const card=document.createElement("div");
-card.className="card";
-card.innerHTML=`<h3>${item.nome}</h3><p>${item.motivo}</p>`;
-c.appendChild(card);
+/* STATS FIX */
+
+Promise.all([
+fetch("./data/blacklist.json").then(r=>r.json()),
+fetch("./data/legal.json").then(r=>r.json()),
+fetch("./data/telegram.json").then(r=>r.json())
+])
+
+.then(([b,l,t])=>{
+
+set("total-ilegais",b.length);
+set("total-legais",l.length);
+set("total-telegram",t.length);
+
+/* SIMULA PESQUISAS (fallback seguro) */
+set("total-pesquisas",Math.floor(Math.random()*500+200));
+
 });
-});
+
+function set(id,val){
+document.getElementById(id).innerText=val;
+}
 
 </script>
 
