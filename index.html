@@ -166,6 +166,44 @@ fetch("header.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("header").innerHTML=data;
+
+/* 🔥 ATIVAR MENU */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const dropdown = document.getElementById("dropdownBtn");
+
+if(btn && menu){
+
+btn.onclick = function(){
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+btn.classList.toggle("active");
+};
+
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+};
+
+if(dropdown){
+dropdown.onclick = function(){
+if(window.innerWidth < 768){
+this.classList.toggle("active");
+}
+};
+}
+
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+});
+});
+
+}
 });
 </script>
 
@@ -339,11 +377,17 @@ resultado.style.color="orange";
 });
 
 /* 🔥 ENTER PARA VERIFICAR */
-document.getElementById("siteInput").addEventListener("keydown", function(e){
+document.addEventListener("DOMContentLoaded", function(){
 
+const input = document.getElementById("siteInput");
+
+if(input){
+input.addEventListener("keydown", function(e){
 if(e.key === "Enter"){
 e.preventDefault();
 verificarSite();
+}
+});
 }
 
 });
@@ -355,22 +399,48 @@ verificarSite();
 Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
 fetch("./data/legal.json").then(r=>r.json()),
-fetch("./data/telegram.json").then(r=>r.json())
+fetch("./data/telegram.json").then(r=>r.json()),
+fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec")
+.then(r=>r.text())
+.then(text=>{
+try{
+return JSON.parse(text);
+}catch{
+return [];
+}
+})
 ])
 
-.then(([b,l,t])=>{
+.then(([b,l,t,p])=>{
 
-set("total-ilegais",b.length);
-set("total-legais",l.length);
-set("total-telegram",t.length);
+animarNumero("total-ilegais", b.length);
+animarNumero("total-legais", l.length);
+animarNumero("total-telegram", t.length);
+animarNumero("total-pesquisas", p.length);
 
-/* SIMULA PESQUISAS (fallback seguro) */
-set("total-pesquisas",Math.floor(Math.random()*500+200));
+})
 
-});
+.catch(()=>console.log("Erro stats"));
 
-function set(id,val){
-document.getElementById(id).innerText=val;
+function animarNumero(id, valor){
+
+let el = document.getElementById(id);
+let atual = 0;
+let incremento = Math.ceil(valor / 40);
+
+let timer = setInterval(()=>{
+
+atual += incremento;
+
+if(atual >= valor){
+el.innerText = valor;
+clearInterval(timer);
+}else{
+el.innerText = atual;
+}
+
+},25);
+
 }
 
 </script>
