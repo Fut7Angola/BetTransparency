@@ -338,6 +338,16 @@ resultado.style.color="orange";
 
 });
 
+/* 🔥 ENTER PARA VERIFICAR */
+document.getElementById("siteInput").addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+e.preventDefault();
+verificarSite();
+}
+
+});
+  
 }
 
 /* STATS FIX */
