@@ -89,6 +89,7 @@ text-align:center;
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
@@ -98,7 +99,7 @@ fetch("header.html")
 
 document.getElementById("header").innerHTML = data;
 
-/* 🔥 ATIVAR MENU MOBILE */
+/* 🔥 MENU MOBILE CORRETO */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const overlay = document.getElementById("overlay");
@@ -113,11 +114,13 @@ btn.classList.toggle("active");
 };
 
 /* fechar ao clicar fora */
+if(overlay){
 overlay.onclick = function(){
 menu.classList.remove("show");
 overlay.classList.remove("show");
 btn.classList.remove("active");
 };
+}
 
 /* dropdown mobile */
 if(dropdown){
@@ -151,163 +154,106 @@ Disciplina mental • controlo emocional • jogo responsável
 </p>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/11153261-L.jpg">
-
 <div>
 <h3>Atomic Habits — James Clear</h3>
-<p>
-Um dos melhores livros para criar disciplina e eliminar comportamentos destrutivos.
-</p>
+<p>Um dos melhores livros para criar disciplina e eliminar comportamentos destrutivos.</p>
 <span class="tag">Disciplina</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg">
-
 <div>
 <h3>The Psychology of Money — Morgan Housel</h3>
-<p>
-Explica como as emoções influenciam decisões financeiras — essencial para quem aposta.
-</p>
+<p>Explica como as emoções influenciam decisões financeiras.</p>
 <span class="tag">Mentalidade</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/9259256-L.jpg">
-
 <div>
 <h3>Thinking, Fast and Slow — Daniel Kahneman</h3>
-<p>
-Ajuda a perceber erros de pensamento e decisões impulsivas (muito comuns no jogo).
-</p>
+<p>Ajuda a perceber decisões impulsivas e erros mentais.</p>
 <span class="tag">Psicologia</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/10594758-L.jpg">
-
 <div>
 <h3>The Easy Way to Stop Gambling — Allen Carr</h3>
-<p>
-Livro focado diretamente no vício do jogo e como sair dele.
-</p>
+<p>Focado diretamente no vício do jogo.</p>
 <span class="tag">Vício do Jogo</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg">
-
 <div>
 <h3>Rich Dad Poor Dad — Robert Kiyosaki</h3>
-<p>
-Base para entender dinheiro e evitar comportamentos financeiros destrutivos.
-</p>
+<p>Base para entender dinheiro e evitar decisões erradas.</p>
 <span class="tag">Educação Financeira</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/10958323-L.jpg">
-
 <div>
 <h3>Can't Hurt Me — David Goggins</h3>
-<p>
-Livro extremo sobre disciplina mental e controlo do comportamento.
-</p>
+<p>Disciplina extrema e controlo mental.</p>
 <span class="tag">Mentalidade Forte</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/10523338-L.jpg">
-
 <div>
 <h3>The Power of Habit — Charles Duhigg</h3>
-<p>
-Explica como os hábitos funcionam e como quebrar ciclos negativos.
-</p>
+<p>Como quebrar hábitos negativos.</p>
 <span class="tag">Hábitos</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/8776051-L.jpg">
-
 <div>
 <h3>Deep Work — Cal Newport</h3>
-<p>
-Ajuda a desenvolver foco e evitar distrações como apostas impulsivas.
-</p>
+<p>Desenvolver foco e evitar distrações.</p>
 <span class="tag">Foco</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/10909258-L.jpg">
-
 <div>
 <h3>Mindset — Carol Dweck</h3>
-<p>
-Ajuda a desenvolver uma mentalidade de crescimento e controlo emocional.
-</p>
+<p>Mentalidade de crescimento.</p>
 <span class="tag">Mentalidade</span>
 </div>
-
 </div>
 
 <div class="book">
-
 <img src="https://covers.openlibrary.org/b/id/10844533-L.jpg">
-
 <div>
 <h3>Discipline Equals Freedom — Jocko Willink</h3>
-<p>
-Livro direto sobre como disciplina elimina comportamentos destrutivos.
-</p>
+<p>Disciplina como solução para comportamentos destrutivos.</p>
 <span class="tag">Disciplina</span>
 </div>
-
 </div>
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
-
-fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
-});
-
 fetch("footer.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("footer").innerHTML=data;
 });
-
 </script>
 
 </body>
