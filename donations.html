@@ -17,7 +17,7 @@ color:#222;
 
 main{
 max-width:900px;
-margin:40px auto;
+margin:100px auto;
 padding:20px;
 }
 
@@ -32,15 +32,6 @@ padding:25px;
 border-radius:12px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
 margin-bottom:30px;
-}
-
-input,select{
-width:100%;
-padding:10px;
-margin-top:10px;
-margin-bottom:15px;
-border-radius:6px;
-border:1px solid #ccc;
 }
 
 button{
@@ -83,6 +74,7 @@ font-size:16px;
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
@@ -92,16 +84,49 @@ fetch("header.html")
 
 document.getElementById("header").innerHTML=data;
 
-const btn=document.getElementById("menuBtn");
-const menu=document.getElementById("menu");
+/* 🔥 MENU MOBILE COMPLETO */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const dropdown = document.getElementById("dropdownBtn");
 
 if(btn && menu){
-btn.onclick=function(){
+
+btn.onclick = function(){
 menu.classList.toggle("show");
+overlay.classList.toggle("show");
+btn.classList.toggle("active");
+};
+
+/* fechar ao clicar fora */
+if(overlay){
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
 };
 }
 
+/* dropdown mobile */
+if(dropdown){
+dropdown.onclick = function(){
+if(window.innerWidth < 768){
+this.classList.toggle("active");
+}
+};
+}
+
+/* fechar ao clicar num link */
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
 });
+});
+
+}
+
 });
 </script>
 
@@ -111,7 +136,7 @@ menu.classList.toggle("show");
 
 <div class="donation-box">
 
-  <h2>Apoiar o projeto</h2>
+<h2>Apoiar o projeto</h2>
 
 <p>
 Se quiser ajudar a manter o BetTransparency online,
@@ -119,8 +144,6 @@ pode fazer uma pequena doação através da plataforma abaixo.
 </p>
 
 <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px">
-
-
 
 <a href="https://buymeacoffee.com/bettransparency" target="_blank">
 
@@ -141,7 +164,7 @@ cursor:pointer;
 
 </div>
 
-<h2>📊 Doações Recebidas</h2>
+<h2 style="margin-top:30px;">📊 Doações Recebidas</h2>
 
 <table>
 
@@ -156,8 +179,11 @@ cursor:pointer;
 
 </table>
 
+</div>
+
 </main>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
@@ -172,43 +198,7 @@ document.getElementById("footer").innerHTML=data;
 
 const scriptURL="https://script.google.com/macros/s/AKfycbyY99-tq8W1rT3IH9IcRIHgjpYO9o4jUzD37Fe-eDOVLXlOS3j9SbBvbKUn5s7w-FScgA/exec"
 
-/* ENVIAR DOAÇÃO */
-
-function enviarDoacao(){
-
-let nome=document.getElementById("nome").value.trim();
-let valor=document.getElementById("valor").value;
-
-if(valor===""){
-alert("Indique o valor da doação.");
-return;
-}
-
-if(nome===""){
-nome="Anónimo";
-}
-
-fetch(scriptURL,{
-method:"POST",
-body:JSON.stringify({
-nome:nome,
-valor:valor
-})
-})
-
-.then(res=>res.text())
-.then(()=>{
-
-document.getElementById("msg").innerHTML="Obrigado pela sua doação ❤️";
-
-carregarDoacoes();
-
-});
-
-}
-
-/* CARREGAR LISTA */
-
+/* CARREGAR DOAÇÕES */
 function carregarDoacoes(){
 
 fetch(scriptURL)
