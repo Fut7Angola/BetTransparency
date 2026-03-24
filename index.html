@@ -362,8 +362,8 @@ verificarSite();
 
 function verificarSite(){
 
-const input=document.getElementById("siteInput").value.toLowerCase().trim();
-const resultado=document.getElementById("resultado");
+const input = normalizar(document.getElementById("siteInput").value);
+const resultado = document.getElementById("resultado");
 
 if(!input){
 resultado.innerText="Escreve um nome";
@@ -377,29 +377,27 @@ fetch("./data/legal.json").then(r=>r.json())
 
 .then(([b,l])=>{
 
-if(b.find(x=>x.nome.toLowerCase().includes(input))){
-resultado.innerText="🚨 ILEGAL";
+const ilegal = b.find(x => normalizar(x.nome) === input);
+const legal = l.find(x => normalizar(x.nome) === input);
+
+if(ilegal){
+resultado.innerText="🚨 Operador ILEGAL";
 resultado.style.color="red";
-guardarPesquisa(input);
 return;
 }
 
-if(l.find(x=>x.nome.toLowerCase().includes(input))){
-resultado.innerText="✅ LEGAL";
+if(legal){
+resultado.innerText="✅ Operador LEGAL";
 resultado.style.color="green";
-guardarPesquisa(input);
 return;
 }
 
 resultado.innerText="⚠️ Não encontrado";
 resultado.style.color="orange";
 
-guardarPesquisa(input);
-
 });
 
 }
-
 /* 🔥 GUARDA PESQUISA */
 function guardarPesquisa(nome){
 
