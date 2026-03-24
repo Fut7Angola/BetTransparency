@@ -251,25 +251,46 @@ menu.classList.remove("show");
 });
 
 /* LISTA COM TIPOS */
-let lista = [];
+let todosGrupos = [];
 
-fetch("/data/telegram.json")
-.then(res => res.json())
+/* CARREGAR DADOS */
+fetch("./data/telegram.json")
+.then(r => r.json())
 .then(data => {
 
-lista = data;
+const container = document.getElementById("lista-telegram");
 
-/* 🔥 ordenar por data (opcional mas top) */
-lista.sort((a,b)=>{
-return new Date(b.data) - new Date(a.data);
+/* 🔥 ORDENAR ALFABÉTICAMENTE */
+todosGrupos = data.sort((a,b)=>
+a.nome.localeCompare(b.nome, 'pt', {sensitivity:'base'})
+);
+
+mostrarGrupos(todosGrupos);
+
 });
 
-render(lista);
+/* MOSTRAR */
+function mostrarGrupos(lista){
 
-})
-.catch(() => {
-console.log("Erro a carregar telegram.json");
+const container = document.getElementById("lista-telegram");
+container.innerHTML = "";
+
+lista.forEach(item => {
+
+const card = document.createElement("div");
+card.className = "card";
+
+card.innerHTML = `
+<h3>${item.nome}</h3>
+<p>${item.motivo}</p>
+<a href="${item.link}" target="_blank" class="btn">Abrir</a>
+`;
+
+container.appendChild(card);
+
 });
+
+}
 
 /* ICONES */
 function getIcon(tipo){
