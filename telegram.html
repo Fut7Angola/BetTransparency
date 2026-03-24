@@ -25,6 +25,21 @@ text-align:center;
 margin-bottom:20px;
 }
 
+/* 🔍 PESQUISA */
+.search-box{
+text-align:center;
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+max-width:400px;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
 /* GRID */
 .grid{
 display:grid;
@@ -32,11 +47,9 @@ grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:15px;
 }
 
-/* MOBILE 2 COLUNAS */
 @media(max-width:768px){
 .grid{
 grid-template-columns:repeat(2,1fr);
-gap:12px;
 }
 }
 
@@ -48,12 +61,7 @@ border-radius:12px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
 cursor:pointer;
 transition:0.2s;
-overflow:hidden;
-
-/* 🔥 quadrado perfeito */
 aspect-ratio:1/1;
-
-/* 🔥 alinhar conteúdo */
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -64,11 +72,8 @@ padding:10px;
 
 .card:hover{
 transform:translateY(-3px);
-position:relative;
-overflow:hidden;
 }
 
-/* 🔥 marca de água melhorada */
 .card::before{
 content:"";
 position:absolute;
@@ -76,16 +81,10 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-
-background-image:url("/images/telegram.jpg");
-background-size:100%;
-background-repeat:no-repeat;
-background-position:center;
-
-opacity:0.08; /* 🔥 controla intensidade */
+background:url("/images/telegram.jpg") center/cover no-repeat;
+opacity:0.08;
 }
 
-/* nome */
 .card h3{
 margin:0;
 font-size:14px;
@@ -93,12 +92,12 @@ color:#b00020;
 z-index:2;
 }
 
-/* 🔥 icone por baixo */
 .icon{
 margin-top:8px;
 font-size:20px;
 z-index:2;
 }
+
 /* MODAL */
 .modal{
 display:none;
@@ -111,14 +110,13 @@ background:rgba(0,0,0,0.6);
 justify-content:center;
 align-items:center;
 z-index:2000;
-padding:10px;
 }
 
 .modal-content{
 background:white;
 padding:20px;
 border-radius:12px;
-width:100%;
+width:90%;
 max-width:500px;
 max-height:85vh;
 overflow-y:auto;
@@ -133,14 +131,12 @@ cursor:pointer;
 font-size:20px;
 }
 
-/* INPUTS */
 textarea, input{
 width:100%;
 padding:10px;
 border-radius:8px;
 border:1px solid #ddd;
 margin-top:8px;
-font-size:16px;
 }
 
 button{
@@ -172,43 +168,37 @@ margin-top:10px;
 
 <h1>🚨 Grupos Telegram Suspeitos</h1>
 
+<!-- 🔍 PESQUISA -->
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Pesquisar grupo...">
+</div>
+
 <div id="container" class="grid"></div>
 
 </main>
 
 <!-- MODAL -->
 <div id="modal" class="modal">
-
 <div class="modal-content">
 
 <span class="close" onclick="fecharModal()">✖</span>
 
 <h2 id="modal-nome"></h2>
-
 <p id="modal-motivo"></p>
 
 <a id="modal-link" target="_blank">Abrir Telegram</a>
 
-<div style="margin-top:10px;">
 <button onclick="denunciar()">🚨 Denunciar</button>
-</div>
-
-<div class="comments">
 
 <h3>💬 Comentários</h3>
 
 <input id="user" placeholder="Nome ou Anónimo">
-
-<textarea id="input" placeholder="Escreve comentário"></textarea>
-
+<textarea id="input"></textarea>
 <button onclick="comentar()">Enviar</button>
 
 <div id="comments">A carregar...</div>
 
 </div>
-
-</div>
-
 </div>
 
 <script type="module">
@@ -217,7 +207,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-/* FIREBASE */
 const app = initializeApp({
 apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
 authDomain:"bettransparency.firebaseapp.com",
@@ -228,96 +217,58 @@ appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
 const db = getFirestore(app);
 signInAnonymously(getAuth());
 
-/* HEADER + MENU */
+/* HEADER */
 fetch("header.html")
 .then(r=>r.text())
 .then(d=>{
 document.getElementById("header").innerHTML=d;
-
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-if(btn && menu){
-
-btn.onclick = ()=>menu.classList.toggle("show");
-
-document.addEventListener("click",(e)=>{
-if(!menu.contains(e.target) && !btn.contains(e.target)){
-menu.classList.remove("show");
-}
 });
 
-}
-});
-
-/* LISTA COM TIPOS */
+/* DADOS */
 let todosGrupos = [];
 
-/* CARREGAR DADOS */
 fetch("./data/telegram.json")
 .then(r => r.json())
 .then(data => {
 
-const container = document.getElementById("lista-telegram");
-
-/* 🔥 ORDENAR ALFABÉTICAMENTE */
 todosGrupos = data.sort((a,b)=>
-a.nome.localeCompare(b.nome, 'pt', {sensitivity:'base'})
+a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'})
 );
 
-mostrarGrupos(todosGrupos);
+render(todosGrupos);
 
 });
 
-/* MOSTRAR */
-function mostrarGrupos(lista){
+/* 🔍 PESQUISA */
+document.getElementById("searchInput").addEventListener("input", function(){
 
-const container = document.getElementById("lista-telegram");
-container.innerHTML = "";
+const termo = this.value.toLowerCase();
 
-lista.forEach(item => {
+const filtrado = todosGrupos.filter(item =>
+item.nome.toLowerCase().includes(termo)
+);
 
-const card = document.createElement("div");
-card.className = "card";
-
-card.innerHTML = `
-<h3>${item.nome}</h3>
-<p>${item.motivo}</p>
-<a href="${item.link}" target="_blank" class="btn">Abrir</a>
-`;
-
-container.appendChild(card);
+render(filtrado);
 
 });
 
-}
-
-/* ICONES */
-function getIcon(tipo){
-if(tipo==="perigo") return "🚫";
-if(tipo==="spam") return "⚠️";
-return "🔍";
-}
-
-/* RENDER */
 /* RENDER */
 function render(lista){
 
 const container=document.getElementById("container");
-container.innerHTML = "";
+container.innerHTML="";
 
 lista.forEach(item=>{
 
 const div=document.createElement("div");
 div.className="card";
 
-let icon = "⚠️";
+let icon="⚠️";
+if(item.tipo==="perigo") icon="🚨";
+if(item.tipo==="spam") icon="📛";
+if(item.tipo==="analise") icon="🔍";
 
-if(item.tipo === "perigo") icon = "🚨";
-if(item.tipo === "spam") icon = "📛";
-if(item.tipo === "analise") icon = "🔍";
-
-div.innerHTML = `
+div.innerHTML=`
 <h3>${item.nome}</h3>
 <div class="icon">${icon}</div>
 `;
@@ -333,7 +284,7 @@ container.appendChild(div);
 /* MODAL */
 let grupoAtual="";
 
-window.abrirModal = function(item){
+window.abrirModal=function(item){
 
 grupoAtual=item.nome;
 
@@ -343,23 +294,17 @@ document.getElementById("modal-motivo").innerText=item.motivo;
 
 const link=document.getElementById("modal-link");
 link.href=item.link;
-link.innerText="Abrir no Telegram";
 
 carregarComentarios();
 
 }
 
-window.fecharModal = function(){
+window.fecharModal=function(){
 document.getElementById("modal").style.display="none";
 }
 
-/* fechar fora */
-document.getElementById("modal").onclick = function(e){
-if(e.target.id==="modal") fecharModal();
-}
-
-/* DENUNCIAR */
-window.denunciar = async function(){
+/* DENÚNCIA */
+window.denunciar=async function(){
 
 await addDoc(collection(db,"denuncias_telegram"),{
 grupo:grupoAtual,
@@ -370,13 +315,13 @@ alert("Denúncia enviada 🚨");
 
 }
 
-/* COMENTAR */
-window.comentar = async function(){
+/* COMENTÁRIOS */
+window.comentar=async function(){
 
 const text=document.getElementById("input").value;
 const user=document.getElementById("user").value || "Anónimo";
 
-if(!text)return alert("Escreve algo");
+if(!text)return;
 
 await addDoc(collection(db,"comentarios_telegram"),{
 grupo:grupoAtual,
@@ -386,12 +331,10 @@ data:Date.now()
 });
 
 document.getElementById("input").value="";
-
 carregarComentarios();
 
 }
 
-/* CARREGAR */
 async function carregarComentarios(){
 
 const q=query(collection(db,"comentarios_telegram"),where("grupo","==",grupoAtual));
