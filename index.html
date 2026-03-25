@@ -413,13 +413,39 @@ fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5
 
 .then(([b,l,t,p])=>{
 
-document.getElementById("total-ilegais").innerText=b.length;
-document.getElementById("total-legais").innerText=l.length;
-document.getElementById("total-telegram").innerText=t.length;
-document.getElementById("total-pesquisas").innerText=p.length;
+animarNumero("total-ilegais", b.length);
+animarNumero("total-legais", l.length);
+animarNumero("total-telegram", t.length);
+animarNumero("total-pesquisas", p.length);
 
 });
 
+function animarNumero(id, valor){
+
+let el = document.getElementById(id);
+let atual = 0;
+
+if(valor === 0){
+el.innerText = 0;
+return;
+}
+
+let incremento = Math.ceil(valor / 40);
+
+let timer = setInterval(()=>{
+
+atual += incremento;
+
+if(atual >= valor){
+el.innerText = valor;
+clearInterval(timer);
+}else{
+el.innerText = atual;
+}
+
+},25);
+
+}  
 </script>
 
 </body>
