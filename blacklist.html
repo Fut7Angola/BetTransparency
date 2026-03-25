@@ -210,6 +210,8 @@ fecharModal();
 
 <p id="modal-motivo"></p>
 
+<p id="modal-pais"></p>
+
 <a id="modal-link" target="_blank"></a>
 
 <div id="modal-rating"></div>
@@ -282,6 +284,9 @@ div.className="card";
 
 div.innerHTML=`
 <h3>${item.nome}</h3>
+<p style="font-size:12px;color:#666;">
+${item.pais ? "🌍 " + item.pais : "🌍 País desconhecido"}
+</p>
 <div class="rating" id="rating-${item.nome}">⭐ ...</div>
 `;
 
@@ -305,6 +310,8 @@ document.getElementById("modal").style.display="flex";
 
 document.getElementById("modal-nome").innerText=item.nome;
 document.getElementById("modal-motivo").innerText=item.motivo;
+document.getElementById("modal-pais").innerText =
+item.pais ? "🌍 País: " + item.pais : "🌍 País desconhecido";
 
 const link=document.getElementById("modal-link");
 link.href=item.website;
