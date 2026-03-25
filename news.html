@@ -1,120 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
-<title>Notícias - BetTransparency</title>
+
+<title>Notícias de Apostas Online em Portugal | BetTransparency</title>
+
+<meta name="description" content="Últimas notícias sobre apostas ilegais, fraudes online e operadores não licenciados em Portugal. Protege-te e mantém-te informado.">
+
+<meta name="keywords" content="noticias apostas portugal, fraudes apostas online, casas ilegais portugal, alertas apostas, operadores não licenciados">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body{
-font-family:Arial,sans-serif;
+font-family:Arial;
 margin:0;
 background:#eef2f7;
 }
 
-/* 🔥 FIX HEADER */
 main{
 max-width:1000px;
-margin:120px auto 30px auto;
-padding:20px;
+margin:100px auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 h1{
 text-align:center;
+margin-bottom:10px;
 color:#0b132b;
 }
 
-/* CARDS */
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:20px;
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:25px;
 }
 
-.card{
-background:white;
+.box{
+border:1px solid #e6ecf2;
 padding:20px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-transition:0.2s;
+margin-bottom:20px;
+border-radius:10px;
+background:#f9fafd;
 }
 
-.card:hover{
-transform:translateY(-4px);
-}
-
-.card h3{
+.box h2{
 margin-top:0;
 }
 
-@media(max-width:768px){
-main{
-margin:110px auto 20px auto;
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 16px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
 }
+
+.btn:hover{
+opacity:0.9;
+}
+
+.alert{
+background:#ffe3e3;
+border:1px solid #ff6b6b;
+padding:15px;
+border-radius:8px;
+margin-bottom:20px;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <script>
 fetch("header.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("header").innerHTML=data;
+.then(res => res.text())
+.then(data => {
 
-const btn=document.getElementById("menuBtn");
-const menu=document.getElementById("menu");
+document.getElementById("header").innerHTML = data;
+
+/* MENU MOBILE */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const dropdown = document.getElementById("dropdownBtn");
 
 if(btn && menu){
-btn.onclick=()=>menu.classList.toggle("show");
+
+btn.onclick = function(){
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+btn.classList.toggle("active");
+};
+
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+};
+
+if(dropdown){
+dropdown.onclick = function(){
+if(window.innerWidth < 768){
+this.classList.toggle("active");
 }
+};
+}
+
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+});
+});
+
+}
+
 });
 </script>
 
+<!-- CONTEÚDO -->
 <main>
-  <h1>Notícias e Alertas</h1>
-  <div class="country-info">País analisado: Portugal</div>
 
-  <!-- Artigo 1 -->
-  <div class="article-box">
-    <h2>Influenciador X promove operador não licenciado</h2>
-    <p class="article-meta">Data: Março 2026 | Categoria: Redes sociais</p>
-    <p>Foi identificado um vídeo em rede social promovendo uma casa de apostas que não consta na lista do SRIJ. O conteúdo alerta para riscos de perda de dinheiro sem proteção legal.</p>
-    <a class="btn" href="article1.html">Ler mais</a>
-  </div>
+<h1>📰 Notícias e Alertas</h1>
 
-  <!-- Artigo 2 -->
-  <div class="article-box">
-    <h2>Bónus elevado sem menção a operador legal</h2>
-    <p class="article-meta">Data: Março 2026 | Categoria: Promoções</p>
-    <p>Uma campanha recente oferece bónus muito altos sem referir um operador licenciado. Jogadores devem ter cuidado antes de se registarem.</p>
-    <a class="btn" href="article2.html">Ler mais</a>
-  </div>
+<p class="subtitle">
+Atualizações sobre apostas ilegais, fraudes online e operadores não licenciados em Portugal
+</p>
 
-  <!-- Artigo 3 -->
-  <div class="article-box">
-    <h2>Como identificar apostas ilegais online</h2>
-    <p class="article-meta">Data: Março 2026 | Categoria: Educativo</p>
-    <p>Guia rápido para reconhecer sinais de alerta em publicidade de apostas não licenciadas e evitar riscos desnecessários.</p>
-    <a class="btn" href="article3.html">Ler mais</a>
-  </div>
+<div class="alert">
+<strong>⚠️ Atenção:</strong>  
+Novos esquemas surgem constantemente. Consulta esta página regularmente para te manteres protegido.
+</div>
+
+<div id="news-container">
+<p>A carregar notícias...</p>
+</div>
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
 fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("footer").innerHTML=data;
+});
+</script>
+
+<!-- SCRIPT NOTÍCIAS -->
+<script>
+
+fetch("./data/news.json")
+.then(r=>r.json())
+.then(data=>{
+
+const container = document.getElementById("news-container");
+
+/* ordenar por data (mais recente primeiro) */
+data.sort((a,b)=> new Date(b.data) - new Date(a.data));
+
+container.innerHTML = "";
+
+data.forEach(item=>{
+
+const div = document.createElement("div");
+div.className = "box";
+
+div.innerHTML = `
+<h2>${item.titulo}</h2>
+<p><strong>Data:</strong> ${item.data} | <strong>Categoria:</strong> ${item.categoria}</p>
+<p>${item.resumo}</p>
+<a href="${item.link}" class="btn">Ler mais</a>
+`;
+
+container.appendChild(div);
+
+});
+
+})
+.catch(()=>{
+document.getElementById("news-container").innerHTML = "Erro ao carregar notícias.";
+});
+
 </script>
 
 </body>
