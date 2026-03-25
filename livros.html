@@ -3,11 +3,9 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Livros sobre Vício do Jogo e Controlo Mental | BetTransparency</title>
+<title>Livros Recomendados | BetTransparency</title>
 
-<meta name="description" content="Lista de livros recomendados para controlar o vício do jogo, melhorar disciplina financeira e controlo emocional.">
-
-<meta name="keywords" content="livros vicio do jogo, controlo emocional apostas, disciplina financeira livros">
+<meta name="description" content="Livros recomendados para ajudar a combater o vício do jogo e recuperar o controlo.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -40,47 +38,28 @@ color:#666;
 margin-bottom:25px;
 }
 
-.book{
-display:flex;
-gap:15px;
+.box{
 border:1px solid #e6ecf2;
-padding:15px;
-margin-bottom:15px;
+padding:20px;
+margin-bottom:20px;
 border-radius:10px;
 background:#f9fafd;
-align-items:flex-start;
 }
 
-.book img{
-width:80px;
-border-radius:6px;
+.alert{
+background:#ffe3e3;
+border:1px solid #ff6b6b;
+padding:15px;
+border-radius:8px;
+margin-bottom:20px;
 }
 
-.book h3{
-margin:0;
-}
-
-.book p{
-margin:5px 0;
-font-size:14px;
-}
-
-.tag{
-display:inline-block;
-background:#1c7ed6;
-color:white;
-padding:3px 8px;
-border-radius:6px;
-font-size:12px;
-margin-top:5px;
-}
-
-@media(max-width:768px){
-.book{
-flex-direction:column;
-align-items:center;
-text-align:center;
-}
+.success{
+background:#e6fcf5;
+border:1px solid #20c997;
+padding:15px;
+border-radius:8px;
+margin-bottom:20px;
 }
 
 </style>
@@ -89,7 +68,6 @@ text-align:center;
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <script>
@@ -99,7 +77,7 @@ fetch("header.html")
 
 document.getElementById("header").innerHTML = data;
 
-/* 🔥 MENU MOBILE CORRETO */
+/* MENU MOBILE */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const overlay = document.getElementById("overlay");
@@ -113,16 +91,12 @@ overlay.classList.toggle("show");
 btn.classList.toggle("active");
 };
 
-/* fechar ao clicar fora */
-if(overlay){
 overlay.onclick = function(){
 menu.classList.remove("show");
 overlay.classList.remove("show");
 btn.classList.remove("active");
 };
-}
 
-/* dropdown mobile */
 if(dropdown){
 dropdown.onclick = function(){
 if(window.innerWidth < 768){
@@ -131,7 +105,6 @@ this.classList.toggle("active");
 };
 }
 
-/* fechar ao clicar num link */
 document.querySelectorAll(".menu a").forEach(link=>{
 link.addEventListener("click", ()=>{
 menu.classList.remove("show");
@@ -147,121 +120,85 @@ btn.classList.remove("active");
 
 <main>
 
-<h1>📚 Livros sobre Dependência do Jogo</h1>
+<h1>📚 Livros Recomendados</h1>
 
 <p class="subtitle">
-Conhecimento é uma das ferramentas mais fortes para recuperar o controlo
+Ferramentas para compreender, parar e recuperar do vício do jogo
 </p>
 
 <div class="alert">
 <strong>⚠️ Importante:</strong>  
-Se sentes que o jogo está a sair do controlo, procurar informação e ajuda é o primeiro passo.
+Ler não substitui ajuda profissional, mas pode ser o primeiro passo para mudar.
 </div>
 
+<!-- LIVROS -->
 
 <div class="box">
-
-<h2>📖 O Problema do Jogo</h2>
-<p><strong>Pedro Hubert</strong></p>
+<h2>📖 O Problema do Jogo — Pedro Hubert</h2>
 <p>
-Escrito por um dos maiores especialistas portugueses na área, aborda as causas e estratégias de tratamento da dependência do jogo.
+Escrito por um dos maiores especialistas portugueses, aborda causas e estratégias de tratamento da dependência do jogo.
 </p>
-
 </div>
 
-
 <div class="box">
-
 <h2>📖 Como Superar o Vício em Apostas Online</h2>
 <p>
 Plano de ação focado na reorganização financeira e emocional para recuperar o controlo da vida.
 </p>
-
 </div>
 
-
 <div class="box">
-
 <h2>📖 Libertando-se do Jogo</h2>
 <p>
-Explora os gatilhos mentais e apresenta passos concretos para superar a compulsão.
+Guia prático que explora gatilhos mentais e apresenta passos para sair da compulsão.
 </p>
-
 </div>
 
-
 <div class="box">
-
-<h2>📖 Como Sair do Vício de Jogos On-line</h2>
-<p><strong>Jeferson Santos</strong></p>
+<h2>📖 Como Sair do Vício de Jogos On-line — Jeferson Santos</h2>
 <p>
 Estratégias diretas para interromper o ciclo do jogo digital.
 </p>
-
 </div>
-
 
 <div class="box">
-
-<h2>📖 O Jogo Que Destrói Vidas</h2>
-<p><strong>Anderson Kadowaki</strong></p>
+<h2>📖 O Jogo Que Destrói Vidas — Anderson Kadowaki</h2>
 <p>
-Utiliza técnicas de Programação Neurolinguística (PNL) para eliminar gatilhos e quebrar o ciclo do vício.
+Manual com técnicas de PNL para quebrar padrões e controlar impulsos.
 </p>
-
 </div>
-
 
 <div class="box">
-
-<h2>📖 Como se Recuperar do Jogo Patológico</h2>
-<p><strong>Andrea Ross</strong></p>
+<h2>📖 Como se Recuperar do Jogo Patológico — Andrea Ross</h2>
 <p>
-Guia completo sobre as fases da recuperação, incluindo apoio psicológico e grupos de ajuda.
+Aborda todas as fases da recuperação, incluindo apoio psicológico e grupos de ajuda.
 </p>
-
 </div>
-
 
 <div class="box">
-
-<h2>📖 Renascer</h2>
-<p><strong>Lincoln D. Fiore</strong></p>
+<h2>📖 Renascer — Lincoln D. Fiore</h2>
 <p>
-Focado em cortar o acesso ao jogo e reconstruir hábitos saudáveis.
+Focado na reconstrução da vida e substituição de hábitos destrutivos.
 </p>
-
 </div>
-
 
 <div class="box">
-
-<h2>📖 Apostas Online: Sinais de Perda de Controlo</h2>
-<p><strong>Ary S. Jr.</strong></p>
+<h2>📖 Apostas Online: Sinais de Perda de Controlo — Ary S. Jr.</h2>
 <p>
-Ideal para identificar sinais iniciais de vício e agir antes que o problema cresça.
+Ideal para quem está no início do problema e precisa de agir rapidamente.
 </p>
-
 </div>
-
 
 <div class="success">
-
-<h2>💡 Mensagem final</h2>
-
+<h2>✅ Mensagem Final</h2>
 <p>
-Recuperar é possível.
+O conhecimento dá-te vantagem.  
+Mas a decisão de parar… muda tudo.
 </p>
-
-<p>
-Quanto mais cedo agires, mais fácil será retomar o controlo.
-</p>
-
 </div>
 
 </main>
 
-<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
