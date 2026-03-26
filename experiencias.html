@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Partilhar Experiência</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#eef2f7,#e6ecf5);
+margin:0;
+}
+
+main{
+max-width:650px;
+margin:60px auto;
+background:white;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+margin-top:0;
+}
+
+p{
+color:#555;
+}
+
+label{
+font-weight:bold;
+font-size:14px;
+}
+
+input, textarea, select{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:18px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:15px;
+}
+
+input:focus, textarea:focus{
+border-color:#1c7ed6;
+outline:none;
+box-shadow:0 0 0 2px rgba(28,126,214,0.15);
+}
+
+button{
+width:100%;
+padding:14px;
+background:linear-gradient(135deg,#1c7ed6,#1864ab);
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+}
+
+button:hover{
+opacity:0.95;
+}
+
+#msg{
+margin-top:15px;
+font-weight:bold;
+text-align:center;
+}
+
+.checkbox{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+document.getElementById("header").innerHTML = data;
+});
+</script>
+
+<main>
+
+<h1>💬 Partilhar Experiência</h1>
+
+<p>A sua experiência pode ajudar outras pessoas a evitar fraudes e perdas financeiras.</p>
+
+<form id="expForm">
+
+<label>Operador / Site</label>
+<input type="text" name="operador" required>
+
+<label>A sua experiência</label>
+<textarea name="experiencia" rows="5" required></textarea>
+
+<label>Nome (opcional)</label>
+<input type="text" name="nome">
+
+<label>Email (opcional)</label>
+<input type="email" name="email">
+
+<label>Como quer ser identificado?</label>
+<select name="identificacao">
+<option value="anonimo">Anónimo</option>
+<option value="nome">Mostrar nome</option>
+</select>
+
+<div class="checkbox">
+<input type="checkbox" name="autoriza" required>
+<span>Autorizo a partilha desta experiência no site</span>
+</div>
+
+<button type="submit">🚀 Enviar experiência</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+
+document.getElementById("expForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+var formData = new FormData(this);
+
+fetch("https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec", {
+method: "POST",
+body: formData
+})
+.then(response => response.text())
+.then(data => {
+
+document.getElementById("msg").innerHTML =
+"✅ Experiência enviada com sucesso!";
+
+document.getElementById("expForm").reset();
+
+})
+.catch(error => {
+
+document.getElementById("msg").innerHTML =
+"❌ Erro ao enviar.";
+
+console.error(error);
+
+});
+
+});
+
+</script>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+</body>
+</html>
