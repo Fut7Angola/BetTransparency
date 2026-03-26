@@ -369,7 +369,6 @@ Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
 fetch("./data/legal.json").then(r=>r.json())
 ])
-
 .then(([b,l])=>{
 
 if(b.find(x=>normalizar(x.nome)===input)){
@@ -390,6 +389,10 @@ resultado.innerText="⚠️ Não encontrado";
 resultado.style.color="orange";
 guardarPesquisa(inputRaw);
 
+})
+.catch(err=>{
+resultado.innerText="Erro ao verificar";
+console.error(err);
 });
 
 }
@@ -415,7 +418,6 @@ fetch("./data/telegram.json").then(r=>r.json()),
 fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec")
 .then(r=>r.json()).catch(()=>[])
 ])
-
 .then(([b,l,t,p])=>{
 
 animarNumero("total-ilegais", b.length);
@@ -425,6 +427,7 @@ animarNumero("total-pesquisas", p.length);
 
 });
 
+/* ANIMAÇÃO */
 function animarNumero(id, valor){
 
 let el = document.getElementById(id);
@@ -450,7 +453,8 @@ el.innerText = atual;
 
 },25);
 
-}  
+}
+
 </script>
 
 </body>
