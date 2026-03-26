@@ -10,34 +10,81 @@
 
 body{
 font-family:Arial;
-background:#eef2f7;
+background:linear-gradient(135deg,#eef2f7,#e6ecf5);
 margin:0;
 }
 
+/* CONTAINER */
 main{
-max-width:700px;
-margin:40px auto;
+max-width:650px;
+margin:60px auto;
 background:white;
 padding:30px;
-border-radius:10px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
+/* TITULO */
+h1{
+margin-top:0;
+color:#1c1c1c;
+}
+
+/* TEXTO */
+p{
+color:#555;
+}
+
+/* LABEL */
+label{
+font-weight:bold;
+font-size:14px;
+color:#333;
+}
+
+/* INPUTS */
 input,textarea{
 width:100%;
-padding:10px;
-margin-bottom:15px;
-border-radius:6px;
-border:1px solid #ccc;
-font-size:16px;
+padding:12px;
+margin-top:6px;
+margin-bottom:18px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:15px;
+transition:0.2s;
 }
 
+/* FOCUS */
+input:focus, textarea:focus{
+border-color:#1c7ed6;
+outline:none;
+box-shadow:0 0 0 2px rgba(28,126,214,0.15);
+}
+
+/* BOTÃO */
 button{
-padding:12px 20px;
-background:#1c7ed6;
+width:100%;
+padding:14px;
+background:linear-gradient(135deg,#1c7ed6,#1864ab);
 color:white;
 border:none;
-border-radius:6px;
+border-radius:10px;
 cursor:pointer;
+font-size:16px;
+font-weight:bold;
+transition:0.2s;
+}
+
+button:hover{
+transform:translateY(-1px);
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* MENSAGEM */
+#msg{
+margin-top:15px;
+font-weight:bold;
+text-align:center;
 }
 
 </style>
@@ -69,25 +116,26 @@ menu.classList.toggle("show");
 
 <main>
 
-<h1>⚠️ Denunciar Operador Suspeito ou Grupo do Telegram</h1>
+<h1>⚠️ Denunciar Operador Suspeito</h1>
 
-<p>Se encontrou um site de apostas suspeito ou ilegal, ou grupo do Telegram suspeito de fraude, pode denunciá-lo aqui.</p>
+<p>Encontrou um site de apostas ilegal ou grupo de Telegram suspeito?  
+Ajude-nos a identificar e proteger outros utilizadores.</p>
 
 <form id="reportForm">
 
-<label>Nome do Operador / Grupo Telegram</label>
+<label>Nome do Operador / Grupo</label>
 <input type="text" name="operador" required>
 
 <label>Website / Link</label>
 <input type="text" name="website">
 
 <label>Motivo da denúncia (opcional)</label>
-<textarea name="motivo"></textarea>
+<textarea name="motivo" rows="4"></textarea>
 
 <label>Email (opcional)</label>
 <input type="email" name="email">
 
-<button type="submit">Enviar denúncia</button>
+<button type="submit">🚀 Enviar denúncia</button>
 
 </form>
 
