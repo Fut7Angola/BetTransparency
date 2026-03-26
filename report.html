@@ -28,6 +28,7 @@ padding:10px;
 margin-bottom:15px;
 border-radius:6px;
 border:1px solid #ccc;
+font-size:16px;
 }
 
 button{
@@ -39,10 +40,6 @@ border-radius:6px;
 cursor:pointer;
 }
 
-input, textarea{
-font-size:16px;
-}
-  
 </style>
 
 </head>
@@ -74,9 +71,9 @@ menu.classList.toggle("show");
 
 <h1>⚠️ Denunciar Operador Suspeito ou Grupo do Telegram</h1>
 
-<p>Se encontrou um site de apostas suspeito ou ilegal, ou grupo do Telegram suspeito de Fraude pode denunciá-lo aqui.</p>
+<p>Se encontrou um site de apostas suspeito ou ilegal, ou grupo do Telegram suspeito de fraude, pode denunciá-lo aqui.</p>
 
-<form method="POST" action="https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec">
+<form id="reportForm">
 
 <label>Nome do Operador / Grupo Telegram</label>
 <input type="text" name="operador" required>
@@ -96,18 +93,13 @@ menu.classList.toggle("show");
 
 <p id="msg"></p>
 
-  <script>
+<script>
 
 document.getElementById("reportForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-var formData = new FormData();
-
-formData.append("operador", document.getElementById("operador").value);
-formData.append("website", document.getElementById("website").value);
-formData.append("motivo", document.getElementById("motivo").value);
-formData.append("email", document.getElementById("email").value);
+var formData = new FormData(this);
 
 fetch("https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec", {
 method: "POST",
@@ -134,6 +126,7 @@ console.error(error);
 });
 
 </script>
+
 </main>
 
 <div id="footer"></div>
