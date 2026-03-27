@@ -400,12 +400,12 @@ console.error(err);
 /* GUARDAR */
 function guardarPesquisa(nome){
 
+var formData = new FormData();
+formData.append("nome", nome);
+
 fetch("https://script.google.com/macros/s/AKfycbzku91pCuvtA75AbQ-r25r5OmW4WSAnu5XUocGzKQ119TJR6o231PWPl_VsDSE_ryEQ/exec",{
 method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body: JSON.stringify({nome: nome})
+body: formData
 });
 
 }
