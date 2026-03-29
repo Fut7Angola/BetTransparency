@@ -64,6 +64,30 @@ cursor:pointer;
 font-size:16px;
 }
 
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.card{
+background:#f9fafd;
+padding:22px;
+border-radius:12px;
+border:1px solid #e6ecf2;
+}
+
+.btn{
+display:inline-block;
+padding:10px 18px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:10px;
+font-weight:bold;
+}
+
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -94,6 +118,38 @@ font-weight:800;
 .pesquisa{background:linear-gradient(135deg,#f59f00,#ffd43b);}
 .telegram{background:linear-gradient(135deg,#1c7ed6,#4dabf7);}
 
+.report-box{
+text-align:center;
+background:linear-gradient(135deg,#ffe3e3,#fff5f5);
+border:1px solid #ff6b6b;
+}
+
+.report-btn{
+display:inline-block;
+padding:14px 26px;
+background:#e03131;
+color:white;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+margin-top:15px;
+}
+
+.donation-box{
+text-align:center;
+}
+
+.donation-btn{
+display:inline-block;
+padding:14px 26px;
+background:#ffdd00;
+color:black;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+margin-top:15px;
+}
+
 </style>
 
 </head>
@@ -117,6 +173,14 @@ document.getElementById("header").innerHTML=data;
 <p>Protegemos jogadores contra apostas ilegais em Portugal</p>
 </div>
 
+<div class="section" style="text-align:center;">
+<h2>💬 O jogo acabou para a mentira</h2>
+<p style="max-width:700px;margin:auto;color:#555;">
+Num mercado cheio de manipulação, expomos a verdade.
+</p>
+<a href="manifesto.html" class="btn">📜 Ler Manifesto</a>
+</div>
+
 <div class="section verificador">
 
 <h2>🔎 Verificar Operador</h2>
@@ -127,6 +191,51 @@ document.getElementById("header").innerHTML=data;
 <button onclick="verificarSite()">Verificar</button>
 
 <div id="resultado" style="margin-top:15px;font-weight:bold;"></div>
+
+</div>
+
+<div class="section">
+
+<h2>🔧 Ferramentas</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🚨 Blacklist</h3>
+<a class="btn" href="blacklist.html">Ver lista</a>
+</div>
+
+<div class="card">
+<h3>📱 Telegram</h3>
+<a class="btn" href="telegram.html">Ver grupos</a>
+</div>
+
+<div class="card">
+<h3>✅ Operadores</h3>
+<a class="btn" href="license.html">Ver lista</a>
+</div>
+
+<div class="card">
+<h3>📚 Guias</h3>
+<a class="btn" href="guides.html">Explorar</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="section report-box">
+
+<h2>🚨 Denunciar Plataforma ou Grupo</h2>
+
+<p>
+Encontraste um site ilegal ou grupo suspeito?
+Ajuda-nos a proteger outros jogadores.
+</p>
+
+<a href="report.html" class="report-btn">
+🚨 Fazer Denúncia
+</a>
 
 </div>
 
@@ -168,6 +277,18 @@ document.getElementById("header").innerHTML=data;
 
 </div>
 
+<div class="section donation-box">
+
+<h2>💙 Apoiar o Projeto</h2>
+
+<p>Ajuda-nos a manter a plataforma independente</p>
+
+<a href="https://buymeacoffee.com/bettransparency" target="_blank" class="donation-btn">
+☕ Apoiar Projeto
+</a>
+
+</div>
+
 </main>
 
 <div id="footer"></div>
@@ -182,12 +303,10 @@ document.getElementById("footer").innerHTML=data;
 
 <script>
 
-/* NORMALIZAR */
 function normalizar(texto){
 return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
 }
 
-/* ENTER */
 document.addEventListener("DOMContentLoaded", ()=>{
 document.getElementById("siteInput").addEventListener("keydown", function(e){
 if(e.key==="Enter"){
@@ -197,7 +316,6 @@ verificarSite();
 });
 });
 
-/* VERIFICADOR */
 function verificarSite(){
 
 const inputRaw = document.getElementById("siteInput").value;
@@ -237,14 +355,11 @@ guardarPesquisa(inputRaw);
 
 }
 
-/* 🔥 GUARDAR (CORRIGIDO COM LINK NOVO) */
+/* 🔥 LINK NOVO */
 function guardarPesquisa(nome){
-
 fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec?nome=" + encodeURIComponent(nome));
-
 }
 
-/* STATS */
 Promise.all([
 fetch("./data/blacklist.json").then(r=>r.json()),
 fetch("./data/legal.json").then(r=>r.json()),
@@ -257,13 +372,10 @@ fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLP
 animarNumero("total-ilegais", b.length);
 animarNumero("total-legais", l.length);
 animarNumero("total-telegram", t.length);
-
-/* 🔥 CONTAR PESQUISAS */
 animarNumero("total-pesquisas", p.length - 1);
 
 });
 
-/* ANIMAÇÃO */
 function animarNumero(id, valor){
 
 let el = document.getElementById(id);
