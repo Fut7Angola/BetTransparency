@@ -40,16 +40,18 @@ border:1px solid #ccc;
 font-size:16px;
 }
 
-/* GRID */
+/* 🔥 GRID CORRIGIDO */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+grid-template-columns:repeat(auto-fill, 160px);
+justify-content:center;
 gap:15px;
 }
 
 @media(max-width:768px){
 .grid{
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,160px);
+justify-content:center;
 }
 }
 
@@ -68,6 +70,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:10px;
+width:160px;
 }
 
 .card:hover{
@@ -168,7 +171,6 @@ margin-top:10px;
 
 <h1>🚨 Grupos Telegram Suspeitos</h1>
 
-<!-- 🔍 PESQUISA -->
 <div class="search-box">
 <input type="text" id="searchInput" placeholder="Pesquisar grupo...">
 </div>
@@ -217,72 +219,23 @@ appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
 const db = getFirestore(app);
 signInAnonymously(getAuth());
 
-/* HEADER */
 fetch("header.html")
 .then(res => res.text())
 .then(data => {
-
 document.getElementById("header").innerHTML = data;
-
-/* 🔥 ATIVAR MENU MOBILE */
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
-const dropdown = document.getElementById("dropdownBtn");
-
-if(btn && menu){
-
-btn.onclick = function(){
-menu.classList.toggle("show");
-overlay.classList.toggle("show");
-btn.classList.toggle("active");
-};
-
-/* fechar ao clicar fora */
-overlay.onclick = function(){
-menu.classList.remove("show");
-overlay.classList.remove("show");
-btn.classList.remove("active");
-};
-
-/* dropdown mobile */
-if(dropdown){
-dropdown.onclick = function(){
-if(window.innerWidth < 768){
-this.classList.toggle("active");
-}
-};
-}
-
-/* fechar ao clicar num link */
-document.querySelectorAll(".menu a").forEach(link=>{
-link.addEventListener("click", ()=>{
-menu.classList.remove("show");
-overlay.classList.remove("show");
-btn.classList.remove("active");
-});
 });
 
-}
-
-});
-
-/* DADOS */
 let todosGrupos = [];
 
 fetch("./data/telegram.json")
 .then(r => r.json())
 .then(data => {
-
 todosGrupos = data.sort((a,b)=>
 a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'})
 );
-
 render(todosGrupos);
-
 });
 
-/* 🔍 PESQUISA */
 document.getElementById("searchInput").addEventListener("input", function(){
 
 const termo = this.value.toLowerCase();
@@ -295,7 +248,6 @@ render(filtrado);
 
 });
 
-/* RENDER */
 function render(lista){
 
 const container=document.getElementById("container");
@@ -324,7 +276,6 @@ container.appendChild(div);
 
 }
 
-/* MODAL */
 let grupoAtual="";
 
 window.abrirModal=function(item){
@@ -346,7 +297,6 @@ window.fecharModal=function(){
 document.getElementById("modal").style.display="none";
 }
 
-/* DENÚNCIA */
 window.denunciar=async function(){
 
 await addDoc(collection(db,"denuncias_telegram"),{
@@ -358,7 +308,6 @@ alert("Denúncia enviada 🚨");
 
 }
 
-/* COMENTÁRIOS */
 window.comentar=async function(){
 
 const text=document.getElementById("input").value;
