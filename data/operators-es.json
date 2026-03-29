@@ -1,28 +1,583 @@
 [
   {
-    "nome": "Bet365",
+    "nome": "888 JOGOS ONLINE ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
     "sites": [
-      "https://www.bet365.es"
+      { "url": "https://www.888sport.es", "tipo": "sports" },
+      { "url": "https://www.888poker.es", "tipo": "poker" },
+      { "url": "https://www.888casino.es", "tipo": "casino" },
+      { "url": "https://www.888.es", "tipo": "geral" }
     ]
   },
   {
-    "nome": "Betfair",
+    "nome": "BPE ESPAÑA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
     "sites": [
-      "https://www.betfair.es"
+      { "url": "https://fuego.casino.es", "tipo": "casino" },
+      { "url": "https://www.platinumcasino.es", "tipo": "casino" }
     ]
   },
   {
-    "nome": "PokerStars",
+    "nome": "ARTIKBET 2012 SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://apuestas.kirolbet.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "BANÉGRAS UNIÓN, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.juegging.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "BEATYA ONLINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
     "sites": [
-      "https://www.pokerstars.es",
-      "https://www.pokerstarscasino.es"
+      { "url": "https://www.admiralbet.es", "tipo": "geral" },
+      { "url": "https://apuestas.starvegas.es", "tipo": "sports" }
     ]
   },
   {
-    "nome": "888",
+    "nome": "APOSTE NO RED DIGITAL, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
     "sites": [
-      "https://www.888.es",
-      "https://www.888casino.es"
+      { "url": "https://www.marcacasin.es", "tipo": "casino" },
+      { "url": "https://www.casinomarca.es", "tipo": "casino" },
+      { "url": "https://marcaapuestas.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BETFAIR INTERNATIONAL ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.betfair.es", "tipo": "geral" },
+      { "url": "https://apuestas.betfair.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BETWAY ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.betway.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "BETFRED ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.betfred.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "BHEES, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "BLUESBLOCK, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.bluesblock.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "BRIGHTSTAR ESPAÑA OPERATIONS, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "CASINO BARCELONA INTERACTIVO, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.casinobarcelona.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "CASUMO ESPAÑA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.casumo.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "CODERE ONLINE, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.codereapuestas.es", "tipo": "sports" },
+      { "url": "https://www.codere.es", "tipo": "geral" },
+      { "url": "https://m.apuestas.codere.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "COMAR INVERSIONES, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.casinogranvia.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "DAUWEI INVESTMENTS, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "GESTÃO DE DISTRIBUIÇÃO DIGITAL IBÉRICA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.bet777.es", "tipo": "sports" },
+      { "url": "https://www.casino777.es", "tipo": "casino" },
+      { "url": "https://777.es", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "DZBT DEPORTES, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.luckia.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "EBINGO ONLINE ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://ebingo.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "EFBET, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.efbet.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "EKASA APOSTAS ONLINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.retabet.es", "tipo": "sports" },
+      { "url": "https://apuestas.retabet.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "ELECTRAWORKS CEUTA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.bwin.es", "tipo": "sports" },
+      { "url": "https://www.partypoker.es", "tipo": "poker" },
+      { "url": "https://www.partycasino.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "EMOTIVA ON-LINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.emotivajuegos.es", "tipo": "casino" },
+      { "url": "https://www.yoaguapoker.es", "tipo": "poker" }
+    ]
+  },
+  {
+    "nome": "ESGAMING, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.casinogranmadridtv.es", "tipo": "casino" },
+      { "url": "https://www.casinogranmadrid.es", "tipo": "casino" },
+      { "url": "https://www.casinogranmadridonline.es", "tipo": "casino" },
+      { "url": "https://www.granmadrid.es", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "ESPANHOLEAD",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "ESTRELLA SOL INTERACTIVE SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.solcasino.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "EURASIA SOLUTIONS, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.dafabet.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "EUROAPUESTAS ONLINE, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.paston.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "EUROBOX, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.tonybet.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "EUROCONCURSOS, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.eurojuegostar.es", "tipo": "casino" },
+      { "url": "https://www.euroconcursos.es", "tipo": "geral" },
+      { "url": "https://www.eurojuego.es", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "EVOLUTION NETENT SOLUTIONS PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "FOODLSA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.luckycasino.es", "tipo": "casino" },
+      { "url": "https://www.onecasino.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "JOGOS ONLINE TI, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://oneplaycasino.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "OPERACIONES DA GAMES SPAIN, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.monopolycasino.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "GAMESYS ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.botemania.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "GIGA GAME ONLINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.casinosonlinenoplay.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "JOGOS DO PARQUE DOURADO, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.todoslots.es", "tipo": "slots" },
+      { "url": "https://www.goldengames.es", "tipo": "casino" },
+      { "url": "https://mobile.bet365.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "HILLSIDE ESPAÑA LEISURE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.bet365.es", "tipo": "geral" },
+      { "url": "https://poker.bet365.es", "tipo": "poker" },
+      { "url": "https://casino.bet365.es", "tipo": "casino" },
+      { "url": "https://games.bet365.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "HILLSIDE NEW MEDIA MALTA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.bet365.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "IBERIA GAMING, SA UNIPESSOAL",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "INTERWETTEN ESPAÑA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.interwetten.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "JPI OPS ESPANHA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "JOGO ONLINE, EAD",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "JUMPMAN GAMING ESPANHA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "KAMBI SPORTSBOOK, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "LEOESP, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.leovegas.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "LP E1, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.hitaspasia.es", "tipo": "casino" },
+      { "url": "https://www.lowen-play.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "LUDOA GAMES, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.ludkia.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "MANSION GAMING ESPANHA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "MARATONBET ESPANHA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.mbet.es", "tipo": "sports" },
+      { "url": "https://www.maratonbet.es", "tipo": "sports" },
+      { "url": "https://www.marathonbet.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "MONDOBETS, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.mondobets.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "MRG ESPANHA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.mrgreen.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "MURCIAPUESTA ONLINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.apuestat.es", "tipo": "sports" },
+      { "url": "https://www.speedybet.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "PAF GAMES, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.goldenbull.es", "tipo": "casino" },
+      { "url": "https://www.paf.es", "tipo": "geral" },
+      { "url": "https://www.pafcasino.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "PLAY SPAIN CASINO, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "JOGADORES, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.platincasino.es", "tipo": "casino" },
+      { "url": "https://www.kirolbet.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "PREMIERE MEGAPLEX, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.betsson.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "PRIMA NETWORKS ESPANHA, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "PT ENTRETENIMIENTO ONLINE, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.casino777.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "RANK DIGITAL CEUTA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.enracha.es", "tipo": "casino" },
+      { "url": "https://www.yocasino.es", "tipo": "casino" },
+      { "url": "https://www.yosports.es", "tipo": "sports" },
+      { "url": "https://www.yobingo.es", "tipo": "bingo" }
+    ]
+  },
+  {
+    "nome": "RANK DIGITAL ESPANHA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "REFRANCO DIGITAL, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.wanacasino.es", "tipo": "casino" },
+      { "url": "https://www.wanabet.es", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "HABILIDAD NA REDE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.yassicasino.es", "tipo": "casino" },
+      { "url": "https://www.slingo.es", "tipo": "casino" },
+      { "url": "https://www.lunacasino.es", "tipo": "casino" },
+      { "url": "https://www.metalcasino.es", "tipo": "casino" },
+      { "url": "https://www.luckylvegas.es", "tipo": "casino" },
+      { "url": "https://www.playjuego.es", "tipo": "casino" },
+      { "url": "https://www.ice36.es", "tipo": "casino" },
+      { "url": "https://www.slotsmagic.es", "tipo": "slots" },
+      { "url": "https://www.playcongo.es", "tipo": "casino" },
+      { "url": "https://lordping.es", "tipo": "casino" },
+      { "url": "https://www.playtoro.es", "tipo": "casino" },
+      { "url": "https://www.gratincasino.es", "tipo": "casino" },
+      { "url": "https://www.euhpoker.es", "tipo": "poker" },
+      { "url": "https://www.gransplay.es", "tipo": "casino" },
+      { "url": "https://www.royale500.es", "tipo": "casino" },
+      { "url": "https://www.megacasino.es", "tipo": "casino" },
+      { "url": "https://www.gentingcasino.es", "tipo": "casino" },
+      { "url": "https://www.bacanaplay.es", "tipo": "casino" },
+      { "url": "https://slotstars.es", "tipo": "slots" },
+      { "url": "https://www.playuzu.es", "tipo": "casino" },
+      { "url": "https://www.primecasino.es", "tipo": "casino" },
+      { "url": "https://www.slingocasino.es", "tipo": "casino" },
+      { "url": "https://www.eucasino.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "SOCIEDADE ESTADUAL DE LOTERIAS E APOSTAS ESTADUAIS",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "DIRETORIA DA SOLANA, SAU",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": []
+  },
+  {
+    "nome": "SPORTIUM APUESTAS DIGITALES, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.sportium.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "SUERTIA INTERACTIVA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://apuestas.suertia.es", "tipo": "sports" },
+      { "url": "https://suertia.es", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "TOMBOLA CEUTA SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.tombola.es", "tipo": "bingo" }]
+  },
+  {
+    "nome": "TSG INTERACTIVE SPAIN, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.pokerstars.es", "tipo": "poker" },
+      { "url": "https://www.pokerstarssports.es", "tipo": "sports" },
+      { "url": "https://www.pokerstarsmobile.es", "tipo": "poker" },
+      { "url": "https://www.pokerstarscasino.es", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "VERAMAT ONLINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.yoapuesto.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "VERSUS ONLINE, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.versus.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "VIDEOLOTS CASINO, PLC",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.videoslots.es", "tipo": "casino" }]
+  },
+  {
+    "nome": "WAGERFAIR, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.betfair.es", "tipo": "geral" }]
+  },
+  {
+    "nome": "WHL CEUTA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.williamhill.es", "tipo": "sports" }]
+  },
+  {
+    "nome": "WINAMAX, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [{ "url": "https://www.winamax.es", "tipo": "poker" }]
+  },
+  {
+    "nome": "ZEBETTING E GAMING ESPAÑA, SA",
+    "pais": "ES",
+    "regulador": "DGOJ",
+    "sites": [
+      { "url": "https://www.zebet.es", "tipo": "sports" },
+      { "url": "https://www.zecasino.es", "tipo": "casino" },
+      { "url": "https://www.zepunt.es", "tipo": "sports" },
+      { "url": "https://www.zeurf.es", "tipo": "sports" }
     ]
   }
 ]
