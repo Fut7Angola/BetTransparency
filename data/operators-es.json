@@ -1,0 +1,28 @@
+[
+  {
+    "nome": "Bet365",
+    "sites": [
+      "https://www.bet365.es"
+    ]
+  },
+  {
+    "nome": "Betfair",
+    "sites": [
+      "https://www.betfair.es"
+    ]
+  },
+  {
+    "nome": "PokerStars",
+    "sites": [
+      "https://www.pokerstars.es",
+      "https://www.pokerstarscasino.es"
+    ]
+  },
+  {
+    "nome": "888",
+    "sites": [
+      "https://www.888.es",
+      "https://www.888casino.es"
+    ]
+  }
+]
