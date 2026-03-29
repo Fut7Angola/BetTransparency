@@ -15,16 +15,61 @@ margin:0;
 }
 
 main{
-max-width:900px;
+max-width:1000px;
 margin:80px auto;
 padding:20px;
 }
 
+h1{
+text-align:center;
+margin-bottom:30px;
+}
+
+/* SECÇÕES */
 .section{
 background:white;
+padding:25px;
+border-radius:14px;
+margin-bottom:25px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* GRID OPERADORES */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:#f9fafd;
 padding:20px;
 border-radius:12px;
-margin-bottom:20px;
+border:1px solid #e6ecf2;
+text-align:center;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+/* NOME */
+.card h3{
+margin:0 0 10px;
+font-size:16px;
+}
+
+/* BOTÃO */
+.btn{
+display:inline-block;
+padding:8px 14px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-size:14px;
 }
 
 </style>
@@ -45,13 +90,32 @@ margin-bottom:20px;
 </div>
 
 <div class="section">
+
 <h2>✅ Operadores Legais</h2>
 
-<ul>
-<li>Betano</li>
-<li>Betclic</li>
-<li>ESC Online</li>
-</ul>
+<div class="grid">
+
+<div class="card">
+<h3>Betano</h3>
+<a href="https://www.betano.pt" target="_blank" class="btn">Visitar</a>
+</div>
+
+<div class="card">
+<h3>Betclic</h3>
+<a href="https://www.betclic.pt" target="_blank" class="btn">Visitar</a>
+</div>
+
+<div class="card">
+<h3>ESC Online</h3>
+<a href="https://www.estorilsolcasinos.pt" target="_blank" class="btn">Visitar</a>
+</div>
+
+<div class="card">
+<h3>Placard</h3>
+<a href="https://www.placard.pt" target="_blank" class="btn">Visitar</a>
+</div>
+
+</div>
 
 </div>
 
