@@ -1,0 +1,156 @@
+[
+  {
+    "nome": "BCFR2",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.circusbet.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BCFR3",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.vibrez.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BCFR4",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.daznbet.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "B.E.S. SAS",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.bwin.fr", "tipo": "sports" },
+      { "url": "https://www.partypoker.fr", "tipo": "poker" }
+    ]
+  },
+  {
+    "nome": "Betclic Enterprises Limited",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.betclic.fr", "tipo": "sports/horses" }
+    ]
+  },
+  {
+    "nome": "BETSSON FRANÇA SA",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.betsson.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Fdj Online Betting and Gaming",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.parionsweb.fr", "tipo": "sports" },
+      { "url": "https://www.parionsweb.fdj.fr", "tipo": "sports" },
+      { "url": "https://enligne.parionssport.fdj.fr", "tipo": "sports" },
+      { "url": "https://www.zeturf.fr", "tipo": "horses" }
+    ]
+  },
+  {
+    "nome": "Feeling Publishing",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.feelingbet.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "FP Opérateur",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.olybet.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "GENYBET",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.genybet.fr", "tipo": "sports/horses" }
+    ]
+  },
+  {
+    "nome": "La Différenciation Evidente",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.yesorno-jeu.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "La Française des Jeux",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.parionsweb.fr", "tipo": "circle_games" },
+      { "url": "https://www.parionsweb.fdj.fr", "tipo": "circle_games" },
+      { "url": "https://enligne.parionssport.fdj.fr", "tipo": "circle_games" }
+    ]
+  },
+  {
+    "nome": "Netbet FR SAS",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.netbet.fr", "tipo": "sports" },
+      { "url": "https://www.netbetsport.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Pari Mutuel Urbain",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.pmu.fr", "tipo": "sports/horses" }
+    ]
+  },
+  {
+    "nome": "Reel Malta Limited",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.pokerstars.fr", "tipo": "poker" },
+      { "url": "https://www.pokerstarsmobile.fr", "tipo": "poker" },
+      { "url": "https://www.betstars.fr", "tipo": "sports" },
+      { "url": "https://www.pokerstarssports.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SPS Betting France Limited",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.unibet.fr", "tipo": "sports/horses" }
+    ]
+  },
+  {
+    "nome": "VBET France",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.vbet.fr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Winamax",
+    "pais": "FR",
+    "regulador": "ANJ",
+    "sites": [
+      { "url": "https://www.winamax.fr", "tipo": "sports/poker" }
+    ]
+  }
+]
