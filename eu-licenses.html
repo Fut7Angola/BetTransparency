@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Licenças Europeias</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:1000px;
+margin:80px auto;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+padding:20px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+.flag{
+font-size:40px;
+margin-bottom:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<main>
+
+<h1>🌍 Licenças Europeias</h1>
+
+<div class="grid">
+
+<a href="license-pt.html" class="card">
+<div class="flag">🇵🇹</div>
+Portugal
+</a>
+
+<a href="license-es.html" class="card">
+<div class="flag">🇪🇸</div>
+Espanha
+</a>
+
+<a href="license-fr.html" class="card">
+<div class="flag">🇫🇷</div>
+França
+</a>
+
+<a href="license-it.html" class="card">
+<div class="flag">🇮🇹</div>
+Itália
+</a>
+
+<a href="license-de.html" class="card">
+<div class="flag">🇩🇪</div>
+Alemanha
+</a>
+
+<a href="license-uk.html" class="card">
+<div class="flag">🇬🇧</div>
+Reino Unido
+</a>
+
+</div>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+fetch("header.html").then(r=>r.text()).then(d=>{
+document.getElementById("header").innerHTML=d;
+});
+fetch("footer.html").then(r=>r.text()).then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+</body>
+</html>
