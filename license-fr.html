@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Licenças França</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:1100px;
+margin:40px auto;
+padding:20px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#0055a4,#ef4135);
+color:white;
+border-radius:14px;
+margin-bottom:30px;
+}
+
+/* SECÇÃO */
+.section{
+background:white;
+padding:25px;
+border-radius:14px;
+margin-bottom:25px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* BOTÃO */
+.btn{
+display:inline-block;
+padding:10px 16px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-size:14px;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:12px;
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3{
+font-size:14px;
+margin-bottom:10px;
+}
+
+/* SITES */
+.sites{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.site-link{
+font-size:13px;
+color:#1c7ed6;
+text-decoration:none;
+word-break:break-all;
+}
+
+.site-link:hover{
+text-decoration:underline;
+}
+
+/* TAG TIPO */
+.tipo{
+font-size:11px;
+background:#e7f5ff;
+color:#1864ab;
+padding:2px 6px;
+border-radius:6px;
+margin-left:6px;
+}
+
+.no-site{
+font-size:12px;
+color:#999;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
+
+/* MENU MOBILE */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+if(btn && menu){
+
+btn.onclick = function(){
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+};
+
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+};
+
+}
+});
+</script>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+<h1>🇫🇷 França</h1>
+<p>Operadores licenciados pela ANJ</p>
+</div>
+
+<!-- REGULADOR -->
+<div class="section">
+
+<h2>🏛 Entidade Reguladora</h2>
+
+<p>Autorité Nationale des Jeux (ANJ)</p>
+
+<a href="https://anj.fr" target="_blank" class="btn">
+🌐 Visitar site oficial
+</a>
+
+</div>
+
+<!-- OPERADORES -->
+<div class="section">
+
+<h2>✅ Operadores Legais</h2>
+
+<div id="container" class="grid">
+A carregar operadores...
+</div>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+<!-- SCRIPT -->
+<script>
+
+fetch("./data/operators-fr.json")
+.then(r=>r.json())
+.then(data=>{
+
+const container = document.getElementById("container");
+container.innerHTML = "";
+
+/* ordenar */
+data.sort((a,b)=>a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'}));
+
+data.forEach(op=>{
+
+const div = document.createElement("div");
+div.className = "card";
+
+let sitesHTML = "";
+
+if(op.sites && op.sites.length > 0){
+
+op.sites.forEach(s=>{
+
+sitesHTML += `
+<a href="${s.url}" target="_blank" class="site-link">
+🌐 ${new URL(s.url).hostname}
+<span class="tipo">${s.tipo}</span>
+</a>
+`;
+
+});
+
+}else{
+sitesHTML = `<p class="no-site">Sem site disponível</p>`;
+}
+
+div.innerHTML = `
+<h3>${op.nome}</h3>
+<div class="sites">${sitesHTML}</div>
+`;
+
+container.appendChild(div);
+
+});
+
+})
+.catch(err=>{
+document.getElementById("container").innerText = "Erro ao carregar operadores";
+console.error(err);
+});
+
+</script>
+
+</body>
+</html>
