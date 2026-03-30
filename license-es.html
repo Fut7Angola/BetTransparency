@@ -67,11 +67,13 @@ margin-top:20px;
 
 /* CARD */
 .card{
-background:#f9fafd;
-padding:20px;
+background:white;
 border-radius:12px;
-border:1px solid #e6ecf2;
-text-align:center;
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 transition:0.2s;
 }
 
@@ -81,42 +83,11 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .card h3{
-margin:0 0 10px;
-font-size:16px;
-}
-
-/* MULTI LINKS */
-.links{
-display:flex;
-flex-wrap:wrap;
-gap:6px;
-justify-content:center;
-}
-
-.links a{
-font-size:12px;
-padding:6px 10px;
-background:#1c7ed6;
-color:white;
-border-radius:6px;
-text-decoration:none;
-}
-
-.card{
-background:white;
-border-radius:12px;
-padding:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-
-.card h3{
 font-size:14px;
 margin-bottom:10px;
 }
 
+/* SITES */
 .sites{
 display:flex;
 flex-direction:column;
@@ -149,45 +120,30 @@ color:#999;
 <div id="header"></div>
 
 <script>
-
-/* CARREGAR JSON */
-fetch("./data/operators-es.json")
-.then(r=>r.json())
+fetch("header.html")
+.then(res=>res.text())
 .then(data=>{
+document.getElementById("header").innerHTML=data;
 
-const container = document.getElementById("container");
-container.innerHTML = "";
+/* MENU MOBILE */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
 
-/* ordenar alfabeticamente */
-data.sort((a,b)=>a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'}));
+if(btn && menu){
 
-data.forEach(item=>{
+btn.onclick = function(){
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+};
 
-const div = document.createElement("div");
-div.className = "card";
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+};
 
-/* criar links */
-let linksHTML = "";
-
-item.sites.forEach(site=>{
-linksHTML += `<a href="${site}" target="_blank">Visitar</a>`;
+}
 });
-
-div.innerHTML = `
-<h3>${item.nome}</h3>
-<div class="links">${linksHTML}</div>
-`;
-
-container.appendChild(div);
-
-});
-
-})
-.catch(err=>{
-document.getElementById("container").innerText = "Erro ao carregar operadores";
-console.error(err);
-});
-
 </script>
 
 <main>
@@ -235,9 +191,9 @@ document.getElementById("footer").innerHTML=d;
 });
 </script>
 
+<!-- 🔥 SCRIPT CORRETO (ÚNICO) -->
 <script>
 
-/* CARREGAR JSON */
 fetch("./data/operators-es.json")
 .then(r=>r.json())
 .then(data=>{
@@ -245,24 +201,34 @@ fetch("./data/operators-es.json")
 const container = document.getElementById("container");
 container.innerHTML = "";
 
-/* ordenar alfabeticamente */
+/* ordenar */
 data.sort((a,b)=>a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'}));
 
-data.forEach(item=>{
+data.forEach(op=>{
 
 const div = document.createElement("div");
 div.className = "card";
 
-/* criar links */
-let linksHTML = "";
+let sitesHTML = "";
 
-item.sites.forEach(site=>{
-linksHTML += `<a href="${site}" target="_blank">Visitar</a>`;
+/* 🔥 CORRETO */
+if(op.sites && op.sites.length > 0){
+
+op.sites.forEach(s=>{
+sitesHTML += `
+<a href="${s.url}" target="_blank" class="site-link">
+🌐 ${new URL(s.url).hostname}
+</a>
+`;
 });
 
+}else{
+sitesHTML = `<p class="no-site">Sem site disponível</p>`;
+}
+
 div.innerHTML = `
-<h3>${item.nome}</h3>
-<div class="links">${linksHTML}</div>
+<h3>${op.nome}</h3>
+<div class="sites">${sitesHTML}</div>
 `;
 
 container.appendChild(div);
