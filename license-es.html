@@ -112,30 +112,47 @@ text-decoration:none;
 <div id="header"></div>
 
 <script>
-fetch("header.html")
-.then(res=>res.text())
+
+fetch("./data/operators-es.json")
+.then(r=>r.json())
 .then(data=>{
-document.getElementById("header").innerHTML=data;
 
-/* MENU MOBILE */
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
+const container = document.getElementById("container");
+container.innerHTML = "";
 
-if(btn && menu){
+data.forEach(op=>{
 
-btn.onclick = function(){
-menu.classList.toggle("show");
-overlay.classList.toggle("show");
-};
+const div = document.createElement("div");
+div.className = "card";
 
-overlay.onclick = function(){
-menu.classList.remove("show");
-overlay.classList.remove("show");
-};
+/* gerar lista de sites */
+let sitesHTML = "";
 
-}
+if(op.sites && op.sites.length > 0){
+
+op.sites.forEach(s=>{
+sitesHTML += `
+<a href="${s.url}" target="_blank" class="site-link">
+🌐 ${new URL(s.url).hostname}
+</a>
+`;
 });
+
+}else{
+sitesHTML = `<p class="no-site">Sem site disponível</p>`;
+}
+
+div.innerHTML = `
+<h3>${op.nome}</h3>
+<div class="sites">${sitesHTML}</div>
+`;
+
+container.appendChild(div);
+
+});
+
+});
+
 </script>
 
 <main>
