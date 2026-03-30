@@ -1,0 +1,292 @@
+[
+  {
+    "nome": "Admiral Bet Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.admiralbet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Azzurri Limitada",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [
+      { "url": "https://www.starcasino.it", "tipo": "casino" },
+      { "url": "https://www.betsson.it", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Betfair Italia Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.betfair.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Betflag Spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.betflag.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Betpoint Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.betpoint.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Betpremium Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.sunbet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Bgame Spa Benefit Corporation",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.bgame.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Bpg Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.netbet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Spa do Cassino Sanremo",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.online.casinosanremo.it", "tipo": "casino" }]
+  },
+  {
+    "nome": "Casino' Di Venezia Gioco Spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.casinoveneziaonline.it", "tipo": "casino" }]
+  },
+  {
+    "nome": "Codere.it Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.codere.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Dez mil e um spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.zonagioco.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Domus Bet Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.domusbet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "E-play 24 Ita Limitada",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [
+      { "url": "https://www.eplay24.it", "tipo": "geral" },
+      { "url": "https://www.sportium.it", "tipo": "sports" },
+      { "url": "https://www.betwin360.it", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "Eurobet Italia Srl Unipessoal",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [
+      { "url": "https://www.eurobet.it", "tipo": "geral" },
+      { "url": "https://www.bwin.it", "tipo": "geral" },
+      { "url": "https://www.giocodigitale.it", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "Gi.lu.pi. Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.betitaly.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Giochi24 Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.giochi24.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Goldbet (GBO Itália Spa)",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [
+      { "url": "https://www.goldbet.it", "tipo": "sports" },
+      { "url": "https://www.lottomatica.it", "tipo": "geral" }
+    ]
+  },
+  {
+    "nome": "Greentube Malta Limitada",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.starvegas.it", "tipo": "casino" }]
+  },
+  {
+    "nome": "Hbg On Line Gaming Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.quigioco.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Hillside (New Media Malta) Plc",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.bet365.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Hit Dd Nova Gorica Spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.perlaplay.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Italix Gaming Limited",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.elabet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Leo Vegas Gaming Plc",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.leovegas.it", "tipo": "casino" }]
+  },
+  {
+    "nome": "Marathonbet Italy Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.marathonbet.it", "tipo": "sports" }]
+  },
+  {
+    "nome": "Mylotteries Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.mylotteriesplay.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Netwin Italia Spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.netwin.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Pintertotobet Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.gioca7.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Pwo Spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.planetwin365.it", "tipo": "sports" }]
+  },
+  {
+    "nome": "Replatz Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.fastbet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Betting Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.daznbet.it", "tipo": "sports" }]
+  },
+  {
+    "nome": "Sisal Italia Spa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.sisal.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Spa Snaitech",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.snai.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Sportbet Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.sportbet.it", "tipo": "sports" }]
+  },
+  {
+    "nome": "Stake Italy Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.stake.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Spa Syngame",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.betpassion.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Tombola Internacional Malta Plc",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.tombola.it", "tipo": "bingo" }]
+  },
+  {
+    "nome": "Total Gaming Solutions Limited",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.stanleybet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Totosi' Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.totosi.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Tsg Italy Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.pokerstars.it", "tipo": "poker" }]
+  },
+  {
+    "nome": "Vincitu' Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.vincitu.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Vittoria Bet 2009 Srl",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.staryes.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "William Hill Malta Plc",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.williamhill.it", "tipo": "sports" }]
+  },
+  {
+    "nome": "Win Bet Online Ltd",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.winbet.it", "tipo": "geral" }]
+  },
+  {
+    "nome": "Winamax Sa",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.winamax.it", "tipo": "poker" }]
+  },
+  {
+    "nome": "888 Italia Limitada",
+    "pais": "IT",
+    "regulador": "ADM",
+    "sites": [{ "url": "https://www.888casino.it", "tipo": "casino" }]
+  }
+]
