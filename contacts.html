@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Contactos Úteis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:1100px;
+margin:40px auto;
+padding:20px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#1c7ed6,#4dabf7);
+color:white;
+border-radius:14px;
+margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:12px;
+padding:20px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+transition:0.2s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3{
+margin-top:0;
+font-size:18px;
+}
+
+.card p{
+font-size:14px;
+color:#555;
+}
+
+/* BOTÃO */
+.btn{
+display:inline-block;
+padding:10px 16px;
+background:linear-gradient(135deg,#1c7ed6,#4dabf7);
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-size:14px;
+font-weight:bold;
+margin-top:10px;
+transition:0.2s;
+text-align:center;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("header").innerHTML=data;
+
+/* MENU MOBILE */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+if(btn){
+btn.onclick = ()=>{
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+};
+
+overlay.onclick = ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+};
+}
+});
+</script>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+<h1>📞 Contactos Úteis</h1>
+<p>Entidades oficiais para denúncias, reclamações e apoio ao consumidor</p>
+</div>
+
+<div class="grid">
+
+<!-- SRIJ -->
+<div class="card">
+<h3>🎰 SRIJ</h3>
+<p><strong>Serviço de Regulação e Inspeção de Jogos</strong></p>
+
+<p>
+Autoridade máxima do jogo online em Portugal. Ideal para conflitos com operadoras licenciadas.
+</p>
+
+<p>
+📌 Pode apresentar reclamações ou denúncias de atividades ilegais.
+</p>
+
+<a href="https://www.srij.turismodeportugal.pt/pt/sobre-o-srij/contactos" target="_blank" class="btn">
+🌐 Contactar SRIJ
+</a>
+</div>
+
+<!-- PJ -->
+<div class="card">
+<h3>🕵️ Polícia Judiciária</h3>
+
+<p>
+Unidade de Combate ao Cibercrime (UNC3T)
+</p>
+
+<p>
+Para burlas, phishing, fraude online ou acesso indevido a contas bancárias.
+</p>
+
+<a href="https://queixaselectronicas.mai.gov.pt/" target="_blank" class="btn">
+📄 Fazer Queixa
+</a>
+
+<a href="https://www.policiajudiciaria.pt/queixa-eletronica/" target="_blank" class="btn">
+🚨 PJ Queixa Eletrónica
+</a>
+</div>
+
+<!-- ASAE -->
+<div class="card">
+<h3>⚖️ ASAE</h3>
+
+<p>
+Autoridade de Segurança Alimentar e Económica
+</p>
+
+<p>
+Fiscaliza atividades económicas e pode atuar em jogo ilegal ou práticas abusivas.
+</p>
+
+<a href="https://www.asae.gov.pt/denuncias1.aspx" target="_blank" class="btn">
+🚨 Fazer Denúncia
+</a>
+</div>
+
+<!-- LIVRO -->
+<div class="card">
+<h3>📖 Livro de Reclamações</h3>
+
+<p>
+Plataforma oficial para reclamar contra empresas legalmente registadas.
+</p>
+
+<p>
+As entidades são obrigadas a responder dentro do prazo legal.
+</p>
+
+<a href="https://www.asae.gov.pt/espaco-publico/formularios/queixas-e-denuncias.aspx" target="_blank" class="btn">
+📝 Fazer Reclamação
+</a>
+</div>
+
+<!-- DECO -->
+<div class="card">
+<h3>🛡️ DECO Proteste</h3>
+
+<p>
+Apoio ao consumidor com mediação e aconselhamento jurídico.
+</p>
+
+<p>
+📞 Linha: 218 410 801
+</p>
+
+<a href="https://www.deco.proteste.pt" target="_blank" class="btn">
+💬 Apoio DECO
+</a>
+</div>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+</body>
+</html>
