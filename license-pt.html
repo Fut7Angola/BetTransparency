@@ -9,23 +9,28 @@
 <style>
 
 body{
-font-family:Arial;
+font-family:Arial,sans-serif;
 background:#eef2f7;
 margin:0;
 }
 
 main{
-max-width:1100px;
-margin:80px auto;
+max-width:1200px;
+margin:40px auto;
 padding:20px;
 }
 
-h1{
+/* HERO */
+.hero{
 text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#046a38,#ff0000);
+color:white;
+border-radius:14px;
 margin-bottom:30px;
 }
 
-/* SECÇÕES */
+/* SECTION */
 .section{
 background:white;
 padding:25px;
@@ -34,44 +39,92 @@ margin-bottom:25px;
 box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* BOTÃO */
-.btn{
-display:inline-block;
-padding:10px 16px;
+/* SEARCH */
+.search-box{
+text-align:center;
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+max-width:400px;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+/* FILTERS */
+.filters{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.filter-btn{
+padding:8px 14px;
+border-radius:20px;
+border:1px solid #ccc;
+cursor:pointer;
+font-size:13px;
+background:white;
+}
+
+.filter-btn.active{
 background:#1c7ed6;
 color:white;
-text-decoration:none;
-border-radius:8px;
-font-size:14px;
-font-weight:bold;
-margin-top:10px;
+border:none;
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
-margin-top:20px;
 }
 
 /* CARD */
 .card{
-background:#f9fafd;
-padding:20px;
+background:white;
 border-radius:12px;
-border:1px solid #e6ecf2;
-text-align:center;
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
 transition:0.2s;
 }
 
 .card:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .card h3{
-margin:0 0 10px;
-font-size:16px;
+font-size:14px;
+margin-bottom:10px;
+}
+
+/* LOGO */
+.logo{
+height:40px;
+margin-bottom:10px;
+object-fit:contain;
+}
+
+/* SITE */
+.site-link{
+font-size:13px;
+color:#1c7ed6;
+text-decoration:none;
+}
+
+/* TAG */
+.tipo{
+font-size:11px;
+background:#e7f5ff;
+padding:2px 6px;
+border-radius:6px;
+margin-left:6px;
 }
 
 </style>
@@ -82,119 +135,61 @@ font-size:16px;
 
 <div id="header"></div>
 
+<script>
+fetch("header.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
+
+/* MENU */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+if(btn){
+btn.onclick = ()=>{
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+};
+overlay.onclick = ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+};
+}
+});
+</script>
+
 <main>
 
+<div class="hero">
 <h1>🇵🇹 Portugal</h1>
+<p>Operadores licenciados pelo SRIJ</p>
+</div>
 
-<!-- REGULADOR -->
 <div class="section">
-
-<h2>🏛 Entidade Reguladora</h2>
-
-<p>
-Serviço de Regulação e Inspeção de Jogos (SRIJ)
-</p>
-
-<a href="https://www.srij.turismodeportugal.pt" target="_blank" class="btn">
-🌐 Visitar site oficial
+<h2>🏛 Regulador</h2>
+<a href="https://www.srij.turismodeportugal.pt" target="_blank">
+🌐 Visitar SRIJ
 </a>
-
 </div>
 
-<!-- OPERADORES -->
 <div class="section">
 
-<h2>✅ Operadores Legais</h2>
+<h2>🔎 Operadores</h2>
 
-<div class="grid">
-
-<div class="card">
-<h3>Betano</h3>
-<a href="https://www.betano.pt" target="_blank" class="btn">Visitar</a>
+<div class="search-box">
+<input id="search" placeholder="Pesquisar operador...">
 </div>
 
-<div class="card">
-<h3>Betclic</h3>
-<a href="https://www.betclic.pt" target="_blank" class="btn">Visitar</a>
+<div class="filters">
+<button class="filter-btn active" onclick="setFilter('all')">Todos</button>
+<button class="filter-btn" onclick="setFilter('sports')">Sports</button>
+<button class="filter-btn" onclick="setFilter('casino')">Casino</button>
+<button class="filter-btn" onclick="setFilter('poker')">Poker</button>
+<button class="filter-btn" onclick="setFilter('bingo')">Bingo</button>
 </div>
 
-<div class="card">
-<h3>ESC Online</h3>
-<a href="https://www.estorilsolcasinos.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Placard</h3>
-<a href="https://www.placard.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Solverde</h3>
-<a href="https://www.solverde.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>888 Portugal</h3>
-<a href="https://www.888.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Bacana Play</h3>
-<a href="https://www.bacanaplay.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Bwin</h3>
-<a href="https://www.bwin.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Casino Portugal</h3>
-<a href="https://www.casinoportugal.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>LeBull</h3>
-<a href="https://www.lebull.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Golsen Park</h3>
-<a href="https://www.goldenpark.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Luckia</h3>
-<a href="https://www.luckia.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Moosh</h3>
-<a href="https://www.moosh.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Nossa Aposta</h3>
-<a href="https://www.nossaaposta.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Poker Stars</h3>
-<a href="https://www.pokerstars.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>Versus Bet</h3>
-<a href="https://www.versusbet.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-<div class="card">
-<h3>YoBingo</h3>
-<a href="https://www.yobingo.pt" target="_blank" class="btn">Visitar</a>
-</div>
-
-
-</div>
+<div id="container" class="grid"></div>
 
 </div>
 
@@ -203,12 +198,88 @@ Serviço de Regulação e Inspeção de Jogos (SRIJ)
 <div id="footer"></div>
 
 <script>
-fetch("header.html").then(r=>r.text()).then(d=>{
-document.getElementById("header").innerHTML=d;
-});
-fetch("footer.html").then(r=>r.text()).then(d=>{
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
 document.getElementById("footer").innerHTML=d;
 });
+</script>
+
+<script>
+
+let filtro = "all";
+
+/* DADOS (manual por agora) */
+const dados = [
+{nome:"Betano", url:"https://www.betano.pt", tipo:"sports"},
+{nome:"Betclic", url:"https://www.betclic.pt", tipo:"sports"},
+{nome:"ESC Online", url:"https://www.estorilsolcasinos.pt", tipo:"casino"},
+{nome:"Placard", url:"https://www.placard.pt", tipo:"sports"},
+{nome:"Solverde", url:"https://www.solverde.pt", tipo:"casino"},
+{nome:"888 Portugal", url:"https://www.888.pt", tipo:"casino"},
+{nome:"Bacana Play", url:"https://www.bacanaplay.pt", tipo:"casino"},
+{nome:"Bwin", url:"https://www.bwin.pt", tipo:"sports"},
+{nome:"Casino Portugal", url:"https://www.casinoportugal.pt", tipo:"casino"},
+{nome:"LeBull", url:"https://www.lebull.pt", tipo:"sports"},
+{nome:"Golden Park", url:"https://www.goldenpark.pt", tipo:"casino"},
+{nome:"Luckia", url:"https://www.luckia.pt", tipo:"sports"},
+{nome:"Moosh", url:"https://www.moosh.pt", tipo:"casino"},
+{nome:"Nossa Aposta", url:"https://www.nossaaposta.pt", tipo:"sports"},
+{nome:"PokerStars", url:"https://www.pokerstars.pt", tipo:"poker"},
+{nome:"Versus Bet", url:"https://www.versusbet.pt", tipo:"sports"},
+{nome:"YoBingo", url:"https://www.yobingo.pt", tipo:"bingo"}
+];
+
+/* filtro */
+function setFilter(f){
+filtro = f;
+
+document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+event.target.classList.add("active");
+
+render();
+}
+
+/* pesquisa */
+document.getElementById("search").addEventListener("input", render);
+
+/* render */
+function render(){
+
+const termo = document.getElementById("search").value.toLowerCase();
+const container = document.getElementById("container");
+
+container.innerHTML = "";
+
+dados.forEach(op=>{
+
+if(!op.nome.toLowerCase().includes(termo)) return;
+if(filtro !== "all" && op.tipo !== filtro) return;
+
+const div = document.createElement("div");
+div.className = "card";
+
+/* logo futuro */
+const logo = `./logos/${op.nome}.png`;
+
+div.innerHTML = `
+<img src="${logo}" class="logo" onerror="this.style.display='none'">
+<h3>${op.nome}</h3>
+<a href="${op.url}" target="_blank" class="site-link">
+🌐 ${new URL(op.url).hostname}
+<span class="tipo">${op.tipo}</span>
+</a>
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+/* inicial */
+render();
+
 </script>
 
 </body>
