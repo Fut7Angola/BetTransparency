@@ -2,27 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://teudominio.com/</loc>
+<loc>https://bettransparency.com/</loc>
+</url>
+
+<!-- FERRAMENTAS -->
+<url>
+<loc>https://bettransparency.com/license.html</loc>
 </url>
 
 <url>
-<loc>https://teudominio.com/blacklist.html</loc>
+<loc>https://bettransparency.com/eu-licenses.html</loc>
 </url>
 
 <url>
-<loc>https://teudominio.com/telegram.html</loc>
+<loc>https://bettransparency.com/license-pt.html</loc>
 </url>
 
 <url>
-<loc>https://teudominio.com/guides.html</loc>
+<loc>https://bettransparency.com/license-es.html</loc>
 </url>
 
 <url>
-<loc>https://teudominio.com/news.html</loc>
+<loc>https://bettransparency.com/license-fr.html</loc>
 </url>
 
 <url>
-<loc>https://teudominio.com/about.html</loc>
+<loc>https://bettransparency.com/blacklist.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/telegram.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/report.html</loc>
+</url>
+
+<!-- EDUCAÇÃO -->
+<url>
+<loc>https://bettransparency.com/guides.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/legislacao.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/guia-seguranca.html</loc>
+</url>
+
+<!-- AJUDA -->
+<url>
+<loc>https://bettransparency.com/ajuda.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/autoexclusao.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/contacts.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/experiencias.html</loc>
+</url>
+
+<!-- CONTEÚDO -->
+<url>
+<loc>https://bettransparency.com/news.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/about.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/manifesto.html</loc>
+</url>
+
+<url>
+<loc>https://bettransparency.com/donations.html</loc>
 </url>
 
 </urlset>
