@@ -1,0 +1,254 @@
+[
+  {
+    "nome": "888poker",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://888poker.de", "tipo": "poker" }]
+  },
+  {
+    "nome": "888sport",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://888sport.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "AdmiralBet",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://admiralbet.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Bet-at-home",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://bet-at-home.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Bet365",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://bet365.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Betano",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://betano.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "BingBong",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://bingbong.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Bwin",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://bwin.de", "tipo": "sports/poker/casino" }]
+  },
+  {
+    "nome": "ChillyBets",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://chillybets.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "DrückGlück",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://drueckglueck.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "German Tote",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://germantote.de", "tipo": "horses" }]
+  },
+  {
+    "nome": "GGPoker",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://ggpoker.de", "tipo": "poker" }]
+  },
+  {
+    "nome": "Hpybet",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://hpybet.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "Interwetten",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://interwetten.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "JackpotPiraten",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://jackpotpiraten.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Jokerstar",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://jokerstar.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Lapalingo",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://lapalingo.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Lord Lucky",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://lordlucky.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Löwen Play",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://loewen-play.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Merkur Spiel",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://merkur-spiel.de", "tipo": "casino/sports" }]
+  },
+  {
+    "nome": "Neo.bet",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://neo.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "Novoline",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://novoline.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "PartyPoker",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://partypoker.de", "tipo": "poker" }]
+  },
+  {
+    "nome": "Pferdewetten.de",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://pferdewetten.de", "tipo": "horses/sports" }]
+  },
+  {
+    "nome": "PokerStars",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://pokerstars.de", "tipo": "poker" }]
+  },
+  {
+    "nome": "Racebets",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://racebets.de", "tipo": "horses" }]
+  },
+  {
+    "nome": "Sportwetten.de",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://sportwetten.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "Tipico",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://tipico.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "Wetten Star",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://wettenstar.de", "tipo": "horses" }]
+  },
+  {
+    "nome": "Wheelz",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://wheelz.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Wildz",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://wildz.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Winamax",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://winamax.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "Wunderino",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://wunderino.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "Berlin trotting Club",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://trotto.de", "tipo": "horses" }]
+  },
+  {
+    "nome": "Betway",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://betway.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "DZBT",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://daznbet.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "IBC",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://wettarena.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "IBA",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://onextwo.de", "tipo": "horses/sports" }]
+  },
+  {
+    "nome": "ITSP",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://intertops.de", "tipo": "sports" }]
+  },
+  {
+    "nome": "Ladbrokes",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://bpremium.de", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Leo Vegas",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://leovegas.de", "tipo": "casino" }]
+  },
+  {
+    "nome": "NSUS",
+    "pais": "DE",
+    "regulador": "GGL",
+    "sites": [{ "url": "https://ggpoker.de", "tipo": "casino" }]
+  }
+]
