@@ -1,0 +1,212 @@
+[
+  {
+    "nome": "bet365",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.bet365.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "William Hill",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.williamhill.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betfair",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betfair.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Paddy Power",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.paddypower.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Sky Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.skybet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Ladbrokes",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.ladbrokes.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Coral",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.coral.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "888sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.888sport.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betfred",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betfred.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betway",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betway.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Unibet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.unibet.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "BoyleSports",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.boylesports.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetVictor",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betvictor.com/", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetMGM",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betmgm.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Parimatch",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.parimatch.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Virgin Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.virginbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "LiveScore Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.livescorebet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "10Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.10bet.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "NetBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.netbet.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Star Sports",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.starsports.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "Smarkets",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.smarkets.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "DAZN Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.daznbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Vbet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.vbet.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "LeoVegas Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.leovegas.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Casumo Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.casumo.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Mr Green",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.mrgreen.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetUK",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betuk.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betano",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betano.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Bwin",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.bwin.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Party Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.partypoker.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Novibet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.novibet.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "EnergyBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.energybet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Winoma Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.winoma.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetDaq",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betdaq.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "PokerStars Sports",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.pokerstarssports.uk", "tipo": "sports" }]
+  }
+]
