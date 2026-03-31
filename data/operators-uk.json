@@ -208,5 +208,401 @@
     "pais": "UK",
     "regulador": "UKGC",
     "sites": [{ "url": "https://www.pokerstarssports.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "TalkSport Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.talksportbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "QuinnBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.quinnbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Virgin Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.virginbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Kwiff",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.kwiff.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Midnite",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.midnite.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Sporting Index",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.sportingindex.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Spreadex",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.spreadex.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "The Tote",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.tote.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "AK Bets",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.akbets.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "Rhino Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.rhinobet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Fitzdares",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.fitzdares.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "DragonBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.dragonbet.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Grosvenor Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.grosvenorcasinos.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "32Red Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.32red.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "All British Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.allbritishcasino.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "21.co.uk",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.21.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Planet Sport Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.planetsportbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betzone",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betzone.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Gentleman Jim",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.gentlemanjim.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "NRG Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.nrg.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "PricedUp",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.pricedup.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betgoodwin",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betgoodwin.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "CopyBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.copybet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "The Pools",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.thepools.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetRino",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betrino.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Luckster",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.luckster.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Mr Play Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.mrplay.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "ZetBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.zetbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "HighBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.highbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetGrouse",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betgrouse.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Karamba Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.karamba.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Hopa Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.hopa.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Sportingbet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.sportingbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Matchbook",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.matchbook.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "FansBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.fansbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Fun88",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.fun88.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "JenningsBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.jenningsbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetRegal",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betregal.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "MagicRed Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.magicred.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetMorph",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betmorph.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetReels",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betreels.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetSteve",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betsteve.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Mobile Wins",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.mobilewins.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Monster Casino Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.monstercasino.co.uk", "tipo": "sports" }]
+  },
+  {
+    "nome": "RubyBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.rubybet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Spinzwin",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.spinzwin.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Yeti Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.yeti.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetTarget",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.bettarget.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betiton",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betiton.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Britain Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.britainbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Interbet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.interbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Promax Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.promax.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "RedZone.bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.redzone.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "SportNation",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.sportnation.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "Tebwin",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.tebwin.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Vegasland Sport",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.vegasland.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "JeffBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.jeffbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Colossus Bets",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.colossusbets.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Geoff Banks",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.geoffbanks.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "McBookie",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.mcbookie.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "MustardBet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.mustardbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetSensi",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betsensi.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "BetStorm",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.betstorm.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Playano",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.playano.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Vickers Bet",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.vickers.bet", "tipo": "sports" }]
+  },
+  {
+    "nome": "Hollywood Bets",
+    "pais": "UK",
+    "regulador": "UKGC",
+    "sites": [{ "url": "https://www.hollywoodbets.co.uk", "tipo": "sports" }]
   }
 ]
