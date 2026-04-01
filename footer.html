@@ -210,4 +210,56 @@ Alertas, esquemas, dicas, prevenção e novidades em primeira mão.
 Verificar casas de apostas legais em Portugal, identificar operadores ilegais, evitar fraude e promover jogo responsável.
 </p>
 
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" style="
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#0b132b;
+color:white;
+padding:15px 20px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+display:none;
+z-index:9999;
+max-width:90%;
+width:400px;
+text-align:center;
+">
+
+<p style="margin:0 0 10px 0; font-size:14px;">
+🍪 Utilizamos cookies para melhorar a experiência.  
+Ao continuar, aceita a nossa  
+<a href="/cookies.html" style="color:#4dabf7;">Política de Cookies</a>.
+</p>
+
+<button onclick="acceptCookies()" style="
+background:#4dabf7;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+">
+Aceitar
+</button>
+
+<script>
+
+function acceptCookies(){
+localStorage.setItem("cookiesAccepted", "true");
+document.getElementById("cookieBanner").style.display = "none";
+}
+
+window.addEventListener("load", function(){
+if(!localStorage.getItem("cookiesAccepted")){
+document.getElementById("cookieBanner").style.display = "block";
+}
+});
+
+</script>
+
+</div> 
 </footer>
