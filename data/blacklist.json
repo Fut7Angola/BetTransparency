@@ -24,13 +24,13 @@
     "data": "19-03-2026"
   },
   {
-    "nome": "Burning Bet",
-    "website": " https://burningbet.net",
-    "app": "",
-    "motivo": "Promoção ativa em Portugal sem autorização legal, muito perigoso.",
-    "pais": "Costa Rica",
-    "data": "19-03-2026"
-  },
+  "nome": "Burning Bet",
+  "website": "https://burningbet.net",
+  "app": "",
+  "motivo": "Operador não licenciado pelo SRIJ. \n\nEste operador está registado na Costa Rica, país onde a atividade de jogo online não é regulada por uma autoridade central. \nNa prática, isto significa que não existe supervisão real, nem garantias de jogo justo, pagamentos ou proteção ao consumidor.\n\nSem licença emitida pelo SRIJ, não está autorizado a operar em Portugal.",
+  "pais": "Costa Rica",
+  "data": "19-03-2026"
+},
   {
 "nome": "Windetta",
 "website": "https://windetta.com",
