@@ -1,88 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+<!-- HOME -->
 <url>
 <loc>https://bettransparency.com/</loc>
+<priority>1.0</priority>
 </url>
 
 <!-- FERRAMENTAS -->
 <url>
 <loc>https://bettransparency.com/license.html</loc>
+<priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/eu-licenses.html</loc>
+<priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/license-pt.html</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/license-es.html</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/license-fr.html</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/blacklist.html</loc>
+<priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/telegram.html</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/report.html</loc>
+<priority>0.9</priority>
 </url>
 
 <!-- EDUCAÇÃO -->
 <url>
 <loc>https://bettransparency.com/guides.html</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/legislacao.html</loc>
+<priority>0.7</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/guia-seguranca.html</loc>
+<priority>0.8</priority>
 </url>
 
 <!-- AJUDA -->
 <url>
 <loc>https://bettransparency.com/ajuda.html</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/autoexclusao.html</loc>
+<priority>0.7</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/contacts.html</loc>
+<priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/experiencias.html</loc>
+<priority>0.7</priority>
+</url>
+
+<!-- LEGAL -->
+<url>
+<loc>https://bettransparency.com/privacy.html</loc>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://bettransparency.com/terms.html</loc>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://bettransparency.com/cookies.html</loc>
+<priority>0.6</priority>
 </url>
 
 <!-- CONTEÚDO -->
 <url>
 <loc>https://bettransparency.com/news.html</loc>
+<priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/about.html</loc>
+<priority>0.7</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/manifesto.html</loc>
+<priority>0.6</priority>
 </url>
 
 <url>
 <loc>https://bettransparency.com/donations.html</loc>
+<priority>0.6</priority>
 </url>
 
 </urlset>
