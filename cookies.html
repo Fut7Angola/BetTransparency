@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Política de Cookies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:900px;
+margin:80px auto;
+padding:20px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#1f4cd1,#4dabf7);
+color:white;
+border-radius:14px;
+margin-bottom:30px;
+}
+
+/* SECÇÕES */
+.section{
+background:white;
+padding:25px;
+border-radius:14px;
+margin-bottom:20px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.section h2{
+margin-top:0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<main>
+
+<div class="hero">
+<h1>🍪 Política de Cookies</h1>
+<p>BetTransparency</p>
+</div>
+
+<div class="section">
+<h2>1. O que são Cookies</h2>
+<p>
+Cookies são pequenos ficheiros armazenados no dispositivo do utilizador para melhorar a experiência de navegação.
+</p>
+</div>
+
+<div class="section">
+<h2>2. Que Cookies Utilizamos</h2>
+
+<p><strong>2.1 Cookies Essenciais</strong></p>
+<ul>
+<li>Navegação</li>
+<li>Carregamento de conteúdos</li>
+<li>Formulários</li>
+</ul>
+
+<p><strong>2.2 Cookies de Estatísticas</strong></p>
+<ul>
+<li>Análise de tráfego</li>
+<li>Melhoria do site</li>
+</ul>
+
+<p>Não identificam o utilizador.</p>
+
+</div>
+
+<div class="section">
+<h2>3. Cookies de Terceiros</h2>
+<p>
+Podemos usar serviços externos como ferramentas de análise ou conteúdos incorporados.
+</p>
+<p>
+Exemplo: Google Analytics.
+</p>
+</div>
+
+<div class="section">
+<h2>4. Como Gerir Cookies</h2>
+<ul>
+<li>Configurações do navegador</li>
+<li>Apagar cookies</li>
+<li>Bloquear cookies</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>5. Alterações</h2>
+<p>
+Esta política pode ser atualizada.
+</p>
+</div>
+
+<div class="section">
+<h2>6. Contacto</h2>
+<p>
+📍 Porto, Portugal<br>
+✉️ geral@bettransparency.com
+</p>
+</div>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+fetch("header.html").then(r=>r.text()).then(d=>{
+document.getElementById("header").innerHTML=d;
+});
+fetch("footer.html").then(r=>r.text()).then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+</body>
+</html>
