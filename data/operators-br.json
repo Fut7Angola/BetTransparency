@@ -1,0 +1,712 @@
+[
+  {
+    "nome": "BPX BETS SPORTS GROUP LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://vaidebet.bet.br", "tipo": "sports" },
+      { "url": "https://betpix365.bet.br", "tipo": "sports" },
+      { "url": "https://obabet.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "NOSSO TIME IGAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://jogajunto.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "BB GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://bra.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "ESTADOX LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://tropino.bet.br", "tipo": "sports" },
+      { "url": "https://bz.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "OIG GAMING BRAZIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://55w.bet.br", "tipo": "sports" },
+      { "url": "https://ice.bet.br", "tipo": "sports" },
+      { "url": "https://7games.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "ENSEADA SERVIÇOS E TECNOLOGIA LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://kbet.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "LAGUNA SERVIÇOS E TECNOLOGIA LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://nossa.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "DEFY LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://1xbet.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "CAIXA LOTERIAS S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betcaixa.bet.br", "tipo": "sports" },
+      { "url": "https://megabet.bet.br", "tipo": "sports" },
+      { "url": "https://xbetcaixa.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "TQJ-PAR PARTICIPAÇÕES SOCIETÁRIAS S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://bau.bet.br", "tipo": "sports" },
+      { "url": "https://milhao.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "RESPONSA GAMMING BRASIL LIMITADA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://jogalimpo.bet.br", "tipo": "sports" },
+      { "url": "https://energia.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SELECT OPERATIONS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://mmabet.bet.br", "tipo": "sports" },
+      { "url": "https://betvip.bet.br", "tipo": "sports" },
+      { "url": "https://papigames.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SPORTVIP GROUP INTERNATIONAL APOSTAS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://esportivavip.bet.br", "tipo": "sports" },
+      { "url": "https://cbesportes.bet.br", "tipo": "sports" },
+      { "url": "https://donosdabola.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "7MBR LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://vert.bet.br", "tipo": "sports" },
+      { "url": "https://cgg.bet.br", "tipo": "sports" },
+      { "url": "https://fanbit.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "PIXBET SOLUÇÕES TECNOLÓGICAS LTDA.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://pix.bet.br", "tipo": "sports" },
+      { "url": "https://ganhei.bet.br", "tipo": "sports" },
+      { "url": "https://betdasorte.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "VANGUARD ENTRETENIMENTO BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://esporte365.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "SISTEMA LOTÉRICO DE PERNAMBUCO LTDA.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betaki.bet.br", "tipo": "sports" },
+      { "url": "https://jogodeouro.bet.br", "tipo": "sports" },
+      { "url": "https://mcgames.bet.br", "tipo": "sports" },
+      { "url": "https://play.bet.br", "tipo": "sports" },
+      { "url": "https://montecarlos.bet.br", "tipo": "sports" },
+      { "url": "https://luck.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "LBBR APOSTAS DE QUOTA FIXA LIMITADA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://1pra1.bet.br", "tipo": "sports" },
+      { "url": "https://start.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "MERIDIAN GAMING BRASIL SPE LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://meridianbet.bet.br", "tipo": "sports" },
+      { "url": "https://pin.bet.br", "tipo": "sports" },
+      { "url": "https://multi.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Rr Participacoes e Intermediacoes de Negocios LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://rico.bet.br", "tipo": "sports" },
+      { "url": "https://brx.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "PIX NA HORA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://aposta1.bet.br", "tipo": "sports" },
+      { "url": "https://apostamax.bet.br", "tipo": "sports" },
+      { "url": "https://aviao.bet.br", "tipo": "sports" },
+      { "url": "https://bateu.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "EA ENTRETENIMENTO E ESPORTES S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://esportiva.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "HILGARDO GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://a247.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "Versus Brasil Ltda",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://versus.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "WORLD SPORTS TECHNOLOGY DO BRASIL S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betcopa.bet.br", "tipo": "sports" },
+      { "url": "https://brasildasorte.bet.br", "tipo": "sports" },
+      { "url": "https://fybet.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "B3T4 INTERNATIONAL GROUP LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://bet4.bet.br", "tipo": "sports" },
+      { "url": "https://aposta.bet.br", "tipo": "sports" },
+      { "url": "https://fazo.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "FOGGO ENTERTAINMENT LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://blaze.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "TRACK GAMING BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://jonbet.bet.br", "tipo": "sports" },
+      { "url": "https://betwarrior.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "GORILLAS GROUP DO BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betgorillas.bet.br", "tipo": "sports" },
+      { "url": "https://betbuffalos.bet.br", "tipo": "sports" },
+      { "url": "https://betfalcons.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BLOW MARKETPLACE LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://bravo.bet.br", "tipo": "sports" },
+      { "url": "https://tradicional.bet.br", "tipo": "sports" },
+      { "url": "https://apostatudo.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "FAST GAMING S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betfast.bet.br", "tipo": "sports" },
+      { "url": "https://faz1.bet.br", "tipo": "sports" },
+      { "url": "https://tivo.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "FUTURAS APOSTAS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://brazino777.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "GAMEWIZ BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://ijogo.bet.br", "tipo": "sports" },
+      { "url": "https://fogo777.bet.br", "tipo": "sports" },
+      { "url": "https://p9.bet.br", "tipo": "sports" },
+      { "url": "https://9f.bet.br", "tipo": "sports" },
+      { "url": "https://6r.bet.br", "tipo": "sports" },
+      { "url": "https://betapp.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SABIA ADMINISTRACAO LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://br4.bet.br", "tipo": "sports" },
+      { "url": "https://goldebet.bet.br", "tipo": "sports" },
+      { "url": "https://lotogreen.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SKILL ON NET LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://bacanaplay.bet.br", "tipo": "sports" },
+      { "url": "https://playuzu.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BETBR LOTERIAS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://apostou.bet.br", "tipo": "sports" },
+      { "url": "https://b1bet.bet.br", "tipo": "sports" },
+      { "url": "https://brbet.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "UX ENTERTAINMENT LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://reals.bet.br", "tipo": "sports" },
+      { "url": "https://ux.bet.br", "tipo": "sports" },
+      { "url": "https://bingo.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SIMULCASTING BRASIL SOM E IMAGEM S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://betsson.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "BIG BRAZIL TECNOLOGIA E LOTERIA S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://big.bet.br", "tipo": "sports" },
+      { "url": "https://apostar.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "OPEN GAMING S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betpontobet.bet.br", "tipo": "sports" },
+      { "url": "https://donald.bet.br", "tipo": "sports" },
+      { "url": "https://bullsbet.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SEVENX GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://jogao.bet.br", "tipo": "sports" },
+      { "url": "https://jogos.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "LOGAME DO BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://lider.bet.br", "tipo": "sports" },
+      { "url": "https://geralbet.bet.br", "tipo": "sports" },
+      { "url": "https://b2x.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "UPBET BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://up.bet.br", "tipo": "sports" },
+      { "url": "https://9d.bet.br", "tipo": "sports" },
+      { "url": "https://wjcasino.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "ANA GAMING BRASIL S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://7k.bet.br", "tipo": "sports" },
+      { "url": "https://cassino.bet.br", "tipo": "sports" },
+      { "url": "https://vera.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "HIPER BET TECNOLOGIA LTDA.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://hiper.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "EB INTERMEDIACOES E JOGOS S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://estrelabet.bet.br", "tipo": "sports" },
+      { "url": "https://vupi.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "F12 DO BRASIL JOGOS ELETRONICOS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://f12.bet.br", "tipo": "sports" },
+      { "url": "https://luva.bet.br", "tipo": "sports" },
+      { "url": "https://brasil.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BELL VENTURES DIGITAL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://bandbet.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "NEXUS INTERNATIONAL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://megapostas.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "OLAVIR LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://rivalo.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "STAKE BRAZIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://stake.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "JOGO PRINCIPAL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://ginga.bet.br", "tipo": "sports" },
+      { "url": "https://qg.bet.br", "tipo": "sports" },
+      { "url": "https://vivasorte.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BRILLIANT GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://afun.bet.br", "tipo": "sports" },
+      { "url": "https://ai.bet.br", "tipo": "sports" },
+      { "url": "https://6z.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SORTENABET GAMING BRASIL S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://sortenabet.bet.br", "tipo": "sports" },
+      { "url": "https://betou.bet.br", "tipo": "sports" },
+      { "url": "https://betfusion.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "LEVANTE BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://sorteonline.bet.br", "tipo": "sports" },
+      { "url": "https://lottoland.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BETSPEED LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://tiger.bet.br", "tipo": "sports" },
+      { "url": "https://pq777.bet.br", "tipo": "sports" },
+      { "url": "https://5g.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BETESPORTE APOSTAS ON LINE LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://betesporte.bet.br", "tipo": "sports" },
+      { "url": "https://lancedesorte.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SUPREMA BET LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://suprema.bet.br", "tipo": "sports" },
+      { "url": "https://maxima.bet.br", "tipo": "sports" },
+      { "url": "https://ultra.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "CDA GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://casadeapostas.bet.br", "tipo": "sports" },
+      { "url": "https://betsul.bet.br", "tipo": "sports" },
+      { "url": "https://jogoonline.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SC OPERATING BRAZIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://vbet.bet.br", "tipo": "sports" },
+      { "url": "https://vivaro.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "H2 LICENSED LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://seu.bet.br", "tipo": "sports" },
+      { "url": "https://h2.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "LUCKY GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://4win.bet.br", "tipo": "sports" },
+      { "url": "https://4play.bet.br", "tipo": "sports" },
+      { "url": "https://pagol.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "APOSTA GANHA LOTERIAS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://apostaganha.bet.br", "tipo": "sports" },
+      { "url": "https://receba.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "HS DO BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://bet365.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "NVBT GAMING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://novibet.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "NSX BETFAIR BRASIL S.A",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://betfair.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "VENTMEAR BRASIL S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://sportingbet.bet.br", "tipo": "sports" },
+      { "url": "https://betboo.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "KAIZEN GAMING BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://betano.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "ESPORTES GAMING BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://esportesdasorte.bet.br", "tipo": "sports" },
+      { "url": "https://ona.bet.br", "tipo": "sports" },
+      { "url": "https://lottu.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "LINDAU GAMING BRASIL S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://spin.bet.br", "tipo": "sports" },
+      { "url": "https://oleybet.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BETBOOM LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://betboom.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "DIGIPLUS BRAZIL INTERACTIVE LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://pinnacle.bet.br", "tipo": "sports" },
+      { "url": "https://matchbook.bet.br", "tipo": "sports" },
+      { "url": "https://betespecial.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "A2FBR S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://bolsadeaposta.bet.br", "tipo": "sports" },
+      { "url": "https://fulltbet.bet.br", "tipo": "sports" },
+      { "url": "https://betbra.bet.br", "tipo": "sports" },
+      { "url": "https://arenaplus.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "ALFA ENTRETENIMENTO S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://alfa.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "OIG GAMING BRAZIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://bingoplus.bet.br", "tipo": "sports" },
+      { "url": "https://betmgm.bet.br", "tipo": "sports" },
+      { "url": "https://mgm.bet.br", "tipo": "sports" },
+      { "url": "https://7games.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "BOA LION S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://kingpanda.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "SEGURO BET LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://seguro.bet.br", "tipo": "sports" },
+      { "url": "https://betao.bet.br", "tipo": "sports" },
+      { "url": "https://r7.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "GALERA GAMING JOGOS ELETRONICOS S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://galera.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "APOLLO OPERATIONS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://kto.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "MMD TECNOLOGIA, ENTRETENIMENTO E MARKETING LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://reidopitaco.bet.br", "tipo": "sports" },
+      { "url": "https://pitaco.bet.br", "tipo": "sports" },
+      { "url": "https://rdp.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SPRBT INTERACTIVE BRASIL LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [
+      { "url": "https://superbet.bet.br", "tipo": "sports" },
+      { "url": "https://magicjackpot.bet.br", "tipo": "sports" },
+      { "url": "https://super.bet.br", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "NSX BRASIL S.A.",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://betnacional.bet.br", "tipo": "sports" }]
+  },
+  {
+    "nome": "BLAC JOGOS LTDA",
+    "pais": "BR",
+    "regulador": "SPA/MF",
+    "sites": [{ "url": "https://sporty.bet.br", "tipo": "sports" }]
+  }
+]
