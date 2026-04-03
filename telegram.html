@@ -9,14 +9,15 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BM5P2FP1B1');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BM5P2FP1B1');
 </script>
 
 <style>
+
+/* (mantive tudo igual) */
 
 body{
 font-family:Arial;
@@ -35,7 +36,6 @@ text-align:center;
 margin-bottom:20px;
 }
 
-/* 🔍 PESQUISA */
 .search-box{
 text-align:center;
 margin-bottom:20px;
@@ -50,7 +50,6 @@ border:1px solid #ccc;
 font-size:16px;
 }
 
-/* 🔥 GRID CORRIGIDO */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fill, 160px);
@@ -65,7 +64,6 @@ justify-content:center;
 }
 }
 
-/* CARD */
 .card{
 position:relative;
 background:white;
@@ -111,7 +109,8 @@ font-size:20px;
 z-index:2;
 }
 
-/* MODAL */
+/* MODAL (igual) */
+
 .modal{
 display:none;
 position:fixed;
@@ -182,7 +181,7 @@ margin-top:10px;
 <h1>🚨 Grupos Telegram Suspeitos</h1>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Pesquisar grupo...">
+<input type="text" id="searchInput" placeholder="Pesquisar por nome ou link (ex: t.me/...)">
 </div>
 
 <div id="container" class="grid"></div>
@@ -246,12 +245,14 @@ a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'})
 render(todosGrupos);
 });
 
+/* 🔥 NOVA PESQUISA INTELIGENTE */
 document.getElementById("searchInput").addEventListener("input", function(){
 
 const termo = this.value.toLowerCase();
 
 const filtrado = todosGrupos.filter(item =>
-item.nome.toLowerCase().includes(termo)
+item.nome.toLowerCase().includes(termo) ||
+(item.link && item.link.toLowerCase().includes(termo))
 );
 
 render(filtrado);
@@ -365,70 +366,12 @@ html || "Sem comentários";
 <div id="footer"></div>
 
 <script>
-fetch("header.html")
-.then(res => res.text())
-.then(data => {
-
-document.getElementById("header").innerHTML = data;
-
-/* 🔥 MENU MOBILE CORRETO */
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
-const dropdown = document.getElementById("dropdownBtn");
-
-if(btn && menu){
-
-btn.onclick = function(){
-menu.classList.toggle("show");
-overlay.classList.toggle("show");
-btn.classList.toggle("active");
-};
-
-/* fechar ao clicar fora */
-if(overlay){
-overlay.onclick = function(){
-menu.classList.remove("show");
-overlay.classList.remove("show");
-btn.classList.remove("active");
-};
-}
-
-/* dropdown mobile */
-if(dropdown){
-dropdown.onclick = function(){
-if(window.innerWidth < 768){
-this.classList.toggle("active");
-}
-};
-}
-
-/* fechar ao clicar num link */
-document.querySelectorAll(".menu a").forEach(link=>{
-link.addEventListener("click", ()=>{
-menu.classList.remove("show");
-overlay.classList.remove("show");
-btn.classList.remove("active");
-});
-});
-
-}
-
-});
-</script>
-
-</main>
-
-<div id="footer"></div>
-
-<script>
 fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("footer").innerHTML=data;
+});
 </script>
-
 
 </body>
 </html>
