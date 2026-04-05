@@ -12,7 +12,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -33,6 +32,23 @@ main{
 padding:90px 15px;
 max-width:1000px;
 margin:auto;
+}
+
+/* ESTILO DO TEXTO DE AVISO */
+.aviso-legal {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #b00020;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.aviso-legal p {
+    margin-bottom: 10px;
 }
 
 /* GRID */
@@ -188,13 +204,19 @@ menu.classList.toggle("show");
 
 <h1>🚨 Blacklist Operadores em Portugal</h1>
 
+<div class="aviso-legal">
+    <p>A lista de grupos apresentada nesta secção tem caráter exclusivamente informativo e destina‑se a identificar comunidades, canais ou grupos do Telegram que, segundo a nossa análise, podem representar risco para os utilizadores, seja por práticas enganosas, promoção de operadores não autorizados, esquemas fraudulentos, manipulação de resultados, venda de tips duvidosas ou qualquer outra atividade potencialmente prejudicial.</p>
+    <p>A inclusão de um grupo na blacklist não constitui uma acusação criminal, nem implica que todos os seus membros ou administradores estejam envolvidos em práticas ilícitas. Significa apenas que, à data da última atualização, o grupo apresenta sinais de risco, comportamentos suspeitos ou práticas incompatíveis com padrões de transparência e segurança.</p>
+    <p>A informação disponibilizada resulta de um processo contínuo que combina denúncias submetidas pelos utilizadores, monitorização ativa da nossa equipa e sistemas de análise assistida por inteligência artificial. Apesar do rigor aplicado, não é possível garantir que todos os dados estejam permanentemente atualizados.</p>
+    <p>O acesso a grupos externos é realizado por conta e risco do utilizador. Recomendamos vivamente que os utilizadores adotem sempre uma postura crítica e consultem fontes oficiais para maior segurança.</p>
+</div>
+
 <input id="searchInput" placeholder="Pesquisar...">
 
 <div id="blacklist-container" class="grid"></div>
 
 </main>
 
-<!-- MODAL -->
 <div id="modal" class="modal">
 
 <div class="modal-content">
@@ -432,7 +454,6 @@ render(f);
 
 </script>
 
-<!-- FOOTER -->
 <div id="footer"></div>
 
 <script>
