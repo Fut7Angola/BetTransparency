@@ -20,6 +20,7 @@
 
   gtag('config', 'G-BM5P2FP1B1');
 </script>  
+
 <style>
 
 body{
@@ -51,6 +52,29 @@ margin:auto;
     margin-bottom: 10px;
 }
 
+/* BARRA DE PESQUISA MELHORADA */
+.search-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#searchInput:focus {
+    border-color: #1c7ed6;
+    box-shadow: 0 4px 12px rgba(28, 126, 214, 0.15);
+}
+
 /* GRID */
 .grid{
 display:grid;
@@ -59,21 +83,17 @@ gap:15px;
 }
 
 @media(max-width:768px){
-
 .grid{
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
-
 .card{
 padding:12px;
 border-radius:12px;
 }
-
 .card h3{
 font-size:14px;
 }
-
 }
 
 /* CARD */
@@ -89,6 +109,11 @@ display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;  
+transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card h3{
@@ -112,22 +137,21 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
 justify-content:center;
-align-items:flex-end; /* 🔥 MOBILE FIX */
+align-items:flex-end;
+z-index: 1000;
 }
 
-/* 🔥 CAIXA */
 .modal-content{
 background:white;
 width:100%;
 max-width:500px;
 max-height:90vh;
-border-radius:16px 16px 0 0; /* 👈 topo arredondado */
+border-radius:16px 16px 0 0;
 display:flex;
 flex-direction:column;
 overflow:hidden;
 }
 
-/* 🔥 HEADER FIXO */
 .modal-header{
 padding:15px;
 border-bottom:1px solid #eee;
@@ -135,13 +159,15 @@ background:white;
 position:sticky;
 top:0;
 z-index:10;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
-/* 🔥 CORPO COM SCROLL */
 .modal-body{
 padding:15px;
 overflow-y:auto;
--webkit-overflow-scrolling: touch; /* 👈 scroll suave iPhone */
+-webkit-overflow-scrolling: touch;
 }
 
 textarea,input,select{
@@ -150,16 +176,18 @@ margin-top:10px;
 padding:10px;
 border-radius:8px;
 border:1px solid #ddd;
+box-sizing: border-box;
 }
 
 button{
 background:#1c7ed6;
 color:white;
 border:none;
-padding:8px 12px;
+padding:10px 15px;
 border-radius:8px;
 margin-top:10px;
 cursor:pointer;
+font-weight: bold;
 }
 
 .comment{
@@ -186,17 +214,13 @@ fetch("header.html")
 .then(res=>res.text())
 .then(data=>{
 document.getElementById("header").innerHTML=data;
-
-/* 🔥 MENU FUNCIONAR */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
-
 if(btn && menu){
 btn.onclick=function(){
 menu.classList.toggle("show");
 };
 }
-
 });
 </script>
 
@@ -211,65 +235,42 @@ menu.classList.toggle("show");
     <p>O acesso a grupos externos é realizado por conta e risco do utilizador. Recomendamos vivamente que os utilizadores adotem sempre uma postura crítica e consultem fontes oficiais para maior segurança.</p>
 </div>
 
-<input id="searchInput" placeholder="Pesquisar...">
+<div class="search-container">
+    <input id="searchInput" placeholder="Pesquisar por nome, site ou país (ex: Curacao)...">
+</div>
 
 <div id="blacklist-container" class="grid"></div>
 
 </main>
 
 <div id="modal" class="modal">
-
-<div class="modal-content">
-
-<div class="modal-header">
-<h2 id="modal-nome"></h2>
-<button onclick="fecharModal()">Fechar</button>
-</div>
-
-<script>
-
-/* FECHAR AO CLICAR FORA */
-document.getElementById("modal").onclick = function(e){
-if(e.target.id === "modal"){
-fecharModal();
-}
-}
-
-</script>
-
-<div class="modal-body">
-
-<p id="modal-motivo"></p>
-
-<p id="modal-pais"></p>
-
-<a id="modal-link" target="_blank"></a>
-
-<div id="modal-rating"></div>
-
-<h3>💬 Comentários</h3>
-<div id="modal-comments"></div>
-
-<h3>✍️ Comentar</h3>
-
-<select id="modal-rating-input">
-<option value="5">⭐⭐⭐⭐⭐</option>
-<option value="4">⭐⭐⭐⭐</option>
-<option value="3">⭐⭐⭐</option>
-<option value="2">⭐⭐</option>
-<option value="1">⭐</option>
-</select>
-
-<input id="modal-user" placeholder="Nome">
-
-<textarea id="modal-text"></textarea>
-
-<button onclick="enviarComentario()">Enviar</button>
-
-</div>
-
-</div>
-
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modal-nome" style="margin:0;"></h2>
+            <button onclick="fecharModal()" style="margin:0; background:#666;">Fechar</button>
+        </div>
+        <div class="modal-body">
+            <p id="modal-motivo"></p>
+            <p id="modal-pais"></p>
+            <a id="modal-link" target="_blank" style="color:#1c7ed6; word-break: break-all;"></a>
+            <div id="modal-rating" style="margin-top:15px; font-weight:bold;"></div>
+            <hr>
+            <h3>💬 Comentários</h3>
+            <div id="modal-comments"></div>
+            <hr>
+            <h3>✍️ Comentar</h3>
+            <select id="modal-rating-input">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+            </select>
+            <input id="modal-user" placeholder="Nome">
+            <textarea id="modal-text" placeholder="Escreve o teu comentário..."></textarea>
+            <button onclick="enviarComentario()">Enviar Comentário</button>
+        </div>
+    </div>
 </div>
 
 <script type="module">
@@ -293,7 +294,6 @@ let blacklist=[];
 let currentSite="";
 
 /* LOAD */
-
 fetch("/data/blacklist.json")
 .then(r=>r.json())
 .then(data=>{
@@ -302,64 +302,50 @@ render(data);
 });
 
 /* RENDER */
-
 function render(lista){
-
 const c=document.getElementById("blacklist-container");
 c.innerHTML="";
 
 lista.forEach(item=>{
-
 const div=document.createElement("div");
 div.className="card";
-
 div.innerHTML=`
 <h3>${item.nome}</h3>
 <p style="font-size:12px;color:#666;">
 ${item.pais ? "🌍 " + item.pais : "🌍 País desconhecido"}
 </p>
-<div class="rating" id="rating-${item.nome}">⭐ ...</div>
+<div class="rating" id="rating-${item.nome.replace(/\s+/g, '-')}">⭐ ...</div>
 `;
-
 div.onclick=()=>abrirModal(item);
-
 c.appendChild(div);
-
 carregarRating(item.nome);
-
 });
-
 }
 
 /* MODAL */
-
 async function abrirModal(item){
-
 currentSite=item.nome;
-
 document.getElementById("modal").style.display="flex";
-
 document.getElementById("modal-nome").innerText=item.nome;
 document.getElementById("modal-motivo").innerText=item.motivo;
-document.getElementById("modal-pais").innerText =
-item.pais ? "🌍 País: " + item.pais : "🌍 País desconhecido";
-
+document.getElementById("modal-pais").innerText = item.pais ? "🌍 País: " + item.pais : "🌍 País desconhecido";
 const link=document.getElementById("modal-link");
 link.href=item.website;
 link.innerText=item.website;
-
 carregarComentarios(item.nome);
-
 }
 
 window.fecharModal = function(){
 document.getElementById("modal").style.display="none";
 }
 
+// Fechar ao clicar fora
+document.getElementById("modal").onclick = function(e){
+if(e.target.id === "modal"){ fecharModal(); }
+}
+
 /* ENVIAR */
-
 window.enviarComentario = async function(){
-
 const text=document.getElementById("modal-text").value;
 const rating=document.getElementById("modal-rating-input").value;
 const user=document.getElementById("modal-user").value || "Anónimo";
@@ -375,81 +361,58 @@ date:Date.now()
 });
 
 document.getElementById("modal-text").value="";
-
 carregarComentarios(currentSite);
 carregarRating(currentSite);
-
 }
 
-/* CARREGAR */
-
+/* CARREGAR COMENTÁRIOS */
 async function carregarComentarios(site){
-
 const q=query(collection(db,"comments"),where("site","==",site));
 const res=await getDocs(q);
-
 let html="";
 let soma=0;
 let count=0;
 
 res.forEach(doc=>{
-
 const d=doc.data();
-
 count++;
 soma+=d.rating;
-
-html+=`
-<div class="comment">
-<strong>${d.user}</strong> ⭐ ${d.rating}
-<p>${d.text}</p>
-</div>
-`;
-
+html+=`<div class="comment"><strong>${d.user}</strong> ⭐ ${d.rating}<p>${d.text}</p></div>`;
 });
 
 let media = count ? (soma/count).toFixed(1) : 0;
-
-document.getElementById("modal-rating").innerText =
-"⭐ "+media+" ("+count+" avaliações)";
-
-document.getElementById("modal-comments").innerHTML =
-html || "Sem comentários";
-
+document.getElementById("modal-rating").innerText = "⭐ "+media+" ("+count+" avaliações)";
+document.getElementById("modal-comments").innerHTML = html || "Sem comentários";
 }
 
 /* RATING NO CARD */
-
 async function carregarRating(site){
-
 const q=query(collection(db,"comments"),where("site","==",site));
 const res=await getDocs(q);
-
 let soma=0;
 let count=0;
-
 res.forEach(doc=>{
 soma+=doc.data().rating;
 count++;
 });
-
 let media = count ? (soma/count).toFixed(1) : "-";
-
-document.getElementById("rating-"+site).innerText =
-"⭐ "+media;
-
+const ratingDiv = document.getElementById("rating-"+site.replace(/\s+/g, '-'));
+if(ratingDiv) ratingDiv.innerText = "⭐ "+media;
 }
 
-/* PESQUISA */
+/* PESQUISA MULTI-CAMPO (Nome, Website, Pais) */
+document.getElementById("searchInput").addEventListener("input", function(){
+    let v = this.value.toLowerCase();
+    
+    let f = blacklist.filter(x => {
+        let nome = x.nome ? x.nome.toLowerCase() : "";
+        let site = x.website ? x.website.toLowerCase() : "";
+        let pais = x.pais ? x.pais.toLowerCase() : "";
+        
+        return nome.includes(v) || site.includes(v) || pais.includes(v);
+    });
 
-document.getElementById("searchInput").addEventListener("keyup",function(){
-
-let v=this.value.toLowerCase();
-
-let f=blacklist.filter(x=>x.nome.toLowerCase().includes(v));
-
-render(f);
-
+    render(f);
 });
 
 </script>
@@ -463,7 +426,6 @@ fetch("footer.html")
 document.getElementById("footer").innerHTML=data;
 });
 </script>
-
 
 </body>
 </html>
