@@ -6,7 +6,6 @@
 <title>Telegram Suspeito</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,8 +15,6 @@ gtag('config', 'G-BM5P2FP1B1');
 </script>
 
 <style>
-
-/* (mantive tudo igual) */
 
 body{
 font-family:Arial;
@@ -29,6 +26,46 @@ main{
 max-width:1000px;
 margin:100px auto;
 padding:20px;
+}
+
+/* ESTILO DO TEXTO EXPLICATIVO */
+.explicacao-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.explicacao-container h2 {
+    color: #1c7ed6;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.explicacao-container h3 {
+    font-size: 17px;
+    color: #444;
+    margin-top: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.explicacao-container p, .explicacao-container ul {
+    font-size: 14px;
+    color: #555;
+}
+
+.explicacao-container ul {
+    padding-left: 20px;
+}
+
+.explicacao-container hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
 }
 
 h1{
@@ -109,7 +146,7 @@ font-size:20px;
 z-index:2;
 }
 
-/* MODAL (igual) */
+/* MODAL */
 
 .modal{
 display:none;
@@ -180,6 +217,28 @@ margin-top:10px;
 
 <h1>🚨 Grupos Telegram Suspeitos</h1>
 
+<div class="explicacao-container">
+    <h2>Como é construída a nossa Blacklist de Telegram</h2>
+    <p>A nossa lista resulta de um processo rigoroso de monitorização para identificar comunidades que representam risco para os utilizadores portugueses, promovendo segurança contra práticas enganosas.</p>
+    
+    <h3>1. Denúncias dos Utilizadores</h3>
+    <p>Analisamos diariamente relatos sobre comportamentos suspeitos, tais como:</p>
+    <ul>
+        <li>Venda de tips manipuladas ou sem transparência;</li>
+        <li>Esquemas de aliciamento financeiro e promessas de ganhos garantidos;</li>
+        <li>Promoção de operadores não autorizados e práticas abusivas.</li>
+    </ul>
+
+    <hr>
+
+    <h3>2. Monitorização Ativa e Análise</h3>
+    <p>A nossa equipa observa continuamente grupos públicos e privados, avaliando o histórico de queixas e a conduta dos administradores. Utilizamos também <strong>Sistemas de Inteligência Artificial</strong> para detetar padrões de spam, mudanças frequentes de links e comportamentos coordenados suspeitos.</p>
+
+    <hr>
+
+    <h3>3. Revisão Humana e Transparência</h3>
+    <p>Nenhum grupo é adicionado automaticamente. Cada caso passa por uma <strong>revisão manual</strong> para confirmar o risco real e a legitimidade das denúncias. A inclusão nesta lista é informativa e visa ajudar o utilizador a proteger a sua estabilidade financeira e privacidade.</p>
+</div>
 <div class="search-box">
 <input type="text" id="searchInput" placeholder="Pesquisar por nome ou link (ex: t.me/...)">
 </div>
@@ -188,7 +247,6 @@ margin-top:10px;
 
 </main>
 
-<!-- MODAL -->
 <div id="modal" class="modal">
 <div class="modal-content">
 
