@@ -73,18 +73,27 @@ text-align:center;
 margin-bottom:20px;
 }
 
-.search-box{
-text-align:center;
-margin-bottom:20px;
+/* BARRA DE PESQUISA IGUAL À BLACKLIST */
+.search-box {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.search-box input{
-width:100%;
-max-width:400px;
-padding:12px;
-border-radius:10px;
-border:1px solid #ccc;
-font-size:16px;
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px; /* Estilo arredondado */
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#searchInput:focus {
+    border-color: #1c7ed6;
+    box-shadow: 0 4px 12px rgba(28, 126, 214, 0.15);
 }
 
 .grid{
@@ -119,7 +128,7 @@ width:160px;
 }
 
 .card:hover{
-transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
 .card::before{
@@ -147,7 +156,6 @@ z-index:2;
 }
 
 /* MODAL */
-
 .modal{
 display:none;
 position:fixed;
@@ -186,6 +194,7 @@ padding:10px;
 border-radius:8px;
 border:1px solid #ddd;
 margin-top:8px;
+box-sizing: border-box;
 }
 
 button{
@@ -196,6 +205,7 @@ padding:8px 12px;
 border-radius:8px;
 cursor:pointer;
 margin-top:8px;
+font-weight: bold;
 }
 
 .comment-box{
@@ -239,6 +249,7 @@ margin-top:10px;
     <h3>3. Revisão Humana e Transparência</h3>
     <p>Nenhum grupo é adicionado automaticamente. Cada caso passa por uma <strong>revisão manual</strong> para confirmar o risco real e a legitimidade das denúncias. A inclusão nesta lista é informativa e visa ajudar o utilizador a proteger a sua estabilidade financeira e privacidade.</p>
 </div>
+
 <div class="search-box">
 <input type="text" id="searchInput" placeholder="Pesquisar por nome ou link (ex: t.me/...)">
 </div>
@@ -255,15 +266,16 @@ margin-top:10px;
 <h2 id="modal-nome"></h2>
 <p id="modal-motivo"></p>
 
-<a id="modal-link" target="_blank">Abrir Telegram</a>
+<a id="modal-link" target="_blank" style="color:#1c7ed6; display:block; margin-bottom:10px;">Abrir Telegram</a>
 
-<button onclick="denunciar()">🚨 Denunciar</button>
+<button onclick="denunciar()">🚨 Denunciar Grupo</button>
 
+<hr>
 <h3>💬 Comentários</h3>
 
-<input id="user" placeholder="Nome ou Anónimo">
-<textarea id="input"></textarea>
-<button onclick="comentar()">Enviar</button>
+<input id="user" placeholder="O seu nome ou Anónimo">
+<textarea id="input" placeholder="Escreva o seu comentário..."></textarea>
+<button onclick="comentar()">Enviar Comentário</button>
 
 <div id="comments">A carregar...</div>
 
@@ -303,63 +315,43 @@ a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'})
 render(todosGrupos);
 });
 
-/* 🔥 NOVA PESQUISA INTELIGENTE */
+/* PESQUISA AVANÇADA (NOME E LINK) */
 document.getElementById("searchInput").addEventListener("input", function(){
-
-const termo = this.value.toLowerCase();
-
-const filtrado = todosGrupos.filter(item =>
-item.nome.toLowerCase().includes(termo) ||
-(item.link && item.link.toLowerCase().includes(termo))
-);
-
-render(filtrado);
-
+    const termo = this.value.toLowerCase();
+    const filtrado = todosGrupos.filter(item => {
+        let nome = item.nome ? item.nome.toLowerCase() : "";
+        let link = item.link ? item.link.toLowerCase() : "";
+        return nome.includes(termo) || link.includes(termo);
+    });
+    render(filtrado);
 });
 
 function render(lista){
-
 const container=document.getElementById("container");
 container.innerHTML="";
-
 lista.forEach(item=>{
-
 const div=document.createElement("div");
 div.className="card";
-
 let icon="⚠️";
 if(item.tipo==="perigo") icon="🚨";
 if(item.tipo==="spam") icon="📛";
 if(item.tipo==="analise") icon="🔍";
-
-div.innerHTML=`
-<h3>${item.nome}</h3>
-<div class="icon">${icon}</div>
-`;
-
+div.innerHTML=`<h3>${item.nome}</h3><div class="icon">${icon}</div>`;
 div.onclick=()=>abrirModal(item);
-
 container.appendChild(div);
-
 });
-
 }
 
 let grupoAtual="";
 
 window.abrirModal=function(item){
-
 grupoAtual=item.nome;
-
 document.getElementById("modal").style.display="flex";
 document.getElementById("modal-nome").innerText=item.nome;
 document.getElementById("modal-motivo").innerText=item.motivo;
-
 const link=document.getElementById("modal-link");
 link.href=item.link;
-
 carregarComentarios();
-
 }
 
 window.fecharModal=function(){
@@ -367,56 +359,36 @@ document.getElementById("modal").style.display="none";
 }
 
 window.denunciar=async function(){
-
 await addDoc(collection(db,"denuncias_telegram"),{
 grupo:grupoAtual,
 data:Date.now()
 });
-
 alert("Denúncia enviada 🚨");
-
 }
 
 window.comentar=async function(){
-
 const text=document.getElementById("input").value;
 const user=document.getElementById("user").value || "Anónimo";
-
 if(!text)return;
-
 await addDoc(collection(db,"comentarios_telegram"),{
 grupo:grupoAtual,
 user,
 text,
 data:Date.now()
 });
-
 document.getElementById("input").value="";
 carregarComentarios();
-
 }
 
 async function carregarComentarios(){
-
 const q=query(collection(db,"comentarios_telegram"),where("grupo","==",grupoAtual));
 const res=await getDocs(q);
-
 let html="";
-
 res.forEach(doc=>{
 const d=doc.data();
-
-html+=`
-<div class="comment-box">
-<strong>${d.user}</strong>
-<p>${d.text}</p>
-</div>
-`;
+html+=`<div class="comment-box"><strong>${d.user}</strong><p>${d.text}</p></div>`;
 });
-
-document.getElementById("comments").innerHTML =
-html || "Sem comentários";
-
+document.getElementById("comments").innerHTML = html || "Sem comentários";
 }
 
 </script>
