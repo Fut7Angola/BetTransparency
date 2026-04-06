@@ -9,61 +9,180 @@
 <meta name="description" content="Verifica as ilegalidades do jogo online.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Google tag -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-BM5P2FP1B1');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BM5P2FP1B1');
 </script>  
 
 <style>
 
-/* 🔹 TEU CSS ORIGINAL (não mexi) */
-body{font-family:Arial,sans-serif;margin:0;background:#eef2f7;}
-main{padding:60px 20px;max-width:1100px;margin:auto;}
-.hero{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#1c7ed6,#1864ab);color:white;border-radius:14px;margin-bottom:30px;}
-.section{background:white;padding:25px;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.08);margin-bottom:30px;}
-.verificador{text-align:center;}
-input{padding:12px;width:60%;max-width:300px;border-radius:8px;border:1px solid #ccc;font-size:16px;}
-button{padding:12px 18px;border:none;border-radius:8px;background:#1c7ed6;color:white;font-weight:bold;cursor:pointer;font-size:16px;}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
-.card{background:#f9fafd;padding:22px;border-radius:12px;border:1px solid #e6ecf2;}
-.btn{display:inline-block;padding:10px 18px;background:#1c7ed6;color:white;text-decoration:none;border-radius:8px;margin-top:10px;font-weight:bold;}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:20px;}
-.stat-card{border-radius:18px;padding:2px;}
-.stat-inner{background:white;border-radius:16px;padding:30px 20px;text-align:center;}
-.stat-inner h3{margin:0;font-size:36px;font-weight:800;}
+/* 🔥 NOVO ALERTA BONITO */
+.alert-box{
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+font-weight:bold;
+}
+
+.alert-green{
+background:#e6fcf5;
+color:#087f5b;
+border:1px solid #38d9a9;
+}
+
+.alert-red{
+background:#fff5f5;
+color:#c92a2a;
+border:1px solid #ff6b6b;
+}
+
+.alert-orange{
+background:#fff9db;
+color:#e67700;
+border:1px solid #ffd43b;
+}
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#eef2f7;
+}
+
+main{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.hero{
+text-align:center;
+padding:50px 20px;
+background:linear-gradient(135deg,#1c7ed6,#1864ab);
+color:white;
+border-radius:14px;
+margin-bottom:30px;
+}
+
+.section{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+.verificador{
+text-align:center;
+}
+
+input{
+padding:12px;
+width:60%;
+max-width:300px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+button{
+padding:12px 18px;
+border:none;
+border-radius:8px;
+background:#1c7ed6;
+color:white;
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.card{
+background:#f9fafd;
+padding:22px;
+border-radius:12px;
+border:1px solid #e6ecf2;
+}
+
+.btn{
+display:inline-block;
+padding:10px 18px;
+background:#1c7ed6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:10px;
+font-weight:bold;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:20px;
+}
+
+.stat-card{
+border-radius:18px;
+padding:2px;
+}
+
+.stat-inner{
+background:white;
+border-radius:16px;
+padding:30px 20px;
+text-align:center;
+}
+
+.stat-inner h3{
+margin:0;
+font-size:36px;
+font-weight:800;
+}
+
 .legal{background:linear-gradient(135deg,#2f9e44,#51cf66);}
 .ilegal{background:linear-gradient(135deg,#e03131,#ff6b6b);}
 .pesquisa{background:linear-gradient(135deg,#f59f00,#ffd43b);}
 .telegram{background:linear-gradient(135deg,#1c7ed6,#4dabf7);}
 
-/* 🔥 NOVO CARD BONITO */
-.result-card{
-margin-top:15px;
-padding:18px;
-border-radius:12px;
-font-weight:bold;
-}
-
-.result-legal{
-background:#d3f9d8;
-border:1px solid #51cf66;
-color:#2f9e44;
-}
-
-.result-ilegal{
-background:#ffe3e3;
+.report-box{
+text-align:center;
+background:linear-gradient(135deg,#ffe3e3,#fff5f5);
 border:1px solid #ff6b6b;
-color:#e03131;
 }
 
-.result-alerta{
-background:#fff3bf;
-border:1px solid #ffd43b;
-color:#e67700;
+.report-btn{
+display:inline-block;
+padding:14px 26px;
+background:#e03131;
+color:white;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+margin-top:15px;
+}
+
+.donation-box{
+text-align:center;
+}
+
+.donation-btn{
+display:inline-block;
+padding:14px 26px;
+background:#ffdd00;
+color:black;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+margin-top:15px;
 }
 
 </style>
@@ -78,7 +197,39 @@ color:#e67700;
 fetch("header.html")
 .then(res => res.text())
 .then(data => {
+
 document.getElementById("header").innerHTML = data;
+
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+if(btn && menu){
+
+btn.onclick = function(){
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+btn.classList.toggle("active");
+};
+
+if(overlay){
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+};
+}
+
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+});
+});
+
+}
+
 });
 </script>
 
@@ -87,6 +238,14 @@ document.getElementById("header").innerHTML = data;
 <div class="hero">
 <h1>BetTransparency</h1>
 <p>Protegemos jogadores contra apostas ilegais em Portugal</p>
+</div>
+
+<div class="section" style="text-align:center;">
+<h2>💬 O jogo acabou para a mentira</h2>
+<p style="max-width:700px;margin:auto;color:#555;">
+Num mercado cheio de manipulação, expomos a verdade.
+</p>
+<a href="manifesto.html" class="btn">📜 Ler Manifesto</a>
 </div>
 
 <div class="section verificador">
@@ -98,9 +257,11 @@ document.getElementById("header").innerHTML = data;
 
 <button onclick="verificarSite()">Verificar</button>
 
-<div id="resultado"></div>
+<div id="resultado" style="margin-top:15px;"></div>
 
 </div>
+
+<!-- RESTO IGUAL NÃO MEXI -->
 
 </main>
 
@@ -116,8 +277,6 @@ document.getElementById("footer").innerHTML=data;
 
 <script>
 
-/* 🔹 FUNÇÃO ORIGINAL + MELHORADA */
-
 function normalizar(texto){
 return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
 }
@@ -129,7 +288,7 @@ const input = normalizar(inputRaw);
 const resultado = document.getElementById("resultado");
 
 if(!input){
-resultado.innerHTML = "<div class='result-card result-alerta'>Escreve um nome</div>";
+resultado.innerHTML="<div class='alert-box alert-orange'>Escreve um nome</div>";
 return;
 }
 
@@ -142,41 +301,47 @@ fetch("./data/legal.json").then(r=>r.json())
 const isLegal = l.find(x=>normalizar(x.nome)===input);
 const isBlack = b.find(x=>normalizar(x.nome)===input);
 
-/* 🔥 CASO MISTO */
+/* 🔥 ALERTA BONITO */
 if(isLegal && isBlack){
 resultado.innerHTML = `
-<div class="result-card result-alerta">
-⚠️ Legal em Portugal (.pt) mas pode ser ilegal noutras regiões
+<div class="alert-box alert-orange">
+⚠️ Este operador é <b>legal em Portugal</b> (domínio .pt)<br>
+Mas pode ser ilegal noutras versões (.com, etc).
 </div>`;
+guardarPesquisa(inputRaw);
 return;
 }
 
-/* ✅ LEGAL */
 if(isLegal){
 resultado.innerHTML = `
-<div class="result-card result-legal">
-✅ Operador Legal em Portugal
+<div class="alert-box alert-green">
+✅ Operador LEGAL em Portugal
 </div>`;
+guardarPesquisa(inputRaw);
 return;
 }
 
-/* 🚨 ILEGAL */
 if(isBlack){
 resultado.innerHTML = `
-<div class="result-card result-ilegal">
+<div class="alert-box alert-red">
 🚨 Operador ILEGAL
 </div>`;
+guardarPesquisa(inputRaw);
 return;
 }
 
-/* ⚠️ NÃO ENCONTRADO */
 resultado.innerHTML = `
-<div class="result-card result-alerta">
-⚠️ Não encontrado
+<div class="alert-box alert-orange">
+⚠️ Não encontrado na base de dados
 </div>`;
+guardarPesquisa(inputRaw);
 
 });
 
+}
+
+function guardarPesquisa(nome){
+fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec?nome=" + encodeURIComponent(nome));
 }
 
 </script>
