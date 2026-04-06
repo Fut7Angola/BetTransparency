@@ -18,6 +18,7 @@
 
   gtag('config', 'G-BM5P2FP1B1');
 </script>  
+
 <style>
 
 body{
@@ -127,6 +128,39 @@ font-weight:800;
 .pesquisa{background:linear-gradient(135deg,#f59f00,#ffd43b);}
 .telegram{background:linear-gradient(135deg,#1c7ed6,#4dabf7);}
 
+/* 🔥 NOVO RESULTADO BONITO */
+.result-box{
+margin-top:20px;
+padding:18px;
+border-radius:12px;
+font-weight:bold;
+}
+
+.result-legal{
+background:#e6fcf5;
+border:1px solid #38d9a9;
+color:#087f5b;
+}
+
+.result-ilegal{
+background:#ffe3e3;
+border:1px solid #ff6b6b;
+color:#c92a2a;
+}
+
+.result-warning{
+background:#fff3bf;
+border:1px solid #ffd43b;
+color:#e67700;
+}
+
+.result-box small{
+display:block;
+margin-top:8px;
+font-weight:normal;
+color:#555;
+}
+
 .report-box{
 text-align:center;
 background:linear-gradient(135deg,#ffe3e3,#fff5f5);
@@ -174,11 +208,9 @@ fetch("header.html")
 
 document.getElementById("header").innerHTML = data;
 
-/* 🔥 MENU MOBILE CORRETO */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const overlay = document.getElementById("overlay");
-const dropdown = document.getElementById("dropdownBtn");
 
 if(btn && menu){
 
@@ -188,7 +220,6 @@ overlay.classList.toggle("show");
 btn.classList.toggle("active");
 };
 
-/* fechar ao clicar fora */
 if(overlay){
 overlay.onclick = function(){
 menu.classList.remove("show");
@@ -197,16 +228,6 @@ btn.classList.remove("active");
 };
 }
 
-/* dropdown mobile */
-if(dropdown){
-dropdown.onclick = function(){
-if(window.innerWidth < 768){
-this.classList.toggle("active");
-}
-};
-}
-
-/* fechar ao clicar num link */
 document.querySelectorAll(".menu a").forEach(link=>{
 link.addEventListener("click", ()=>{
 menu.classList.remove("show");
@@ -220,20 +241,11 @@ btn.classList.remove("active");
 });
 </script>
 
-
 <main>
 
 <div class="hero">
 <h1>BetTransparency</h1>
 <p>Protegemos jogadores contra apostas ilegais em Portugal</p>
-</div>
-
-<div class="section" style="text-align:center;">
-<h2>💬 O jogo acabou para a mentira</h2>
-<p style="max-width:700px;margin:auto;color:#555;">
-Num mercado cheio de manipulação, expomos a verdade.
-</p>
-<a href="manifesto.html" class="btn">📜 Ler Manifesto</a>
 </div>
 
 <div class="section verificador">
@@ -245,102 +257,7 @@ Num mercado cheio de manipulação, expomos a verdade.
 
 <button onclick="verificarSite()">Verificar</button>
 
-<div id="resultado" style="margin-top:15px;font-weight:bold;"></div>
-
-</div>
-
-<div class="section">
-
-<h2>🔧 Ferramentas</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🚨 Blacklist</h3>
-<a class="btn" href="blacklist.html">Ver lista</a>
-</div>
-
-<div class="card">
-<h3>📱 Telegram</h3>
-<a class="btn" href="telegram.html">Ver grupos</a>
-</div>
-
-<div class="card">
-<h3>✅ Operadores</h3>
-<a class="btn" href="license.html">Ver lista</a>
-</div>
-
-<div class="card">
-<h3>📚 Guias</h3>
-<a class="btn" href="guides.html">Explorar</a>
-</div>
-
-</div>
-
-</div>
-
-<div class="section report-box">
-
-<h2>🚨 Denunciar Plataforma ou Grupo</h2>
-
-<p>
-Encontraste um site ilegal ou grupo suspeito?
-Ajuda-nos a proteger outros jogadores.
-</p>
-
-<a href="report.html" class="report-btn">
-🚨 Fazer Denúncia
-</a>
-
-</div>
-
-<div class="section">
-
-<h2>📊 Estatísticas</h2>
-
-<div class="stats">
-
-<div class="stat-card legal" onclick="window.location.href='license.html'" style="cursor:pointer;">
-<div class="stat-inner">
-<h3 id="total-legais">17</h3>
-<p>Operadores Legais 🇵🇹</p>
-</div>
-</div>
-
-<div class="stat-card ilegal" onclick="window.location.href='blacklist.html'" style="cursor:pointer;">
-<div class="stat-inner">
-<h3 id="total-ilegais">517</h3>
-<p>Websites Ilegais 🇵🇹</p>
-</div>
-</div>
-
-<div class="stat-card pesquisa">
-<div class="stat-inner">
-<h3 id="total-pesquisas">553</h3>
-<p>Pesquisas Realizadas</p>
-</div>
-</div>
-
-<div class="stat-card telegram" onclick="window.location.href='telegram.html'" style="cursor:pointer;">
-<div class="stat-inner">
-<h3 id="total-telegram">369</h3>
-<p>Grupos Telegram Suspeitos</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="section donation-box">
-
-<h2>💙 Apoiar o Projeto</h2>
-
-<p>Ajuda-nos a manter a plataforma independente</p>
-
-<a href="https://buymeacoffee.com/bettransparency" target="_blank" class="donation-btn">
-☕ Apoiar Projeto
-</a>
+<div id="resultado"></div>
 
 </div>
 
@@ -362,15 +279,6 @@ function normalizar(texto){
 return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-document.getElementById("siteInput").addEventListener("keydown", function(e){
-if(e.key==="Enter"){
-e.preventDefault();
-verificarSite();
-}
-});
-});
-
 function verificarSite(){
 
 const inputRaw = document.getElementById("siteInput").value;
@@ -378,7 +286,7 @@ const input = normalizar(inputRaw);
 const resultado = document.getElementById("resultado");
 
 if(!input){
-resultado.innerText="Escreve um nome";
+resultado.innerHTML="";
 return;
 }
 
@@ -391,81 +299,42 @@ fetch("./data/legal.json").then(r=>r.json())
 const isLegal = l.find(x=>normalizar(x.nome)===input);
 const isBlack = b.find(x=>normalizar(x.nome)===input);
 
-/* ✅ PRIORIDADE: LEGAL EM PORTUGAL */
+/* 🔥 RESULTADO BONITO */
+
 if(isLegal && isBlack){
-resultado.innerText="⚠️ ✅ Operador Legal em Portugal, se termnar em .pt";
-resultado.style.color="orange";
-guardarPesquisa(inputRaw);
+resultado.innerHTML = `
+<div class="result-box result-warning">
+✅ ${inputRaw}
+<small>Este operador é legal em Portugal apenas em domínio .pt</small>
+</div>`;
 return;
 }
 
 if(isLegal){
-resultado.innerText="✅ Operador LEGAL em Portugal";
-resultado.style.color="green";
-guardarPesquisa(inputRaw);
+resultado.innerHTML = `
+<div class="result-box result-legal">
+✅ ⚠️ ${inputRaw}
+<small>Operador legal em Portugal</small>
+</div>`;
 return;
 }
 
 if(isBlack){
-resultado.innerText="🚨 Operador ILEGAL";
-resultado.style.color="red";
-guardarPesquisa(inputRaw);
+resultado.innerHTML = `
+<div class="result-box result-ilegal">
+🚨 ${inputRaw}
+<small>Operador ilegal identificado</small>
+</div>`;
 return;
 }
 
-resultado.innerText="⚠️ Não encontrado";
-resultado.style.color="orange";
-guardarPesquisa(inputRaw);
+resultado.innerHTML = `
+<div class="result-box result-warning">
+⚠️ ${inputRaw}
+<small>Não encontrado na base de dados</small>
+</div>`;
 
 });
-
-}
-
-/* 🔥 LINK NOVO */
-function guardarPesquisa(nome){
-fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec?nome=" + encodeURIComponent(nome));
-}
-
-Promise.all([
-fetch("./data/blacklist.json").then(r=>r.json()),
-fetch("./data/legal.json").then(r=>r.json()),
-fetch("./data/telegram.json").then(r=>r.json()),
-fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec")
-.then(r=>r.json()).catch(()=>[])
-])
-.then(([b,l,t,p])=>{
-
-animarNumero("total-ilegais", b.length);
-animarNumero("total-legais", l.length);
-animarNumero("total-telegram", t.length);
-animarNumero("total-pesquisas", p.length - 1);
-
-});
-
-function animarNumero(id, valor){
-
-let el = document.getElementById(id);
-let atual = 0;
-
-if(valor <= 0){
-el.innerText = 0;
-return;
-}
-
-let incremento = Math.ceil(valor / 40);
-
-let timer = setInterval(()=>{
-
-atual += incremento;
-
-if(atual >= valor){
-el.innerText = valor;
-clearInterval(timer);
-}else{
-el.innerText = atual;
-}
-
-},25);
 
 }
 
