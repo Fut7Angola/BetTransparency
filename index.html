@@ -388,16 +388,27 @@ fetch("./data/legal.json").then(r=>r.json())
 ])
 .then(([b,l])=>{
 
-if(b.find(x=>normalizar(x.nome)===input)){
-resultado.innerText="🚨 Operador ILEGAL";
-resultado.style.color="red";
+const isLegal = l.find(x=>normalizar(x.nome)===input);
+const isBlack = b.find(x=>normalizar(x.nome)===input);
+
+/* ✅ PRIORIDADE: LEGAL EM PORTUGAL */
+if(isLegal && isBlack){
+resultado.innerText="⚠️ ✅ Operador Legal em Portugal, se termnar em .pt";
+resultado.style.color="orange";
 guardarPesquisa(inputRaw);
 return;
 }
 
-if(l.find(x=>normalizar(x.nome)===input)){
-resultado.innerText="✅ Operador LEGAL";
+if(isLegal){
+resultado.innerText="✅ Operador LEGAL em Portugal";
 resultado.style.color="green";
+guardarPesquisa(inputRaw);
+return;
+}
+
+if(isBlack){
+resultado.innerText="🚨 Operador ILEGAL";
+resultado.style.color="red";
 guardarPesquisa(inputRaw);
 return;
 }
