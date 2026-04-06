@@ -1,103 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <title>Denunciar Operador | BetTransparency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta charset="UTF-8">
-<title>Denunciar Operador</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BM5P2FP1B1');
+    </script>  
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7f9;
+            margin: 0;
+            color: #333;
+        }
 
-  gtag('config', 'G-BM5P2FP1B1');
-</script>  
-<style>
+        main {
+            max-width: 700px;
+            margin: 100px auto 60px; /* Margem superior para o header */
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
 
-body{
-font-family:Arial;
-background:linear-gradient(135deg,#eef2f7,#e6ecf5);
-margin:0;
-}
+        .report-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-/* CONTAINER */
-main{
-max-width:650px;
-margin:60px auto;
-background:white;
-padding:30px;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
+        .report-header h1 {
+            color: #b00020;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
 
-/* TITULO */
-h1{
-margin-top:0;
-color:#1c1c1c;
-}
+        .report-header p {
+            color: #666;
+            line-height: 1.6;
+        }
 
-/* TEXTO */
-p{
-color:#555;
-}
+        .privacy-note {
+            background: #fff5f5;
+            border-left: 4px solid #ff6b6b;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #c92a2a;
+        }
 
-/* LABEL */
-label{
-font-weight:bold;
-font-size:14px;
-color:#333;
-}
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 14px;
+        }
 
-/* INPUTS */
-input,textarea{
-width:100%;
-padding:12px;
-margin-top:6px;
-margin-bottom:18px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:15px;
-transition:0.2s;
-}
+        input, textarea, select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-sizing: border-box; /* Garante que não sai do ecrã no mobile */
+        }
 
-/* FOCUS */
-input:focus, textarea:focus{
-border-color:#1c7ed6;
-outline:none;
-box-shadow:0 0 0 2px rgba(28,126,214,0.15);
-}
+        input:focus, textarea:focus {
+            border-color: #1c7ed6;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(28,126,214,0.1);
+        }
 
-/* BOTÃO */
-button{
-width:100%;
-padding:14px;
-background:linear-gradient(135deg,#1c7ed6,#1864ab);
-color:white;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-size:16px;
-font-weight:bold;
-transition:0.2s;
-}
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-button:hover{
-transform:translateY(-1px);
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-}
+        @media (max-width: 600px) {
+            .row { grid-template-columns: 1fr; }
+            main { margin: 80px 15px; padding: 25px; }
+        }
 
-/* MENSAGEM */
-#msg{
-margin-top:15px;
-font-weight:bold;
-text-align:center;
-}
+        button {
+            width: 100%;
+            padding: 16px;
+            background: #b00020;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
 
-</style>
+        button:hover {
+            background: #8e0019;
+        }
 
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -108,82 +125,56 @@ text-align:center;
 fetch("header.html")
 .then(res => res.text())
 .then(data => {
-
-document.getElementById("header").innerHTML = data;
-
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-if(btn && menu){
-btn.onclick=function(){
-menu.classList.toggle("show");
-};
-}
-
+    document.getElementById("header").innerHTML = data;
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    if(btn && menu){
+        btn.onclick=function(){ menu.classList.toggle("show"); };
+    }
 });
 </script>
 
 <main>
+    <div class="report-header">
+        <h1>⚠️ Denúncia Confidencial</h1>
+        <p>Ajude-nos a manter a comunidade segura. Todas as denúncias são analisadas manualmente pela nossa equipa.</p>
+    </div>
 
-<h1>⚠️ Denunciar Operador Suspeito</h1>
+    <div class="privacy-note">
+        <strong>🔒 Privacidade Garantida:</strong> Esta denúncia será enviada diretamente para <strong>geral@bettransparency.com</strong>. Os seus dados nunca serão partilhados com terceiros ou com as entidades denunciadas.
+    </div>
 
-<p>Encontrou um site de apostas ilegal ou grupo de Telegram suspeito?  
-Ajude-nos a identificar e proteger outros utilizadores.</p>
+    <form id="reportForm" action="https://formspree.io/f/geral@bettransparency.com" method="POST">
+        
+        <div class="row">
+            <div>
+                <label>Tipo de Denúncia</label>
+                <select name="tipo_denuncia" required>
+                    <option value="Website Ilegal">Website Ilegal</option>
+                    <option value="Grupo Telegram">Grupo Telegram</option>
+                    <option value="Esquema Fraudulento">Esquema / Fraude</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            <div>
+                <label>Nome do Operador / Grupo</label>
+                <input type="text" name="nome_operador" placeholder="Ex: Beteefy" required>
+            </div>
+        </div>
 
-<form id="reportForm">
+        <label>Website ou Link Suspeito</label>
+        <input type="text" name="url_suspeito" placeholder="https://..." required>
 
-<label>Nome do Operador / Grupo</label>
-<input type="text" name="operador" required>
+        <label>Descrição da Atividade (O que aconteceu?)</label>
+        <textarea name="descricao" rows="5" placeholder="Explique aqui o motivo da sua denúncia..." required></textarea>
 
-<label>Website / Link</label>
-<input type="text" name="website">
+        <label>Seu Email (Opcional - caso queira receber feedback)</label>
+        <input type="email" name="email_utilizador" placeholder="seuemail@exemplo.com">
 
-<label>Motivo da denúncia (opcional)</label>
-<textarea name="motivo" rows="4"></textarea>
-
-<label>Email (opcional)</label>
-<input type="email" name="email">
-
-<button type="submit">🚀 Enviar denúncia</button>
-
-</form>
-
-<p id="msg"></p>
-
-<script>
-
-document.getElementById("reportForm").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-var formData = new FormData(this);
-
-fetch("https://script.google.com/macros/s/AKfycbw_Sk8-MWoY14ZuqHa63vm_xqoeoChFnYFLQNyc4_jFhSDg52ffTHN4pZCg7NzKn1o8Lw/exec", {
-method: "POST",
-body: formData
-})
-.then(response => response.text())
-.then(data => {
-
-document.getElementById("msg").innerHTML =
-"✅ Denúncia enviada com sucesso.";
-
-document.getElementById("reportForm").reset();
-
-})
-.catch(error => {
-
-document.getElementById("msg").innerHTML =
-"❌ Erro ao enviar denúncia.";
-
-console.error(error);
-
-});
-
-});
-
-</script>
-
+        <button type="submit">🚀 Enviar Denúncia para Análise</button>
+        
+        <p class="footer-note">Ao enviar, confirma que as informações prestadas são verdadeiras.</p>
+    </form>
 </main>
 
 <div id="footer"></div>
@@ -191,9 +182,7 @@ console.error(error);
 <script>
 fetch("footer.html")
 .then(r=>r.text())
-.then(d=>{
-document.getElementById("footer").innerHTML=d;
-});
+.then(d=>{ document.getElementById("footer").innerHTML=d; });
 </script>
 
 </body>
