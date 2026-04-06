@@ -280,45 +280,68 @@ fetch("header.html")
 <script>
 fetch("footer.html").then(res=>res.text()).then(data=>{document.getElementById("footer").innerHTML=data;});
 
-/* --- LÓGICA DE VERIFICAÇÃO --- */
-function normalizar(texto){
-    return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g, '').trim();
+/* --- LÓGICA DE VERIFICAÇÃO MELHORADA --- */
+
+function normalizar(texto) {
+    // Remove acentos, converte para minúsculas e retira espaços extras
+    return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
-function verificarSite(){
-    const inputRaw = document.getElementById("siteInput").value;
-    const input = normalizar(inputRaw);
+function verificarSite() {
+    const inputRaw = document.getElementById("siteInput").value.trim();
+    const inputNormalizado = normalizar(inputRaw);
     const resultado = document.getElementById("resultado");
 
-    if(!input){
-        resultado.innerText="Por favor, escreva o nome do site.";
-        resultado.style.color="black";
+    if (!inputRaw) {
+        resultado.innerText = "Por favor, escreva o nome do site.";
+        resultado.style.color = "black";
         return;
     }
 
     resultado.innerText = "A verificar...";
 
     Promise.all([
-        fetch("./data/blacklist.json").then(r=>r.json()),
-        fetch("./data/legal.json").then(r=>r.json())
+        fetch("./data/blacklist.json").then(r => r.json()),
+        fetch("./data/legal.json").then(r => r.json())
     ])
-    .then(([b,l])=>{
-        const isLegal = l.find(x=>normalizar(x.nome).includes(input) || input.includes(normalizar(x.nome)));
-        const isBlack = b.find(x=>normalizar(x.nome).includes(input) || input.includes(normalizar(x.nome)));
+    .then(([blacklist, legal]) => {
+        
+        // 1. Verifica se o utilizador escreveu um domínio que não termina em .pt (ex: .bet.br ou .com)
+        const temPonto = inputRaw.includes('.');
+        const terminaEmPT = inputRaw.toLowerCase().endsWith('.pt');
+        const eEstrangeiro = temPonto && !terminaEmPT;
+        
+        // 2. Procurar correspondência EXATA pelo nome ou pelo site
+        const eLegal = legal.find(x => normalizar(x.nome) === inputNormalizado || normalizar(x.website).includes(inputNormalizado));
+        const eBlacklist = blacklist.find(x => normalizar(x.nome) === inputNormalizado || (x.website && normalizar(x.website).includes(inputNormalizado)));
 
-        if(isLegal){
-            resultado.innerText="✅ Operador LEGAL em Portugal";
-            resultado.style.color="green";
-        } else if(isBlack){
-            resultado.innerText="🚨 Operador ILEGAL - Evite depositar aqui!";
-            resultado.style.color="red";
-        } else {
-            resultado.innerText="⚠️ Não encontramos registo. Verifique se escreveu corretamente.";
-            resultado.style.color="orange";
+        // --- REGRAS DE DECISÃO ---
+
+        if (eEstrangeiro) {
+            // Se tem um ponto e não é .pt, é ilegal em Portugal (ex: casas-de-apostas.com)
+            resultado.innerHTML = `🚨 OPERADOR ILEGAL EM PORTUGAL<br><span style="font-size:13px; font-weight:normal; color:#444;">Atenção: Em Portugal, apenas domínios <b>.pt</b> são autorizados.</span>`;
+            resultado.style.color = "red";
+        } 
+        else if (eLegal) {
+            // Se o nome for exatamente igual a uma casa legal
+            resultado.innerText = "✅ Operador LEGAL em Portugal";
+            resultado.style.color = "green";
+        } 
+        else if (eBlacklist) {
+            // Se o nome constar na blacklist
+            resultado.innerText = "🚨 Operador ILEGAL - Evite depositar aqui!";
+            resultado.style.color = "red";
+        } 
+        else {
+            // Se escrever apenas "beta" ou algo que não está nas listas
+            resultado.innerText = "⚠️ Não encontrado ou nome incompleto. Tente o nome oficial (ex: Betano).";
+            resultado.style.color = "orange";
         }
+
         guardarPesquisa(inputRaw);
-    }).catch(()=>{
-        resultado.innerText="Erro ao conectar à base de dados.";
+    })
+    .catch(() => {
+        resultado.innerText = "Erro ao conectar à base de dados.";
     });
 }
 
