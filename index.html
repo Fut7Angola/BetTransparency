@@ -9,11 +9,11 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BM5P2FP1B1');
-</script>  
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BM5P2FP1B1');
+</script>
 
 <style>
 body{font-family:Arial,sans-serif;margin:0;background:#eef2f7;}
@@ -21,7 +21,7 @@ main{padding:60px 20px;max-width:1100px;margin:auto;}
 .hero{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#1c7ed6,#1864ab);color:white;border-radius:14px;margin-bottom:30px;}
 .section{background:white;padding:25px;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.08);margin-bottom:30px;}
 .verificador{text-align:center;}
-input{padding:12px;width:60%;max-width:300px;border-radius:8px;border:1px solid #ccc;font-size:16px;outline:none;}
+input{padding:12px;width:60%;max-width:300px;border-radius:8px;border:1px solid #ccc;font-size:16px;}
 button{padding:12px 18px;border:none;border-radius:8px;background:#1c7ed6;color:white;font-weight:bold;cursor:pointer;font-size:16px;}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
 .card{background:#f9fafd;padding:22px;border-radius:12px;border:1px solid #e6ecf2;text-align:center;}
@@ -44,124 +44,105 @@ button{padding:12px 18px;border:none;border-radius:8px;background:#1c7ed6;color:
 </head>
 
 <body>
+
 <div id="header"></div>
 
 <script>
-/* 🔥 CORREÇÃO DO MENU HAMBURGER */
 fetch("header.html")
 .then(res => res.text())
 .then(data => {
-    document.getElementById("header").innerHTML = data;
+document.getElementById("header").innerHTML = data;
 
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-    const overlay = document.getElementById("overlay");
-    const dropdown = document.getElementById("dropdownBtn");
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const dropdown = document.getElementById("dropdownBtn");
 
-    if(btn && menu){
+if(btn && menu){
 
-        btn.onclick = function(){
-            menu.classList.toggle("show");
-            if(overlay) overlay.classList.toggle("show");
-            btn.classList.toggle("active");
-        };
+btn.onclick = function(){
+menu.classList.toggle("show");
+if(overlay) overlay.classList.toggle("show");
+btn.classList.toggle("active");
+};
 
-        if(overlay){
-            overlay.onclick = function(){
-                menu.classList.remove("show");
-                overlay.classList.remove("show");
-                btn.classList.remove("active");
-            };
-        }
+if(overlay){
+overlay.onclick = function(){
+menu.classList.remove("show");
+overlay.classList.remove("show");
+btn.classList.remove("active");
+};
+}
 
-        if(dropdown){
-            dropdown.onclick = function(){
-                if(window.innerWidth < 768){
-                    this.classList.toggle("active");
-                }
-            };
-        }
+if(dropdown){
+dropdown.onclick = function(){
+if(window.innerWidth < 768){
+this.classList.toggle("active");
+}
+};
+}
 
-        document.querySelectorAll(".menu a").forEach(link=>{
-            link.addEventListener("click", ()=>{
-                menu.classList.remove("show");
-                if(overlay) overlay.classList.remove("show");
-                btn.classList.remove("active");
-            });
-        });
-    }
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+if(overlay) overlay.classList.remove("show");
+btn.classList.remove("active");
+});
+});
+
+}
 });
 </script>
 
 <main>
 
 <div class="hero">
-    <h1>BetTransparency</h1>
-    <p>Protegemos jogadores contra apostas ilegais em Portugal</p>
+<h1>BetTransparency</h1>
+<p>Protegemos jogadores contra apostas ilegais em Portugal</p>
 </div>
 
 <div class="section" style="text-align:center;">
-    <h2>💬 O jogo acabou para a mentira</h2>
-    <p style="max-width:700px;margin:auto;color:#555;">Num mercado cheio de manipulação, expomos a verdade.</p>
-    <a href="manifesto.html" class="btn">📜 Ler Manifesto</a>
+<h2>💬 O jogo acabou para a mentira</h2>
+<p style="max-width:700px;margin:auto;color:#555;">Num mercado cheio de manipulação, expomos a verdade.</p>
+<a href="manifesto.html" class="btn">📜 Ler Manifesto</a>
 </div>
 
 <div class="section verificador">
-    <h2>🔎 Verificar Operador</h2>
-    <input type="text" id="siteInput" placeholder="Ex: Betano">
-    <br><br>
-    <button onclick="verificarSite()">Verificar Agora</button>
-    <div id="resultado" style="margin-top:15px;font-weight:bold;min-height:20px;"></div>
+<h2>🔎 Verificar Operador</h2>
+<input type="text" id="siteInput" placeholder="Ex: Betano">
+<br><br>
+<button onclick="verificarSite()">Verificar Agora</button>
+<div id="resultado" style="margin-top:15px;font-weight:bold;"></div>
 </div>
 
 <div class="section">
-    <h2>🔧 Ferramentas</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>🚨 Blacklist</h3>
-            <a class="btn" href="blacklist.html">Ver lista</a>
-        </div>
-        <div class="card">
-            <h3>📱 Telegram</h3>
-            <a class="btn" href="telegram.html">Ver grupos</a>
-        </div>
-        <div class="card">
-            <h3>✅ Operadores</h3>
-            <a class="btn" href="license.html">Ver lista</a>
-        </div>
-        <div class="card">
-            <h3>📚 Guias</h3>
-            <a class="btn" href="guides.html">Explorar</a>
-        </div>
-    </div>
+<h2>🔧 Ferramentas</h2>
+<div class="cards">
+<div class="card"><h3>🚨 Blacklist</h3><a class="btn" href="blacklist.html">Ver lista</a></div>
+<div class="card"><h3>📱 Telegram</h3><a class="btn" href="telegram.html">Ver grupos</a></div>
+<div class="card"><h3>✅ Operadores</h3><a class="btn" href="license.html">Ver lista</a></div>
+<div class="card"><h3>📚 Guias</h3><a class="btn" href="guides.html">Explorar</a></div>
+</div>
 </div>
 
 <div class="section">
-    <h2>📊 Estatísticas em Tempo Real para Portugal 🇵🇹</h2>
-    <div class="stats">
-        <div class="stat-card legal" onclick="window.location.href='license.html'" style="cursor:pointer;">
-            <div class="stat-inner"><h3 id="total-legais">...</h3><p>OPERADORES LEGAIS</p></div>
-        </div>
-        <div class="stat-card ilegal" onclick="window.location.href='blacklist.html'" style="cursor:pointer;">
-            <div class="stat-inner"><h3 id="total-ilegais">...</h3><p>SITES NA BLACKLIST</p></div>
-        </div>
-        <div class="stat-card pesquisa">
-            <div class="stat-inner"><h3 id="total-pesquisas">...</h3><p>PESQUISAS TOTAIS</p></div>
-        </div>
-        <div class="stat-card telegram" onclick="window.location.href='telegram.html'" style="cursor:pointer;">
-            <div class="stat-inner"><h3 id="total-telegram">...</h3><p>GRUPOS TELEGRAM</p></div>
-        </div>
-    </div>
+<h2>📊 Estatísticas</h2>
+<div class="stats">
+<div class="stat-card legal"><div class="stat-inner"><h3 id="total-legais">...</h3><p>LEGAIS</p></div></div>
+<div class="stat-card ilegal"><div class="stat-inner"><h3 id="total-ilegais">...</h3><p>ILEGAIS</p></div></div>
+<div class="stat-card pesquisa"><div class="stat-inner"><h3 id="total-pesquisas">...</h3><p>PESQUISAS</p></div></div>
+<div class="stat-card telegram"><div class="stat-inner"><h3 id="total-telegram">...</h3><p>TELEGRAM</p></div></div>
+</div>
 </div>
 
 <div class="section report-box">
-    <h2>🚨 Denunciar Plataforma ou Grupo</h2>
-    <a href="report.html" class="report-btn">🚨 Fazer Denúncia</a>
+<h2>🚨 Denunciar Plataforma ou Grupo</h2>
+<a href="report.html" class="report-btn">🚨 Fazer Denúncia</a>
 </div>
 
 <div class="section donation-box">
-    <h2>💙 Apoiar o Projeto</h2>
-    <a href="https://buymeacoffee.com/bettransparency" target="_blank" class="donation-btn">☕ Apoiar Projeto</a>
+<h2>💙 Apoiar o Projeto</h2>
+<a href="https://buymeacoffee.com/bettransparency" target="_blank" class="donation-btn">☕ Apoiar Projeto</a>
 </div>
 
 </main>
@@ -170,6 +151,63 @@ fetch("header.html")
 
 <script>
 fetch("footer.html").then(res=>res.text()).then(data=>{document.getElementById("footer").innerHTML=data;});
+</script>
+
+<script>
+
+/* 🔎 VERIFICADOR */
+function normalizar(texto){
+return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
+}
+
+async function verificarSite(){
+const inputRaw = document.getElementById("siteInput").value;
+const input = normalizar(inputRaw);
+const resultado = document.getElementById("resultado");
+
+if(!input){
+resultado.innerText="Escreve um nome";
+return;
+}
+
+const [b,l] = await Promise.all([
+fetch("./data/blacklist.json").then(r=>r.json()),
+fetch("./data/legal.json").then(r=>r.json())
+]);
+
+if(l.find(x=>normalizar(x.nome)===input)){
+resultado.innerText="✅ Operador LEGAL em Portugal";
+resultado.style.color="green";
+}
+else if(b.find(x=>normalizar(x.nome)===input)){
+resultado.innerText="🚨 Operador ILEGAL";
+resultado.style.color="red";
+}
+else{
+resultado.innerText="⚠️ Não encontrado";
+resultado.style.color="orange";
+}
+
+fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec?nome="+encodeURIComponent(inputRaw));
+}
+
+/* 📊 STATS */
+async function carregarStats(){
+const [b,l,t,p] = await Promise.all([
+fetch("./data/blacklist.json").then(r=>r.json()),
+fetch("./data/legal.json").then(r=>r.json()),
+fetch("./data/telegram.json").then(r=>r.json()),
+fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec").then(r=>r.json()).catch(()=>[])
+]);
+
+document.getElementById("total-ilegais").innerText=b.length;
+document.getElementById("total-legais").innerText=l.length;
+document.getElementById("total-telegram").innerText=t.length;
+document.getElementById("total-pesquisas").innerText=p.length;
+}
+
+window.onload=carregarStats;
+
 </script>
 
 </body>
