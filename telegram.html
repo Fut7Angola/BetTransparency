@@ -298,11 +298,51 @@ appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
 const db = getFirestore(app);
 signInAnonymously(getAuth());
 
+/* --- SISTEMA DE CARREGAMENTO E ATIVAÇÃO DO MENU --- */
 fetch("header.html")
-.then(res => res.text())
-.then(data => {
-document.getElementById("header").innerHTML = data;
-});
+  .then(res => res.text())
+  .then(data => {
+    const headerElement = document.getElementById("header");
+    headerElement.innerHTML = data;
+
+    const btn = headerElement.querySelector("#menuBtn");
+    const menu = headerElement.querySelector("#menu");
+    const overlay = headerElement.querySelector("#overlay");
+    const dropdowns = headerElement.querySelectorAll(".dropdown");
+
+    if (btn && menu) {
+      btn.onclick = function() {
+        menu.classList.toggle("show");
+        btn.classList.toggle("active");
+        if (overlay) overlay.classList.toggle("show");
+      };
+
+      if (overlay) {
+        overlay.onclick = function() {
+          menu.classList.remove("show");
+          btn.classList.remove("active");
+          overlay.classList.remove("show");
+        };
+      }
+
+      dropdowns.forEach(drop => {
+        drop.onclick = function() {
+          if (window.innerWidth < 768) {
+            this.classList.toggle("active");
+          }
+        };
+      });
+
+      const links = menu.querySelectorAll("a");
+      links.forEach(link => {
+        link.onclick = function() {
+          menu.classList.remove("show");
+          btn.classList.remove("active");
+          if (overlay) overlay.classList.toggle("show");
+        };
+      });
+    }
+  });
 
 let todosGrupos = [];
 
