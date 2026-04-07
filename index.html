@@ -126,7 +126,25 @@ button{padding:12px 18px;border:none;border-radius:8px;background:#1c7ed6;color:
 <div id="footer"></div>
 
 <script>
-fetch("header.html").then(res=>res.text()).then(data=>{document.getElementById("header").innerHTML=data;});
+// Carrega o Header e ativa o botão de menu logo a seguir
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+    
+    // Procura o botão (hamburguer) e a navegação (o menu que abre)
+    const btnMobile = document.querySelector('.btn-mobile') || document.querySelector('.hamburger'); 
+    const nav = document.querySelector('#nav');
+    
+    // Se encontrar o botão, diz-lhe para abrir/fechar ao clicar
+    if (btnMobile && nav) {
+      btnMobile.onclick = function() {
+        nav.classList.toggle('active');
+      };
+    }
+  });
+
+// Carrega o Footer normalmente
 fetch("footer.html").then(res=>res.text()).then(data=>{document.getElementById("footer").innerHTML=data;});
 
 /* --- LÓGICA DE VERIFICAÇÃO TOTALMENTE CORRIGIDA --- */
