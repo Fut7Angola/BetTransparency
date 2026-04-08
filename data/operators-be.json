@@ -1,0 +1,194 @@
+[
+  {
+    "nome": "Unibet",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://unibet.be", "tipo": "Sports/Horses" },
+      { "url": "https://unibetsports.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Ladbrokes",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://ladbrokes.be", "tipo": "Sports/Horses" }
+    ]
+  },
+  {
+    "nome": "Bwin",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://bwin.be", "tipo": "Sports" },
+      { "url": "https://sports.bwin.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Bet777",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://bet777.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Circus",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://circus.be", "tipo": "Sports" },
+      { "url": "https://circus-sport.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Napoleon Games",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://napoleonsports.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "betFIRST",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://sports.betfirst.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Bingoal",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://bingoal.be", "tipo": "Sports/Horses" },
+      { "url": "https://bingoalsport.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Betcenter",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://betcenter.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Golden Palace",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://goldenpalacesports.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Eurotiercé",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://eurotierce.be", "tipo": "Horses" }
+    ]
+  },
+  {
+    "nome": "ZEbet / ZEturf",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://zebet.be", "tipo": "Sports" },
+      { "url": "https://zeturf.be", "tipo": "Horses" }
+    ]
+  },
+  {
+    "nome": "Betano",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://betano.be", "tipo": "Sports" },
+      { "url": "https://betanosports.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Meridianbet",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://meridiansports.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Starcasinobet",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://starsport.be", "tipo": "Sports" },
+      { "url": "https://starcasinobet.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Magic Betting",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://magicbettingsports.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "VivatBet",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://vivatbet.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Blitz",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://blitz.be", "tipo": "Sports" },
+      { "url": "https://blitzbet.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Golden Vegas",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://goldenvegas-sport.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Stanleybet",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://stanleybet.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Scooore",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://scooore.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "Bet90",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://bet90.be", "tipo": "Sports" }
+    ]
+  },
+  {
+    "nome": "e-Lotto",
+    "pais": "BE",
+    "regulador": "CJH",
+    "sites": [
+      { "url": "https://e-lotto.be", "tipo": "Lottery/Sports" }
+    ]
+  }
+]
