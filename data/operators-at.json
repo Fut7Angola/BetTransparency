@@ -1,890 +1,668 @@
 [
   {
     "nome": "10bet",
-    "website": "https://10bet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://10bet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "1Bet",
-    "website": "https://1bet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://1bet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "1xBet",
-    "website": "https://1xbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://1xbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "20Bet",
-    "website": "https://20bet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://20bet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "22Bet",
-    "website": "https://22bet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://22bet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "888 Sport",
-    "website": "https://888sport.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://888sport.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Admiral",
-    "website": "https://admiral.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://admiral.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "AmunRa",
-    "website": "https://amunra.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://amunra.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Bet25",
-    "website": "https://bet25.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://bet25.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Bet-at-home",
-    "website": "https://bet-at-home.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://bet-at-home.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Bet365",
-    "website": "https://bet365.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://bet365.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betandyou",
-    "website": "https://betandyou.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betandyou.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betano",
-    "website": "https://betano.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betano.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BetBeast",
-    "website": "https://betbeast.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betbeast.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BetBoom",
-    "website": "https://betboom.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betboom.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betclic",
-    "website": "https://betclic.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betclic.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BetCollect",
-    "website": "https://betcollect.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betcollect.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betfair",
-    "website": "https://betfair.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betfair.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BetHard",
-    "website": "https://bethard.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://bethard.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betibet",
-    "website": "https://betibet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betibet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betidior",
-    "website": "https://betidior.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betidior.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betista",
-    "website": "https://betista.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betista.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betninja",
-    "website": "https://betninja.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betninja.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BetRepublic",
-    "website": "https://betrepublic.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betrepublic.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betsafe",
-    "website": "https://betsafe.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betsafe.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betsson",
-    "website": "https://betsson.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betsson.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BetUS",
-    "website": "https://betus.com.pa",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betus.com.pa", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betway",
-    "website": "https://betway.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betway.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betwhale",
-    "website": "https://betwhale.com",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betwhale.com", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Betwinner",
-    "website": "https://betwinner.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://betwinner.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "BillyBets",
-    "website": "https://billybets.com",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://billybets.com", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Boomerang Bet",
-    "website": "https://boomerang-bet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://boomerang-bet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Bwin",
-    "website": "https://bwin.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://bwin.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Cashed",
-    "website": "https://cashed.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://cashed.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Casinado",
-    "website": "https://casinado.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://casinado.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Cashpoint",
-    "website": "https://cashpoint.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://cashpoint.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Cazimbo",
-    "website": "https://cazimbo.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://cazimbo.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "ComeOn!",
-    "website": "https://comeon.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://comeon.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "CosmicSlot",
-    "website": "https://cosmicslot.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://cosmicslot.at", "tipo": "casino" }]
   },
   {
     "nome": "CryptoLeo",
-    "website": "https://cryptoleo.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://cryptoleo.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Dafabet",
-    "website": "https://dafabet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://dafabet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Dragonia",
-    "website": "https://dragonia.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://dragonia.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Dudespin",
-    "website": "https://dudespin.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://dudespin.at", "tipo": "casino" }]
   },
   {
     "nome": "Duelbits",
-    "website": "https://duelbits.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://duelbits.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "FEZbet",
-    "website": "https://fezbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://fezbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Gamblezen",
-    "website": "https://gamblezen.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://gamblezen.at", "tipo": "casino" }]
   },
   {
     "nome": "Goldenbet",
-    "website": "https://goldenbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://goldenbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Granawin",
-    "website": "https://granawin.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://granawin.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "HPYBET",
-    "website": "https://hpybet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://hpybet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Hugo Casino",
-    "website": "https://hugocasino.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://hugocasino.at", "tipo": "casino" }]
   },
   {
     "nome": "Instant Casino",
-    "website": "https://instantcasino.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://instantcasino.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Interwetten",
-    "website": "https://interwetten.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://interwetten.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Ivibet",
-    "website": "https://ivibet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://ivibet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Ladbrokes",
-    "website": "https://ladbrokes.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://ladbrokes.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Leon Bets",
-    "website": "https://leon.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://leon.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "LeoVegas",
-    "website": "https://leovegas.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://leovegas.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Lucky Ones",
-    "website": "https://luckyones.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://luckyones.at", "tipo": "casino" }]
   },
   {
     "nome": "Lunubet",
-    "website": "https://lunubet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://lunubet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Lyllo Casino",
-    "website": "https://lyllo.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://lyllo.at", "tipo": "casino" }]
   },
   {
     "nome": "MarathonBet",
-    "website": "https://marathonbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://marathonbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Megapari",
-    "website": "https://megapari.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://megapari.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Melbet",
-    "website": "https://melbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://melbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Merkur Bets",
-    "website": "https://merkurbets.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://merkurbets.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Mobilebet",
-    "website": "https://mobilebet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://mobilebet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Mr Green",
-    "website": "https://mrgreen.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://mrgreen.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "N1bet",
-    "website": "https://n1bet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://n1bet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "NEO.bet",
-    "website": "https://neo.bet",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://neo.bet", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "NetBet",
-    "website": "https://netbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://netbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "NordicBet",
-    "website": "https://nordicbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://nordicbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "ODDSET",
-    "website": "https://oddset.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://oddset.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Pandido",
-    "website": "https://pandido.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://pandido.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Paripesa",
-    "website": "https://paripesa.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://paripesa.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Pinnacle",
-    "website": "https://pinnacle.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://pinnacle.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "PLANBET",
-    "website": "https://planbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://planbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "PlayZilla",
-    "website": "https://playzilla.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://playzilla.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Powbet",
-    "website": "https://powbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://powbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Rabona",
-    "website": "https://rabona.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://rabona.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Realz",
-    "website": "https://realz.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://realz.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Ritzo",
-    "website": "https://ritzo.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://ritzo.at", "tipo": "casino" }]
   },
   {
     "nome": "Roby Casino",
-    "website": "https://robycasino.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://robycasino.at", "tipo": "casino" }]
   },
   {
     "nome": "Roobet",
-    "website": "https://roobet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://roobet.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Roostino",
-    "website": "https://roostino.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://roostino.at", "tipo": "casino" }]
   },
   {
     "nome": "Slotmonster",
-    "website": "https://slotmonster.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://slotmonster.at", "tipo": "casino" }]
   },
   {
     "nome": "Sombrero Spins",
-    "website": "https://sombrerospins.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://sombrerospins.at", "tipo": "casino" }]
   },
   {
     "nome": "Spinational",
-    "website": "https://spinational.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://spinational.at", "tipo": "casino" }]
   },
   {
     "nome": "Spinjo",
-    "website": "https://spinjo.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://spinjo.at", "tipo": "casino" }]
   },
   {
     "nome": "Spinrollz",
-    "website": "https://spinrollz.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://spinrollz.at", "tipo": "casino" }]
   },
   {
     "nome": "Spinsup",
-    "website": "https://spinsup.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://spinsup.at", "tipo": "casino" }]
   },
   {
     "nome": "Sportaza",
-    "website": "https://sportaza.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://sportaza.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Sportwetten-at",
-    "website": "https://sportwetten-at.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://sportwetten-at.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Sportwetten.de",
-    "website": "https://sportwetten.de",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://sportwetten.de", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Stake",
-    "website": "https://stake.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://stake.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Supabet",
-    "website": "https://supabet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://supabet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Tipico",
-    "website": "https://tipico.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://tipico.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Tipp3",
-    "website": "https://tipp3.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://tipp3.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "TonyBet",
-    "website": "https://tonybet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://tonybet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Vave",
-    "website": "https://vave.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://vave.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Vbet",
-    "website": "https://vbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://vbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Vegas Now",
-    "website": "https://vegasnow.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://vegasnow.at", "tipo": "casino" }]
   },
   {
     "nome": "Vierklee",
-    "website": "https://vierklee.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://vierklee.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Wazamba",
-    "website": "https://wazamba.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://wazamba.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "Wettarena",
-    "website": "https://wettarena.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://wettarena.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Wettstar (Hípica)",
-    "website": "https://wettstar.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://wettstar.at", "tipo": "apostas hípicas" }]
   },
   {
     "nome": "William Hill",
-    "website": "https://williamhill.com",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://williamhill.com", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Win2day (Federal)",
-    "website": "https://win2day.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://win2day.at", "tipo": "multijogos" }]
   },
   {
     "nome": "Winamax",
-    "website": "https://winamax.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://winamax.at", "tipo": "poker/apostas" }]
   },
   {
     "nome": "Winmega",
-    "website": "https://winmega.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://winmega.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Winshark",
-    "website": "https://winshark.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://winshark.at", "tipo": "casino" }]
   },
   {
     "nome": "Winz.io",
-    "website": "https://winz.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://winz.at", "tipo": "casino/apostas" }]
   },
   {
     "nome": "ZetBet",
-    "website": "https://zetbet.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://zetbet.at", "tipo": "apostas desportivas" }]
   },
   {
     "nome": "Zoccer",
-    "website": "https://zoccer.at",
-    "app": "",
-    "motivo": "Operador não licenciado pelo SRIJ. Este operador possui licença emitida na Áustria, onde opera sob a regulamentação local (Ministério das Finanças). No entanto, esta licença não é válida em território português. Sem a aprovação do SRIJ, o operador não está autorizado a oferecer serviços de jogo online ou aceitar apostas de residentes em Portugal.",
-    "pais": "Austria",
-    "data": "08-04-2026"
+    "pais": "AT",
+    "regulador": "BMF",
+    "sites": [{ "url": "https://zoccer.at", "tipo": "apostas desportivas" }]
   }
 ]
