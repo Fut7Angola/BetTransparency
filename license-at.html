@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<title>Licenças Áustria</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BM5P2FP1B1');
+</script>  
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef2f7;
+margin:0;
+}
+
+main{
+max-width:1200px;
+margin:40px auto;
+padding:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+background:linear-gradient(135deg,#1c7ed6,#4dabf7);
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:14px;
+font-weight:bold;
+margin-top:10px;
+transition:0.2s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* HERO - Cores da Áustria (Vermelho e Branco) */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#ed2939,#ffffff);
+color:#333; /* Texto escuro para contraste no branco */
+border-radius:14px;
+margin-bottom:30px;
+border: 1px solid #ddd;
+}
+
+.hero h1 { color: #ed2939; }
+
+/* SECTION */
+.section{
+background:white;
+padding:25px;
+border-radius:14px;
+margin-bottom:25px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* SEARCH */
+.search-box{
+text-align:center;
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+max-width:400px;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+/* FILTERS */
+.filters{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.filter-btn{
+padding:8px 14px;
+border-radius:20px;
+border:1px solid #ccc;
+cursor:pointer;
+font-size:13px;
+background:white;
+}
+
+.filter-btn.active{
+background:#1c7ed6;
+color:white;
+border:none;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:12px;
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3{
+font-size:14px;
+margin-bottom:10px;
+}
+
+/* LOGO */
+.logo{
+height:40px;
+margin-bottom:10px;
+object-fit:contain;
+}
+
+/* SITES */
+.sites{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.site-link{
+font-size:13px;
+color:#1c7ed6;
+text-decoration:none;
+}
+
+.tipo{
+font-size:11px;
+background:#e7f5ff;
+padding:2px 6px;
+border-radius:6px;
+margin-left:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<script>
+fetch("header.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("header").innerHTML=d;
+
+/* MENU */
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+if(btn){
+btn.onclick = ()=>{
+menu.classList.toggle("show");
+overlay.classList.toggle("show");
+};
+overlay.onclick = ()=>{
+menu.classList.remove("show");
+overlay.classList.remove("show");
+};
+}
+});
+</script>
+
+<main>
+
+<div class="hero">
+<h1>🇦🇹 Áustria</h1>
+<p>Operadores licenciados pelo BMF</p>
+</div>
+
+<div class="section">
+<h2>🏛 Regulador</h2>
+<p>Bundesministerium für Finanzen (Ministério Federal das Finanças)</p>
+<a href="https://www.bmf.gv.at" target="_blank" class="btn">
+🌐 Visitar BMF
+</a>
+</div>
+
+<div class="section">
+
+<h2>🔎 Operadores</h2>
+
+<div class="search-box">
+<input id="search" placeholder="Pesquisar operador austríaco...">
+</div>
+
+<div class="filters">
+<button class="filter-btn active" onclick="setFilter('all')">Todos</button>
+<button class="filter-btn" onclick="setFilter('sports')">Sports</button>
+<button class="filter-btn" onclick="setFilter('casino')">Casino</button>
+<button class="filter-btn" onclick="setFilter('poker')">Poker</button>
+<button class="filter-btn" onclick="setFilter('bingo')">Bingo</button>
+</div>
+
+<div id="container" class="grid"></div>
+
+</div>
+
+</main>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+.then(r=>r.text())
+.then(d=>{
+document.getElementById("footer").innerHTML=d;
+});
+</script>
+
+<script>
+
+let dados = [];
+let filtro = "all";
+
+/* carregar - Alterado para operators-at.json */
+fetch("./data/operators-at.json")
+.then(r=>r.json())
+.then(data=>{
+dados = data;
+render();
+})
+.catch(err => console.error("Erro ao carregar JSON da Áustria:", err));
+
+/* filtro */
+function setFilter(f){
+filtro = f;
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+event.target.classList.add("active");
+
+render();
+}
+
+/* pesquisa */
+document.getElementById("search").addEventListener("input", render);
+
+/* render */
+function render(){
+
+const termo = document.getElementById("search").value.toLowerCase();
+const container = document.getElementById("container");
+
+container.innerHTML = "";
+
+dados.forEach(op=>{
+
+/* filtro texto */
+if(!op.nome.toLowerCase().includes(termo)) return;
+
+/* filtro tipo */
+if(filtro !== "all"){
+if(!op.sites.some(s=>s.tipo.includes(filtro))) return;
+}
+
+/* criar card */
+const div = document.createElement("div");
+div.className = "card";
+
+/* sites */
+let sitesHTML = "";
+
+op.sites.forEach(s=>{
+sitesHTML += `
+<a href="${s.url}" target="_blank" class="site-link">
+🌐 ${new URL(s.url).hostname}
+<span class="tipo">${s.tipo}</span>
+</a>
+`;
+});
+
+/* logo */
+const logo = `./logos/${op.nome}.png`;
+
+div.innerHTML = `
+<img src="${logo}" class="logo" onerror="this.style.display='none'">
+<h3>${op.nome}</h3>
+<div class="sites">${sitesHTML}</div>
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
