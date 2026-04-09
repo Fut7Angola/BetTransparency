@@ -2,61 +2,61 @@
   {
     "nome": "Bingo.dk",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.bingo.dk", "tipo": "casino" }]
   },
   {
     "nome": "2 Trios venner",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.2triosvenner.dk", "tipo": "casino" }]
   },
   {
     "nome": "Hirtshals PrivatRadio Klub",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.hirtshals-radio.dk", "tipo": "casino" }]
   },
   {
     "nome": "Lifa Klubben",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.lifaklubben.dk", "tipo": "casino" }]
   },
   {
     "nome": "RSV Støtteforening",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.rsv-radio.dk", "tipo": "casino" }]
   },
   {
     "nome": "Røde Kors",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.rodekors.dk", "tipo": "lottery" }]
   },
   {
     "nome": "Støtteforeningen Radio Djursland",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.radiodjursland.dk", "tipo": "casino" }]
   },
   {
     "nome": "Radio Limfjord",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.radiolimfjord.dk", "tipo": "casino" }]
   },
   {
     "nome": "Radio Als",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.radioals.dk", "tipo": "casino" }]
   },
   {
     "nome": "Danske Licens Spil A/S",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.danskespil.dk", "tipo": "sports" },
       { "url": "https://www.tivolicasino.dk", "tipo": "casino" }
@@ -65,7 +65,7 @@
   {
     "nome": "25syv A/S",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.bet25.dk", "tipo": "sports" },
       { "url": "https://www.rød25.dk", "tipo": "casino" },
@@ -75,7 +75,7 @@
   {
     "nome": "888 Denmark",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.888.dk", "tipo": "casino" },
       { "url": "https://www.888sport.dk", "tipo": "sports" },
@@ -85,19 +85,19 @@
   {
     "nome": "Betfair International",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.betfair.dk", "tipo": "sports" }]
   },
   {
     "nome": "Hillside (Bet365)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.bet365.dk", "tipo": "sports" }]
   },
   {
     "nome": "Unibet (Denmark)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.unibet.dk", "tipo": "sports" },
       { "url": "https://www.mariacasino.dk", "tipo": "casino" }
@@ -106,7 +106,7 @@
   {
     "nome": "LeoVegas Gaming",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.leovegas.dk", "tipo": "casino" },
       { "url": "https://www.expekt.dk", "tipo": "sports" }
@@ -115,7 +115,7 @@
   {
     "nome": "ElectraWorks (Bwin)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.bwin.dk", "tipo": "sports" },
       { "url": "https://www.partycasino.dk", "tipo": "casino" }
@@ -124,7 +124,7 @@
   {
     "nome": "Nordic Spil (Betsson)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.nordicbet.dk", "tipo": "sports" },
       { "url": "https://www.betsson.dk", "tipo": "sports" }
@@ -133,7 +133,7 @@
   {
     "nome": "SkillOnNet Ltd",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.playojo.dk", "tipo": "casino" },
       { "url": "https://www.luckymeslots.dk", "tipo": "casino" },
@@ -143,13 +143,13 @@
   {
     "nome": "Mr Green Limited",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.mrgreen.dk", "tipo": "sports" }]
   },
   {
     "nome": "Reel Denmark (PokerStars)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.pokerstars.dk", "tipo": "casino" },
       { "url": "https://www.betstars.dk", "tipo": "sports" }
@@ -158,7 +158,7 @@
   {
     "nome": "Blueberry (Denmark)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.videoslots.dk", "tipo": "casino" },
       { "url": "https://www.mrvegas.dk", "tipo": "casino" }
@@ -167,7 +167,7 @@
   {
     "nome": "Denix Limited (Betinia)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.betinia.dk", "tipo": "sports" },
       { "url": "https://www.campobet.dk", "tipo": "sports" },
@@ -177,19 +177,19 @@
   {
     "nome": "Cashpoint Limited",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.cashpoint.dk", "tipo": "sports" }]
   },
   {
     "nome": "Insipia Limited (Betano)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.betano.dk", "tipo": "sports" }]
   },
   {
     "nome": "ComeOn Denmark",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.comeon.dk", "tipo": "sports" },
       { "url": "https://www.getlucky.dk", "tipo": "casino" }
@@ -198,19 +198,19 @@
   {
     "nome": "Vbet Denmark",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.vbet.dk", "tipo": "sports" }]
   },
   {
     "nome": "Marathonbet",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.marathonbet.dk", "tipo": "sports" }]
   },
   {
     "nome": "RoyalCasino.com Ltd",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.royalcasino.dk", "tipo": "casino" },
       { "url": "https://www.kapowcasino.dk", "tipo": "casino" }
@@ -219,7 +219,7 @@
   {
     "nome": "Apollo Entertainment",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.casinoaction.dk", "tipo": "casino" },
       { "url": "https://www.luxurycasino.dk", "tipo": "casino" }
@@ -228,7 +228,7 @@
   {
     "nome": "Karamba Limited",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.karamba.dk", "tipo": "casino" },
       { "url": "https://www.danske777.dk", "tipo": "casino" }
@@ -237,13 +237,13 @@
   {
     "nome": "One Casino Ltd",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.onecasino.dk", "tipo": "casino" }]
   },
   {
     "nome": "Stake (Vindere Casino)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.stake.dk", "tipo": "sports" },
       { "url": "https://www.vindercasino.dk", "tipo": "casino" }
@@ -252,7 +252,7 @@
   {
     "nome": "Infiton Limited",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [
       { "url": "https://www.spilleboden.dk", "tipo": "casino" },
       { "url": "https://www.casongo.dk", "tipo": "casino" }
@@ -261,73 +261,73 @@
   {
     "nome": "BM Solutions DK (Betmaster)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.betmaster.dk", "tipo": "sports" }]
   },
   {
     "nome": "Jackpotbet A/S",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.jackpotbet.dk", "tipo": "sports" }]
   },
   {
     "nome": "Dreambox Games (Chanz)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.chanz.com/da", "tipo": "casino" }]
   },
   {
     "nome": "Omnigame ApS (Pip.dk)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.pip.dk", "tipo": "casino" }]
   },
   {
     "nome": "CEGO A/S (Spilnu.dk)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.spilnu.dk", "tipo": "casino" }]
   },
   {
     "nome": "E-Play24 IT Ltd",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.e-play24.dk", "tipo": "sports" }]
   },
   {
     "nome": "Interwetten (Denmark)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.interwetten.dk", "tipo": "sports" }]
   },
   {
     "nome": "Magic Net (Vulkan)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.vulkan.dk", "tipo": "casino" }]
   },
   {
     "nome": "Videoslots Limited",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.videoslots.dk", "tipo": "casino" }]
   },
   {
     "nome": "Winteq ApS",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.winteq.dk", "tipo": "casino" }]
   },
   {
     "nome": "THWeb Games (Vindstort)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.vindstort.dk", "tipo": "casino" }]
   },
   {
     "nome": "Swush.com ApS (Holdet)",
     "pais": "DK",
-    "regulador": "SKAT",
+    "regulador": "DGA",
     "sites": [{ "url": "https://www.holdet.dk", "tipo": "sports" }]
   }
 ]
