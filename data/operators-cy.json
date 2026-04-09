@@ -1,1 +1,74 @@
-
+[
+  {
+    "nome": "Stoiximan",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://stoiximan.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Bet365",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://bet365.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Fonbet",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://fonbet.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Parimatch",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://parimatch.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Winmasters",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://winmasters.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betano",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://betano.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "7777",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://7777.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Megabet Plus",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://megabetplus.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Bet on Alpha",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://betonalfa.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Meridianbet",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://meridianbet.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Ubet",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://ubet.com.cy", "tipo": "sports" }]
+  },
+  {
+    "nome": "Novibet",
+    "pais": "Cy",
+    "regulador": "NBA",
+    "sites": [{ "url": "https://novibet.com.cy", "tipo": "sports" }]
+  }
+]
