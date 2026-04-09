@@ -1,1 +1,134 @@
-
+[
+  {
+    "nome": "Efbet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://efbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Winbet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://winbet.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Palms Bet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://palmsbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Bet365",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://bet365.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Bwin",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://bwin.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betano",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://betano.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Sesame",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://sesame.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "8888.bg",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://8888.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Alphawin",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://alphawin.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Inbet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://inbet.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betmarket",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://betmarket.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Sportingwin",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://sportingwin.com", "tipo": "sports" }]
+  },
+  {
+    "nome": "Magic Bet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://magicbet.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "7777.bg",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://7777.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betway",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://betway.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "PokerStars",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://pokerstars.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Betfair",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://betfair.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Bulgarian Sports Totalizator",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://toto.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Elitbet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://elitbet.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Everbet",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://everbet.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Mr Bit",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://mrbit.bg", "tipo": "sports" }]
+  },
+  {
+    "nome": "Frank Casino",
+    "pais": "Bg",
+    "regulador": "NRA",
+    "sites": [{ "url": "https://frankcasino.bg", "tipo": "sports" }]
+  }
+]
