@@ -1,1 +1,98 @@
-
+[
+  {
+    "nome": "Hrvatska Lutrija",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.lutrija.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "SuperSport",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.supersport.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Hattrick-PSK",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.psk.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Germania Sport",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.germaniasport.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Favbet",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.favbet.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Admiral",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.admiral.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Senator",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.senator.hr", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "Rizk",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.rizk.hr", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "Arena Casino",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.arenacasino.hr", "tipo": "sports" }
+    ]
+  },
+  {
+    "nome": "Luckia",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.luckia.hr", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "OlyBet",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.olybet.hr", "tipo": "casino" }
+    ]
+  },
+  {
+    "nome": "Vegas",
+    "pais": "HR",
+    "regulador": "MFIN",
+    "sites": [
+      { "url": "https://www.vegas.hr", "tipo": "casino" }
+    ]
+  }
+]
