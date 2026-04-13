@@ -240,54 +240,54 @@ async function verificarSite() {
 
         // --- REGRAS DE DECISÃO POR ORDEM DE PRIORIDADE ---
 
-        if (casaLegal) {
+// --- REGRAS DE DECISÃO (VERSÃO FINAL CORRETA) ---
+
+const exemplo = inputRaw.toLowerCase().replace(/\s+/g,"") + ".pt";
+
+// 🟢 1. PRIORIDADE: OPERADORES LEGAIS
+if (casaLegal) {
 
     if (temPonto) {
 
         if (terminaEmPT) {
             resultado.innerHTML = `
-            ✅ Operador LEGAL em Portugal 🇵🇹<br>
-            <span style="font-size:12px;color:#555;">
-            Domínio .pt autorizado pelo SRIJ
-            </span>`;
+            ✅ Operador LEGAL em Portugal 🇵🇹`;
             resultado.style.color = "green";
         } else {
             resultado.innerHTML = `
-            ⚠️ Marca legal, mas domínio NÃO autorizado em Portugal<br>
+            🚨 Domínio NÃO autorizado em Portugal<br>
             <span style="font-size:12px;color:#555;">
-            Apenas versões <b>.pt</b> são legais (ex: betano.pt)<br>
-            Este domínio pode ser legal noutro país (.com, .de, .be, etc)
+            Esta marca é legal, mas apenas com domínio <b>.pt</b><br>
+            Este domínio é ilegal em Portugal
             </span>`;
-            resultado.style.color = "orange";
+            resultado.style.color = "red";
         }
 
     } else {
         resultado.innerHTML = `
-        ⚠️ Marca LEGAL em Portugal<br>
+        ✅ Marca LEGAL em Portugal<br>
         <span style="font-size:12px;color:#555;">
-        Atenção: só é legal se usar domínio <b>.pt</b><br>
-        Exemplo correto: betano.pt
+        ⚠️ Apenas é legal com domínio <b>.pt</b><br>
+        Exemplo correto: ${exemplo}
         </span>`;
-        resultado.style.color = "orange";
+        resultado.style.color = "green";
     }
 
-} 
-        else if (casaIlegal) {
-            // Se o nome está na lista negra (ex: "Beteefy")
-            resultado.innerText = "🚨 Operador ILEGAL - Lista Negra";
-            resultado.style.color = "red";
-        }
-        else if (temPonto && !terminaEmPT) {
-            // Se escreveu algo com ponto que NÃO termina em .pt (ex: betano.com ou beta.br)
-            // E não foi encontrado nas listas acima
-            resultado.innerHTML = `🚨 DOMÍNIO ILEGAL EM PORTUGAL<br><span style="font-size:12px; font-weight:normal; color:#555;">Apenas domínios <b>.pt</b> são autorizados para jogo online.</span>`;
-            resultado.style.color = "red";
-        }
-        else {
-            // Se escreveu "beta", "xyz" ou qualquer coisa que não está nas listas
-            resultado.innerText = "⚠️ Não encontrado, a nossa equipa irá verificar a legalidade.";
-            resultado.style.color = "orange";
-        }
+}
+
+// 🔴 2. BLACKLIST (só se NÃO for legal)
+else if (casaIlegal) {
+    resultado.innerHTML = `
+    🚨 Operador ILEGAL - Lista Negra`;
+    resultado.style.color = "red";
+}
+
+// 🟡 3. NÃO ENCONTRADO
+else {
+    resultado.innerHTML = `
+    ⚠️ Não encontrado na base de dados`;
+    resultado.style.color = "orange";
+}
 
         // Regista a pesquisa no teu Google Sheets
         fetch("https://script.google.com/macros/s/AKfycbzZ7AIgAJYbcvqkpRVf-c6A3WQ3Uo_aLPmV5VorXJIvBnt7HP5c1p0lao3SAzs8l8D3/exec?nome=" + encodeURIComponent(inputRaw));
