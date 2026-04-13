@@ -241,10 +241,37 @@ async function verificarSite() {
         // --- REGRAS DE DECISÃO POR ORDEM DE PRIORIDADE ---
 
         if (casaLegal) {
-            // Se o nome está na lista legal (ex: "Betano")
-            resultado.innerText = "✅ Operador LEGAL em Portugal";
+
+    if (temPonto) {
+
+        if (terminaEmPT) {
+            resultado.innerHTML = `
+            ✅ Operador LEGAL em Portugal 🇵🇹<br>
+            <span style="font-size:12px;color:#555;">
+            Domínio .pt autorizado pelo SRIJ
+            </span>`;
             resultado.style.color = "green";
-        } 
+        } else {
+            resultado.innerHTML = `
+            ⚠️ Marca legal, mas domínio NÃO autorizado em Portugal<br>
+            <span style="font-size:12px;color:#555;">
+            Apenas versões <b>.pt</b> são legais (ex: betano.pt)<br>
+            Este domínio pode ser legal noutro país (.com, .de, .be, etc)
+            </span>`;
+            resultado.style.color = "orange";
+        }
+
+    } else {
+        resultado.innerHTML = `
+        ⚠️ Marca LEGAL em Portugal<br>
+        <span style="font-size:12px;color:#555;">
+        Atenção: só é legal se usar domínio <b>.pt</b><br>
+        Exemplo correto: betano.pt
+        </span>`;
+        resultado.style.color = "orange";
+    }
+
+} 
         else if (casaIlegal) {
             // Se o nome está na lista negra (ex: "Beteefy")
             resultado.innerText = "🚨 Operador ILEGAL - Lista Negra";
