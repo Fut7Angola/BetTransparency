@@ -73,7 +73,7 @@ text-align:center;
 margin-bottom:20px;
 }
 
-/* BARRA DE PESQUISA IGUAL À BLACKLIST */
+/* BARRA DE PESQUISA */
 .search-box {
     margin-bottom: 30px;
     text-align: center;
@@ -85,7 +85,7 @@ margin-bottom:20px;
     padding: 15px 20px;
     font-size: 16px;
     border: 2px solid #ddd;
-    border-radius: 30px; /* Estilo arredondado */
+    border-radius: 30px;
     outline: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -153,6 +153,35 @@ z-index:2;
 margin-top:8px;
 font-size:20px;
 z-index:2;
+}
+
+/* ESTILO PAGINAÇÃO ADICIONADO */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-pag {
+    background: #1c7ed6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-pag:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#pageInfo {
+    font-weight: bold;
+    color: #444;
 }
 
 /* MODAL */
@@ -256,6 +285,12 @@ margin-top:10px;
 
 <div id="container" class="grid"></div>
 
+<div class="pagination">
+    <button id="prevBtn" class="btn-pag">Anterior</button>
+    <span id="pageInfo">Página 1</span>
+    <button id="nextBtn" class="btn-pag">Próximo</button>
+</div>
+
 </main>
 
 <div id="modal" class="modal">
@@ -345,6 +380,11 @@ fetch("header.html")
   });
 
 let todosGrupos = [];
+let gruposFiltrados = [];
+let paginaAtual = 1;
+
+// Define limites: 20 para PC, 10 para Telemóvel
+const itensPorPagina = window.innerWidth <= 768 ? 10 : 20;
 
 fetch("./data/telegram.json")
 .then(r => r.json())
@@ -352,35 +392,69 @@ fetch("./data/telegram.json")
 todosGrupos = data.sort((a,b)=>
 a.nome.localeCompare(b.nome,'pt',{sensitivity:'base'})
 );
-render(todosGrupos);
+gruposFiltrados = todosGrupos;
+renderizarPagina();
 });
 
-/* PESQUISA AVANÇADA (NOME E LINK) */
+/* FUNÇÃO DE RENDERIZAÇÃO COM PAGINAÇÃO */
+function renderizarPagina(){
+    const container = document.getElementById("container");
+    container.innerHTML = "";
+
+    const inicio = (paginaAtual - 1) * itensPorPagina;
+    const fim = inicio + itensPorPagina;
+    const listaExibir = gruposFiltrados.slice(inicio, fim);
+
+    listaExibir.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card";
+        let icon = "⚠️";
+        if(item.tipo === "perigo") icon = "🚨";
+        if(item.tipo === "spam") icon = "📛";
+        if(item.tipo === "analise") icon = "🔍";
+        div.innerHTML = `<h3>${item.nome}</h3><div class="icon">${icon}</div>`;
+        div.onclick = () => abrirModal(item);
+        container.appendChild(div);
+    });
+
+    atualizarControlosPagina();
+}
+
+function atualizarControlosPagina() {
+    const totalPaginas = Math.ceil(gruposFiltrados.length / itensPorPagina);
+    document.getElementById("pageInfo").innerText = `Página ${paginaAtual} de ${totalPaginas || 1}`;
+    document.getElementById("prevBtn").disabled = (paginaAtual === 1);
+    document.getElementById("nextBtn").disabled = (paginaAtual >= totalPaginas);
+}
+
+document.getElementById("prevBtn").onclick = () => {
+    if(paginaAtual > 1) {
+        paginaAtual--;
+        renderizarPagina();
+        window.scrollTo(0, 400); // Sobe para o início da lista após a explicação
+    }
+}
+
+document.getElementById("nextBtn").onclick = () => {
+    const totalPaginas = Math.ceil(gruposFiltrados.length / itensPorPagina);
+    if(paginaAtual < totalPaginas) {
+        paginaAtual++;
+        renderizarPagina();
+        window.scrollTo(0, 400);
+    }
+}
+
+/* PESQUISA AVANÇADA */
 document.getElementById("searchInput").addEventListener("input", function(){
     const termo = this.value.toLowerCase();
-    const filtrado = todosGrupos.filter(item => {
+    gruposFiltrados = todosGrupos.filter(item => {
         let nome = item.nome ? item.nome.toLowerCase() : "";
         let link = item.link ? item.link.toLowerCase() : "";
         return nome.includes(termo) || link.includes(termo);
     });
-    render(filtrado);
+    paginaAtual = 1;
+    renderizarPagina();
 });
-
-function render(lista){
-const container=document.getElementById("container");
-container.innerHTML="";
-lista.forEach(item=>{
-const div=document.createElement("div");
-div.className="card";
-let icon="⚠️";
-if(item.tipo==="perigo") icon="🚨";
-if(item.tipo==="spam") icon="📛";
-if(item.tipo==="analise") icon="🔍";
-div.innerHTML=`<h3>${item.nome}</h3><div class="icon">${icon}</div>`;
-div.onclick=()=>abrirModal(item);
-container.appendChild(div);
-});
-}
 
 let grupoAtual="";
 
