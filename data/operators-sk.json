@@ -27,7 +27,7 @@
     "nome": "Synot Tip",
     "pais": "Sk",
     "regulador": "URHH",
-    "sites": [{ "url": "https://synottip.sk", "tipo": "sports/casino" }]
+    "sites": [{ "url": "https://synottip.sk", "tipo": "sports/casino/poker" }]
   },
   {
     "nome": "Tipos (eTipos)",
@@ -78,9 +78,105 @@
     "sites": [{ "url": "https://doublestar.sk", "tipo": "casino" }]
   },
   {
-    "nome": "Go4Games",
+    "nome": "Go4Games (Gox)",
     "pais": "Sk",
     "regulador": "URHH",
     "sites": [{ "url": "https://gox.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Orion Tip",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://oriontip.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Victory Tip",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://victorytip.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Excelbet",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://excelbet.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Rebuy Stars",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://rebuystars.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Card Casino Online",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://cardcasino.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "777.sk (Ariola)",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://777.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "BetRing",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://betring.sk", "tipo": "sports" }]
+  },
+  {
+    "nome": "Slovmatic",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://slovmatic.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Game World Online",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://gameworld.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Gapa Group",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://gapagroup.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Sazka Hry",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://sazkahry.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "K-BET 7",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://k-bet.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Magnus Game",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://magnusgame.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Banco Casino",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://bancocasino.sk", "tipo": "casino/poker" }]
+  },
+  {
+    "nome": "Olympic Casino Online",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://olympic-casino.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Terno",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://terno.sk", "tipo": "sports" }]
   }
 ]
