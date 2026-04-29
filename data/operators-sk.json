@@ -1,1 +1,86 @@
-
+[
+  {
+    "nome": "Fortuna",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://ifortuna.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Tipsport",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://tipsport.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Niké",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://nike.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Doxxbet",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://doxxbet.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Synot Tip",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://synottip.sk", "tipo": "sports/casino" }]
+  },
+  {
+    "nome": "Tipos (eTipos)",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://etipos.sk", "tipo": "lottery/sports/casino" }]
+  },
+  {
+    "nome": "Betor",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://betor.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "MonacoBet",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://monacobet.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Eurogold",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://eurogold.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "OlyBet",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://olybet.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Kajot Intacto",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://kajotintacto.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Admiral Online",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://admiralonline.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "DoubleStar",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://doublestar.sk", "tipo": "casino" }]
+  },
+  {
+    "nome": "Go4Games",
+    "pais": "Sk",
+    "regulador": "URHH",
+    "sites": [{ "url": "https://gox.sk", "tipo": "casino" }]
+  }
+]
