@@ -1,68 +1,122 @@
 [
   {
-    "nome": "Športna loterija (e-stave)",
-    "pais": "Si",
-    "regulador": "FURS",
-    "sites": [
-      {
-        "url": "https://e-stave.com",
-        "tipo": "sports"
-      }
-    ]
+    "nome": "OlyBet",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://olybet.ee", "tipo": "apostas desportivas e casino" }]
   },
   {
-    "nome": "Loterija Slovenije",
-    "pais": "Si",
-    "regulador": "FURS",
-    "sites": [
-      {
-        "url": "https://loterija.si",
-        "tipo": "lottery"
-      }
-    ]
+    "nome": "Ninja Casino",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://ninjacasino.ee", "tipo": "casino online" }]
   },
   {
-    "nome": "Casino Portorož",
-    "pais": "Si",
-    "regulador": "FURS",
-    "sites": [
-      {
-        "url": "https://casino.si",
-        "tipo": "casino"
-      }
-    ]
+    "nome": "Coolbet",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://coolbet.ee", "tipo": "apostas desportivas" }]
   },
   {
-    "nome": "Hit Group",
-    "pais": "Si",
-    "regulador": "FURS",
-    "sites": [
-      {
-        "url": "https://hit.si",
-        "tipo": "casino"
-      }
-    ]
+    "nome": "Paf",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://paf.ee", "tipo": "apostas desportivas e casino" }]
   },
   {
-    "nome": "Admiral Slovenija",
-    "pais": "Si",
-    "regulador": "FURS",
-    "sites": [
-      {
-        "url": "https://admiral.si",
-        "tipo": "casino"
-      }
-    ]
+    "nome": "Betsafe",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://betsafe.ee", "tipo": "apostas desportivas e casino" }]
   },
   {
-    "nome": "Casino Mond",
-    "pais": "Si",
-    "regulador": "FURS",
-    "sites": [
-      {
-        "url": "https://casinomond.si",
-        "tipo": "casino"
-      }
-    ]
+    "nome": "Unibet",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://unibet.ee", "tipo": "apostas desportivas e casino" }]
+  },
+  {
+    "nome": "Bet365",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://bet365.ee", "tipo": "apostas desportivas" }]
+  },
+  {
+    "nome": "Optibet",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://optibet.ee", "tipo": "apostas desportivas e casino" }]
+  },
+  {
+    "nome": "Maria Casino",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://mariacasino.ee", "tipo": "casino online" }]
+  },
+  {
+    "nome": "SuperCasino",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://supercasino.ee", "tipo": "casino online" }]
+  },
+  {
+    "nome": "TonyBet",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://tonybet.ee", "tipo": "apostas desportivas" }]
+  },
+  {
+    "nome": "Chanz",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://chanz.com", "tipo": "casino online" }]
+  },
+  {
+    "nome": "Kingswin",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://kingswin.com", "tipo": "casino online" }]
+  },
+  {
+    "nome": "GrandX",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://grandx.com", "tipo": "casino online" }]
+  },
+  {
+    "nome": "Fenikss Casino",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://feniksscasino.ee", "tipo": "casino online" }]
+  },
+  {
+    "nome": "Jalla Casino",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://jallacasino.ee", "tipo": "casino online" }]
+  },
+  {
+    "nome": "Nutz",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://nutz.ee", "tipo": "casino online" }]
+  },
+  {
+    "nome": "Kiirrasiino",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://kiirrasiino.ee", "tipo": "casino online" }]
+  },
+  {
+    "nome": "Vivi Bet",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://vivibet.ee", "tipo": "apostas desportivas" }]
+  },
+  {
+    "nome": "Kanuna",
+    "pais": "Ee",
+    "regulador": "EMTA",
+    "sites": [{ "url": "https://kanuna.ee", "tipo": "casino online" }]
   }
 ]
