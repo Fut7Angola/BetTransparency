@@ -3,13 +3,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <title>Blacklist de Casas de Apostas Ilegais em Portugal</title>
-
 <meta name="description" content="Lista atualizada de sites de apostas ilegais em Portugal. Evita fraudes e protege o teu dinheiro.">
-
 <meta name="keywords" content="casas apostas ilegais portugal, blacklist apostas, sites ilegais apostas">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM5P2FP1B1"></script>
@@ -17,223 +13,270 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-BM5P2FP1B1');
 </script>  
 
 <style>
-
-body{
-font-family:Arial;
-margin:0;
-background:#eef2f7;
+:root {
+    --primary-color: #1c7ed6;
+    --danger-color: #b00020;
+    --bg-color: #f8f9fa;
+    --text-dark: #333;
+    --text-muted: #666;
 }
 
-main{
-padding:90px 15px;
-max-width:1000px;
-margin:auto;
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-dark);
 }
 
-/* ESTILO DO TEXTO DE AVISO */
+main {
+    padding: 90px 15px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* AVISO LEGAL */
 .aviso-legal {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 5px solid #b00020;
-    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 16px;
+    border-left: 6px solid var(--danger-color);
+    margin-bottom: 30px;
     font-size: 14px;
     line-height: 1.6;
-    color: #444;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.aviso-legal p {
-    margin-bottom: 10px;
-}
-
-/* BARRA DE PESQUISA MELHORADA */
+/* PESQUISA */
 .search-container {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
 #searchInput {
     width: 100%;
-    max-width: 500px;
-    padding: 15px 20px;
+    max-width: 600px;
+    padding: 16px 25px;
     font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 30px;
+    border: 2px solid #eee;
+    border-radius: 50px;
     outline: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 #searchInput:focus {
-    border-color: #1c7ed6;
-    box-shadow: 0 4px 12px rgba(28, 126, 214, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 20px rgba(28, 126, 214, 0.2);
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:15px;
+/* GRID & CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-@media(max-width:768px){
-.grid{
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-}
-.card{
-padding:12px;
-border-radius:12px;
-}
-.card h3{
-font-size:14px;
-}
-}
-
-/* CARD */
-.card{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-cursor:pointer;
-text-align:center;
-aspect-ratio:1/1;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;  
-transition: transform 0.2s;
+.card {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
 }
 
-.card h3{
-margin:0;
-color:#b00020;
+.card h3 {
+    margin: 0 0 10px 0;
+    color: var(--danger-color);
+    font-size: 18px;
 }
 
-.rating{
-color:#f59f00;
-font-weight:bold;
-margin-top:5px;
+.rating {
+    color: #f59f00;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-/* ESTILO PAGINAÇÃO ADICIONADO */
+/* MODAL MODERNO */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 550px;
+    max-height: 85vh;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-fechar {
+    background: #f1f3f5;
+    color: #444;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.btn-fechar:hover { background: #e9ecef; }
+
+.modal-body {
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.info-box {
+    background: #fff5f5;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: var(--danger-color);
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid #ffe3e3;
+}
+
+.meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.comment-section {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.comment {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+}
+
+/* FORMULÁRIO */
+input, textarea, select {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+textarea { height: 80px; resize: none; }
+
+.btn-enviar {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-enviar:hover { background: #1864ab; }
+
+/* PAGINAÇÃO */
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin: 30px 0;
+    gap: 20px;
+    margin: 40px 0;
 }
 
 .btn-pag {
-    background: #1c7ed6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 30px;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-pag:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
 }
 
 .btn-pag:disabled {
-    background: #ccc;
+    border-color: #ccc;
+    color: #ccc;
     cursor: not-allowed;
 }
 
-#pageInfo {
-    font-weight: bold;
-    color: #444;
+@media(max-width:768px){
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .modal { align-items: flex-end; padding: 0; }
+    .modal-content { border-radius: 25px 25px 0 0; max-height: 90vh; }
 }
-
-/* MODAL */
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-justify-content:center;
-align-items:flex-end;
-z-index: 1000;
-}
-
-.modal-content{
-background:white;
-width:100%;
-max-width:500px;
-max-height:90vh;
-border-radius:16px 16px 0 0;
-display:flex;
-flex-direction:column;
-overflow:hidden;
-}
-
-.modal-header{
-padding:15px;
-border-bottom:1px solid #eee;
-background:white;
-position:sticky;
-top:0;
-z-index:10;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.modal-body{
-padding:15px;
-overflow-y:auto;
--webkit-overflow-scrolling: touch;
-}
-
-textarea,input,select{
-width:100%;
-margin-top:10px;
-padding:10px;
-border-radius:8px;
-border:1px solid #ddd;
-box-sizing: border-box;
-}
-
-button{
-background:#1c7ed6;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:8px;
-margin-top:10px;
-cursor:pointer;
-font-weight: bold;
-}
-
-.comment{
-background:#f1f3f5;
-padding:10px;
-border-radius:8px;
-margin-top:10px;
-}
-
-input, textarea{
-font-size:16px;
-}
-  
 </style>
 
 </head>
-
 <body>
 
 <div id="header"></div>
@@ -242,84 +285,77 @@ font-size:16px;
 fetch("header.html")
 .then(res=>res.text())
 .then(data=>{
-document.getElementById("header").innerHTML=data;
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-if(btn && menu){
-btn.onclick=function(){
-menu.classList.toggle("show");
-};
-}
+    document.getElementById("header").innerHTML=data;
 });
 </script>
 
 <main>
+    <h1>🚨 Blacklist Operadores em Portugal</h1>
 
-<h1>🚨 Blacklist Operadores em Portugal</h1>
+    <div class="aviso-legal">
+        <p>A lista abaixo identifica comunidades e sites que apresentam sinais de risco ou operam sem autorização legal em Portugal. O objetivo é a proteção do utilizador.</p>
+    </div>
 
-<div class="aviso-legal">
-    <p>A lista de grupos apresentada nesta secção tem caráter exclusivamente informativo e destina‑se a identificar comunidades, canais ou grupos do Telegram que, segundo a nossa análise, podem representar risco para os utilizadores, seja por práticas enganosas, promoção de operadores não autorizados, esquemas fraudulentos, manipulação de resultados, venda de tips duvidosas ou qualquer outra atividade potencialmente prejudicial.</p>
-    <p>A inclusão de um grupo na blacklist não constitui uma acusação criminal, nem implica que todos os seus membros ou administradores estejam envolvidos em práticas ilícitas. Significa apenas que, à data da última atualização, o grupo apresenta sinais de risco, comportamentos suspeitos ou práticas incompatíveis com padrões de transparência e segurança.</p>
-    <p>A informação disponibilizada resulta de um processo contínuo que combina denúncias submetidas pelos utilizadores, monitorização ativa da nossa equipa e sistemas de análise assistida por inteligência artificial. Apesar do rigor aplicado, não é possível garantir que todos os dados estejam permanentemente atualizados.</p>
-    <p>O acesso a grupos externos é realizado por conta e risco do utilizador. Recomendamos vivamente que os utilizadores adotem sempre uma postura crítica e consultem fontes oficiais para maior segurança.</p>
-</div>
+    <div class="search-container">
+        <input id="searchInput" placeholder="Pesquisar por nome, site ou país...">
+    </div>
 
-<div class="search-container">
-    <input id="searchInput" placeholder="Pesquisar por nome, site ou país (ex: Curacao)...">
-</div>
+    <div id="blacklist-container" class="grid"></div>
 
-<div id="blacklist-container" class="grid"></div>
-
-<div class="pagination">
-    <button id="prevBtn" class="btn-pag">Anterior</button>
-    <span id="pageInfo">Página 1</span>
-    <button id="nextBtn" class="btn-pag">Próximo</button>
-</div>
-
+    <div class="pagination">
+        <button id="prevBtn" class="btn-pag">← Anterior</button>
+        <span id="pageInfo">Página 1</span>
+        <button id="nextBtn" class="btn-pag">Próximo →</button>
+    </div>
 </main>
 
 <div id="modal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2 id="modal-nome" style="margin:0;"></h2>
-            <button onclick="fecharModal()" style="margin:0; background:#666;">Fechar</button>
+            <h2 id="modal-nome" style="margin:0; font-size: 22px; color: var(--danger-color);"></h2>
+            <button class="btn-fechar" onclick="fecharModal()">✕</button>
         </div>
         <div class="modal-body">
-            <p id="modal-motivo"></p>
-            <p id="modal-pais"></p>
-            <a id="modal-link" target="_blank" style="color:#1c7ed6; word-break: break-all;"></a>
-            <div id="modal-rating" style="margin-top:15px; font-weight:bold;"></div>
-            <hr>
-            <h3>💬 Comentários</h3>
-            <div id="modal-comments"></div>
-            <hr>
-            <h3>✍️ Comentar</h3>
-            <select id="modal-rating-input">
-                <option value="5">⭐⭐⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="1">⭐</option>
-            </select>
-            <input id="modal-user" placeholder="Nome">
-            <textarea id="modal-text" placeholder="Escreve o teu comentário..."></textarea>
-            <button onclick="enviarComentario()">Enviar Comentário</button>
+            <div id="modal-motivo" class="info-box"></div>
+            
+            <div class="meta-info">
+                <div class="meta-item" id="modal-pais"></div>
+                <div class="meta-item">
+                    🔗 <a id="modal-link" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500;"></a>
+                </div>
+                <div id="modal-rating" style="font-size: 18px; margin-top: 5px;"></div>
+            </div>
+
+            <div class="comment-section">
+                <h3 style="margin-top:0;">💬 Comentários</h3>
+                <div id="modal-comments"></div>
+                
+                <h3 style="margin-top:25px;">✍️ Deixar Avaliação</h3>
+                <select id="modal-rating-input">
+                    <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+                    <option value="4">⭐⭐⭐⭐ (Bom)</option>
+                    <option value="3">⭐⭐⭐ (Médio)</option>
+                    <option value="2">⭐⭐ (Fraco)</option>
+                    <option value="1">⭐ (Muito Mau)</option>
+                </select>
+                <input id="modal-user" placeholder="O seu nome">
+                <textarea id="modal-text" placeholder="Conte a sua experiência com este operador..."></textarea>
+                <button class="btn-enviar" onclick="enviarComentario()">Enviar Avaliação</button>
+            </div>
         </div>
     </div>
 </div>
 
 <script type="module">
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-/* FIREBASE */
 const app = initializeApp({
-apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
-authDomain:"bettransparency.firebaseapp.com",
-projectId:"bettransparency",
-appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
+    apiKey:"AIzaSyB8zs1zhEmHeDZTyNwzKVx3LUUnmElMTec",
+    authDomain:"bettransparency.firebaseapp.com",
+    projectId:"bettransparency",
+    appId:"1:493636447089:web:f5ceb8146a11a5b60364d0"
 });
 
 const db = getFirestore(app);
@@ -329,24 +365,19 @@ let blacklist=[];
 let filteredList=[];
 let currentPage = 1;
 let currentSite="";
-
-// Configura o limite conforme o aparelho
 const itemsPerPage = window.innerWidth <= 768 ? 10 : 20;
 
-/* LOAD */
 fetch("/data/blacklist.json")
 .then(r=>r.json())
 .then(data=>{
-blacklist=data;
-filteredList=data;
-renderPage();
+    blacklist=data;
+    filteredList=data;
+    renderPage();
 });
 
-/* FUNÇÃO DE RENDERIZAÇÃO POR PÁGINA */
 function renderPage() {
     const c=document.getElementById("blacklist-container");
     c.innerHTML="";
-
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     const itemsToShow = filteredList.slice(start, end);
@@ -355,17 +386,16 @@ function renderPage() {
         const div=document.createElement("div");
         div.className="card";
         div.innerHTML=`
-        <h3>${item.nome}</h3>
-        <p style="font-size:12px;color:#666;">
-        ${item.pais ? "🌍 " + item.pais : "🌍 País desconhecido"}
-        </p>
-        <div class="rating" id="rating-${item.nome.replace(/\s+/g, '-')}">⭐ ...</div>
+            <h3>${item.nome}</h3>
+            <p style="font-size:13px; color:#777; margin: 10px 0;">
+                🌍 ${item.pais || "País desconhecido"}
+            </p>
+            <div class="rating" id="rating-${item.nome.replace(/\s+/g, '-')}">⭐ ...</div>
         `;
         div.onclick=()=>abrirModal(item);
         c.appendChild(div);
         carregarRating(item.nome);
     });
-
     updatePagination();
 }
 
@@ -376,126 +406,74 @@ function updatePagination() {
     document.getElementById("nextBtn").disabled = (currentPage >= totalPages);
 }
 
-document.getElementById("prevBtn").onclick = () => {
-    if(currentPage > 1) {
-        currentPage--;
-        renderPage();
-        window.scrollTo(0,0);
-    }
-}
+document.getElementById("prevBtn").onclick = () => { if(currentPage > 1) { currentPage--; renderPage(); window.scrollTo(0,0); } }
+document.getElementById("nextBtn").onclick = () => { if(currentPage < Math.ceil(filteredList.length / itemsPerPage)) { currentPage++; renderPage(); window.scrollTo(0,0); } }
 
-document.getElementById("nextBtn").onclick = () => {
-    const totalPages = Math.ceil(filteredList.length / itemsPerPage);
-    if(currentPage < totalPages) {
-        currentPage++;
-        renderPage();
-        window.scrollTo(0,0);
-    }
-}
-
-/* MODAL */
 async function abrirModal(item){
-currentSite=item.nome;
-document.getElementById("modal").style.display="flex";
-document.getElementById("modal-nome").innerText=item.nome;
-document.getElementById("modal-motivo").innerText=item.motivo;
-document.getElementById("modal-pais").innerText = item.pais ? "🌍 País: " + item.pais : "🌍 País desconhecido";
-const link=document.getElementById("modal-link");
-link.href=item.website;
-link.innerText=item.website;
-carregarComentarios(item.nome);
+    currentSite=item.nome;
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("modal-nome").innerText=item.nome;
+    document.getElementById("modal-motivo").innerText="⚠️ " + item.motivo;
+    document.getElementById("modal-pais").innerHTML = "🌍 <b>País:</b> " + (item.pais || "Desconhecido");
+    const link=document.getElementById("modal-link");
+    link.href=item.website;
+    link.innerText=item.website;
+    carregarComentarios(item.nome);
 }
 
-window.fecharModal = function(){
-document.getElementById("modal").style.display="none";
-}
+window.fecharModal = function(){ document.getElementById("modal").style.display="none"; }
+document.getElementById("modal").onclick = function(e){ if(e.target.id === "modal"){ fecharModal(); } }
 
-// Fechar ao clicar fora
-document.getElementById("modal").onclick = function(e){
-if(e.target.id === "modal"){ fecharModal(); }
-}
-
-/* ENVIAR */
 window.enviarComentario = async function(){
-const text=document.getElementById("modal-text").value;
-const rating=document.getElementById("modal-rating-input").value;
-const user=document.getElementById("modal-user").value || "Anónimo";
-
-if(!text)return alert("Escreve algo");
-
-await addDoc(collection(db,"comments"),{
-site:currentSite,
-text,
-rating:Number(rating),
-user,
-date:Date.now()
-});
-
-document.getElementById("modal-text").value="";
-carregarComentarios(currentSite);
-carregarRating(currentSite);
+    const text=document.getElementById("modal-text").value;
+    const rating=document.getElementById("modal-rating-input").value;
+    const user=document.getElementById("modal-user").value || "Anónimo";
+    if(!text) return alert("Por favor, escreva um comentário.");
+    await addDoc(collection(db,"comments"),{ site:currentSite, text, rating:Number(rating), user, date:Date.now() });
+    document.getElementById("modal-text").value="";
+    carregarComentarios(currentSite);
+    carregarRating(currentSite);
 }
 
-/* CARREGAR COMENTÁRIOS */
 async function carregarComentarios(site){
-const q=query(collection(db,"comments"),where("site","==",site));
-const res=await getDocs(q);
-let html="";
-let soma=0;
-let count=0;
-
-res.forEach(doc=>{
-const d=doc.data();
-count++;
-soma+=d.rating;
-html+=`<div class="comment"><strong>${d.user}</strong> ⭐ ${d.rating}<p>${d.text}</p></div>`;
-});
-
-let media = count ? (soma/count).toFixed(1) : 0;
-document.getElementById("modal-rating").innerText = "⭐ "+media+" ("+count+" avaliações)";
-document.getElementById("modal-comments").innerHTML = html || "Sem comentários";
+    const q=query(collection(db,"comments"),where("site","==",site));
+    const res=await getDocs(q);
+    let html=""; let soma=0; let count=0;
+    res.forEach(doc=>{
+        const d=doc.data(); count++; soma+=d.rating;
+        html+=`<div class="comment"><strong>${d.user}</strong> <span style="color:#f59f00">★ ${d.rating}</span><p style="margin:5px 0 0 0; font-size:14px;">${d.text}</p></div>`;
+    });
+    let media = count ? (soma/count).toFixed(1) : 0;
+    document.getElementById("modal-rating").innerHTML = `<span style="color:#f59f00">★ ${media}</span> <small style="color:#666; font-size:12px;">(${count} avaliações)</small>`;
+    document.getElementById("modal-comments").innerHTML = html || "<p style='color:#999'>Ainda não há comentários.</p>";
 }
 
-/* RATING NO CARD */
 async function carregarRating(site){
-const q=query(collection(db,"comments"),where("site","==",site));
-const res=await getDocs(q);
-let soma=0;
-let count=0;
-res.forEach(doc=>{
-soma+=doc.data().rating;
-count++;
-});
-let media = count ? (soma/count).toFixed(1) : "-";
-const ratingDiv = document.getElementById("rating-"+site.replace(/\s+/g, '-'));
-if(ratingDiv) ratingDiv.innerText = "⭐ "+media;
+    const q=query(collection(db,"comments"),where("site","==",site));
+    const res=await getDocs(q);
+    let soma=0; let count=0;
+    res.forEach(doc=>{ soma+=doc.data().rating; count++; });
+    let media = count ? (soma/count).toFixed(1) : "-";
+    const ratingDiv = document.getElementById("rating-"+site.replace(/\s+/g, '-'));
+    if(ratingDiv) ratingDiv.innerText = "⭐ "+media;
 }
 
-/* PESQUISA MULTI-CAMPO */
 document.getElementById("searchInput").addEventListener("input", function(){
     let v = this.value.toLowerCase();
-    
     filteredList = blacklist.filter(x => {
-        let nome = x.nome ? x.nome.toLowerCase() : "";
-        let site = x.website ? x.website.toLowerCase() : "";
-        let pais = x.pais ? x.pais.toLowerCase() : "";
+        let nome = (x.nome || "").toLowerCase();
+        let site = (x.website || "").toLowerCase();
+        let pais = (x.pais || "").toLowerCase();
         return nome.includes(v) || site.includes(v) || pais.includes(v);
     });
-
     currentPage = 1;
     renderPage();
 });
-
 </script>
 
 <div id="footer"></div>
-
 <script>
-fetch("footer.html")
-.then(res=>res.text())
-.then(data=>{
-document.getElementById("footer").innerHTML=data;
-});
+fetch("footer.html").then(res=>res.text()).then(data=>{ document.getElementById("footer").innerHTML=data; });
 </script>
 
 </body>
