@@ -7,6 +7,54 @@
     "pais": " Curacao ",
     "data": "17-03-2026"
   },
+  {
+    "nome": "Športna loterija (e-stave)",
+    "website": "https://e-stave.com",
+    "app": "iOS, Android",
+    "motivo": "Operador legalmente licenciado pela Administração Financeira da República da Eslovénia (FURS). Detém o monopólio estatal para a exploração de apostas desportivas online em território esloveno, garantindo total proteção ao jogador e conformidade fiscal.",
+    "pais": "Eslovénia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Loterija Slovenije",
+    "website": "https://loterija.si",
+    "app": "iOS, Android",
+    "motivo": "Operador nacional licenciado para a exploração exclusiva de jogos de lotaria clássicos e sorteios. É uma entidade regulada pelo governo esloveno, operando sob supervisão direta para garantir a integridade dos jogos.",
+    "pais": "Eslovénia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Casino Portorož",
+    "website": "https://casino.si",
+    "app": "",
+    "motivo": "Operador detentor de uma concessão de casino físico que permite a exploração legal de jogos de fortuna e azar online. Totalmente regulado pela legislação eslovena sob o domínio oficial .si.",
+    "pais": "Eslovénia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Hit Group (Hit d.d.)",
+    "website": "https://hit.si",
+    "app": "Privativa (Privilege Club)",
+    "motivo": "O maior grupo de entretenimento e casinos da Eslovénia, operando plataformas online legalizadas vinculadas às suas concessões de unidades físicas (ex: Perla e Park).",
+    "pais": "Eslovénia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Admiral Slovenija",
+    "website": "https://admiral.si",
+    "app": "",
+    "motivo": "Operador de casinos e salões de jogos com licença oficial na Eslovénia. A plataforma online está devidamente autorizada e vinculada à sua operação terrestre regulada pela FURS.",
+    "pais": "Eslovénia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Casino Mond (Hit Group)",
+    "website": "https://casinomond.si",
+    "app": "",
+    "motivo": "Extensão digital licenciada da concessão física do Casino Mond em Šentilj. Opera legalmente sob a jurisdição eslovena e supervisão das autoridades fiscais.",
+    "pais": "Eslovénia",
+    "data": "29-04-2026"
+  },
 {
     "nome": "Viking",
     "website": " https://vikingbet.win",
