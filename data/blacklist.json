@@ -8,6 +8,246 @@
     "data": "17-03-2026"
   },
  {
+    "nome": "Fortuna",
+    "website": "https://ifortuna.sk",
+    "app": "iOS, Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Embora possua licença da URHH para operar na Eslováquia, não detém licença para exploração de jogo online em Portugal. Sem a certificação do regulador português, não oferece as garantias de proteção, auditoria e mecanismos de resolução de conflitos exigidos pela lei portuguesa.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Tipsport",
+    "website": "https://tipsport.sk",
+    "app": "iOS, Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Esta entidade está autorizada a operar apenas no mercado eslovaco sob regulação da URHH. Por não possuir licença emitida em Portugal, a sua atividade não é fiscalizada pelas autoridades portuguesas, não sendo permitida a sua exploração em território nacional.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Niké",
+    "website": "https://nike.sk",
+    "app": "iOS, Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Possui licença eslovaca, mas esta não é reconhecida para a exploração de apostas ou casino em Portugal. O acesso e registo a partir de Portugal não é legalmente protegido, uma vez que o operador não cumpre o regime jurídico do jogo online português.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Doxxbet",
+    "website": "https://doxxbet.sk",
+    "app": "iOS, Android",
+    "motivo": "Operador não licenciado pelo SRIJ. A licença emitida pela URHH na Eslováquia é territorial e não autoriza a operação em Portugal. A falta de licenciamento em Portugal significa que o operador não foi sujeito aos testes de idoneidade e segurança do SRIJ.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Synot Tip",
+    "website": "https://synottip.sk",
+    "app": "Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Detém licença para o mercado eslovaco, mas não cumpre os requisitos legais para operar em Portugal. Não está autorizado a aceitar jogadores residentes em Portugal nem a publicitar os seus serviços no país.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Tipos (eTipos)",
+    "website": "https://etipos.sk",
+    "app": "iOS, Android",
+    "motivo": "Operador estatal eslovaco não licenciado pelo SRIJ. Sendo a operadora de lotaria da Eslováquia, a sua jurisdição está limitada àquele país. Não possui autorização legal para oferecer jogos de fortuna ou azar a utilizadores em Portugal.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Betor",
+    "website": "https://betor.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Possui licença da URHH (Eslováquia), que não tem validade em território português. Por não estar sujeito à regulação do SRIJ, o operador não garante o cumprimento das normas de jogo responsável aplicáveis em Portugal.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "MonacoBet",
+    "website": "https://monacobet.sk",
+    "app": "iOS, Android",
+    "motivo": "Operador não licenciado pelo SRIJ. A sua licença eslovaca permite-lhe operar no domínio .sk, mas não em Portugal. Operar sem licença portuguesa constitui uma infração, e o jogador não beneficia da proteção jurídica nacional.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Eurogold",
+    "website": "https://eurogold.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. A licença eslovaca não substitui a necessidade de licenciamento em Portugal. Não está autorizado a operar ou publicitar serviços de jogo para residentes portugueses através do SRIJ.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "OlyBet",
+    "website": "https://olybet.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Embora seja uma marca internacional licenciada na Eslováquia, não obteve a homologação necessária junto do SRIJ para operar no mercado português, sendo considerada uma plataforma ilegal em Portugal.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Kajot Intacto",
+    "website": "https://kajotintacto.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Operação autorizada apenas na Eslováquia pela URHH. Em Portugal, a exploração de jogos de casino por esta entidade não é permitida legalmente sem licença nacional.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Admiral Online",
+    "website": "https://admiralonline.sk",
+    "app": "Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Detém licença para operação na Eslováquia, mas não possui autorização legal para exploração de jogo online em Portugal. Sem licença nacional, o SRIJ não pode garantir a segurança dos fundos.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "DoubleStar",
+    "website": "https://doublestar.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Licença eslovaca válida apenas territorialmente. Sem a licença obrigatória em Portugal, os seus jogos e plataforma não podem ser explorados legalmente no país.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Go4Games (Gox)",
+    "website": "https://gox.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Autorizado apenas pelo regulador URHH da Eslováquia. Carece de certificação e auditorias de software obrigatórias para atuar legalmente no mercado português de jogo online.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Orion Tip",
+    "website": "https://oriontip.sk",
+    "app": "Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Licenciado para apostas na Eslováquia, mas opera à margem da lei portuguesa. Sem licença do SRIJ, não oferece as garantias de jogo justo exigidas em Portugal.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Victory Tip",
+    "website": "https://victorytip.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Possui licença local eslovaca, mas a falta de licença em Portugal impede a sua operação legal. O site pode ser alvo de ordens de bloqueio por parte das autoridades nacionais.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Excelbet",
+    "website": "https://excelbet.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Operador regional eslovaco sem autorização para exploração de jogos de fortuna ou azar no mercado regulado português, não garantindo proteção jurídica ao jogador.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Rebuy Stars",
+    "website": "https://rebuystars.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. A sua licença emitida pela URHH (Eslováquia) não é válida para residentes em Portugal, sendo a sua atividade considerada ilegal e sem fiscalização em solo nacional.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Card Casino Online",
+    "website": "https://cardcasino.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Detém licença eslovaca para casino, mas não possui a licença portuguesa necessária. Não está sujeito à monitorização de fluxos financeiros por parte do SRIJ.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "777.sk (Ariola)",
+    "website": "https://777.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Entidade autorizada pela URHH mas sem licença do regulador português. Não oferece mecanismos de autoexclusão integrados com o sistema nacional português.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "BetRing",
+    "website": "https://betring.sk",
+    "app": "Android",
+    "motivo": "Operador não licenciado pelo SRIJ. Embora possua licença na Eslováquia, não detém licença para exploração de apostas em Portugal. O SRIJ não reconhece a idoneidade desta operadora para o mercado nacional.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Slovmatic",
+    "website": "https://slovmatic.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Licenciado apenas para o mercado eslovaco pela URHH. A sua operação em Portugal não é autorizada, fiscalizada ou tributada pelo Estado português.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Game World Online",
+    "website": "https://gameworld.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Entidade regulada na Eslováquia, mas ilegal em Portugal por não cumprir o regime jurídico de licenciamento e as normas de segurança digital do SRIJ.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Gapa Group",
+    "website": "https://gapagroup.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Possui licença da URHH para o domínio .sk, mas não possui habilitação legal para servir jogadores em Portugal nem garantias de solvabilidade perante o SRIJ.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Sazka Hry",
+    "website": "https://sazkahry.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Licenciado pela autoridade eslovaca URHH, mas sem qualquer validade legal para operar no mercado português. Não contribui para as políticas de jogo responsável em Portugal.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "K-BET 7",
+    "website": "https://k-bet.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. A licença eslovaca é insuficiente para operar em Portugal. O operador não garante as auditorias obrigatórias de RNG exigidas pelo regulador português.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Magnus Game",
+    "website": "https://magnusgame.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Autorizado apenas na jurisdição eslovaca. Por não possuir licença portuguesa, não está habilitado a aceitar registos de residentes em Portugal sob pena de ilegalidade.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Banco Casino",
+    "website": "https://bancocasino.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Embora licenciado na Eslováquia pela URHH, a falta de licença em Portugal impede a exploração legal de jogos. Não oferece proteção em caso de retenção indevida de fundos.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Olympic Casino Online",
+    "website": "https://olympic-casino.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Licença eslovaca sem reconhecimento em Portugal. Sem licença nacional, o operador não garante os mecanismos de resolução de conflitos e mediação do SRIJ.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+  {
+    "nome": "Terno",
+    "website": "https://terno.sk",
+    "app": "",
+    "motivo": "Operador não licenciado pelo SRIJ. Possui licença territorial na Eslováquia, mas não está autorizado pelo regulador português a explorar apostas online, sendo considerado um operador ilegal em Portugal.",
+    "pais": "Eslováquia",
+    "data": "29-04-2026"
+  },
+ {
     "nome": "OlyBet (Olympic Casino)",
     "website": "https://olybet.ee",
     "app": "iOS, Android",
