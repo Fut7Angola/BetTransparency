@@ -1,8 +1,10 @@
-{
-  "nome": "Veikkaus",
-  "pais": "FI",
-  "regulador": "Governo da Finlândia",
-  "sites": [
-    { "url": "https://www.veikkaus.fi", "tipo": "sports" }
-  ]
+[
+  {
+    "nome": "Veikkaus",
+    "pais": "FI",
+    "regulador": "Governo da Finlândia",
+    "sites": [
+      { "url": "https://www.veikkaus.fi", "tipo": "sports" }
+    ]
   }
+]
